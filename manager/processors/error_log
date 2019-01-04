@@ -1,0 +1,102 @@
+[25-Dec-2018 09:51:42 America/New_York] PHP Notice:  Undefined index: captcha_code in /home/popgrafi/public_html/manager/processors/login.processor.php on line 56
+[25-Dec-2018 09:51:42 America/New_York] PHP Notice:  Undefined index: rememberme in /home/popgrafi/public_html/manager/processors/login.processor.php on line 57
+[25-Dec-2018 09:51:42 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 09:51:43 America/New_York] PHP Notice:  Undefined variable: allowed_ip in /home/popgrafi/public_html/manager/processors/login.processor.php on line 137
+[25-Dec-2018 09:51:43 America/New_York] PHP Notice:  Undefined variable: allowed_days in /home/popgrafi/public_html/manager/processors/login.processor.php on line 151
+[25-Dec-2018 09:51:43 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 09:51:43 America/New_York] PHP Notice:  Undefined variable: newloginerror in /home/popgrafi/public_html/manager/processors/login.processor.php on line 190
+[25-Dec-2018 09:51:44 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/popgrafi/public_html/manager/processors/login.processor.php:56) in /home/popgrafi/public_html/manager/processors/login.processor.php on line 264
+[25-Dec-2018 09:51:44 America/New_York] PHP Notice:  Undefined variable: charset in /home/popgrafi/public_html/manager/includes/extenders/dbapi.mysql.class.inc.php on line 86
+[25-Dec-2018 09:51:45 America/New_York] PHP Notice:  Undefined variable: charset in /home/popgrafi/public_html/manager/includes/extenders/dbapi.mysql.class.inc.php on line 86
+[25-Dec-2018 09:51:45 America/New_York] PHP Notice:  Undefined index: captcha_code in /home/popgrafi/public_html/manager/processors/login.processor.php on line 56
+[25-Dec-2018 09:51:45 America/New_York] PHP Notice:  Undefined index: rememberme in /home/popgrafi/public_html/manager/processors/login.processor.php on line 57
+[25-Dec-2018 09:51:45 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 09:51:45 America/New_York] PHP Notice:  Undefined variable: allowed_ip in /home/popgrafi/public_html/manager/processors/login.processor.php on line 137
+[25-Dec-2018 09:51:45 America/New_York] PHP Notice:  Undefined variable: allowed_days in /home/popgrafi/public_html/manager/processors/login.processor.php on line 151
+[25-Dec-2018 09:51:45 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 09:51:45 America/New_York] PHP Notice:  Undefined variable: newloginerror in /home/popgrafi/public_html/manager/processors/login.processor.php on line 190
+[25-Dec-2018 09:51:45 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/popgrafi/public_html/manager/includes/extenders/dbapi.mysql.class.inc.php:86) in /home/popgrafi/public_html/manager/processors/login.processor.php on line 264
+[25-Dec-2018 09:52:04 America/New_York] PHP Notice:  Undefined index: captcha_code in /home/popgrafi/public_html/manager/processors/login.processor.php on line 56
+[25-Dec-2018 09:52:04 America/New_York] PHP Notice:  Undefined index: rememberme in /home/popgrafi/public_html/manager/processors/login.processor.php on line 57
+[25-Dec-2018 09:52:04 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 09:52:04 America/New_York] PHP Notice:  Undefined variable: allowed_ip in /home/popgrafi/public_html/manager/processors/login.processor.php on line 137
+[25-Dec-2018 09:52:04 America/New_York] PHP Notice:  Undefined variable: allowed_days in /home/popgrafi/public_html/manager/processors/login.processor.php on line 151
+[25-Dec-2018 09:52:04 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 09:52:04 America/New_York] PHP Notice:  Undefined variable: newloginerror in /home/popgrafi/public_html/manager/processors/login.processor.php on line 190
+[25-Dec-2018 09:52:04 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/popgrafi/public_html/manager/processors/login.processor.php:56) in /home/popgrafi/public_html/manager/processors/login.processor.php on line 264
+[25-Dec-2018 09:52:04 America/New_York] PHP Notice:  Undefined variable: charset in /home/popgrafi/public_html/manager/includes/extenders/dbapi.mysql.class.inc.php on line 86
+[25-Dec-2018 12:54:35 America/New_York] PHP Notice:  Undefined index: captcha_code in /home/popgrafi/public_html/manager/processors/login.processor.php on line 56
+[25-Dec-2018 12:54:35 America/New_York] PHP Notice:  Undefined index: rememberme in /home/popgrafi/public_html/manager/processors/login.processor.php on line 57
+[25-Dec-2018 12:54:35 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 12:54:36 America/New_York] PHP Notice:  Undefined variable: allowed_ip in /home/popgrafi/public_html/manager/processors/login.processor.php on line 137
+[25-Dec-2018 12:54:36 America/New_York] PHP Notice:  Undefined variable: allowed_days in /home/popgrafi/public_html/manager/processors/login.processor.php on line 151
+[25-Dec-2018 12:54:36 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 12:54:36 America/New_York] PHP Notice:  Undefined variable: newloginerror in /home/popgrafi/public_html/manager/processors/login.processor.php on line 190
+[25-Dec-2018 12:54:37 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/popgrafi/public_html/manager/processors/login.processor.php:56) in /home/popgrafi/public_html/manager/processors/login.processor.php on line 264
+[25-Dec-2018 12:54:37 America/New_York] PHP Notice:  Undefined variable: charset in /home/popgrafi/public_html/manager/includes/extenders/dbapi.mysql.class.inc.php on line 86
+[25-Dec-2018 13:23:42 America/New_York] PHP Notice:  Undefined index: captcha_code in /home/popgrafi/public_html/manager/processors/login.processor.php on line 56
+[25-Dec-2018 13:23:42 America/New_York] PHP Notice:  Undefined index: rememberme in /home/popgrafi/public_html/manager/processors/login.processor.php on line 57
+[25-Dec-2018 13:23:42 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 13:23:43 America/New_York] PHP Notice:  Undefined variable: allowed_ip in /home/popgrafi/public_html/manager/processors/login.processor.php on line 137
+[25-Dec-2018 13:23:43 America/New_York] PHP Notice:  Undefined variable: allowed_days in /home/popgrafi/public_html/manager/processors/login.processor.php on line 151
+[25-Dec-2018 13:23:43 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 13:23:43 America/New_York] PHP Notice:  Undefined variable: newloginerror in /home/popgrafi/public_html/manager/processors/login.processor.php on line 190
+[25-Dec-2018 13:23:43 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/popgrafi/public_html/manager/processors/login.processor.php:56) in /home/popgrafi/public_html/manager/processors/login.processor.php on line 264
+[25-Dec-2018 13:23:43 America/New_York] PHP Notice:  Undefined variable: charset in /home/popgrafi/public_html/manager/includes/extenders/dbapi.mysql.class.inc.php on line 86
+[25-Dec-2018 13:29:27 America/New_York] PHP Notice:  Undefined index: captcha_code in /home/popgrafi/public_html/manager/processors/login.processor.php on line 56
+[25-Dec-2018 13:29:27 America/New_York] PHP Notice:  Undefined index: rememberme in /home/popgrafi/public_html/manager/processors/login.processor.php on line 57
+[25-Dec-2018 13:29:27 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 13:29:27 America/New_York] PHP Notice:  Undefined variable: allowed_ip in /home/popgrafi/public_html/manager/processors/login.processor.php on line 137
+[25-Dec-2018 13:29:27 America/New_York] PHP Notice:  Undefined variable: allowed_days in /home/popgrafi/public_html/manager/processors/login.processor.php on line 151
+[25-Dec-2018 13:29:27 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 13:33:16 America/New_York] PHP Notice:  Undefined index: captcha_code in /home/popgrafi/public_html/manager/processors/login.processor.php on line 56
+[25-Dec-2018 13:33:16 America/New_York] PHP Notice:  Undefined index: rememberme in /home/popgrafi/public_html/manager/processors/login.processor.php on line 57
+[25-Dec-2018 13:33:16 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 13:33:16 America/New_York] PHP Notice:  Undefined variable: allowed_ip in /home/popgrafi/public_html/manager/processors/login.processor.php on line 137
+[25-Dec-2018 13:33:16 America/New_York] PHP Notice:  Undefined variable: allowed_days in /home/popgrafi/public_html/manager/processors/login.processor.php on line 151
+[25-Dec-2018 13:33:16 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 13:34:01 America/New_York] PHP Notice:  Undefined index: captcha_code in /home/popgrafi/public_html/manager/processors/login.processor.php on line 56
+[25-Dec-2018 13:34:01 America/New_York] PHP Notice:  Undefined index: rememberme in /home/popgrafi/public_html/manager/processors/login.processor.php on line 57
+[25-Dec-2018 13:34:01 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 13:34:01 America/New_York] PHP Notice:  Undefined variable: allowed_ip in /home/popgrafi/public_html/manager/processors/login.processor.php on line 137
+[25-Dec-2018 13:34:01 America/New_York] PHP Notice:  Undefined variable: allowed_days in /home/popgrafi/public_html/manager/processors/login.processor.php on line 151
+[25-Dec-2018 13:34:01 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 13:34:01 America/New_York] PHP Notice:  Undefined variable: newloginerror in /home/popgrafi/public_html/manager/processors/login.processor.php on line 190
+[25-Dec-2018 13:34:01 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/popgrafi/public_html/manager/processors/login.processor.php:56) in /home/popgrafi/public_html/manager/processors/login.processor.php on line 264
+[25-Dec-2018 13:34:01 America/New_York] PHP Notice:  Undefined variable: charset in /home/popgrafi/public_html/manager/includes/extenders/dbapi.mysql.class.inc.php on line 86
+[25-Dec-2018 14:59:46 America/New_York] PHP Notice:  Undefined index: captcha_code in /home/popgrafi/public_html/manager/processors/login.processor.php on line 56
+[25-Dec-2018 14:59:46 America/New_York] PHP Notice:  Undefined index: rememberme in /home/popgrafi/public_html/manager/processors/login.processor.php on line 57
+[25-Dec-2018 14:59:46 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 14:59:49 America/New_York] PHP Notice:  Undefined variable: allowed_ip in /home/popgrafi/public_html/manager/processors/login.processor.php on line 137
+[25-Dec-2018 14:59:49 America/New_York] PHP Notice:  Undefined variable: allowed_days in /home/popgrafi/public_html/manager/processors/login.processor.php on line 151
+[25-Dec-2018 14:59:49 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 14:59:49 America/New_York] PHP Notice:  Undefined variable: newloginerror in /home/popgrafi/public_html/manager/processors/login.processor.php on line 190
+[25-Dec-2018 14:59:51 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/popgrafi/public_html/manager/processors/login.processor.php:56) in /home/popgrafi/public_html/manager/processors/login.processor.php on line 264
+[25-Dec-2018 14:59:51 America/New_York] PHP Notice:  Undefined variable: charset in /home/popgrafi/public_html/manager/includes/extenders/dbapi.mysql.class.inc.php on line 86
+[25-Dec-2018 15:14:08 America/New_York] PHP Notice:  Undefined index: captcha_code in /home/popgrafi/public_html/manager/processors/login.processor.php on line 56
+[25-Dec-2018 15:14:08 America/New_York] PHP Notice:  Undefined index: rememberme in /home/popgrafi/public_html/manager/processors/login.processor.php on line 57
+[25-Dec-2018 15:14:08 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 15:14:08 America/New_York] PHP Notice:  Undefined variable: allowed_ip in /home/popgrafi/public_html/manager/processors/login.processor.php on line 137
+[25-Dec-2018 15:14:08 America/New_York] PHP Notice:  Undefined variable: allowed_days in /home/popgrafi/public_html/manager/processors/login.processor.php on line 151
+[25-Dec-2018 15:14:08 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 15:14:08 America/New_York] PHP Notice:  Undefined variable: newloginerror in /home/popgrafi/public_html/manager/processors/login.processor.php on line 190
+[25-Dec-2018 15:14:08 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/popgrafi/public_html/manager/processors/login.processor.php:56) in /home/popgrafi/public_html/manager/processors/login.processor.php on line 264
+[25-Dec-2018 15:14:08 America/New_York] PHP Notice:  Undefined variable: charset in /home/popgrafi/public_html/manager/includes/extenders/dbapi.mysql.class.inc.php on line 86
+[25-Dec-2018 17:04:58 America/New_York] PHP Notice:  Undefined index: captcha_code in /home/popgrafi/public_html/manager/processors/login.processor.php on line 56
+[25-Dec-2018 17:04:58 America/New_York] PHP Notice:  Undefined index: rememberme in /home/popgrafi/public_html/manager/processors/login.processor.php on line 57
+[25-Dec-2018 17:04:58 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 17:04:59 America/New_York] PHP Notice:  Undefined variable: allowed_ip in /home/popgrafi/public_html/manager/processors/login.processor.php on line 137
+[25-Dec-2018 17:04:59 America/New_York] PHP Notice:  Undefined variable: allowed_days in /home/popgrafi/public_html/manager/processors/login.processor.php on line 151
+[25-Dec-2018 17:04:59 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[25-Dec-2018 17:04:59 America/New_York] PHP Notice:  Undefined variable: newloginerror in /home/popgrafi/public_html/manager/processors/login.processor.php on line 190
+[25-Dec-2018 17:04:59 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/popgrafi/public_html/manager/processors/login.processor.php:56) in /home/popgrafi/public_html/manager/processors/login.processor.php on line 264
+[25-Dec-2018 17:04:59 America/New_York] PHP Notice:  Undefined variable: charset in /home/popgrafi/public_html/manager/includes/extenders/dbapi.mysql.class.inc.php on line 86
+[03-Jan-2019 23:07:52 America/New_York] PHP Notice:  Undefined index: captcha_code in /home/popgrafi/public_html/manager/processors/login.processor.php on line 56
+[03-Jan-2019 23:07:53 America/New_York] PHP Notice:  Undefined index: rememberme in /home/popgrafi/public_html/manager/processors/login.processor.php on line 57
+[03-Jan-2019 23:07:53 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[03-Jan-2019 23:07:54 America/New_York] PHP Notice:  Undefined variable: allowed_ip in /home/popgrafi/public_html/manager/processors/login.processor.php on line 137
+[03-Jan-2019 23:07:54 America/New_York] PHP Notice:  Undefined variable: allowed_days in /home/popgrafi/public_html/manager/processors/login.processor.php on line 151
+[03-Jan-2019 23:07:54 America/New_York] PHP Notice:  Undefined index: Forgot Manager LoginProps in /home/popgrafi/public_html/manager/includes/document.parser.class.inc.php on line 2375
+[03-Jan-2019 23:07:54 America/New_York] PHP Notice:  Undefined variable: newloginerror in /home/popgrafi/public_html/manager/processors/login.processor.php on line 190
+[03-Jan-2019 23:07:55 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/popgrafi/public_html/manager/processors/login.processor.php:56) in /home/popgrafi/public_html/manager/processors/login.processor.php on line 264
+[03-Jan-2019 23:07:55 America/New_York] PHP Notice:  Undefined variable: charset in /home/popgrafi/public_html/manager/includes/extenders/dbapi.mysql.class.inc.php on line 86
