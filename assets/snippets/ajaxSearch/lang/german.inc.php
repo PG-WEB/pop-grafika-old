@@ -30,10 +30,4 @@ $_lang['as_cmtIntroMessage'] = 'Haben Sie gefunden, wonach Sie gesucht haben? Hi
 $_lang['as_cmtSubmitText'] = 'Senden';
 $_lang['as_cmtResetText'] = 'Löschen';
 $_lang['as_cmtThksMessage'] = 'Danke für Ihren Kommentar !';
-$_lang['as_resultsTextSingle'] = '%d Ergebnis gefunden.';
-$_lang['as_resultsTextMultiple'] = '%d Ergebnisse gefunden.';
-$_lang['as_grpResultsDisplayedText'] = '(Gezeigt werden %d - %d von %d)';
-$_lang['as_resultsDisplayed'] = 'Angezeigt: %d';
-$_lang['as_paging1Text'] = '%d - %d / %d';
-$_lang['as_paging2Text'] = 'Zeige weitere %d Ergebnisse';
 ?>

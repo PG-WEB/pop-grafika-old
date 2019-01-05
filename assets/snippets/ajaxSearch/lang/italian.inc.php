@@ -1,10 +1,14 @@
 <?php
+
 /*
-english.inc.php - for AjaxSearch 1.9.0
-Created by: KyleJ (kjaebker@muddydogpaws.com), Modified by Coroico
-Created on: 01/22/07, Modified on 16/05/10
-Description: Language strings for AjaxSearch Translation: Nicola Lambathakis (Banzai), Luigif
+english.inc.php - for AjaxSearch 1.5
+Created by: KyleJ (kjaebker@muddydogpaws.com)
+Created on: 01/22/07
+Description: Language strings for AjaxSearch
+Updated 04/03/2009
+Translation: Nicola Lambathakis (Banzai), Luigif
 */
+
 $_lang['as_resultsIntroFailure'] = 'Non ci sono risultati per la ricerca. Prova con un termine pi&ugrave; generico.';
 $_lang['as_searchButtonText'] = 'Cerca!';
 $_lang['as_boxText'] = 'Cerca nel sito...';
@@ -27,10 +31,4 @@ $_lang['as_cmtIntroMessage'] = 'Hai trovato quello che stavi cercando? Inviaci i
 $_lang['as_cmtSubmitText'] = 'Invia';
 $_lang['as_cmtResetText'] = 'Cancella';
 $_lang['as_cmtThksMessage'] = 'Grazie per i commenti!';
-$_lang['as_resultsTextSingle'] = '%d risultato trovato.';
-$_lang['as_resultsTextMultiple'] = '%d risultati trovati.';
-$_lang['as_grpResultsDisplayedText'] = '(Visualizzati %d - %d di %d)';
-$_lang['as_resultsDisplayed'] = 'Visualizzati: %d';
-$_lang['as_paging1Text'] = '%d - %d / %d';
-$_lang['as_paging2Text'] = 'Mostra altri %d risultati';
 ?>
