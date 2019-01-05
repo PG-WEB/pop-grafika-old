@@ -28,7 +28,7 @@ if (!defined('MAGPIE_DIR')) {
 }
 
 if (!defined('MAGPIE_CACHE_DIR')) {
-    define('MAGPIE_CACHE_DIR', MODX_BASE_PATH . 'assets/cache/rss/');
+    define('MAGPIE_CACHE_DIR', MODX_BASE_PATH . 'assets/cache/rss');
 }
 
 require_once( MAGPIE_DIR . 'rss_parse.inc' );
@@ -359,7 +359,9 @@ function init () {
     }
 
     if ( !defined('MAGPIE_OUTPUT_ENCODING') ) {
-        define('MAGPIE_OUTPUT_ENCODING', 'ISO-8859-1');
+        global $modx_manager_charset;
+        if(empty($modx_manager_charset)) $modx_manager_charset = 'ISO-8859-1';
+        define('MAGPIE_OUTPUT_ENCODING', $modx_manager_charset);
     }
     
     if ( !defined('MAGPIE_INPUT_ENCODING') ) {

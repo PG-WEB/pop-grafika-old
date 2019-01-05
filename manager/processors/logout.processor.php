@@ -1,9 +1,9 @@
 <?php
-if(IN_MANAGER_MODE!="true") die("<b>INCLUDE_ORDERING_ERROR</b><br /><br />Please use the MODx Content Manager instead of accessing this file directly.");
+if(IN_MANAGER_MODE!="true") die("<b>INCLUDE_ORDERING_ERROR</b><br /><br />Please use the MODX Content Manager instead of accessing this file directly.");
 
 $internalKey = $modx->getLoginUserID();
 $username = $_SESSION['mgrShortname'];
-
+$sid = $modx->sid;
 
 // invoke OnBeforeManagerLogout event
 $modx->invokeEvent("OnBeforeManagerLogout",
@@ -25,6 +25,12 @@ if (isset($_COOKIE[session_name()])) {
 //startCMSSession();
 //session_destroy();
 
+// Clean up active_user_locks
+$modx->db->delete($modx->getFullTableName('active_user_locks'), "sid = '{$sid}'");
+
+// Clean up active_user_sessions
+$modx->db->delete($modx->getFullTableName('active_user_sessions'), "sid = '{$sid}'");
+
 // invoke OnManagerLogout event
 $modx->invokeEvent("OnManagerLogout",
 						array(
@@ -33,5 +39,5 @@ $modx->invokeEvent("OnManagerLogout",
 						));
 
 // show login screen
-header('Location: ' . MODX_BASE_URL . 'manager/');
+header('Location: ' . MODX_MANAGER_URL);
 ?>

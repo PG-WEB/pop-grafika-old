@@ -1,8 +1,8 @@
-﻿<?php
+<?php
 /*
-polish-utf8.inc.php - for AjaxSearch 1.8
+polish-utf8.inc.php - for AjaxSearch 1.10.2
 Created by: Radosław Włodkowski (radoslaw@artengine.pl)
-Created on: 09/24/09
+Last Modified on 2014-12-09
 Description: Language strings for AjaxSearch
 */
 $_lang['as_resultsIntroFailure'] = 'Niczego nie znaleziono. Spróbuj użyć innego wyrażenia.';
@@ -22,9 +22,15 @@ $_lang['oneword'] = 'Jedno słowo';
 $_lang['allwords'] = 'Wszystkie słowa';
 $_lang['exactphrase'] = 'Dokładne wyrażenie';
 $_lang['nowords'] = 'Bez słów';
-$_lang['as_cmtHiddenFieldIntro'] = 'To pole powinno być puste. <br /> Powstrzymaj się od wpisywania jakiegokolwiek tekstu.';
+$_lang['as_cmtHiddenFieldIntro'] = 'To pole powinno być puste. <br /> Nie wpisuj tu niczego.';
 $_lang['as_cmtIntroMessage'] = 'Znalazłeś to czego szukałeś? Pozostaw swój komentarz!';
 $_lang['as_cmtSubmitText'] = 'Wyślij';
 $_lang['as_cmtResetText'] = 'Wyczyść';
 $_lang['as_cmtThksMessage'] = 'Dziękujemy za komentarz!';
+$_lang['as_resultsTextSingle'] = '%d wynik.';
+$_lang['as_resultsTextMultiple'] = '%d wyników.';
+$_lang['as_grpResultsDisplayedText'] = '(Wyniki %d - %d z %d)';
+$_lang['as_resultsDisplayed'] = 'Wyświetlono: 6';
+$_lang['as_paging1Text'] = '%d - %d / %d';
+$_lang['as_paging2Text'] = 'Pokaż kolejne %d wyników';
 ?>
