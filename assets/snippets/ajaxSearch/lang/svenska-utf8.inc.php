@@ -1,13 +1,9 @@
 <?php
 /*
-Created by: KyleJ (kjaebker@muddydogpaws.com)
-Created on: 01/22/07
-Description: Language strings for AjaxSearch
-
-svenska-utf8.inc.php - Swedish language file for AjaxSearch 1.8
-Translation: Andreas Wettainen [mrhaw]
-Date: 2009-03-04
-
+svenska-utf8.inc.php - Swedish language file for AjaxSearch 1.9
+Created by: KyleJ (kjaebker@muddydogpaws.com), Modified by Coroico
+Translation: Pontus Ågren (Pont)
+Date: 2010-05-20
 */
 $_lang['as_resultsIntroFailure'] = 'Din sökning gav inga träffar. Pröva att använda mer allmänna sökord.';
 $_lang['as_searchButtonText'] = 'Sök!';
@@ -31,4 +27,10 @@ $_lang['as_cmtIntroMessage'] = 'Hittade du det som du sökte? Skriv en kommentar
 $_lang['as_cmtSubmitText'] = 'Skicka';
 $_lang['as_cmtResetText'] = 'Rensa';
 $_lang['as_cmtThksMessage'] = 'Tack för din kommentar!';
+$_lang['as_resultsTextSingle'] = '%d resultat.';
+$_lang['as_resultsTextMultiple'] = '%d resultat.';
+$_lang['as_grpResultsDisplayedText'] = '(Visar %d - %d av %d)';
+$_lang['as_resultsDisplayed'] = 'Visade: %d';
+$_lang['as_paging1Text'] = '%d - %d / %d';
+$_lang['as_paging2Text'] = 'Visa fler. %d resultat.';
 ?>

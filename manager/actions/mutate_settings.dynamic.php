@@ -47,8 +47,6 @@ $dir->close();
 $isDefaultUnavailableMsg = $site_unavailable_message == $_lang['siteunavailable_message_default'];
 $isDefaultUnavailableMsgJs = $isDefaultUnavailableMsg ? 'true' : 'false';
 $site_unavailable_message_view = isset($site_unavailable_message) ? $site_unavailable_message : $_lang['siteunavailable_message_default'];
-$validate_referrer_off_val = $modx->db->getValue('SELECT setting_value FROM '.$modx->getFullTableName('system_settings').' WHERE setting_name=\'validate_referer\'');
-$validate_referrer_off_val = $validate_referrer_off_val === '00' ? '00' : '0'; // storing the double zero is a trick to hide the warning message from the manager
 
 /* check the file paths */
 $settings['filemanager_path'] = $filemanager_path = trim($settings['filemanager_path']) == '' ? MODX_BASE_PATH : $settings['filemanager_path'];
@@ -56,7 +54,9 @@ $settings['rb_base_dir'] = $rb_base_dir = trim($settings['rb_base_dir']) == '' ?
 $settings['rb_base_url'] =  $rb_base_url = trim($settings['rb_base_url']) == '' ? 'assets/' : $settings['rb_base_url'];
 
 ?>
-
+<style type="text/css">
+	table th {text-align:left; vertical-align:top;}
+</style>
 <script type="text/javascript">
 function checkIM() {
 	im_on = document.settings.im_plugin[0].checked; // check if im_plugin is on
@@ -336,9 +336,9 @@ function confirmLangChange(el, lkey, elupd){
 
           <tr>
             <td nowrap class="warning" valign="top"><b><?php echo $_lang["track_visitors_title"] ?></b></td>
-            <td><input onchange="documentDirty=true;" type="radio" name="track_visitors" value="1" <?php echo ($track_visitors=='1' || !isset($track_visitors)) ? 'checked="checked"' : "" ; ?> onclick='showHide(/logRow/, 1);' />
+            <td><input onchange="documentDirty=true;" type="radio" name="track_visitors" value="1" <?php echo ($track_visitors=='1' || !isset($track_visitors)) ? 'checked="checked"' : "" ; ?> />
               <?php echo $_lang["yes"]?><br />
-              <input onchange="documentDirty=true;" type="radio" name="track_visitors" value="0" <?php echo $track_visitors=='0' ? 'checked="checked"' : "" ; ?> onclick='showHide(/logRow/, 0);' />
+              <input onchange="documentDirty=true;" type="radio" name="track_visitors" value="0" <?php echo $track_visitors=='0' ? 'checked="checked"' : "" ; ?> />
               <?php echo $_lang["no"]?> </td>
           </tr>
           <tr>
@@ -346,20 +346,6 @@ function confirmLangChange(el, lkey, elupd){
             <td class='comment'><?php echo $_lang["track_visitors_message"] ?></td>
           </tr>
           <tr>
-            <td colspan="2"><div class='split'></div></td>
-          </tr>
-          <tr id='logRow1' class='row1' style="display: <?php echo $track_visitors==1 ? $displayStyle : 'none' ; ?>">
-            <td nowrap class="warning" valign="top"><b><?php echo $_lang["resolve_hostnames_title"] ?></b></td>
-            <td> <input onchange="documentDirty=true;" type="radio" name="resolve_hostnames" value="1" <?php echo ($resolve_hostnames=='1' || !isset($resolve_hostnames)) ? 'checked="checked"' : "" ; ?> />
-              <?php echo $_lang["yes"]?><br />
-              <input onchange="documentDirty=true;" type="radio" name="resolve_hostnames" value="0" <?php echo $resolve_hostnames=='0' ? 'checked="checked"' : "" ; ?> />
-              <?php echo $_lang["no"]?> </td>
-          </tr>
-          <tr id='logRow2' class='row1' style="display: <?php echo $track_visitors==1 ? $displayStyle : 'none' ; ?>">
-            <td width="200">&nbsp;</td>
-            <td class='comment'><?php echo $_lang["resolve_hostnames_message"] ?></td>
-          </tr>
-          <tr id='logRow3' style="display: <?php echo $track_visitors==1 ? $displayStyle : 'none' ; ?>">
             <td colspan="2"><div class='split'></div></td>
           </tr>
           <tr>
@@ -373,31 +359,63 @@ function confirmLangChange(el, lkey, elupd){
           <tr>
             <td colspan="2"><div class='split'></div></td>
           </tr>
+            <tr>
+                <td nowrap class="warning" valign="top"><b><?php echo $_lang["defaulttemplate_logic_title"];?></b></td>
+                <td>
+                    <p><?php echo $_lang["defaulttemplate_logic_general_message"];?></p>
+                    <input onchange="documentDirty=true;" type="radio" name="auto_template_logic" value="system"<?php if($auto_template_logic == 'system') {echo " checked='checked'";}?>/> <?php echo $_lang["defaulttemplate_logic_system_message"]; ?><br />
+                    <input onchange="documentDirty=true;" type="radio" name="auto_template_logic" value="parent"<?php if($auto_template_logic == 'parent') {echo " checked='checked'";}?>/> <?php echo $_lang["defaulttemplate_logic_parent_message"]; ?><br />
+                    <input onchange="documentDirty=true;" type="radio" name="auto_template_logic" value="sibling"<?php if($auto_template_logic == 'sibling') {echo " checked='checked'";}?>/> <?php echo $_lang["defaulttemplate_logic_sibling_message"]; ?><br />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><div class='split'></div></td>
+            </tr>
           <tr>
             <td nowrap class="warning" valign="top"><b><?php echo $_lang["defaulttemplate_title"] ?></b></td>
             <td>
 			<?php
-				$sql = "select templatename, id from $dbase.`".$table_prefix."site_templates`";
+				$sql = 'SELECT t.templatename, t.id, c.category FROM '.$table_prefix.'site_templates t LEFT JOIN '.$table_prefix.'categories c ON t.category = c.id ORDER BY c.category, t.templatename ASC';
 				$rs = mysql_query($sql);
 			?>
-			  <select name="default_template" class="inputBox" onchange='documentDirty=true;' style="width:150px">
+			  <select name="default_template" class="inputBox" onchange="documentDirty=true;wrap=document.getElementById('template_reset_options_wrapper');if(this.options[this.selectedIndex].value != '<?php echo $default_template;?>'){wrap.style.display='block';}else{wrap.style.display='none';}" style="width:150px">
 				<?php
+				
+				$currentCategory = '';
 				while ($row = mysql_fetch_assoc($rs)) {
-					$selectedtext = $row['id']==$default_template ? "selected='selected'" : "" ;
+					$thisCategory = $row['category'];
+					if($thisCategory == null) {
+						$thisCategory = $_lang["no_category"];
+					}
+					if($thisCategory != $currentCategory) {
+						if($closeOptGroup) {
+							echo "\t\t\t\t\t</optgroup>\n";							
+						}
+						echo "\t\t\t\t\t<optgroup label=\"$thisCategory\">\n";
+						$closeOptGroup = true;
+					} else {
+						$closeOptGroup = false;
+					}
+					
+					$selectedtext = $row['id'] == $default_template ? ' selected="selected"' : '';
 					if ($selectedtext) {
 						$oldTmpId = $row['id'];
 						$oldTmpName = $row['templatename'];
 					}
-				?>
-					<option value="<?php echo $row['id']; ?>" <?php echo $selectedtext; ?>><?php echo $row['templatename']; ?></option>
-				<?php
+					
+					echo "\t\t\t\t\t".'<option value="'.$row['id'].'"'.$selectedtext.'>'.$row['templatename']."</option>\n";
+					$currentCategory = $thisCategory;
 				}
-				?>
+				if($thisCategory != '') {
+					echo "\t\t\t\t\t</optgroup>\n";							
+				}
+?>
  			 </select>
  			 	<br />
- 			 	<br />
-				<input onchange="documentDirty=true;" type="radio" name="reset_template" value="1" /> <?php echo $_lang["template_reset_all"]; ?><br />
-				<input onchange="documentDirty=true;" type="radio" name="reset_template" value="2" /> <?php echo sprintf($_lang["template_reset_specific"],$oldTmpName); ?>
+                <div id="template_reset_options_wrapper" style="display:none;">
+    				<input onchange="documentDirty=true;" type="radio" name="reset_template" value="1" /> <?php echo $_lang["template_reset_all"]; ?><br />
+	    			<input onchange="documentDirty=true;" type="radio" name="reset_template" value="2" /> <?php echo sprintf($_lang["template_reset_specific"],$oldTmpName); ?>
+                </div>
 				<input type="hidden" name="old_template" value="<?php echo $oldTmpId; ?>" />
 			</td>
           </tr>
@@ -527,7 +545,7 @@ function confirmLangChange(el, lkey, elupd){
               <td nowrap class="warning"><b><?php echo $_lang["validate_referer_title"] ?></b></td>
               <td><input onchange="documentDirty=true;" type="radio" name="validate_referer" value="1" <?php echo ($validate_referer=='1' || !isset($validate_referer)) ? 'checked="checked"' : "" ; ?> />
                 <?php echo $_lang["yes"]?><br />
-                <input onchange="documentDirty=true;" type="radio" name="validate_referer" value="<?php echo $validate_referrer_off_val;?>" <?php echo $validate_referer=='0' ? 'checked="checked"' : "" ; ?> />
+                <input onchange="documentDirty=true;" type="radio" name="validate_referer" value="0" <?php echo $validate_referer=='0' ? 'checked="checked"' : "" ; ?> />
                 <?php echo $_lang["no"]?> </td>
             </tr>
             <tr>
@@ -732,6 +750,60 @@ function confirmLangChange(el, lkey, elupd){
             <td width="200">&nbsp;</td>
             <td class='comment'><?php echo $_lang["blocked_minutes_message"] ?></td>
           </tr>
+           <tr>
+            <td colspan="2"><div class='split'></div></td>
+          </tr>
+		<tr>
+		<?php if(!isset($error_reporting)) $error_reporting = '1'; ?>
+		<th><?php echo $_lang['a17_error_reporting_title']; ?></th>
+		<td>
+			<?php echo wrap_label($_lang['a17_error_reporting_opt0'], form_radio('error_reporting','0' , $error_reporting==='0'));?><br />
+			<?php echo wrap_label($_lang['a17_error_reporting_opt1'], form_radio('error_reporting','1' , $error_reporting==='1'));?><br />
+			<?php echo wrap_label($_lang['a17_error_reporting_opt2'], form_radio('error_reporting','2' , $error_reporting==='2'));?><br />
+			<?php echo wrap_label($_lang['a17_error_reporting_opt99'],form_radio('error_reporting','99', $error_reporting==='99'));?><br />
+		<?php echo $_lang['a17_error_reporting_msg'];?></td>
+		</tr>
+            <tr>
+              <td colspan="2"><div class='split'></div></td>
+            </tr>
+			<tr>
+			<th><?php echo $_lang["pwd_hash_algo_title"] ?></th>
+			<td>
+			<?php
+				$phm['sel']['BLOWFISH_Y'] = $pwd_hash_algo=='BLOWFISH_Y' ?  1 : 0;
+				$phm['sel']['BLOWFISH_A'] = $pwd_hash_algo=='BLOWFISH_A' ?  1 : 0;
+				$phm['sel']['SHA512']     = $pwd_hash_algo=='SHA512' ?  1 : 0;
+				$phm['sel']['SHA256']     = $pwd_hash_algo=='SHA256' ?  1 : 0;
+				$phm['sel']['MD5']        = $pwd_hash_algo=='MD5' ?  1 : 0;
+				$phm['sel']['UNCRYPT']    = $pwd_hash_algo=='UNCRYPT' ?  1 : 0;
+				if(!isset($pwd_hash_algo) || empty($pwd_hash_algo)) $phm['sel']['UNCRYPT'] = 1;
+				$phm['e']['BLOWFISH_Y'] = $modx->manager->checkHashAlgorithm('BLOWFISH_Y') ? 0:1;
+				$phm['e']['BLOWFISH_A'] = $modx->manager->checkHashAlgorithm('BLOWFISH_A') ? 0:1;
+				$phm['e']['SHA512']     = $modx->manager->checkHashAlgorithm('SHA512') ? 0:1;
+				$phm['e']['SHA256']     = $modx->manager->checkHashAlgorithm('SHA256') ? 0:1;
+				$phm['e']['MD5']        = $modx->manager->checkHashAlgorithm('MD5') ? 0:1;
+				$phm['e']['UNCRYPT']    = $modx->manager->checkHashAlgorithm('UNCRYPT') ? 0:1;
+			?>
+				<?php echo wrap_label('CRYPT_BLOWFISH_Y (salt &amp; stretch)',form_radio('pwd_hash_algo','BLOWFISH_Y',$phm['sel']['BLOWFISH_Y'], '', $phm['e']['BLOWFISH_Y']));?><br />
+				<?php echo wrap_label('CRYPT_BLOWFISH_A (salt &amp; stretch)',form_radio('pwd_hash_algo','BLOWFISH_A',$phm['sel']['BLOWFISH_A'], '', $phm['e']['BLOWFISH_A']));?><br />
+				<?php echo wrap_label('CRYPT_SHA512 (salt &amp; stretch)'    ,form_radio('pwd_hash_algo','SHA512'    ,$phm['sel']['SHA512']    , '', $phm['e']['SHA512']));?><br />
+				<?php echo wrap_label('CRYPT_SHA256 (salt &amp; stretch)'    ,form_radio('pwd_hash_algo','SHA256'    ,$phm['sel']['SHA256']    , '', $phm['e']['SHA256']));?><br />
+				<?php echo wrap_label('CRYPT_MD5 (salt &amp; stretch)'       ,form_radio('pwd_hash_algo','MD5'       ,$phm['sel']['MD5']       , '', $phm['e']['MD5']));?><br />
+				<?php echo wrap_label('UNCRYPT(32 chars salt + SHA-1 hash)'   ,form_radio('pwd_hash_algo','UNCRYPT'   ,$phm['sel']['UNCRYPT']   , '', $phm['e']['UNCRYPT']));?><br />
+				<?php echo $_lang["pwd_hash_algo_message"]?>
+			</td>
+			</tr>
+           <tr>
+            <td colspan="2"><div class='split'></div></td>
+          </tr>
+		<tr>
+			<th><?php echo $_lang["enable_bindings_title"] ?></th>
+			<td>
+				<?php echo wrap_label($_lang["yes"],form_radio('enable_bindings','1',$enable_bindings=='1' || !isset($enable_bindings)));?><br />
+				<?php echo wrap_label($_lang["no"], form_radio('enable_bindings','0',$enable_bindings=='0'));?><br />
+				<?php echo $_lang["enable_bindings_message"] ?>
+		</td>
+		</tr>
            <tr>
             <td colspan="2"><div class='split'></div></td>
           </tr>
@@ -1161,10 +1233,24 @@ function confirmLangChange(el, lkey, elupd){
               <input onchange="documentDirty=true;" type='text' maxlength='255' style="width: 250px;" name="upload_flash" value="<?php echo isset($upload_flash) ? $upload_flash : "swf,fla" ; ?>" />
             </td>
           </tr>
-          <tr id='rbRow17' class='row3' style="display: <?php echo $use_browser==1 ? $displayStyle : 'none' ; ?>">
-            <td width="200">&nbsp;</td>
-            <td class='comment'><?php echo $_lang["uploadable_flash_message"]?></td>
+            <tr id='rbRow17' class='row3' style="display: <?php echo $use_browser==1 ? $displayStyle : 'none' ; ?>">
+              <td width="200">&nbsp;</td>
+              <td class='comment'><?php echo $_lang["uploadable_flash_message"]?></td>
+            </tr>
+            <tr id='rbRow171' style="display: <?php echo $use_browser==1 ? $displayStyle : 'none' ; ?>">
+              <td colspan="2"><div class='split'></div></td>
+            </tr>
+          <tr id='rbRow172' class='row3' style="display: <?php echo $use_browser==1 ? $displayStyle : 'none' ; ?>">
+              <td nowrap class="warning"><b><?php echo $_lang["clean_uploaded_filename"]?></b></td>
+              <td> <input onchange="documentDirty=true;" type="radio" name="clean_uploaded_filename" value="1" <?php echo $clean_uploaded_filename=='1' ? 'checked="checked"' : "" ; ?> />
+                <?php echo $_lang["yes"]?><br />
+                <input onchange="documentDirty=true;" type="radio" name="clean_uploaded_filename" value="0" <?php echo ($clean_uploaded_filename=='0' || !isset($clean_uploaded_filename)) ? 'checked="checked"' : "" ; ?> />
+                <?php echo $_lang["no"]?> </td>
           </tr>
+            <tr id='rbRow17' class='row3' style="display: <?php echo $use_browser==1 ? $displayStyle : 'none' ; ?>">
+              <td width="200">&nbsp;</td>
+              <td class='comment'><?php echo $_lang["clean_uploaded_filename_message"];?></td>
+            </tr>
           <tr id='rbRow18' style="display: <?php echo $use_browser==1 ? $displayStyle : 'none' ; ?>">
           <td colspan="2"><div class='split'></div></td>
           </tr>
@@ -1394,4 +1480,14 @@ function get_lang_options($key=null, $selected_lang=null) {
         return $lang_options;
     }
 }
-?>
+
+function form_radio($name,$value,$checked=false,$add='',$disabled=false) {
+	if($checked)  $checked  = ' checked="checked"';
+	if($disabled) $disabled = ' disabled';
+	if($add)     $add = ' ' . $add;
+	return '<input type="radio" name="' . $name . '" value="' . $value . '"' . $checked . $disabled . $add . ' />';
+}
+
+function wrap_label($str='',$object) {
+	return "<label>{$object}\n{$str}</label>";
+}

@@ -345,9 +345,13 @@ $rs = mysql_query($sql);
 		<?php
 
 while ($row = mysql_fetch_assoc($rs)) {
-	$selectedtext = $row['id'] == $userdata['role'] ? "selected='selected'" : "";
+    if ($_REQUEST['a']=='11') {
+        $selectedtext = $row['id'] == '1' ? ' selected="selected"' : '';
+    } else {
+        $selectedtext = $row['id'] == $userdata['role'] ? "selected='selected'" : '';
+    }
 ?>
-			<option value="<?php echo $row['id']; ?>" <?php echo $selectedtext; ?>><?php echo $row['name']; ?></option>
+			<option value="<?php echo $row['id']; ?>"<?php echo $selectedtext; ?>><?php echo $row['name']; ?></option>
 		<?php
 
 }
@@ -474,7 +478,7 @@ while ($row = mysql_fetch_assoc($rs)) {
 	    <td> <select name="manager_language" size="1" class="inputBox" onchange="documentDirty=true">
 	    <option value=""> </option>
 	    <?php
-$activelang = !empty($usersettings['manager_language']) ? $usersettings['manager_language'] : $manager_language;
+$activelang = !empty($usersettings['manager_language']) ? $usersettings['manager_language'] : '';
 $dir = dir("includes/lang");
 while ($file = $dir->read()) {
 	if (strpos($file, ".inc.php") > 0) {

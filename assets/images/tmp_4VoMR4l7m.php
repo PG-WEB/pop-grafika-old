@@ -1,1 +1,0 @@
-<?php header("Signature: 4VoMR4l7m"); ?>

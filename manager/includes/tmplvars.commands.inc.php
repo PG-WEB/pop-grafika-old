@@ -14,19 +14,23 @@ $BINDINGS = array (
     'DIRECTORY'
 );
 
-function ProcessTVCommand($value, $name = '', $docid = '') {
+function ProcessTVCommand($value, $name = '', $docid = '', $src='docform') {
     global $modx;
     $etomite = & $modx;
     $docid = intval($docid) ? intval($docid) : $modx->documentIdentifier;
     $nvalue = trim($value);
     if (substr($nvalue, 0, 1) != '@')
         return $value;
+    elseif(isset($modx->config['enable_bindings']) && $modx->config['enable_bindings']!=1 && $src==='docform') {
+        return '@Bindings is disabled.';
+    }
     else {
         list ($cmd, $param) = ParseCommand($nvalue);
         $cmd = trim($cmd);
         switch ($cmd) {
             case "FILE" :
-                $output = ProcessFile($param);
+                $output = ProcessFile(trim($param));
+                $output = str_replace('@FILE ' . $param, $output, $nvalue);
                 break;
 
             case "CHUNK" : // retrieve a chunk and process it's content
@@ -73,9 +77,16 @@ function ProcessTVCommand($value, $name = '', $docid = '') {
                         continue; // hide unpublished docs if we're not at the top
 
                     $tv = $modx->getTemplateVar($name, '*', $doc['id'], $doc['published']);
-                    if ((string) $tv['value'] !== '' && $tv['value'] { 0 }
-                        != '@') {
+
+                    // inheritance allows other @ bindings to be inherited
+                    // if no value is inherited and there is content following the @INHERIT binding,
+                    // that content will be used as the output
+                    // @todo consider reimplementing *appending* the output the follows an @INHERIT as opposed
+                    //       to using it as a default/fallback value; perhaps allow choice in behavior with
+                    //       system setting
+                    if ((string) $tv['value'] !== '' && !preg_match('%^@INHERIT[\s\n\r]*$%im', $tv['value'])) {
                         $output = (string) $tv['value'];
+                        //$output = str_replace('@INHERIT', $output, $nvalue);
                         break 2;
                     }
                 }
@@ -107,7 +118,7 @@ function ProcessTVCommand($value, $name = '', $docid = '') {
 
         }
         // support for nested bindings
-        return is_string($output) && ($output != $value) ? ProcessTVCommand($output, $name, $docid) : $output;
+        return is_string($output) && ($output != $value) ? ProcessTVCommand($output, $name, $docid, $src) : $output;
     }
 }
 

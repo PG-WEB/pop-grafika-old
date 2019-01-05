@@ -34,4 +34,10 @@ $_lang['as_cmtIntroMessage'] = 'Fant du det du søkte etter? Legg til kommentar 
 $_lang['as_cmtSubmitText'] = 'Send';
 $_lang['as_cmtResetText'] = 'Tøm';
 $_lang['as_cmtThksMessage'] = 'Takk for din kommentar.';
+$_lang['as_resultsTextSingle'] = '%d resultat funnet.';
+$_lang['as_resultsTextMultiple'] = '%d resultater funnet.';
+$_lang['as_grpResultsDisplayedText'] = '(Viser %d - %d av %d)';
+$_lang['as_resultsDisplayed'] = 'Vist: %d';
+$_lang['as_paging1Text'] = '%d - %d / %d';
+$_lang['as_paging2Text'] = 'Flere enn %d resultater';
 ?>

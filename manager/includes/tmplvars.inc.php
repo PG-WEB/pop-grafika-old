@@ -1,11 +1,12 @@
 <?php
 	// DISPLAY FORM ELEMENTS
-
-	function renderFormElement($field_type, $field_id, $default_text, $field_elements, $field_value, $field_style='') {
+	function renderFormElement($field_type, $field_id, $default_text, $field_elements, $field_value, $field_style='', $row = array()) {
 		global $modx;
 		global $base_url;
 		global $rb_base_url;
 		global $manager_theme;
+		global $_lang;
+		global $content;
 
 		$field_html ='';
 		$field_value = ($field_value!="" ? $field_value : $default_text);
@@ -42,7 +43,7 @@
 				break;
 			case "dropdown": // handler for select boxes
 				$field_html .=  '<select id="tv'.$field_id.'" name="tv'.$field_id.'" size="1" onchange="documentDirty=true;">';
-				$index_list = ParseIntputOptions(ProcessTVCommand($field_elements, $field_id));
+				$index_list = ParseIntputOptions(ProcessTVCommand($field_elements, $field_id,'','tvform'));
 				while (list($item, $itemvalue) = each ($index_list))
 				{
 					list($item,$itemvalue) =  (is_array($itemvalue)) ? $itemvalue : explode("==",$itemvalue);
@@ -53,7 +54,7 @@
 				break;
 			case "listbox": // handler for select boxes
 				$field_html .=  '<select id="tv'.$field_id.'" name="tv'.$field_id.'" onchange="documentDirty=true;" size="8">';	
-				$index_list = ParseIntputOptions(ProcessTVCommand($field_elements, $field_id));
+				$index_list = ParseIntputOptions(ProcessTVCommand($field_elements, $field_id,'','tvform'));
 				while (list($item, $itemvalue) = each ($index_list))
 				{
 					list($item,$itemvalue) =  (is_array($itemvalue)) ? $itemvalue : explode("==",$itemvalue);
@@ -65,7 +66,7 @@
 			case "listbox-multiple": // handler for select boxes where you can choose multiple items
 				$field_value = explode("||",$field_value);
 				$field_html .=  '<select id="tv'.$field_id.'[]" name="tv'.$field_id.'[]" multiple="multiple" onchange="documentDirty=true;" size="8">';
-				$index_list = ParseIntputOptions(ProcessTVCommand($field_elements, $field_id));
+				$index_list = ParseIntputOptions(ProcessTVCommand($field_elements, $field_id,'','tvform'));
 				while (list($item, $itemvalue) = each ($index_list))
 				{
 					list($item,$itemvalue) =  (is_array($itemvalue)) ? $itemvalue : explode("==",$itemvalue);
@@ -89,7 +90,7 @@
 				break;
 			case "checkbox": // handles check boxes
 				$field_value = !is_array($field_value) ? explode("||",$field_value) : $field_value;
-				$index_list = ParseIntputOptions(ProcessTVCommand($field_elements, $field_id));
+				$index_list = ParseIntputOptions(ProcessTVCommand($field_elements, $field_id,'','tvform'));
 				static $i=0;
 				while (list($item, $itemvalue) = each ($index_list))
 				{
@@ -100,7 +101,7 @@
 				}
 				break;
 			case "option": // handles radio buttons
-				$index_list = ParseIntputOptions(ProcessTVCommand($field_elements, $field_id));
+				$index_list = ParseIntputOptions(ProcessTVCommand($field_elements, $field_id,'','tvform'));
 				while (list($item, $itemvalue) = each ($index_list))
 				{
 					list($item,$itemvalue) =  (is_array($itemvalue)) ? $itemvalue : explode("==",$itemvalue);
@@ -218,6 +219,56 @@
 				$field_html .='<input type="text" id="tv'.$field_id.'" name="tv'.$field_id.'"  value="'.$field_value .'" '.$field_style.' onchange="documentDirty=true;" />&nbsp;<input type="button" value="'.$_lang['insert'].'" onclick="BrowseFileServer(\'tv'.$field_id.'\')" />';
                 
 				break;
+
+            case 'custom_tv':
+                $custom_output = '';
+                /* If we are loading a file */
+                if(substr($field_elements, 0, 5) == "@FILE") {
+                    $file_name = MODX_BASE_PATH . trim(substr($field_elements, 6));
+                    if( !file_exists($file_name) ) {
+                        $custom_output = $file_name . ' does not exist';
+                    } else {
+                        $custom_output = file_get_contents($file_name);
+                    }
+                } elseif(substr($field_elements, 0, 8) == '@INCLUDE') {
+                    $file_name = MODX_BASE_PATH . trim(substr($field_elements, 9));
+                    if( !file_exists($file_name) ) {
+                        $custom_output = $file_name . ' does not exist';
+                    } else {
+                        ob_start();
+                        include $file_name;
+                        $custom_output = ob_get_contents();
+                        ob_end_clean();
+                    }
+                } elseif(substr($field_elements, 0, 6) == "@CHUNK") {
+                    $chunk_name = trim(substr($field_elements, 7));
+                    $chunk_body = $modx->getChunk($chunk_name);
+                    if($chunk_body == false) {
+                        $custom_output = $_lang['chunk_no_exist']
+                            . '(' . $_lang['htmlsnippet_name']
+                            . ':' . $chunk_name . ')';
+                    } else {
+                        $custom_output = $chunk_body;
+                    }
+                } elseif(substr($field_elements, 0, 5) == "@EVAL") {
+                    $eval_str = trim(substr($field_elements, 6));
+                    $custom_output = eval($eval_str);
+                } else {
+                    $custom_output = $field_elements;
+                }
+                $replacements = array(
+                    '[+field_type+]'   => $field_type,
+                    '[+field_id+]'     => $field_id,
+                    '[+default_text+]' => $default_text,
+                    '[+field_value+]'  => htmlspecialchars($field_value),
+                    '[+field_style+]'  => $field_style,
+                );
+                $custom_output = str_replace(array_keys($replacements), $replacements, $custom_output);
+                $modx->documentObject = $content;
+                $custom_output = $modx->parseDocumentSource($custom_output);
+                $field_html .= $custom_output;
+                break;
+            
 			default: // the default handler -- for errors, mostly
 				$field_html .=  '<input type="text" id="tv'.$field_id.'" name="tv'.$field_id.'" value="'.htmlspecialchars($field_value).'" '.$field_style.' onchange="documentDirty=true;" />';
 

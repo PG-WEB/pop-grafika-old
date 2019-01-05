@@ -1,13 +1,18 @@
 <?php
 /**
- * Filename:       includes/lang/czech.inc.php
- * Function:       Language file.
- * Encoding:       UTF8
- * Author:         Hansek, COEX (hansek@coex.cz), původní překlad: rasel^ - http://www.etomite.sk, R - stick, Ajven, golem, stranger, rzelnik
- * Date:           18 October 2009
- * Version:        2.0.4
- * MODx version:   Evolution 1.0.1
-*/
+/**
+ * MODx language File
+ *
+ * @author modxcms.cz
+ * @package MODx
+ * @version 1.5
+ * @updated 2010-12-11
+ *
+ * Filename:       /install/lang/czech.inc.php
+ * Language:       Czech
+ * Encoding:       utf-8
+ */
+
 $modx_lang_attribute = 'cs'; // Manager HTML/XML Language Attribute see http://en.wikipedia.org/wiki/ISO_639-1
 $modx_manager_charset = 'UTF-8';
 
@@ -52,6 +57,7 @@ $_lang["add_template"] = 'Přidat šablonu';
 $_lang["add_tv"] = 'Přidat TV';
 $_lang["add_weblink"] = 'Nový odkaz';
 $_lang["administrator_role_message"] = 'S vašemi pravomocemi nemůžete upravovat ani mazat.';
+$_lang["administrators"] = 'Administrátoři';
 $_lang["after_saving"] = 'Po uložení';
 $_lang["alert_delete_self"] = 'Nemůžete odstranit sám sebe!';
 $_lang["alias"] = 'Alias';
@@ -96,6 +102,8 @@ $_lang["chunk_code"] = 'Kód chunku (html)';
 $_lang["chunk_multiple_id"] = 'Chyba: Více Chunků sdílí unikátní ID.';
 $_lang["chunk_no_exist"] = 'Chunk neexistuje.';
 $_lang["cleaningup"] = 'Čistím / Odstraňuji';
+$_lang["clean_uploaded_filename"] = 'Přepisovat názvy nahrávaných souborů';
+$_lang["clean_uploaded_filename_message"] = 'Je-li aktivní bude využito výchozího nastavení nebo nastavení pro transalias, které odstraní speciální znaky (např. diakritiku, ...) z názvů nahrávaných souborů, tečky budou zachovány.';
 $_lang["clear_log"] = 'Vyčistit výpis';
 $_lang["click_to_context"] = 'Kliknutím získáte přístup do kontextového menu';
 $_lang["click_to_edit_title"] = 'Zde klikněte pro úpravu tohoto záznamu';
@@ -114,6 +122,7 @@ $_lang["configcheck_errorpage_unavailable"] = 'Vaše Chybová stránka (error 40
 $_lang["configcheck_errorpage_unavailable_msg"] = 'To znamená, že vaše Chybová stránka není dostupná normálním internetovým uživatelům nebo neexistuje. To může vést k mnoha chybovým zápisům do logů. Ujistěte se zda žádná ze skupin návštěvníků nemá přístup k této stránce.';
 $_lang["configcheck_errorpage_unpublished"] = 'Vaše Chybová stránka (error 404) není publikována nebo neexistuje.';
 $_lang["configcheck_errorpage_unpublished_msg"] = 'To znamená, že vaše Chybová stránka je nedostupná širolé veřejnosti. Publikujte stránku nebo se přesvědčte, že stránka existuje a je umístěna ve stromu dokumentů v Nástrojích &gt; Konfigurační menu';
+$_lang["configcheck_hide_warning"] = '<a href="javascript:hideConfigCheckWarning(\'%s\');"><em>Tuto zprávu již nezobrazovat.</em></a>';
 $_lang["configcheck_images"] = 'Do adresáře pro obrázky nelze zapisovat';
 $_lang["configcheck_images_msg"] = 'Adresář pro obrázky neexistuje nebo nemá povoleno právo k zápisu. Je potřeba pro funkčnost WYSIWYG editoru.';
 $_lang["configcheck_installer"] = 'Instalátor nebyl smazán.';
@@ -122,9 +131,15 @@ $_lang["configcheck_lang_difference"] = 'Nesprávný počet položek v souboru j
 $_lang["configcheck_lang_difference_msg"] = 'Právě vybraný jazyk má rozdílný počet položek než výchozí jazyk (angličtina). Pravděpodobně používate zastaralý nebo nekorektně upravený lokalizační soubor. I když se neobjeví problémy, bude asi potřeba udělat jeho aktualizaci.';
 $_lang["configcheck_notok"] = 'Byly nalezeny následující problémy: ';
 $_lang["configcheck_ok"] = 'Kontola proběhla úspěšně - žádná varovavání nejsou třeba.';
+$_lang["configcheck_php_gdzip"] = 'GD a/nebo Zip PHP extenze nenalezena';
+$_lang["configcheck_php_gdzip_msg"] = 'MODx potřebuje aktivní extenzi GD a Zip v PHP. Dokud bude MODx bežet bez nich, nebude možno používat všech výhod vestavěného správce souborů, editoru obrázků nebo captcha.';
 $_lang["configcheck_register_globals"] = 'register_globals je nastaven na zapnuto (ON) v konfiguračním souboru php.ini';
 $_lang["configcheck_register_globals_msg"] = 'Tato konfigurace dělá Vaše stránky více citlivé na útoky typu Cross Site Scripting (XSS). ';
 $_lang["configcheck_title"] = 'Kontrola konfigurace';
+$_lang["configcheck_templateswitcher_present"] = 'Detekován plugin TemplateSwitcher';
+$_lang["configcheck_templateswitcher_present_delete"] = '<a href="javascript:deleteTemplateSwitcher();">Odstranit TemplateSwitcher</a>';
+$_lang["configcheck_templateswitcher_present_disable"] = '<a href="javascript:disableTemplateSwitcher();">Vypnout TemplateSwitcher</a>';
+$_lang["configcheck_templateswitcher_present_msg"] = 'Bylo zjištěno, že plugin zapříčiňuje problémy s ukládáním do vyrovnávací paměti a způsobuje problémy s výkonem, měli by jste využít pouze funkcionalit nutných pro chod stránek.';
 $_lang["configcheck_unauthorizedpage_unavailable"] = 'Stránka o neautorizovaném přístupu není publikována nebo neexistuje.';
 $_lang["configcheck_unauthorizedpage_unavailable_msg"] = 'To znamená, že Stránka o neautorizovaném přístupu není dostupná normálním internetovým uživatelům nebo neexistuje. To může vést k mnoha chybovým zápisům do logů. Ujistěte se zda žádná ze skupin návštěvníků nemá přístup k této stránce.';
 $_lang["configcheck_unauthorizedpage_unpublished"] = 'Stránka o neautorizovaném přístupu definovaná v nastavení webu není publikována.';
@@ -194,6 +209,7 @@ $_lang["datepicker_offset"] = 'Počet let v minulosti: ';
 $_lang["datepicker_offset_message"] = 'Kolik předchozích let má být zobrazeno ve výběru data.';
 $_lang["datetime_format"] = 'Format datumu';
 $_lang["datetime_format_message"] = 'Formát datumu v Manager.';
+$_lang["default"] = 'Výchozí:';
 $_lang["defaultcache_message"] = 'Označte \'Ano\' pro předvolené načtení dokumentů do zásobníku.';
 $_lang["defaultcache_title"] = 'Ukládání do zásobníku';
 $_lang["defaultmenuindex_message"] = 'Volbou \'Ano\' zapnete automatický menu index přidaný do jádra (základu).';
@@ -204,6 +220,11 @@ $_lang["defaultsearch_message"] = 'Označte \'Ano\' pro předvolené vyhledává
 $_lang["defaultsearch_title"] = 'Přednastavené vyhledávání';
 $_lang["defaulttemplate_message"] = 'Vyberte přednastavenou šablonu, kterou chcete používat v nových dokumentech. Stále můžete vybrat odlišnou šablonu v editoru dokumentů, toto nastavení definuje jednu ze šablon jako výchozí.';
 $_lang["defaulttemplate_title"] = 'Přednastavená šablona';
+$_lang["defaulttemplate_logic_title"] = 'Automatické nastavování šablon';
+$_lang["defaulttemplate_logic_general_message"] = 'Novým dokumentům budou přiřazovány šablony dle následujících pravidel, pokud to nebude možné použije se šablona jako v nadřazeném dokumentu:';
+$_lang["defaulttemplate_logic_system_message"] = '<strong>Systémová</strong>: výchozí šablona systému.';
+$_lang["defaulttemplate_logic_parent_message"] = '<strong>Nadřazená</strong>: stejná šablona jako u nadřazeného dokumentu.';
+$_lang["defaulttemplate_logic_sibling_message"] = '<strong>Sourozenecká</strong>: stejná šablona jako ostatní dokumenty na dané úrovni.';
 $_lang["delete"] = 'Smazat';
 $_lang["delete_resource"] = 'Smazat dokument';
 $_lang["delete_tags"] = 'Smazat tagy';
@@ -256,6 +277,7 @@ $_lang["event_id"] = 'ID události';
 $_lang["eventlog"] = 'Zápis událostí';
 $_lang["eventlog_msg"] = 'Zápis událostí je používán k zobrazení informativních, varovných a chybových zpráv vytvořených správcem obsahu. Sloupec "zdroj" zobrazuje část správce obsahu, kde zpráva nastala.';
 $_lang["eventlog_viewer"] = 'Prohlížeč událostí';
+$_lang["everybody"] = 'Všichni';
 $_lang["existing_category"] = 'Existující kategorie';
 $_lang["expand_tree"] = 'Rozbalit';
 $_lang["export_site"] = 'Export do HTML';
@@ -660,6 +682,9 @@ $_lang["refresh_site"] = 'Vyrovnávací paměť';
 $_lang["refresh_title"] = 'Obnovení stránek';
 $_lang["refresh_tree"] = 'Obnovit adresářový strom';
 $_lang["refresh_unpublished"] = 'Počet dokumentů s ukončenou dobou publikování: <b>%s</b>';
+$_lang["release_date"] = 'Datum vydání';
+$_lang["remember_last_tab"] = 'Pamatovat záložky';
+$_lang["remember_last_tab_message"] = 'Stránky manažeru se záložkami se budou nahrávat s naposledy otevřenými záložkami, normálně se zobrazuje první záložka.';
 $_lang["remember_username"] = 'Zapamatovat si heslo';
 $_lang["remove"] = 'Odstranit';
 $_lang["remove_date"] = 'Odstranit datum';
@@ -668,10 +693,9 @@ $_lang["rename"] = 'Přejmenovat';
 $_lang["reports"] = 'Hlášení';
 $_lang["require_tagname"] = 'Je požadován název značky';
 $_lang["require_tagvalue"] = 'Je požadována hodnota tagu';
+$_lang["reserved_name_warning"] = 'Tento název nelze použít. Jedná se o název, který je vyhrazen systému.';
 $_lang["reset"] = 'Vymazat';
 $_lang["reset_failedlogins"] = 'reset';
-$_lang["resolve_hostnames_message"] = 'Chcete, aby MODx konvertoval hostitelské IP na hostname Vašich návštevníků, když navštíví stránku? Zobrazení názvů mírně zvýší zátěž serveru, Vaši návštěvníci si toho, ale nijak nevšimnou.';
-$_lang["resolve_hostnames_title"] = 'Převod IP na hostname:';
 $_lang["resource"] = 'Dokument';
 $_lang["resource_alias"] = 'Zástupce dokumentu';
 $_lang["resource_alias_help"] = "Zde můžete zvolit zástupce pro tento dokument. Pro lehčí přístup k dokumentu použijte:\n\nhttp://vase_domena/zastupce\n\nZástupce bude pracovat jen při aktivování funkce zjednodušených url adres.";
@@ -774,6 +798,7 @@ $_lang["role_new_user"] = 'Vytvořit nové užívatele';
 $_lang["role_new_web_user"] = 'Vytvořit nového návštěvníka';
 $_lang["role_plugin_management"] = 'Správa pluginů';
 $_lang["role_publish_doc"] = 'Publikované dokumenty';
+$_lang["role_remove_locks"] = 'Odstranit zámky';
 $_lang["role_role_management"] = 'Oprávnění';
 $_lang["role_run_module"] = 'Spustit modul';
 $_lang["role_save_chunk"] = 'Uložit chunky';
@@ -947,6 +972,8 @@ $_lang["top_howmany_title"] = 'Kolik "Nejlepších ...." položek';
 $_lang["total"] = 'celkem';
 $_lang["track_visitors_message"] = 'Toto nastavení nemá žádný efekt, pokud máte nainstalováno sledování návštěvníků nebo statistiky, které podporují toto nastavení. Logování návštěv vám umožní zobrazit uživatelské statistiky vašich stránek.';
 $_lang["track_visitors_title"] = 'Logování návštěv (statistiky)';
+$_lang["tree_page_click"] = 'Chování stránky při kliknutí';
+$_lang["tree_page_click_message"] = 'Výchozí chování při kliknutí na stránku ve stromu dokumentů.';
 $_lang["tree_show_protected"] = 'Ukázat chráněné stránky';
 $_lang["tree_show_protected_message"] = 'Pokud nastavíte "Ne", chráněné stránky (a žádní jejich potomci) se nezobrazí ve stromu dokumentů. "Ne" je výchozím nastavením MODx.';
 $_lang["truncate_table"] = 'Klikněte sem pro vyprázdnění této tabulky';
@@ -1020,7 +1047,6 @@ $_lang["users"] = 'Zabezpečení';
 $_lang["validate_referer_message"] = 'Ověření hlaviček HTTP_REFERER z důvodů snížení nebezpečí, že by Váš editor mohl způsobit neúmyslé postupy ve správci jako oběť CSRF (Cross Site Request Forgery) útoku. Některé nastavení nemusí být použitelné pokud servr neposílá HTTP_REFERER hlavičky.';
 $_lang["validate_referer_title"] = 'Ověřit hlavičky HTTP_REFERER';
 $_lang["value"] = 'Hodnota';
-$_lang["version_codename"] = 'Kódové označení verze';
 $_lang["view"] = 'Zobrazit';
 $_lang["view_child_resources_in_container"] = 'Zobrazit potomky';
 $_lang["view_log"] = 'Zobrazit výpis';
@@ -1028,6 +1054,8 @@ $_lang["view_logging"] = 'Správce procesů';
 $_lang["view_sysinfo"] = 'Systémové informace';
 $_lang["warning"] = 'Varování!';
 $_lang["warning_not_saved"] = 'Změny, které jste v dokumentu provedli, nebudou uložené. Můžete zvolit zda chcete na stránce setrvat a uložit změny (\'Storno\'), nebo stránku opustit a ztratit všechny změny, které jste udělali (\'OK\').';
+$_lang["warning_visibility"] = 'Varování konfigurace viditelné pro';
+$_lang["warning_visibility_message"] = 'Ovladač viditelnosti varování konfigurace zobrazeného na úvodní stránce manageru';
 $_lang["web_access_permissions"] = 'Webová přístupová práva';
 $_lang["web_access_permissions_user_groups"] = 'Skupiny návštěvníků';
 $_lang["web_permissions"] = 'Webová práva';
@@ -1036,7 +1064,6 @@ $_lang["web_user_management_title"] = 'Návštěvníci';
 $_lang["web_user_title"] = 'Vytvořit/upravit návštěvníka';
 $_lang["web_users"] = 'Návštěvníci';
 $_lang["weblink"] = 'Hypertextový odkaz';
-$_lang["weblink_message"] = 'Hypertextový odkaz je odkaz na objekt nacházející se na Internetu. Může odkazovat na dokument v MODx, anebo na stránku, obrázek umístněný kdekoli jinde na Internetu.<p>';
 $_lang["webpwdreminder_message"] = 'Zde napište zprávu, která bude odeslána vašim uživatelům, kteří požádají o přidělení nového hesla e-mailem. Správce obsahu odešle e-mail obsahující nové heslo a aktivační informace. <br /><b>Poznámka:</b> Následující značky (placeholders) budou nahrazeny při odesílání nahrazeny Správcem obsahu: <br /><br />[+sname+] - Jméno vaší webové stránky, <br />[+saddr+] - E-mailová adresa vašich stránek, <br />[+surl+] - URL vašich stránek, <br />[+uid+] - Uživatelské přihlašovací jméno nebo id, <br />[+pwd+] - Uživatelské heslo, <br />[+ufn+] - Celé uživatelovo jméno. <br /><br /><b>Vynecháním [+uid+] a [+pwd+] v e-mailu způsobíte, že se uživatel své uživatelské jméno a heslo!</b>';
 $_lang["webpwdreminder_title"] = 'Nastavení emailu při zapomenutém hesle:';
 $_lang["websignupemail_message"] = 'Zde můžete nastavit zprávu, která bude zaslána vašim uživatelům webu, když jim vytvoříte webový účet a necháte Správce obsahuzaslat jim e-mail obsahující jejich přístupové jméno a heslo. <br /><b>Poznámka:</b> Následující značky (placeholders) budou nahrazeny při odesílání nahrazeny Správcem obsahu: <br /><br />[+sname+] - Jméno vaší webové stránky, <br />[+saddr+] - E-mailová adresa vašich stránek, <br />[+surl+] - URL vašich stránek, <br />[+uid+] - Uživatelské přihlašovací jméno nebo id, <br />[+pwd+] - Uživatelské heslo, <br />[+ufn+] - Celé uživatelovo jméno. <br /><br /><b>Vynecháním [+uid+] a [+pwd+] v e-mailu způsobíte, že se uživatel své uživatelské jméno a heslo!</b>';

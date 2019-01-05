@@ -1,6 +1,6 @@
 <?php
 /**
- *	MODx Configuration file
+ * MODx Configuration file
  */
 $database_type = 'mysql';
 $database_server = 'localhost';
@@ -12,9 +12,9 @@ $dbase = '`popgrafi_distro2`';
 $table_prefix = 'modx_';
 error_reporting(E_ALL & ~E_NOTICE);
 
-$lastInstallTime = 1546581578;
+$lastInstallTime = 1546714160;
 
-$site_sessionname = 'SN5c2ef64a5c0b6';
+$site_sessionname = 'SN5c30fc30342b8';
 $https_port = '443';
 
 // automatically assign base_path and base_url
@@ -37,14 +37,14 @@ if(empty($base_path)||empty($base_url)||$_REQUEST['base_path']||$_REQUEST['base_
     unset ($a);
     $base_url= $url . (substr($url, -1) != "/" ? "/" : "");
     $base_path= $pth . (substr($pth, -1) != "/" && substr($pth, -1) != "\\" ? "/" : "");
-    // assign site_url
-    $site_url= ((isset ($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on') || $_SERVER['SERVER_PORT'] == $https_port) ? 'https://' : 'http://';
-    $site_url .= $_SERVER['HTTP_HOST'];
-    if ($_SERVER['SERVER_PORT'] != 80)
-        $site_url= str_replace(':' . $_SERVER['SERVER_PORT'], '', $site_url); // remove port from HTTP_HOST  
-    $site_url .= ($_SERVER['SERVER_PORT'] == 80 || (isset ($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on') || $_SERVER['SERVER_PORT'] == $https_port) ? '' : ':' . $_SERVER['SERVER_PORT'];
-    $site_url .= $base_url;
 }
+// assign site_url
+$site_url= ((isset ($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on') || $_SERVER['SERVER_PORT'] == $https_port) ? 'https://' : 'http://';
+$site_url .= $_SERVER['HTTP_HOST'];
+if ($_SERVER['SERVER_PORT'] != 80)
+    $site_url= str_replace(':' . $_SERVER['SERVER_PORT'], '', $site_url); // remove port from HTTP_HOST  
+$site_url .= ($_SERVER['SERVER_PORT'] == 80 || (isset ($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on') || $_SERVER['SERVER_PORT'] == $https_port) ? '' : ':' . $_SERVER['SERVER_PORT'];
+$site_url .= $base_url;
 
 if (!defined('MODX_BASE_PATH')) define('MODX_BASE_PATH', $base_path);
 if (!defined('MODX_BASE_URL')) define('MODX_BASE_URL', $base_url);
@@ -54,11 +54,11 @@ if (!defined('MODX_MANAGER_URL')) define('MODX_MANAGER_URL', $site_url.'manager/
 
 // start cms session
 if(!function_exists('startCMSSession')) {
-	function startCMSSession(){
-		global $site_sessionname;
-		session_name($site_sessionname);
-		session_start();
-		$cookieExpiration= 0;
+    function startCMSSession(){
+        global $site_sessionname;
+        session_name($site_sessionname);
+        session_start();
+        $cookieExpiration= 0;
         if (isset ($_SESSION['mgrValidated']) || isset ($_SESSION['webValidated'])) {
             $contextKey= isset ($_SESSION['mgrValidated']) ? 'mgr' : 'web';
             if (isset ($_SESSION['modx.' . $contextKey . '.session.cookie.lifetime']) && is_numeric($_SESSION['modx.' . $contextKey . '.session.cookie.lifetime'])) {
@@ -67,11 +67,11 @@ if(!function_exists('startCMSSession')) {
             if ($cookieLifetime) {
                 $cookieExpiration= time() + $cookieLifetime;
             }
-			if (!isset($_SESSION['modx.session.created.time'])) {
-			  $_SESSION['modx.session.created.time'] = time();
-			}
+            if (!isset($_SESSION['modx.session.created.time'])) {
+              $_SESSION['modx.session.created.time'] = time();
+            }
         }
-		setcookie(session_name(), session_id(), $cookieExpiration, MODX_BASE_URL);
-	}
+        setcookie(session_name(), session_id(), $cookieExpiration, MODX_BASE_URL);
+    }
 }
 ?>
