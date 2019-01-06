@@ -4,9 +4,9 @@
 * -----------------------------------------------------------------------------
 * @package  AjaxSearchLog
 *
-* @author       Coroico - www.modx.wangba.fr
-* @version      1.9.2
-* @date         05/12/2010
+* @author       Coroico - www.evo.wangba.fr
+* @version      1.10.2
+* @date         12/04/2016
 *
 * Purpose:
 *    The AjaxSearchLog class contains all functions used to Log AjaxSearch requests
@@ -39,7 +39,7 @@ class AjaxSearchLog {
     *  @access public
     *  @param string $log log parameter
     */
-    function AjaxSearchLog($log='0:0') {
+    function __construct($log='0:0') {
         global $modx;
         $this->_tbName = $modx->getFullTableName(LOG_TABLE_NAME);
         $asLog_array = explode(':', $log);
@@ -104,18 +104,16 @@ class AjaxSearchLog {
     function setLogRecord($rs) {
         global $modx;
         if ($this->_purge) $this->_purgeLogs();
-        $asString = mysql_real_escape_string($rs['searchString']);
-        $asNbResults = $rs['nbResults'];
-        $asResults = trim($rs['results']);
-        $asCmt = '';
-        $asCall = $rs['asCall'];
-        $asSelect = $rs['asSelect'];
-        $asIp = $_SERVER['REMOTE_ADDR'];
-        $INSERT_RECORD = "INSERT INTO " . $this->_tbName . " (
-            searchstring, nb_results, results, comment, as_call, as_select, ip
-            ) VALUES ('$asString','$asNbResults','$asResults','$asCmt','$asCall','$asSelect','$asIp')";
-        $modx->db->query($INSERT_RECORD);
-        $lastid = $modx->db->getInsertId();
+        $lastid = $modx->db->insert(
+			array(
+				'searchstring' => $modx->db->escape($rs['searchString']),
+				'nb_results' => $rs['nbResults'],
+				'results' => trim($rs['results']),
+				'comment' => '',
+				'as_call' => $rs['asCall'],
+				'as_select' => $rs['asSelect'],
+				'ip' => $_SERVER['REMOTE_ADDR'],
+			), $this->_tbName);
         return $lastid;
     }
     /*
@@ -124,14 +122,11 @@ class AjaxSearchLog {
     function _purgeLogs() {
         global $modx;
 
-        $sql = "SELECT COUNT(*) AS count FROM " . $this->_tbName;
-        $rs = $modx->db->query($sql);
-        $row = $modx->db->getRow($rs);
-        $nbLogs = $row['count'];
+        $rs = $modx->db->select('count(*) AS count', $this->_tbName);
+        $nbLogs = $modx->db->getValue($rs);
 
         if ($nbLogs + 1 > $this->_purge) {
-            $sql = "DELETE LOW_PRIORITY FROM " . $this->_tbName;
-            $rs = $modx->db->query($sql);
+            $modx->db->delete($this->_tbName);
         }
     }
     /*
@@ -160,7 +155,7 @@ if ($_POST['logid'] && $_POST['ascmt']) {
 
         define('MODX_API_MODE', true);
 
-        include_once (MODX_MANAGER_PATH . '/includes/document.parser.class.inc.php');
+        include_once (MODX_MANAGER_PATH . 'includes/document.parser.class.inc.php');
         $modx = new DocumentParser;
         $modx->db->connect();
         $modx->getSettings();
@@ -171,4 +166,3 @@ if ($_POST['logid'] && $_POST['ascmt']) {
         echo "ERROR: comment rejected";
     }
 }
-?>

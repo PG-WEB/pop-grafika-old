@@ -1,16 +1,18 @@
 <?php
 /**
- * MODX language File
+ * MODX Installer language file
  *
- * @author davaeron
- * @package MODX
- * @version 1.0.1
- * 
- * Filename:       /install/lang/russian-utf8.inc.php
- * Language:       Russian
- * Encoding:       UTF-8
- * Translated by:  Pertsev Dmitriy, Safronovich Victor, Russian MODX Community
- * Date:           15 october 2009
+ * @author Pertsev Dmitriy
+ * @author Safronovich Victor
+ * @author Russian MODX Community
+ * @version 1.0.15
+ * @date 2014/02/24
+ *
+ * @language Russian
+ * @package modx
+ * @subpackage installer
+ *
+ * Please commit your language changes on Transifex (https://www.transifex.com/projects/p/modx-evolution/) or on GitHub (https://github.com/modxcms/evolution).
  */
 setlocale (LC_ALL, 'ru_RU.UTF-8');
 $_lang["agree_to_terms"] = 'Согласиться с условиями лицензии и приступить к установке';
@@ -33,17 +35,17 @@ $_lang["btnback_value"] = 'Назад';
 $_lang["btnclose_value"] = 'Закрыть';
 $_lang["btnnext_value"] = 'Далее';
 $_lang["cant_write_config_file"] = 'Программа установки не смогла записать файл конфигурации. Скопируйте вышеперечисленное в файл ';
-$_lang["cant_write_config_file_note"] = 'Как только вы это сделаете, вы можете войти в панель управления, перейдя в браузере по адресу Адрес_Вашего_Сайта/manager/.';
+$_lang["cant_write_config_file_note"] = 'Как только вы это сделаете, вы можете войти в панель управления, перейдя в браузере по адресу Адрес_Вашего_Сайта/[+MGR_DIR+]/.';
 $_lang["checkbox_select_options"] = 'Параметры выбора флажков:';
 $_lang["checking_if_cache_exist"] = 'Проверка существования папок <span class="mono">/assets/cache</span> и <span class="mono">/assets/cache/rss</span>: ';
 $_lang["checking_if_cache_file_writable"] = 'Проверка возможности записи в файл <span class="mono">/assets/cache/siteCache.idx.php</span>: ';
 $_lang["checking_if_cache_file2_writable"] = 'Проверка возможности записи в файл <span class="mono">/assets/cache/sitePublishing.idx.php</span>: ';
 $_lang["checking_if_cache_writable"] = 'Проверка возможности записи в папки <span class="mono">/assets/cache</span> и <span class="mono">/assets/cache/rss</span>: ';
-$_lang["checking_if_config_exist_and_writable"] = 'Проверка существования и возможности записи в файл <span class="mono">/manager/includes/config.inc.php</span>: ';
+$_lang["checking_if_config_exist_and_writable"] = 'Проверка существования и возможности записи в файл <span class="mono">/[+MGR_DIR+]/includes/config.inc.php</span>: ';
 $_lang["checking_if_export_exists"] = 'Проверка существования папки <span class="mono">/assets/export</span>: ';
 $_lang["checking_if_export_writable"] = 'Проверка возможности записи в папку <span class="mono">/assets/export</span>: ';
-$_lang["checking_if_images_exist"] = 'Проверка существования папок <span class="mono">/assets/images</span>, <span class="mono">/assets/files</span>, <span class="mono">/assets/flash</span> и <span class="mono">/assets/media</span>: ';
-$_lang["checking_if_images_writable"] = 'Проверка возможности записи в папки <span class="mono">/assets/images</span>, <span class="mono">/assets/files</span>, <span class="mono">/assets/flash</span> и <span class="mono">/assets/media</span>: ';
+$_lang["checking_if_images_exist"] = 'Проверка существования папок <span class="mono">/assets/images</span>, <span class="mono">/assets/files</span>, <span class="mono">/assets/flash</span>, <span class="mono">/assets/media</span>, <span class="mono">/assets/backup</span> и <span class="mono">/assets/.thumbs</span>: ';
+$_lang["checking_if_images_writable"] = 'Проверка возможности записи в папки <span class="mono">/assets/images</span>, <span class="mono">/assets/files</span>, <span class="mono">/assets/flash</span>, <span class="mono">/assets/media</span>, <span class="mono">/assets/backup</span> и <span class="mono">/assets/.thumbs</span>: ';
 $_lang["checking_mysql_strict_mode"] = 'Проверка MySQL на строгий режим strict sql_mode: ';
 $_lang["checking_mysql_version"] = 'Проверка версии MySQL: ';
 $_lang["checking_php_version"] = 'Проверка версии PHP: ';
@@ -51,8 +53,9 @@ $_lang["checking_registerglobals"] = 'Проверка PHP-параметра Re
 $_lang["checking_registerglobals_note"] = 'Конфигурация PHP делает ваш сайт более восприимчивым к XSS-атакам. Вы должны самостоятельно, или связавшись с администрацией хостинга, выключить Register_Globals. Обычно это делается одним из следующих путей: вносятся исправления в php.ini файл, добавляются правила в файл .htaccess, который находится в корне папки MODX, или добавлением своего php.ini в каждую папку внутри папки MODX (их очень много). Вы можете продолжить установку MODX, но обдумайте это предупреждение.';
 $_lang["checking_sessions"] = 'Проверка настроек сессий: ';
 $_lang["checking_table_prefix"] = 'Проверка префикса таблиц `';
+$_lang["choose_language"] = 'Выберите язык';
 $_lang["chunks"] = 'Чанки';
-$_lang["config_permissions_note"] = 'При новой Linux/Unix установке, создайте пустой файл <span class="mono">config.inc.php</span> в папке <span class="mono">/manager/includes/</span> с правами 0666.';
+$_lang["config_permissions_note"] = 'При новой Linux/Unix установке, создайте пустой файл <span class="mono">config.inc.php</span> в папке <span class="mono">/[+MGR_DIR+]/includes/</span> с правами 0666.';
 $_lang["connection_screen_collation"] = 'Сопоставление:';
 $_lang["connection_screen_connection_method"] = 'Метод сопоставления:';
 $_lang["connection_screen_database_connection_information"] = 'Параметры базы данных';
@@ -82,13 +85,16 @@ $_lang["database_use_failed"] = 'Невозможно выбрать базу д
 $_lang["database_use_failed_note"] = 'Проверьте, есть ли у вас необходимые права на доступ к базе данных.';
 $_lang["default_language"] = 'Язык по умолчанию менеджера';
 $_lang["default_language_description"] = 'Это язык, который будет по умолчанию использоваться менеджером в административной панели MODX.';
+$_lang["depedency_create"] = 'Зависимости созданы ';
+$_lang["depedency_update"] = 'Зависимости обновлены';
 $_lang["during_execution_of_sql"] = ' во время выполнения SQL запроса ';
 $_lang["encoding"] = 'utf-8';
 $_lang["error"] = 'ошибки';
 $_lang["errors"] = 'ошибок';
 $_lang["failed"] = 'ОШИБКА!';
+$_lang["guid_set"] = 'GUID ключ';
 $_lang["help"] = 'Помощь!';
-$_lang["help_link"] = 'http://MODXcms.com/forums/index.php/board,42.0.html';
+$_lang["help_link"] = 'http://forums.modx.com/board/230/russian';
 $_lang["help_title"] = 'Помощь в установке на форумах MODX';
 $_lang["iagree_box"] = 'Я согласен с условиями <a href="../assets/docs/license.txt" target="_blank">лицензии</a>. С русским переводом текста лицензии можно познакомиться на странице <a href="http://ru.wikipedia.org/wiki/GPL" target="_blank">GNU General Public License</a>.';
 $_lang["install"] = 'Установить';
@@ -111,10 +117,10 @@ $_lang["installing_demo_site"] = 'Установка примера веб-са�
 $_lang["language_code"] = 'ru';
 $_lang["loading"] = 'Загружается...';
 $_lang["modules"] = 'Модули';
-$_lang["MODX_footer1"] = '&copy; 2005-2013 <a href="http://www.modx.com/" target="_blank" style="color: green; text-decoration:underline">MODX</a> Content Mangement Framework (CMF) project. Все права защищены. MODX лицензирован GNU GPL.';
-$_lang["MODX_footer2"] = 'MODX &mdash; свободное программное обеспечение. Мы поощряем вас быть творческими и использовать MODX как вы считаете целесообразным. Если вы внесете изменения и решите распространять ваш измененный вариант MODX, то должны сохранять и распространять исходный код бесплатно.';
-$_lang["MODX_install"] = 'MODX &raquo; Установка';
-$_lang["MODX_requires_php"] = ', а MODX необходим PHP 4.2.0 или более поздний';
+$_lang["modx_footer1"] = '&copy; 2005-[+current_year+] <a href="http://modx.com/" target="_blank" style="color: green; text-decoration:underline">MODX</a> Content Mangement Framework (CMF) project. Все права защищены. MODX лицензирован GNU GPL.';
+$_lang["modx_footer2"] = 'MODX &mdash; свободное программное обеспечение. Мы поощряем вас быть творческими и использовать MODX как вы считаете целесообразным. Если вы внесете изменения и решите распространять ваш измененный вариант MODX, то должны сохранять и распространять исходный код бесплатно.';
+$_lang["modx_install"] = 'MODX &raquo; Установка';
+$_lang["modx_requires_php"] = ', а MODX необходим PHP [+min_version+] или более поздний';
 $_lang["mysql_5051"] = ' версия MySQL - 5.0.51!';
 $_lang["mysql_5051_warning"] = 'Известны проблемы с MySQL 5.0.51. Настоятельно рекомендуем обновить базу данных перед продолжением установки.';
 $_lang["mysql_version_is"] = ' Ваша версия MySQL: ';
@@ -139,7 +145,7 @@ $_lang["running_database_updates"] = 'Обновление базы данных
 $_lang["sample_web_site"] = 'Пример веб-сайта';
 $_lang["sample_web_site_note"] = 'Осторожно! Установка этого параметра <b>перепишет</b> существующие ресурсы и элементы.';
 $_lang["session_problem"] = 'Была обнаружена проблема в сессии сервера. Свяжитесь, пожалуйста, с администратором сервера для ее устранения.';
-$_lang["session_problem_try_again"] = 'Повторить?'; 
+$_lang["session_problem_try_again"] = 'Повторить?';
 $_lang["setup_cannot_continue"] = 'К сожалению, установка не может быть продолжена из-за ';
 $_lang["setup_couldnt_install"] = 'Программа установки MODX не смогла установить/изменить некоторые таблицы базы данных.';
 $_lang["setup_database"] = 'Программа установки сейчас попробует установить базу данных:<br />';
@@ -175,9 +181,9 @@ $_lang["table_prefix_already_inuse_note"] = 'Продолжение устано
 $_lang["table_prefix_not_exist"] = ' - нет такого префикса таблиц в базе данных!';
 $_lang["table_prefix_not_exist_note"] = 'Продолжение установки невозможно, так как нет таблиц с указанным префиксом, измените префикс таблиц и попробуйте снова.';
 $_lang["templates"] = 'Шаблоны';
-$_lang["to_log_into_content_manager"] = 'Чтобы войти в панель управления (manager/index.php) нажмите на кнопку `Закрыть`.';
+$_lang["to_log_into_content_manager"] = 'Чтобы войти в панель управления ([+MGR_DIR+]/index.php) нажмите на кнопку `Закрыть`.';
 $_lang["toggle"] = 'Переключить';
-$_lang["tvs"] = 'Параметры (TV)';
+$_lang['tvs'] = 'Параметры (TV)';
 $_lang["unable_install_chunk"] = 'Невозможно установить чанк. Файл';
 $_lang["unable_install_module"] = 'Невозможно установить модуль. Файл';
 $_lang["unable_install_plugin"] = 'Невозможно установить плагин. Файл';
@@ -186,7 +192,7 @@ $_lang["unable_install_template"] = 'Невозможно установить �
 $_lang["upgrade_note"] = '<strong>Внимание:</strong> Прежде чем открыть ваш сайт, вам необходимо войти в панель управления, затем просмотреть и сохранить системную конфигурацию.';
 $_lang["upgraded"] = 'Обновлен';
 $_lang["validate_referer_title"] = 'Проверять серверные заголовки HTTP_REFERER?';
-$_lang["visit_forum"] = ', посетите <a href="http://www.MODXcms.com/forums/" target="_blank">форум MODX</a>.';
+$_lang["visit_forum"] = ', посетите <a href="http://forums.modx.com/board/230/russian" target="_blank">форум MODX</a>.';
 $_lang["warning"] = 'Предупреждение!';
 $_lang["welcome_message_start"] = 'Выберите тип установки:';
 $_lang["welcome_message_text"] = 'Эта программа проведет вас через весь процесс установки.';

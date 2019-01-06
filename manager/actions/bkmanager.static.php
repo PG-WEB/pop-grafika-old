@@ -1,8 +1,7 @@
 <?php
-if(!defined('IN_MANAGER_MODE') || IN_MANAGER_MODE != 'true') exit();
+if(IN_MANAGER_MODE!="true") die("<b>INCLUDE_ORDERING_ERROR</b><br /><br />Please use the MODX Content Manager instead of accessing this file directly.");
 if(!$modx->hasPermission('bk_manager')) {
-	$e->setError(3);
-	$e->dumpError();
+	$modx->webAlertAndQuit($_lang["error_no_privileges"]);
 }
 
 $dbase = trim($dbase,'`');
@@ -39,7 +38,11 @@ elseif ($mode=='restore2')
 	{
 		$source = file_get_contents($path);
 		import_sql($source);
-		header('Location: index.php?r=9&a=93');
+		if (headers_sent()) {
+       		echo "<script>document.location.href='index.php?r=9&a=93';</script>\n";
+		} else {
+        	header("Location: index.php?r=9&a=93");
+		}
 	}
 	exit;
 }
@@ -48,10 +51,7 @@ elseif ($mode=='backup')
 	$tables = isset($_POST['chk']) ? $_POST['chk'] : '';
 	if (!is_array($tables))
 	{
-		echo '<html><body>'.
-		     '<script type="text/javascript">alert(\'Please select a valid table from the list below\');</script>'.
-		     '</body></html>';
-		exit;
+		$modx->webAlertAndQuit("Please select a valid table from the list below.");
 	}
 
 	/*
@@ -63,16 +63,14 @@ elseif ($mode=='backup')
 	$dumper = new Mysqldumper($database_server, $database_user, $database_password, $dbase);
 	$dumper->setDBtables($tables);
 	$dumper->setDroptables((isset($_POST['droptables']) ? true : false));
-	$dumpfinished = $dumper->createDump('callBack');
+	$dumpfinished = $dumper->createDump('dumpSql');
 	if($dumpfinished)
 	{
 		exit;
 	}
 	else
 	{
-		$e->setError(1, 'Unable to Backup Database');
-		$e->dumpError();
-		exit;
+		$modx->webAlertAndQuit('Unable to Backup Database');
 	}
 
 	// MySQLdumper class can be found below
@@ -84,32 +82,24 @@ elseif ($mode=='snapshot')
 		mkdir(rtrim($modx->config['snapshot_path'],'/'));
 		@chmod(rtrim($modx->config['snapshot_path'],'/'), 0777);
 	}
-	if(!file_exists("{$modx->config['snapshot_path']}.htaccess"))
+	if(!is_file("{$modx->config['snapshot_path']}.htaccess"))
 	{
 		$htaccess = "order deny,allow\ndeny from all\n";
 		file_put_contents("{$modx->config['snapshot_path']}.htaccess",$htaccess);
 	}
 	if(!is_writable(rtrim($modx->config['snapshot_path'],'/')))
 	{
-		echo parsePlaceholder($_lang["bkmgr_alert_mkdir"],$modx->config['snapshot_path']);
-		exit;
+		$modx->webAlertAndQuit(parsePlaceholder($_lang["bkmgr_alert_mkdir"],array('snapshot_path'=>$modx->config['snapshot_path'])));
 	}
-	$escaped_table_prefix = str_replace('_', '\\_', $table_prefix);
-	$sql = "SHOW TABLE STATUS FROM `{$dbase}` LIKE '{$escaped_table_prefix}%'";
+	$sql = "SHOW TABLE STATUS FROM `{$dbase}` LIKE '".$modx->db->escape($modx->db->config['table_prefix'])."%'";
 	$rs = $modx->db->query($sql);
-	$tables = array();
-	if(0<$modx->db->getRecordCount($rs))
-	{
-		while($db_status = $modx->db->getRow($rs))
-		{
-			$tables[] = $db_status['Name'];
-		}
-	}
-	$today = $modx->toDateFormat(time());
-	$today = str_replace(array('/',' '), '-', $today);
-	$today = str_replace(':', '', $today);
-	$today = strtolower($today);
-	global $path;
+		$tables = $modx->db->getColumn('Name', $rs);
+	//$today = $modx->toDateFormat(time());
+	//$today = str_replace(array('/',' '), '-', $today);
+	//$today = str_replace(':', '', $today);
+	//$today = strtolower($today);
+    $today = date('Y-m-d_H-i-s');
+    global $path;
 	$path = "{$modx->config['snapshot_path']}{$today}.sql";
 	
 	@set_time_limit(120); // set timeout limit to 2 minutes
@@ -136,9 +126,7 @@ elseif ($mode=='snapshot')
 		header("Location: index.php?a=93");
 		exit;
 	} else {
-		$e->setError(1, 'Unable to Backup Database');
-		$e->dumpError();
-		exit;
+		$modx->webAlertAndQuit('Unable to Backup Database');
 	}
 }
 else
@@ -151,15 +139,21 @@ if(isset($_SESSION['result_msg']) && $_SESSION['result_msg'] != '')
 	switch($_SESSION['result_msg'])
 	{
 		case 'import_ok':
-			$ph['result_msg'] = '<div class="msg">' . $_lang["bkmgr_import_ok"] . '</div>';
+			$ph['result_msg_import'] = '<div class="msg">' . $_lang["bkmgr_import_ok"] . '</div>';
+			$ph['result_msg_snapshot'] = '<div class="msg">' . $_lang["bkmgr_import_ok"] . '</div>';
 			break;
 		case 'snapshot_ok':
-			$ph['result_msg'] = '<div class="msg">' . $_lang["bkmgr_snapshot_ok"] . '</div>';
+			$ph['result_msg_import'] = '';
+			$ph['result_msg_snapshot'] = '<div class="msg">' . $_lang["bkmgr_snapshot_ok"] . '</div>';
 			break;
 	}
 	$_SESSION['result_msg'] = '';
 }
-else $ph['result_msg'] = '';
+else
+{
+	$ph['result_msg_import'] = '';
+	$ph['result_msg_snapshot'] = '';
+}
 
 ?>
 <script type="text/javascript" src="media/script/tabpane.js"></script>
@@ -178,14 +172,30 @@ else $ph['result_msg'] = '';
 		f.submit();
 		return false;
 	}
+    function confirmRevert(filename) {
+	    var m = '<?php echo $_lang["bkmgr_restore_confirm"] ?>';
+            m = m.replace('[+filename+]', filename);
+        var c = confirm(m);
+        if(c) {
+            document.restore2.filename.value = filename;
+            document.restore2.save.click();
+        }
+    }
 	<?php echo isset($_REQUEST['r']) ? " doRefresh(".$_REQUEST['r'].");" : "" ;?>
 
 </script>
-<h1><?php echo $_lang['bk_manager']?></h1>
+<h1 class="pagetitle">
+  <span class="pagetitle-icon">
+    <i class="fa fa-database"></i>
+  </span>
+  <span class="pagetitle-text">
+    <?php echo $_lang['bk_manager']; ?>
+  </span>
+</h1>
 
 <div id="actions">
   <ul class="actionButtons">
-      <li id="Button5"><a href="#" onclick="documentDirty=false;document.location.href='index.php?a=2';"><img alt="icons_cancel" src="<?php echo $_style["icons_cancel"] ?>" /> <?php echo $_lang['cancel']?></a></li>
+      <li id="Button5" class="transition"><a href="#" onclick="documentDirty=false;document.location.href='index.php?a=2';"><img alt="icons_cancel" src="<?php echo $_style["icons_cancel"] ?>" /> <?php echo $_lang['cancel']?></a></li>
   </ul>
 </div>
 
@@ -199,9 +209,9 @@ else $ph['result_msg'] = '';
 	    <script type="text/javascript">tpDBM.addTabPage(document.getElementById('tabBackup'));</script>
 	<form name="frmdb" method="post">
 	<input type="hidden" name="mode" value="" />
-	<p><?php echo $_lang['table_hoverinfo']?></p>
+    <p class="element-edit-message"><?php echo $_lang['table_hoverinfo']?></p>
 
-	<p class="actionButtons"><a class="primary" href="#" onclick="backup();return false;"><img src="media/style/<?php echo $modx->config['manager_theme'];?>/images/misc/ed_save.gif" /> <?php echo $_lang['database_table_clickbackup']?></a></p>
+	<p class="actionButtons"><a class="primary" href="#" onclick="backup();return false;"><img src="<?php echo $_style['ed_save'];?>" /> <?php echo $_lang['database_table_clickbackup']?></a></p>
 	<p><label><input type="checkbox" name="droptables" checked="checked" /><?php echo $_lang['database_table_droptablestatements']?></label></p>
 	<table border="0" cellpadding="1" cellspacing="1" width="100%" bgcolor="#ccc">
 		<thead><tr>
@@ -216,12 +226,11 @@ else $ph['result_msg'] = '';
 		</tr></thead>
 		<tbody>
 			<?php
-$sql = "SHOW TABLE STATUS FROM `{$dbase}` LIKE '{$table_prefix}%'";
+$sql = "SHOW TABLE STATUS FROM `{$dbase}` LIKE '".$modx->db->escape($modx->db->config['table_prefix'])."%'";
 $rs = $modx->db->query($sql);
-$limit = $modx->db->getRecordCount($rs);
-for ($i = 0; $i < $limit; $i++) {
-	$db_status = $modx->db->getRow($rs);
-	$bgcolor = ($i % 2) ? '#EEEEEE' : '#FFFFFF';
+$i = 0;
+while ($db_status = $modx->db->getRow($rs)) {
+	$bgcolor = ($i++ % 2) ? '#EEEEEE' : '#FFFFFF';
 
 	if (isset($tables))
 		$table_string = implode(',', $table);
@@ -234,8 +243,8 @@ for ($i = 0; $i < $limit; $i++) {
 
 	// Enable record deletion for certain tables (TRUNCATE TABLE) if they're not already empty
 	$truncateable = array(
-		$table_prefix.'event_log',
-		$table_prefix.'manager_log',
+		$modx->db->config['table_prefix'].'event_log',
+		$modx->db->config['table_prefix'].'manager_log',
 	);
 	if($modx->hasPermission('settings') && in_array($db_status['Name'], $truncateable) && $db_status['Rows'] > 0) {
 		echo '<td dir="ltr" align="right">'.
@@ -283,9 +292,11 @@ if ($totaloverhead > 0) {
 <iframe name="fileDownloader" width="1" height="1" style="display:none; width:1px; height:1px;"></iframe>
 <div class="tab-page" id="tabRestore">
 	<h2 class="tab"><?php echo $_lang["bkmgr_restore_title"];?></h2>
-	<?php echo $ph['result_msg']; ?>
-	<script type="text/javascript">tpDBM.addTabPage(document.getElementById('tabRestore'));</script>
-	<?php echo $_lang["bkmgr_restore_msg"]; ?>
+	<?php echo $ph['result_msg_import']; ?>
+    <script type="text/javascript">tpDBM.addTabPage(document.getElementById('tabRestore'));</script>
+    <div class="element-edit-message">
+      <?php echo $_lang["bkmgr_restore_msg"]; ?>
+    </div>
 	<form method="post" name="mutate" enctype="multipart/form-data" action="index.php">
 	<input type="hidden" name="a" value="93" />
 	<input type="hidden" name="mode" value="restore1" />
@@ -328,7 +339,6 @@ if(isset($_SESSION['last_result']) || !empty($_SESSION['last_result']))
 	$last_result = $_SESSION['last_result'];
 	unset($_SESSION['last_result']);
 	if(count($last_result)<1) $result = '';
-	elseif(count($last_result)==1) echo $last_result[0];
 	else
 	{
 		$last_result = array_merge(array(), array_diff($last_result, array('')));
@@ -336,7 +346,7 @@ if(isset($_SESSION['last_result']) || !empty($_SESSION['last_result']))
 		{
 			$title[] = $k;
 		}
-		$result = '<tr><th>' . join('</th><th>',$title) . '</th></tr>';
+		$result = '<tr><th>' . implode('</th><th>',$title) . '</th></tr>';
 		foreach($last_result as $row)
 		{
 			$result_value = array();
@@ -346,7 +356,7 @@ if(isset($_SESSION['last_result']) || !empty($_SESSION['last_result']))
 				{
 					$result_value[] = $v;
 				}
-				$result .= '<tr><td>' . join('</td><td>',$result_value) . '</td></tr>';
+				$result .= '<tr><td>' . implode('</td><td>',$result_value) . '</td></tr>';
 			}
 		}
 		$style = '<style type="text/css">table th {border:1px solid #ccc;background-color:#ddd;}</style>';
@@ -379,17 +389,20 @@ function checked($cond)
 
 <div class="tab-page" id="tabSnapshot">
 	<h2 class="tab"><?php echo $_lang["bkmgr_snapshot_title"];?></h2>
-	<?php echo $ph['result_msg']; ?>
+	<?php echo $ph['result_msg_snapshot']; ?>
 	<script type="text/javascript">tpDBM.addTabPage(document.getElementById('tabSnapshot'));</script>
-	<?php echo parsePlaceholder($_lang["bkmgr_snapshot_msg"],array('snapshot_path'=>"snapshot_path={$modx->config['snapshot_path']}"));?>
+    <div class="element-edit-message">
+      <?php echo parsePlaceholder($_lang["bkmgr_snapshot_msg"],array('snapshot_path'=>"snapshot_path={$modx->config['snapshot_path']}"));?>
+    </div>
 	<form method="post" name="snapshot" action="index.php">
 	<input type="hidden" name="a" value="93" />
 	<input type="hidden" name="mode" value="snapshot" />
-	<div class="actionButtons" style="margin-top:10px;margin-bottom:10px;">
-	<a href="#" class="primary" onclick="document.snapshot.save.click();"><img alt="icons_save" src="<?php echo $_style["icons_add"]?>" /><?php echo $_lang["bkmgr_snapshot_submit"];?></a>
-	<input type="submit" name="save" style="display:none;" />
+	<div class="actionButtons" style="margin-top:2em;margin-bottom:2em;">
+        <?php echo $_lang["description"]; ?> <input type="text" name="backup_title" style="width: 350px; margin-bottom:1em;" maxlength="350" /> 
+	<a href="#" class="primary" style="display:inline-block;" onclick="document.snapshot.save.click();"><img alt="icons_save" src="<?php echo $_style["icons_add"]?>" /><?php echo $_lang["bkmgr_snapshot_submit"];?></a>
+      <input type="submit" name="save" style="display:none;" />
+      </div>
 	</form>
-	</div>
 	<style type="text/css">
 	table {background-color:#fff;border-collapse:collapse;}
 	table td {border:1px solid #ccc;padding:4px;}
@@ -405,18 +418,41 @@ function checked($cond)
 $pattern = "{$modx->config['snapshot_path']}*.sql";
 $files = glob($pattern,GLOB_NOCHECK);
 $total = ($files[0] !== $pattern) ? count($files) : 0;
+$detailFields = array('MODX Version', 'Host', 'Generation Time', 'Server version', 'PHP Version', 'Database', 'Description');
 if(is_array($files) && 0 < $total)
 {
-	echo '<ul>';
+	echo '<table>';
+        echo "<tr><th>{$_lang["files_filename"]}</th><th>{$_lang["files_filesize"]}</th><th>{$_lang["description"]}</th><th>{$_lang["modx_version"]}</th><th>{$_lang["database_name"]}</th><th>{$_lang["onlineusers_action"]}</th></tr>\n";
 	arsort($files);
-	$tpl = '<li>[+filename+] ([+filesize+]) (<a href="#" onclick="document.restore2.filename.value=\'[+filename+]\';document.restore2.save.click()">' . $_lang["bkmgr_restore_submit"] . '</a>)</li>' . "\n";
+	$tpl = '<tr><td>[+filename+]</td><td>[+filesize+]</td><td>[+filedesc+]</td><td>[+modx_version+]</td><td>[+database_name+]</td><td><a href="#" onclick="confirmRevert(\'[+filename+]\');" title="[+tooltip+]">' . $_lang["bkmgr_restore_submit"] . '</a></td></tr>' . "\n";
 	while ($file = array_shift($files))
 	{
 		$filename = substr($file,strrpos($file,'/')+1);
 		$filesize = $modx->nicesize(filesize($file));
-		echo str_replace(array('[+filename+]','[+filesize+]'),array($filename,$filesize),$tpl);
+
+                $file = fopen($file,"r");
+                $count = 0;
+                $details = array();
+                while($count < 11) {
+                    $line = fgets($file);
+                    foreach($detailFields as $label) {
+                        $fileLabel = '# '.$label;
+                        if (strpos($line, $fileLabel) !== false) {
+                            $details[$label] = htmlentities(trim(str_replace(array($fileLabel,':','`'), '', $line)), ENT_QUOTES, $modx_manager_charset);
+                        }
+                    }
+                    $count++;
+                };
+                fclose($file);
+            
+                $tooltip  = "Generation Time: ".$details["Generation Time"]."\n";
+                $tooltip .= "Server version: ".$details["Server version"]."\n";
+                $tooltip .= "PHP Version: ".$details["PHP Version"]."\n";
+                $tooltip .= "Host: ".$details["Host"]."\n";
+            
+		echo str_replace(array('[+filename+]','[+filesize+]','[+filedesc+]','[+modx_version+]','[+database_name+]','[+tooltip+]'),array($filename,$filesize,$details['Description'],$details['MODX Version'],$details['Database'],$tooltip),$tpl);
 	}
-	echo '</ul>';
+	echo '</table>';
 }
 else
 {
@@ -433,6 +469,11 @@ else
 </div>
 
 <?php
+
+if (is_numeric($_GET['tab'])) {
+    echo '<script type="text/javascript">tpDBM.setSelectedIndex( '.$_GET['tab'].' );</script>';
+}
+
 	include_once "footer.inc.php"; // send footer
 ?>
 
@@ -455,7 +496,7 @@ class Mysqldumper {
 	var $database_server;
 	var $dbname;
 
-	function Mysqldumper($database_server, $database_user, $database_password, $dbname) {
+	function __construct($database_server, $database_user, $database_password, $dbname) {
 		// Don't drop tables by default.
 		$this->dbname = $dbname;
 		$this->setDroptables(false);
@@ -472,6 +513,7 @@ class Mysqldumper {
 
 		// Set line feed
 		$lf = "\n";
+		$tempfile_path = $modx->config['base_path'] . 'assets/backup/temp.php';
 
 		$result = $modx->db->query('SHOW TABLES');
 		$tables = $this->result2Array(0, $result);
@@ -479,17 +521,23 @@ class Mysqldumper {
 			$result = $modx->db->query("SHOW CREATE TABLE `{$tblval}`");
 			$createtable[$tblval] = $this->result2Array(1, $result);
 		}
+        
+        $version = $modx->getVersionData();
+        
 		// Set header
 		$output  = "#{$lf}";
 		$output .= "# ".addslashes($modx->config['site_name'])." Database Dump{$lf}";
-		$output .= "# MODX Version:{$modx->config['settings_version']}{$lf}";
+		$output .= "# MODX Version:{$version['version']}{$lf}";
 		$output .= "# {$lf}";
 		$output .= "# Host: {$this->database_server}{$lf}";
 		$output .= "# Generation Time: " . $modx->toDateFormat(time()) . $lf;
 		$output .= "# Server version: ". $modx->db->getVersion() . $lf;
 		$output .= "# PHP Version: " . phpversion() . $lf;
-		$output .= "# Database : `{$this->dbname}`{$lf}";
+		$output .= "# Database: `{$this->dbname}`{$lf}";
+                $output .= "# Description: ".trim($_REQUEST['backup_title'])."{$lf}";
 		$output .= "#";
+		file_put_contents($tempfile_path, $output, FILE_APPEND | LOCK_EX);
+		$output = '';
 
 		// Generate dumptext for the tables.
 		if (isset($this->_dbtables) && count($this->_dbtables)) {
@@ -504,12 +552,25 @@ class Mysqldumper {
 					continue;
 				}
 			}
+			if($callBack==='snapshot')
+			{
+				/*
+				switch($tblval)
+				{
+					case $modx->db->config['table_prefix'].'event_log':
+					case $modx->db->config['table_prefix'].'manager_log':
+						continue 2;
+				}*/
+				if(!preg_match('@^'.$modx->db->config['table_prefix'].'@', $tblval)) continue;
+			}
 			$output .= "{$lf}{$lf}# --------------------------------------------------------{$lf}{$lf}";
 			$output .= "#{$lf}# Table structure for table `{$tblval}`{$lf}";
 			$output .= "#{$lf}{$lf}";
 			// Generate DROP TABLE statement when client wants it to.
 			if($this->isDroptables()) {
+				$output .= "SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;{$lf}";
 				$output .= "DROP TABLE IF EXISTS `{$tblval}`;{$lf}";
+				$output .= "SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;{$lf}{$lf}";
 			}
 			$output .= "{$createtable[$tblval][0]};{$lf}";
 			$output .= $lf;
@@ -521,19 +582,37 @@ class Mysqldumper {
 				$insertdump .= "INSERT INTO `{$tblval}` VALUES (";
 				$arr = $this->object2Array($row);
 				foreach($arr as $key => $value) {
-					$value = addslashes($value);
-					$value = str_replace(array("\r\n","\r","\n"), '\\n', $value);
-					$insertdump .= "'$value',";
+					if(is_null($value)) $value = 'NULL';
+					else {
+    					$value = addslashes($value);
+    					$value = str_replace(array("\r\n","\r","\n"), '\\n', $value);
+    					$value = "'{$value}'";
+					}
+					$insertdump .= $value .',';
 				}
-				$output .= rtrim($insertdump,',') . ");";
+				$output .= rtrim($insertdump,',') . ");\n";
+				if(1048576 < strlen($output))
+				{
+					file_put_contents($tempfile_path, $output, FILE_APPEND | LOCK_EX);
+					$output = '';
+				}
 			}
-			// invoke callback -- raymond
-			if ($callBack) {
-				if (!$callBack($output)) break;
-				$output = '';
-			}
+			file_put_contents($tempfile_path, $output, FILE_APPEND | LOCK_EX);
+			$output = '';
 		}
-		return ($callBack) ? true: $output;
+		$output = file_get_contents($tempfile_path);
+		if(!empty($output)) unlink($tempfile_path);
+		
+		switch($callBack)
+		{
+			case 'dumpSql':
+				dumpSql($output);
+				break;
+			case 'snapshot':
+				snapshot($output);
+				break;
+		}
+		return true;
 	}
 
 	// Private function object2Array.
@@ -552,23 +631,25 @@ class Mysqldumper {
 
 	// Private function loadObjectList.
 	function loadObjectList($key='', $resource) {
+		global $modx;
 		$array = array();
-		while ($row = mysql_fetch_object($resource)) {
+		while ($row = $modx->db->getRow($resource,'object')) {
 			if ($key)
 			        $array[$row->$key] = $row;
 			else    $array[] = $row;
 		}
-		mysql_free_result($resource);
+		$modx->db->freeResult($resource);
 		return $array;
 	}
 
 	// Private function result2Array.
 	function result2Array($numinarray = 0, $resource) {
+		global $modx;
 		$array = array();
-		while ($row = mysql_fetch_row($resource)) {
+		while ($row = $modx->db->getRow($resource,'num')) {
 			$array[] = $row[$numinarray];
 		}
-		mysql_free_result($resource);
+		$modx->db->freeResult($resource);
 		return $array;
 	}
 }
@@ -577,19 +658,14 @@ function import_sql($source,$result_code='import_ok')
 {
 	global $modx,$e;
 	
-	$tbl_active_users = $modx->getFullTableName('active_users');
-	$rs = $modx->db->select('*',$tbl_active_users,"action='27'");
-	if(0 < $modx->db->getRecordCount($rs))
+	if($modx->getLockedElements() !== array())
 	{
-		echo '<html><body>'.
-		     '<script type="text/javascript">alert(\'Resource is edit now by any user\');</script>'.
-		     '</body></html>';
-		exit;
+		$modx->webAlertAndQuit("At least one Resource is still locked or edited right now by any user. Remove locks or ask users to log out before proceeding.");
 	}
 	
 	$settings = getSettings();
 	
-	$source = str_replace(array("\r\n","\n","\r"),"\n",$source);
+	if(strpos($source, "\r")!==false) $source = str_replace(array("\r\n","\n","\r"),"\n",$source);
 	$sql_array = preg_split('@;[ \t]*\n@', $source);
 	foreach($sql_array as $sql_entry)
 	{
@@ -600,27 +676,24 @@ function import_sql($source,$result_code='import_ok')
 	restoreSettings($settings);
 	
 	$modx->clearCache();
-	if(0 < $modx->db->getRecordCount($rs))
-	{
-		while($row = $modx->db->getRow($rs))
-		{
-			$_SESSION['last_result'][] = $row;
-		}
-	}
+
+	$_SESSION['last_result'] = $modx->db->makeArray($rs);
 	
 	$_SESSION['result_msg'] = $result_code;
 }
 
-function callBack(&$dumpstring) {
+function dumpSql(&$dumpstring) {
 	global $modx;
 	$today = $modx->toDateFormat(time(),'dateOnly');
 	$today = str_replace('/', '-', $today);
 	$today = strtolower($today);
+	$size = strlen($dumpstring);
 	if(!headers_sent()) {
 	    header('Expires: 0');
         header('Cache-Control: private');
         header('Pragma: cache');
 		header('Content-type: application/download');
+		header("Content-Length: {$size}");
 		header("Content-Disposition: attachment; filename={$today}_database_backup.sql");
 	}
 	echo $dumpstring;
@@ -636,8 +709,8 @@ function snapshot(&$dumpstring) {
 function getSettings()
 {
 	global $modx;
-	
 	$tbl_system_settings = $modx->getFullTableName('system_settings');
+	
 	$rs = $modx->db->select('setting_name, setting_value',$tbl_system_settings);
 	
 	$settings = array();
@@ -659,8 +732,8 @@ function getSettings()
 function restoreSettings($settings)
 {
 	global $modx;
-	
 	$tbl_system_settings = $modx->getFullTableName('system_settings');
+	
 	foreach($settings as $k=>$v)
 	{
 		$modx->db->update(array('setting_value'=>$v),$tbl_system_settings,"setting_name='{$k}'");

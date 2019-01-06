@@ -2,9 +2,9 @@
 /**
  * QuickManager+
  *  
- * @author      Mikko Lammi, www.maagit.fi 
+ * @author      Mikko Lammi, www.maagit.fi, updated by Dmi3yy 
  * @license     GNU General Public License (GPL), http://www.gnu.org/copyleft/gpl.html
- * @version     1.5.5 updated 12/01/2011
+ * @version     1.5.6 updated 08/08/2013
  */
 
 if(!class_exists('Qm')) {
@@ -13,34 +13,34 @@ class Qm {
   var $modx;
   
     //_______________________________________________________
-    function Qm(&$modx, $jqpath='', $loadmanagerjq='', $loadfrontendjq='', $noconflictjq='', $loadtb='', $tbwidth='', $tbheight='', $hidefields='', $hidetabs='', $hidesections='', $addbutton='', $tpltype='', $tplid='', $custombutton='', $managerbutton='', $logout='', $autohide='', $editbuttons='', $editbclass='', $newbuttons='', $newbclass='', $tvbuttons='', $tvbclass='') {
+    function __construct(&$modx, $jqpath='', $loadmanagerjq='', $loadfrontendjq='', $noconflictjq='', $loadtb='', $tbwidth='', $tbheight='', $hidefields='', $hidetabs='', $hidesections='', $addbutton='', $tpltype='', $tplid='', $custombutton='', $managerbutton='', $logout='', $autohide='', $editbuttons='', $editbclass='', $newbuttons='', $newbclass='', $tvbuttons='', $tvbclass='') {
         $this->modx = $modx;
         
         // Get plugin parameters
         $this->jqpath = $jqpath;
         $this->loadmanagerjq = $loadmanagerjq;
         $this->loadfrontendjq = $loadfrontendjq;
-        $this->noconflictjq = $noconflictjq;  
+        $this->noconflictjq = $noconflictjq;
         $this->loadtb = $loadtb;
         $this->tbwidth = $tbwidth;
         $this->tbheight = $tbheight;
-        $this->usemm = $usemm;
-        $this->hidefields = $hidefields;  
+        $this->usemm = null;
+        $this->hidefields = $hidefields;
         $this->hidetabs = $hidetabs;  
         $this->hidesections = $hidesections;     
-        $this->addbutton = $addbutton;       
-        $this->tpltype = $tpltype;       
+        $this->addbutton = $addbutton;
+        $this->tpltype = $tpltype;
         $this->tplid = $tplid;
         $this->custombutton = $custombutton;
         $this->managerbutton = $managerbutton;
         $this->logout = $logout;
-        $this->autohide = $autohide; 
+        $this->autohide = $autohide;
         $this->editbuttons = $editbuttons;
         $this->editbclass = $editbclass;
         $this->newbuttons = $newbuttons;
         $this->newbclass = $newbclass;
         $this->tvbuttons = $tvbuttons;
-        $this->tvbclass = $tvbclass;      
+        $this->tvbclass = $tvbclass;
         
         // Includes
         include_once($this->modx->config['base_path'].'assets/plugins/qm/mcc.class.php');
@@ -52,19 +52,14 @@ class Qm {
     //_______________________________________________________
     function Run() {
         
-        // Include MODx manager language file
+        // Include MODX manager language file
         global $_lang;
 		
 		// Get manager language
         $manager_language = $this->modx->config['manager_language'];
         
         // Individual user language setting (if set)
-        $query = 'SELECT setting_name, setting_value FROM '.$this->modx->getFullTableName('user_settings').' WHERE setting_name=\'manager_language\' AND user='.$_SESSION['mgrInternalKey'];
-        $records = $this->modx->db->query($query);
-        if ($this->modx->db->getRecordCount($records) > 0) {
-            $record = $this->modx->db->getRow($records);
-            $manager_language = $record['setting_value'];
-        }
+        if (isset($_SESSION['mgrUsrConfigSet']['manager_language'])) $manager_language = $_SESSION['mgrUsrConfigSet']['manager_language'];
 	
 		// Include_once the language file
         if(!isset($manager_language) || !file_exists(MODX_MANAGER_PATH."includes/lang/".$manager_language.".inc.php")) {
@@ -95,24 +90,29 @@ class Qm {
                     
                     // Normal saving document procedure stops to redirect => Before redirecting secure documents and clear cache
                     
-                    // Secure web documents - flag as private (code from: manager/processors/save_content.processor.php)
-    		        include $this->modx->config['base_path']."manager/includes/secure_web_documents.inc.php";
+                    // Secure web documents - flag as private (code from: processors/save_content.processor.php)
+    		        include $this->modx->config['site_manager_path']."includes/secure_web_documents.inc.php";
     		        secureWebDocument($key);
     
-            		// Secure manager documents - flag as private (code from: manager/processors/save_content.processor.php)
-            		include $this->modx->config['base_path']."manager/includes/secure_mgr_documents.inc.php";
+            		// Secure manager documents - flag as private (code from: processors/save_content.processor.php)
+            		include $this->modx->config['site_manager_path']."includes/secure_mgr_documents.inc.php";
             		secureMgrDocument($key);
                     
                     // Clear cache
-                    $this->clearCache();
+                    $this->modx->clearCache('full');
                     
                     // Different doc to be refreshed than the one we are editing?
                     if (isset($_POST['qmrefresh'])) {
                         $id = intval($_POST['qmrefresh']);
-                    }   
+                    }
                     
                     // Redirect to clearer page which refreshes parent window and closes modal box frame
-                    $this->modx->sendRedirect($this->modx->config['base_url'].'index.php?id='.$id.'&quickmanagerclose=1', 0, 'REDIRECT_HEADER', 'HTTP/1.1 301 Moved Permanently');               
+                    if ($this->modx->config['friendly_urls'] == 1){
+                        $this->modx->sendRedirect($this->modx->makeUrl($id).'?quickmanagerclose=1', 0, 'REDIRECT_HEADER', 'HTTP/1.1 301 Moved Permanently'); 
+                    }else{
+                        $this->modx->sendRedirect($this->modx->makeUrl($id).'&quickmanagerclose=1', 0, 'REDIRECT_HEADER', 'HTTP/1.1 301 Moved Permanently');    
+                    }
+                    
                 }
                 
                 break;
@@ -133,17 +133,16 @@ class Qm {
                     $url = $this->modx->makeUrl($docID, '', '', 'full');
                     
                     $output = '
-                    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-                    <html xmlns="http://www.w3.org/1999/xhtml">
-                    <head>
-                    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-                    <title></title>
-                    </head>
-                    <body onload="javascript: parent.location.href = \''.$url.'\';">
-                    </body>
-                    </html>
-                    ';
-                    
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title></title>
+</head>
+<body onload="javascript: parent.location.href = \''.$url.'\';">
+</body>
+</html>
+';
                     break;
                 }
                 
@@ -157,10 +156,9 @@ class Qm {
                     $imagePreview = '';
                     
                     // Includes
-                    $manager_path = 'manager/';
-                    include_once($manager_path.'includes/tmplvars.inc.php');
-                    include_once($manager_path.'includes/tmplvars.commands.inc.php');
-                    include_once($manager_path.'includes/tmplvars.format.inc.php');
+                    include_once(MODX_MANAGER_PATH.'includes/tmplvars.inc.php');
+                    include_once(MODX_MANAGER_PATH.'includes/tmplvars.commands.inc.php');
+                    include_once(MODX_MANAGER_PATH.'includes/tmplvars.format.inc.php');
                     
                     // Get save status
                     if (isset($_POST['save'])) $save = intval($_POST['save']); 
@@ -232,7 +230,6 @@ class Qm {
                         <title></title>
                         <link rel="stylesheet" type="text/css" href="'.$this->modx->config['site_url'].'assets/plugins/qm/css/style.css" />
                         <!--[if IE]><link rel="stylesheet" type="text/css" href="'.$this->modx->config['site_url'].'assets/plugins/qm/css/ie.css" /><![endif]-->
-                        <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="'.$this->modx->config['site_url'].'assets/plugins/qm/css/ie7.css" /><![endif]-->
                         <script src="'.$this->modx->config['site_url'].$this->jqpath.'" type="text/javascript"></script>
                         </head>
                         ';
@@ -284,9 +281,9 @@ class Qm {
                                     </script>
                                     ';
                                 }
-                            
+                                $amp = ($this->modx->config['friendly_urls'] == 1) ? '?' : '&';
                                 $output .= ' 
-                                <form id="qm-tv-form" name="mutate" method="post" enctype="multipart/form-data" action="'.$this->modx->config['site_url'].'index.php?id='.$docID.'&amp;quickmanagertv=1&amp;tvname='.$tvName.'">
+                                <form id="qm-tv-form" name="mutate" method="post" enctype="multipart/form-data" action="'.$this->modx->makeUrl($docID).$amp.'quickmanagertv=1&amp;tvname='.$tvName.'">
                                 <input type="hidden" name="tvid" value="'.$tv['id'].'" />
                                 <input id="save" type="hidden" name="save" value="1" />
                                     
@@ -338,14 +335,15 @@ class Qm {
                         }
                         
                         $userID = $_SESSION['mgrInternalKey'];
-                        //$docID = $this->modx->documentIdentifier;
-                        $doc = $this->modx->getDocument($docID);
                         
+                        // Add ID
+                        $controls .= '<li class="qmId">ID: '.$docID.'</li>';
+
                         // Edit button
                         
                         $editButton = '
                         <li class="qmEdit">
-                        <a class="qmButton qmEdit colorbox" href="'.$this->modx->config['site_url'].'manager/index.php?a=27&amp;id='.$docID.'&amp;quickmanager=1"><span> '.$_lang['edit_resource'].'</span></a>
+                        <a class="qmButton qmEdit colorbox" href="'.$this->modx->config['site_manager_url'].'index.php?a=27&amp;id='.$docID.'&amp;quickmanager=1"><span> '.$_lang['edit_resource'].'</span></a>
                         </li>
                         ';
                         
@@ -359,7 +357,7 @@ class Qm {
                             // Add button
                             $addButton = '
                             <li class="qmAdd">
-                            <a class="qmButton qmAdd colorbox" href="'.$this->modx->config['site_url'].'manager/index.php?a=4&amp;pid='.$docID.'&amp;quickmanager=1"><span>'.$_lang['create_resource_here'].'</span></a>
+                            <a class="qmButton qmAdd colorbox" href="'.$this->modx->config['site_manager_url'].'index.php?a=4&amp;pid='.$docID.'&amp;quickmanager=1"><span>'.$_lang['create_resource_here'].'</span></a>
                             </li>
                             ';
                             
@@ -419,7 +417,7 @@ class Qm {
                                         case 'new':
                                             $customButton = '
                                             <li class="qm-custom-'.$i.' qmCustom">
-                                            <a class="qmButton qmCustom colorbox" href="'.$this->modx->config['site_url'].'manager/index.php?a=4&amp;pid='.$buttonParentId.'&amp;quickmanager=1&amp;customaddtplid='.$buttonTplId.'"><span>'.$buttonTitle.'</span></a>
+                                            <a class="qmButton qmCustom colorbox" href="'.$this->modx->config['site_manager_url'].'index.php?a=4&amp;pid='.$buttonParentId.'&amp;quickmanager=1&amp;customaddtplid='.$buttonTplId.'"><span>'.$buttonTitle.'</span></a>
                                             </li>
                                             ';
                                         break;
@@ -449,14 +447,14 @@ class Qm {
                         if ($this->managerbutton == 'true') {
                             $managerButton  = '
                             <li class="qmManager">
-                            <a class="qmButton qmManager" title="'.$_lang['manager'].'" href="'.$this->modx->config['site_url'].'manager/" ><span>'.$_lang['manager'].'</span></a>
+                            <a class="qmButton qmManager" title="'.$_lang['manager'].'" href="'.$this->modx->config['site_manager_url'].'" ><span>'.$_lang['manager'].'</span></a>
                             </li>
                             ';
                             $controls .= $managerButton;
                         }
                         
                         // Logout button
-                        $logout = $this->modx->config['site_url'].'manager/index.php?a=8&amp;quickmanager=logout&amp;logoutid='.$docID;     
+                        $logout = $this->modx->config['site_manager_url'].'index.php?a=8&amp;quickmanager=logout&amp;logoutid='.$docID;
                         $logoutButton  = '
                         <li class="qmLogout">
                         <a id="qmLogout" class="qmButton qmLogout" title="'.$_lang['logout'].'" href="'.$logout.'" ><span>'.$_lang['logout'].'</span></a>
@@ -480,7 +478,6 @@ class Qm {
                         $css = '
                         <link rel="stylesheet" type="text/css" href="'.$this->modx->config['site_url'].'assets/plugins/qm/css/style.css" />
                         <!--[if IE]><link rel="stylesheet" type="text/css" href="'.$this->modx->config['site_url'].'assets/plugins/qm/css/ie.css" /><![endif]-->
-                        <!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="'.$this->modx->config['site_url'].'assets/plugins/qm/css/ie7.css" /><![endif]-->
                         ';
             
                         // Autohide toolbar? Default: true
@@ -493,6 +490,7 @@ class Qm {
                         }
             
                         // Insert jQuery and ColorBox in head if needed
+                        $head = '';
                         if ($this->loadfrontendjq == 'true') $head .= '<script src="'.$this->modx->config['site_url'].$this->jqpath.'" type="text/javascript"></script>';
                         if ($this->loadtb == 'true') {
                             $head .= '
@@ -545,14 +543,40 @@ class Qm {
                                     $'.$jvar.'("body").css({"overflow":"hidden"});
                                     $'.$jvar.'("html").css({"overflow":"hidden"});
                                     $'.$jvar.'("#qmEditor").css({"display":"none"});
-                                });  
+                                });
+				
+                                $'.$jvar.'(document).bind("cbox_cleanup", function(){ 
+                                    //window is closing and cannot be stopped so clear dirty settings for all fields and tinyMCE
+				    var foundit;
+				    
+                                    //loop through the iframes, checking their scr
+                                    iframearray = document.getElementsByTagName(\'iframe\');
+				    
+                                    for(var i=0; i < iframearray.length; i++) {
+                                        //if the matching colorbox src, we have found the correct iframe
+                                        haystack=iframearray[i].src;
+                                        needle="'.$this->modx->config["site_url"]."manager/index.php?a=27".'";
+                                        if(haystack.substr(0, needle.length) == needle){ 
+                                            foundit=iframearray[i]; //assign it to the foundit variable created earlier
+                                            break; //no need to keep looking
+                                        }
+                                    }
+                                    if (foundit) {
+                                        foundit.contentWindow.window.documentDirty=false; //clear document dirty for fields
+                                        //loop through tinyMCE editors and clear any dirty flags
+                                        if (typeof(foundit.contentWindow.window.tinyMCE)!==\'undefined\') {   
+                                            var i, t = foundit.contentWindow.window.tinyMCE.editors;for (i in t){    
+                                            if (t.hasOwnProperty(i)){    t[i].isNotDirty=true }}  
+                                        }
+                                    }
+                                });
                                 
                             	$'.$jvar.'(document).bind("cbox_closed", function(){      
                                     $'.$jvar.'("body").css({"overflow":"auto"});
                                     $'.$jvar.'("html").css({"overflow":"auto"});
                                     $'.$jvar.'("#qmEditor").css({"display":"block"});
                                     // Remove manager lock by going to home page
-                                    $'.$jvar.'.ajax({ type: "GET", url: "'.$this->modx->config['site_url'].'manager/index.php?a=2" });
+                                    $'.$jvar.'.ajax({ type: "GET", url: "'.$this->modx->config['site_manager_url'].'index.php?a=2" });
                                 });                  
                                                             						                            
                                 // Hide QM+ if cookie found
@@ -590,6 +614,23 @@ class Qm {
     
                         </script>
                         ';
+
+                        $head .= "
+                        <script>
+                        // Assure keeping session and related locks alive
+                        $(document).ready(function($) {
+                            function updateMODXsession() {
+                              $.ajax({ url: '".MODX_MANAGER_URL."index.php', method:'post', data:{'updateMsgCount':true},
+                                success: function(data) {},
+                                complete: function() {
+                                  setTimeout(updateMODXsession, ". ($this->modx->config['mail_check_timeperiod'] * 1000) .");
+                                }
+                              });
+                            }
+                            setTimeout(updateMODXsession, ". ($this->modx->config['mail_check_timeperiod'] * 1000) .");
+                        });
+                        </script>
+                        ";
                         
                         // Insert QM+ css in head
                         $head .= $css;
@@ -602,12 +643,12 @@ class Qm {
                         
                         // Search and create edit buttons in to the content
                         if ($this->editbuttons == 'true' && $access) {
-                            $output = preg_replace('/<!-- '.$this->editbclass.' ([0-9]+) \'([^\\"\'\(\)<>!?]+)\' -->/', '<span class="'.$this->editbclass.'"><a class="colorbox" href="'.$this->modx->config['site_url'].'manager/index.php?a=27&amp;id=$1&amp;quickmanager=1&amp;qmrefresh='.$docID.'"><span>$2</span></a></span>', $output);
+                            $output = preg_replace('/<!-- '.$this->editbclass.' ([0-9]+) \'([^\\"\'\(\)<>!?]+)\' -->/', '<span class="'.$this->editbclass.'"><a class="colorbox" href="'.$this->modx->config['site_manager_url'].'index.php?a=27&amp;id=$1&amp;quickmanager=1&amp;qmrefresh='.$docID.'"><span>$2</span></a></span>', $output);
                         }
                         
                         // Search and create new document buttons in to the content
                         if ($this->newbuttons == 'true' && $access) {
-                            $output = preg_replace('/<!-- '.$this->newbclass.' ([0-9]+) ([0-9]+) \'([^\\"\'\(\)<>!?]+)\' -->/', '<span class="'.$this->newbclass.'"><a class="colorbox" href="'.$this->modx->config['site_url'].'manager/index.php?a=4&amp;pid=$1&amp;quickmanager=1&amp;customaddtplid=$2"><span>$3</span></a></span>', $output);
+                            $output = preg_replace('/<!-- '.$this->newbclass.' ([0-9]+) ([0-9]+) \'([^\\"\'\(\)<>!?]+)\' -->/', '<span class="'.$this->newbclass.'"><a class="colorbox" href="'.$this->modx->config['site_manager_url'].'index.php?a=4&amp;pid=$1&amp;quickmanager=1&amp;customaddtplid=$2"><span>$3</span></a></span>', $output);
                         }
                         
                         // Search and create new document buttons in to the content
@@ -625,13 +666,13 @@ class Qm {
                 
                 break;
             
-            // Edit document in ThickBox frame (MODx manager frame)
+            // Edit document in ThickBox frame (MODX manager frame)
             case 'OnDocFormPrerender':
                                         
                 // If there is Qm call, add control buttons and modify to edit document page
                 if (intval($_REQUEST['quickmanager']) == 1) {
                 
-                    global $content;
+                    global $content, $_style;
                     
                     // Set template for new document, action = 4
                     if(intval($_GET['a']) == 4) {    
@@ -682,7 +723,9 @@ class Qm {
                                             $tv['value'] = $sibl[0]['template'];
                                         }
                                         else $tv['value'] = ''; // Added by yama
-                                    } else {
+                                    }
+                                    else
+                                    {
                                         // Get "inheritTpl" TV
                                         $tv = $this->modx->getTemplateVar('inheritTpl', '', $pid);
                                     }
@@ -701,8 +744,6 @@ class Qm {
                     // Hide default manager action buttons
                     $mc->addLine('$("#actions").hide();');
     
-                    // Get MODx theme
-					$qm_theme = $this->modx->config['manager_theme'];
 					
 					// Get doc id
 					$doc_id = intval($_REQUEST['id']);
@@ -712,7 +753,8 @@ class Qm {
 					else $jq_mode = '$';
 					
 					// Add action buttons
-                    $mc->addLine('var controls = "<div style=\"padding:4px 0;position:fixed;top:10px;right:-10px;z-index:1000\" id=\"qmcontrols\" class=\"actionButtons\"><ul><li><a href=\"#\" onclick=\"documentDirty=false;document.mutate.save.click();return false;\"><img src=\"media/style/'.$qm_theme.'/images/icons/save.png\" />'.$_lang['save'].'</a></li><li><a href=\"#\" onclick=\"documentDirty=false; parent.'.$jq_mode.'.fn.colorbox.close(); return false;\"><img src=\"media/style/'.$qm_theme.'/images/icons/stop.png\"/>'.$_lang['cancel'].'</a></li></ul></div>";');
+                    $url = $this->modx->makeUrl($doc_id,'','','full');
+                    $mc->addLine('var controls = "<div style=\"padding:4px 0;position:fixed;top:10px;right:-10px;z-index:1000\" id=\"qmcontrols\" class=\"actionButtons\"><ul><li><a href=\"#\" onclick=\"documentDirty=false;document.mutate.save.click();return false;\"><img src=\"'.$_style["icons_save"].'\" />'.$_lang['save'].'</a></li><li><a href=\"#\" onclick=\"parent.location.href=\''.$url.'\'; return false;\"><img src=\"'.$_style["icons_cancel"].'\"/>'.$_lang['cancel'].'</a></li></ul></div>";');
                     
                     // Modify head
                     $mc->head = '<script type="text/javascript">document.body.style.display="none";</script>';
@@ -791,9 +833,8 @@ class Qm {
             $table= $this->modx->getFullTableName("document_groups");
             
             // Check if current document is assigned to one or more doc groups
-            $sql= "SELECT id FROM {$table} WHERE document={$docID}";
-            $result= $this->modx->db->query($sql);
-            $rowCount= $this->modx->recordCount($result);
+            $result = $this->modx->db->select('count(id)', $table, "document='{$docID}'");
+            $rowCount= $this->modx->db->getValue($result);
             
             // If document is assigned to one or more doc groups, check access
             if ($rowCount >= 1) {
@@ -804,9 +845,8 @@ class Qm {
                     $docGroup = implode(",", $mrgDocGroups); 
                     
                     // Check if user has access to current document 
-                    $sql= "SELECT id FROM {$table} WHERE document = {$docID} AND document_group IN ({$docGroup})";
-                    $result= $this->modx->db->query($sql);
-                    $rowCount = $this->modx->recordCount($result);
+                    $result = $this->modx->db->select('count(id)', $table, "document = '{$docID}' AND document_group IN ({$docGroup})");
+                    $rowCount = $this->modx->db->getValue($result);
                     
                     if ($rowCount >= 1) $access = TRUE;
                 }
@@ -820,19 +860,15 @@ class Qm {
         return $access;
     }
     
-    // Function from: manager/processors/cache_sync.class.processor.php 
+    // Function from: processors/cache_sync.class.processor.php 
     //_____________________________________________________
     function getParents($id, $path = '') { // modx:returns child's parent
-		global $modx;
 		if(empty($this->aliases)) {
-			$sql = "SELECT id, IF(alias='', id, alias) AS alias, parent FROM ".$modx->getFullTableName('site_content');
-			$qh = $modx->db->query($sql);
-			if ($qh && $modx->db->getRecordCount($qh) > 0)	{
-				while ($row = $modx->db->getRow($qh)) {
+			$qh = $this->modx->db->select("id, IF(alias='', id, alias) AS alias, parent", $this->modx->getFullTableName('site_content'));
+				while ($row = $this->modx->db->getRow($qh)) {
 					$this->aliases[$row['id']] = $row['alias'];
 					$this->parents[$row['id']] = $row['parent'];
 				}
-			}
 		}
 		if (isset($this->aliases[$id])) {
 			$path = $this->aliases[$id] . ($path != '' ? '/' : '') . $path;
@@ -870,7 +906,8 @@ class Qm {
 	    
 	    // Return TV button link if access
 	    if ($access && $caption != '') {
-	        return '<span class="'.$this->tvbclass.'"><a class="colorbox" href="'.$this->modx->config['site_url'].'index.php?id='.$docID.'&amp;quickmanagertv=1&amp;tvname='.$matches[1].'"><span>'.$caption.'</span></a></span>';
+            $amp = ($this->modx->config['friendly_urls'] == 1) ? '?' : '&';
+	        return '<span class="'.$this->tvbclass.'"><a class="colorbox" href="'.$this->modx->makeUrl($docID).$amp.'quickmanagertv=1&amp;tvname='.$matches[1].'"><span>'.$caption.'</span></a></span>';
         } 
     }
     
@@ -885,18 +922,16 @@ class Qm {
 	    
 	    // Check permission to TV, is TV in document group?  
 	    if (!$access) {
-	        $sql = "SELECT id FROM {$table} WHERE tmplvarid = {$tvId}";
-            $result = $this->modx->db->query($sql);
-            $rowCount = $this->modx->recordCount($result);
+	        $result = $this->modx->db->select('count(id)', $table, "tmplvarid = '{$tvId}'");
+            $rowCount = $this->modx->db->getValue($result);
             // TV is not in any document group
             if ($rowCount == 0) { $access = TRUE; }    
 	    }
 	    
 	    // Check permission to TV, TV is in document group 
 	    if (!$access && $this->docGroup != '') {
-            $sql = "SELECT id FROM {$table} WHERE tmplvarid = {$tvId} AND documentgroup IN ({$this->docGroup})";
-            $result = $this->modx->db->query($sql);
-            $rowCount = $this->modx->recordCount($result);
+            $result = $this->modx->db->select('count(id)', $table, "tmplvarid = '{$tvId}' AND documentgroup IN ({$this->docGroup})");
+            $rowCount = $this->modx->db->getValue($result);
             if ($rowCount >= 1) { $access = TRUE; }
         }    
         
@@ -926,19 +961,10 @@ class Qm {
 	//_____________________________________________________
 	function checkLocked() {
 
-		$activeUsersTable = $this->modx->getFullTableName('active_users');
 		$pageId = $this->modx->documentIdentifier;
 		$locked = TRUE;
-		$userId = $_SESSION['mgrInternalKey'];
 
-		$sql = "SELECT `internalKey`
-    	          FROM {$activeUsersTable}
-    	          WHERE (`action` = 27)
-    	          AND `internalKey` != '{$userId}'
-    	          AND `id` = '{$pageId}';";
-		$result = $this->modx->db->query($sql);
-
-		if ($this->modx->db->getRecordCount($result) === 0) {
+		if ($this->modx->elementIsLocked(7, $pageId) === NULL) {
 			$locked = FALSE;
 		}
 
@@ -949,29 +975,17 @@ class Qm {
 	//_____________________________________________________
 	function setLocked($locked) {
 
-		$activeUsersTable = $this->modx->getFullTableName('active_users');
 		$pageId = $this->modx->documentIdentifier;
-		$userId = $_SESSION['mgrInternalKey'];
 		
 		// Set document locked
 		if ($locked == 1) {
-    		$fields = array (
-            'id'	=> $pageId,
-    		'action'	=> 27
-    		);	
+    		$this->modx->lockElement(7, $pageId);
         }
         
         // Set document unlocked
         else {
-            $fields = array (
-            'id'	=> 'NULL',
-    		'action'	=> 2
-    		);    
+            $this->modx->unlockElement(7, $pageId);    
         }
-		
-		$where = 'internalKey = "' . $userId . '"';
-		
-        $result = $this->modx->db->update($fields, $activeUsersTable, $where);
 	}
 	
 	// Save TV
@@ -996,80 +1010,52 @@ class Qm {
         
         // Handle checkboxes and other arrays, TV to be saved must be e.g. value1||value2||value3
         if (is_array($tvContent)) {
-            foreach($tvContent as $key => $value) {
-                $tvContentTemp .= $value . '||';
-            }
-            $tvContentTemp = substr($tvContentTemp, 0, -2);  // Remove last ||
-            $tvContent = $tvContentTemp;
+            $tvContent = implode("||", $tvContent);
         }
         
         // Save TV
         if ($tvId != '') {
-            $sql = "SELECT id
-                    FROM {$tmplvarContentValuesTable}
-                    WHERE `tmplvarid` = '{$tvId}'
-                    AND `contentid` = '{$pageId}';";
-            $result = $this->modx->db->query($sql);
+            $fields = array(
+                'tmplvarid' => $tvId,
+                'contentid' => $pageId,
+                'value'     => $tvContent,
+                );
+            $result = $this->modx->db->select('count(id)', $tmplvarContentValuesTable, "tmplvarid = '{$fields['tmplvarid']}' AND contentid = '{$fields['contentid']}'");
             
             // TV exists, update TV   
-            if($this->modx->db->getRecordCount($result)) {
-            
-                $sql = "UPDATE {$tmplvarContentValuesTable}
-                     SET `value` = '{$tvContent}'
-                     WHERE `tmplvarid` = '{$tvId}'
-                     AND `contentid` = '{$pageId}';";
+            if($this->modx->db->getValue($result)) {
+                $this->modx->db->update($fields, $tmplvarContentValuesTable, "tmplvarid = '{$fields['tmplvarid']}' AND contentid = '{$fields['contentid']}'");
             } 
         
             // TV does not exist, create new TV   
             else {
-                $sql = "INSERT INTO {$tmplvarContentValuesTable} (tmplvarid, contentid, value)
-                         VALUES('{$tvId}', '{$pageId}', '{$tvContent}');";        
+                $this->modx->db->insert($fields, $tmplvarContentValuesTable);
             }
             
             // Page edited by
-            $this->modx->db->update(array('editedon'=>$time, 'editedby'=>$user), $siteContentTable, 'id = "' . $pageId . '"');
+            $this->modx->db->update(
+                array(
+                    'editedon' => $time,
+                    'editedby' => $user
+                    ), $siteContentTable, "id = '{$pageId}'");
         } 
         
         // Save default field, e.g. pagetitle
         else {                
-            $sql = "UPDATE {$siteContentTable}
-                    SET 
-                    `{$tvName}` = '{$tvContent}',
-                    `editedon` = '{$time}',
-                    `editedby` = '{$user}'
-                    WHERE `id` = '{$pageId}';"; 
-                    
+            $this->modx->db->update(
+                array(
+                    $tvName    => $tvContent,
+                    'editedon' => $time,
+                    'editedby' => $user
+                    ), $siteContentTable, "id = '{$pageId}'");
         }
         
-        // Update TV
-        if($sql) { $result = $this->modx->db->query($sql); }
-        
-        // Log possible errors
-        if(!$result) {
-            $this->modx->logEvent(0, 0, "<p>Save failed!</p><strong>SQL:</strong><pre>{$sql}</pre>", 'QuickManager+');     
-        } 
-        
-        // No errors
-        else {
             // Invoke OnDocFormSave event
             $this->modx->invokeEvent('OnDocFormSave', array('mode'=>'upd', 'id'=>$pageId));
             
             // Clear cache
-            $this->clearCache();
-        }   
+            $this->modx->clearCache('full');
     }
-    
-    // Clear cache
-	//_____________________________________________________
-	function clearCache() {
-        // Clear cache
-        include_once $this->modx->config['base_path']."manager/processors/cache_sync.class.processor.php";
-        $sync = new synccache();
-        $sync->setCachepath($this->modx->config['base_path']."assets/cache/");
-        $sync->setReport(false);
-        $sync->emptyCache();    
-	}
 	
 }
 }
-?>

@@ -16,7 +16,7 @@
 class asPHxParser {
     var $placeholders = array();
 
-    function asPHxParser($template='',$maxpass=500) {
+    function __construct($template='',$maxpass=500) {
         global $modx;
         $this->name = "PHx";
         $this->version = "2.1.3";
@@ -42,14 +42,14 @@ class asPHxParser {
 
     // ====================================================================== parser part
 
-    // Plugin event hook for MODx
+    // Plugin event hook for MODX
     function OnParseDocument() {
         global $modx;
-        // Get document output from MODx
+        // Get document output from MODX
         $template = $modx->documentOutput;
         // To the parse cave .. let's go! *insert batman tune here*
         $template = $this->Parse($template);
-        // Set processed document output in MODx
+        // Set processed document output in MODX
         $modx->documentOutput = $template;
     }
 
@@ -64,7 +64,7 @@ class asPHxParser {
         $template = preg_replace($this->safetags[0],$this->safetags[1],$template);
         // To the parse mobile.. let's go! *insert batman tune here*
         $template = $this->ParseValues($template);
-        // clean up unused placeholders that have modifiers attached (MODx can't clean them)
+        // clean up unused placeholders that have modifiers attached (MODX can't clean them)
         preg_match_all('~\[(\+|\*|\()([^:\+\[\]]+)([^\[\]]*?)(\1|\))\]~s', $template, $matches);
         if ($matches[0]) $template = str_replace($matches[0], '', $template);
         // Restore non-call characters in the template: [, ]
@@ -84,10 +84,10 @@ class asPHxParser {
         $this->curPass = $this->curPass + 1;
         $st = md5($template);
 
-        // MODx Chunks
+        // MODX Chunks
         $template = $modx->mergeChunkContent($template);
 
-        // MODx Snippets
+        // MODX Snippets
         if ( preg_match_all('~\[(\[)([^\[]*?)(\])\]~s',$template, $matches)) {
             $count = count($matches[0]);
             $var_search = array();
@@ -97,7 +97,7 @@ class asPHxParser {
             for($i=0; $i<$count; $i++) {
                 $snippet = $matches[2][$i]; // snippet call
 
-                // Let MODx evaluate snippet
+                // Let MODX evaluate snippet
                 $replace = $modx->evalSnippets("[[".$snippet."]]");
 
                 // Replace values
@@ -108,7 +108,7 @@ class asPHxParser {
             $template = str_replace($var_search, $var_replace, $template);
         }
 
-        // PHx / MODx Tags
+        // PHx / MODX Tags
         if ( preg_match_all('~\[(\+|\*|\()([^:\+\[\]]+)([^\[\]]*?)(\1|\))\]~s',$template, $matches)) {
 
             //$matches[0] // Complete string that's need to be replaced
@@ -134,12 +134,12 @@ class asPHxParser {
                             $input = $modx->mergeDocumentContent("[*".$input."*]");
                             $replace = $this->Filter($input,$modifiers);
                             break;
-                        // MODx Setting eXtended
+                        // MODX Setting eXtended
                         case "(":
                             $input = $modx->mergeSettingsContent("[(".$input.")]");
                             $replace = $this->Filter($input,$modifiers);
                             break;
-                        // MODx Placeholder eXtended
+                        // MODX Placeholder eXtended
                         default:
                             // Check if placeholder is set
                             if ( !array_key_exists($input, $this->placeholders) && !array_key_exists($input, $modx->placeholders) ) {
@@ -187,7 +187,7 @@ class asPHxParser {
                     case "lowerthan":    case "lt":$condition[] = intval(($output<$modifier_value[$i]));break;
                     case "isinrole": case "ir": case "memberof": case "mo": // Is Member Of  (same as inrole but this one can be stringed as a conditional)
                         if ($output == "&_PHX_INTERNAL_&") $output = $this->user["id"];
-                        $grps = (strlen($modifier_value[$i]) > 0 ) ? explode(",",$modifier_value[$i]) :array();
+                        $grps = (strlen($modifier_value[$i]) > 0 ) ? array_filter(array_map('trim', explode(',', $modifier_value[$i]))) :array();
                         $condition[] = intval($this->isMemberOfWebGroupByUserId($output,$grps));
                         break;
                     case "or":$condition[] = "||";break;
@@ -222,7 +222,7 @@ class asPHxParser {
                     case "lcase": $output = strtolower($output); break;
                     case "ucase": $output = strtoupper($output); break;
                     case "ucfirst": $output = ucfirst($output); break;
-                    case "htmlent": $output = htmlentities($output,ENT_QUOTES,$modx->config['etomite_charset']); break;
+                    case "htmlent": $output = htmlentities($output,ENT_QUOTES,$modx->config['modx_charset']); break;
                     case "esc":
                         $output = preg_replace("/&amp;(#[0-9]+|[a-z]+);/i", "&$1;", htmlspecialchars($output));
                         $output = str_replace(array("[","]","`"),array("&#91;","&#93;","&#96;"),$output);
@@ -233,7 +233,7 @@ class asPHxParser {
                     case "reverse": $output = strrev($output); break;
                     case "wordwrap": // default: 70
                         $wrapat = intval($modifier_value[$i]) ? intval($modifier_value[$i]) : 70;
-                        $output = preg_replace("~(\b\w+\b)~e","wordwrap('\\1',\$wrapat,' ',1)",$output);
+                        $output = preg_replace_callback("@(\b\w+\b)@",function($m) use($wrapat) {return wordwrap($m[1],$wrapat,' ',1);},$output);
                         break;
                     case "limit": // default: 100
                         $limit = intval($modifier_value[$i]) ? intval($modifier_value[$i]) : 100;
@@ -242,16 +242,40 @@ class asPHxParser {
 
                     #####  Special functions
                     // img modifiers added by coroico
-                    case "imgwidth": list($width, $height, $type, $attr) = getimagesize($output); $output = $width; break;
-                    case "imgheight": list($width, $height, $type, $attr) = getimagesize($output); $output = $height; break;
-                    case "imgattr": list($width, $height, $type, $attr) = getimagesize($output); $output = $attr; break;
+                    case "imgwidth":
+                        if (@file_exists($output)) {
+                            list($width, $height, $type, $attr) = getimagesize($output);
+                            $output = $width;
+                        }
+                        else $output = 0;
+                        break;
+                    case "imgheight":
+                        if (@file_exists($output)) {
+                            list($width, $height, $type, $attr) = getimagesize($output);
+                            $output = $height;
+                        }
+                        else $output = 0;
+                        break;
+                    case "imgattr":
+                        if (@file_exists($output)) {
+                            list($width, $height, $type, $attr) = getimagesize($output);
+                            $output = $attr;
+                        }
+                        else $output = '';
+                        break;
                     case "imgmaxwidth":
-                        list($width, $height, $type, $attr) = getimagesize($output);
-                        $output = ($width < intval($modifier_value[$i])) ? $width : intval($modifier_value[$i]);
+                        if (@file_exists($output)) {
+                            list($width, $height, $type, $attr) = getimagesize($output);
+                            $output = ($width < intval($modifier_value[$i])) ? $width : intval($modifier_value[$i]);
+                        }
+                        else $output = intval($modifier_value[$i]);
                         break;
                     case "imgmaxheight":
-                        list($width, $height, $type, $attr) = getimagesize($output);
-                        $output = ($height < intval($modifier_value[$i])) ? $height : intval($modifier_value[$i]);
+                        if (@file_exists($output)) {
+                            list($width, $height, $type, $attr) = getimagesize($output);
+                            $output = ($height < intval($modifier_value[$i])) ? $height : intval($modifier_value[$i]);
+                        }
+                        else $output = intval($modifier_value[$i]);
                         break;
                     case "math":
                         $filter = preg_replace("~([a-zA-Z\n\r\t\s])~","",$modifier_value[$i]);
@@ -276,19 +300,17 @@ class asPHxParser {
                         break;
                     case "inrole": // deprecated
                         if ($output == "&_PHX_INTERNAL_&") $output = $this->user["id"];
-                        $grps = (strlen($modifier_value[$i]) > 0 ) ? explode(",",$modifier_value[$i]) :array();
+                        $grps = (strlen($modifier_value[$i]) > 0 ) ? array_filter(array_map('trim', explode(',', $modifier_value[$i]))) :array();
                         $output = intval($this->isMemberOfWebGroupByUserId($output,$grps));
                         break;
                     default:
                         if (!array_key_exists($modifier_cmd[$i], $this->cache["cm"])) {
                             $phx_snippet_name = 'phx:' . $modx->db->escape($modifier_cmd[$i]);
-                            $sql = "SELECT snippet FROM " . $modx->getFullTableName("site_snippets") . " WHERE " . $modx->getFullTableName("site_snippets") . ".name='" . $phx_snippet_name . "';";
-                             $result = $modx->dbQuery($sql);
-                             if ($modx->recordCount($result) == 1) {
-                                $row = $modx->fetchRow($result);
-                                 $cm = $this->cache["cm"][$modifier_cmd[$i]] = $row["snippet"];
-                             } else if ($modx->recordCount($result) == 0){ // If snippet not found, look in the modifiers folder
-                                $filename = $modx->config['rb_base_dir'] . 'plugins/phx/modifiers/'.$modifier_cmd[$i].'.phx.php';
+                             $result = $modx->db->select('snippet', $modx->getFullTableName("site_snippets"), "name='{$phx_snippet_name}'");
+                             if ($snippet = $modx->db->getValue($result)) {
+                                 $cm = $this->cache["cm"][$modifier_cmd[$i]] = $snippet;
+                             } else if ($modx->db->getRecordCount($result) == 0){ // If snippet not found, look in the modifiers folder
+                                $filename = MODX_BASE_PATH . 'assets/plugins/phx/modifiers/'.$modifier_cmd[$i].'.phx.php';
                                 if (@file_exists($filename)) {
                                     $file_contents = @file_get_contents($filename);
                                     $file_contents = str_replace('<?php', '', $file_contents);
@@ -344,8 +366,8 @@ class asPHxParser {
         if (!array_key_exists($userid, $this->cache["mo"])) {
             $tbl = $modx->getFullTableName("webgroup_names");
             $tbl2 = $modx->getFullTableName("web_groups");
-            $sql = "SELECT wgn.name FROM $tbl wgn INNER JOIN $tbl2 wg ON wg.webgroup=wgn.id AND wg.webuser='".$userid."'";
-            $this->cache["mo"][$userid] = $grpNames = $modx->db->getColumn("name",$sql);
+			$rs = $modx->db->select('wgn.name', "$tbl AS wgn INNER JOIN $tbl2 AS wg ON wg.webgroup=wgn.id AND wg.webuser='{$userid}'");
+            $this->cache["mo"][$userid] = $grpNames = $modx->db->getColumn("name",$rs);
         } else {
             $grpNames = $this->cache["mo"][$userid];
         }
@@ -357,7 +379,7 @@ class asPHxParser {
         return false;
      }
 
-    // Returns the value of a PHx/MODx placeholder.
+    // Returns the value of a PHx/MODX placeholder.
     function getPHxVariable($name) {
         global $modx;
         // Check if this variable is created by PHx
@@ -365,7 +387,7 @@ class asPHxParser {
             // Return the value from PHx
             return $this->placeholders[$name];
         } else {
-            // Return the value from MODx
+            // Return the value from MODX
             return $modx->getPlaceholder($name);
         }
     }
@@ -412,7 +434,7 @@ class asPHxParser {
         if ($modx->getChunk($tpl) != "") {
             $template = $modx->getChunk($tpl);
         } else if (substr($tpl, 0, 6) == "@FILE:") {
-            $template = $this->get_file_contents($modx->config['base_path'] . substr($tpl, 6));
+            $template = file_get_contents($modx->config['base_path'] . substr($tpl, 6));
         } else if (substr($tpl, 0, 6) == "@CODE:") {
             $template = substr($tpl, 6);
         } else {
@@ -420,17 +442,4 @@ class asPHxParser {
         }
         return $template;
     }
-
-    function get_file_contents($filename) {
-        // Returns the contents of file name passed
-        if (!function_exists('file_get_contents')) {
-            $fhandle = fopen($filename, "r");
-            $fcontents = fread($fhandle, filesize($filename));
-            fclose($fhandle);
-        } else {
-            $fcontents = file_get_contents($filename);
-        }
-        return $fcontents;
-    }
 }
-?>

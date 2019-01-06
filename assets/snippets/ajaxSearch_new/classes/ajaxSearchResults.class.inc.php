@@ -4,9 +4,9 @@
 * -----------------------------------------------------------------------------
 * @package  AjaxSearchResults
 *
-* @author       Coroico - www.modx.wangba.fr
-* @version      1.9.2
-* @date         05/10/2010
+* @author       Coroico - www.evo.wangba.fr
+* @version      1.10.2
+* @date         12/04/2016
 *
 * Purpose:
 *    The AjaxSearchResults class contains all functions and data used to manage Results
@@ -51,7 +51,7 @@ class AjaxSearchResults {
     *
     *  @access public
     */
-    function AjaxSearchResults() {
+    function __construct() {
     }
     /*
     *  Initializes the class into the proper context
@@ -291,7 +291,7 @@ class AjaxSearchResults {
                 $rs[$i]['order'] = $rs[$i][$order];
                 $this->_groupMixedResults['results'][] = $rs[$i];
             }
-            if ($this->dbgRes) $this->asUtil->dbgRecord($this->_groupMixedResults[$ig], "AjaxSearch - group mixed results");
+            if ($this->dbgRes) $this->asUtil->dbgRecord($this->_groupMixedResults, "AjaxSearch - group mixed results");
 
         }
         else {
@@ -356,7 +356,7 @@ class AjaxSearchResults {
                             $this->_groupMixedResults['results'][] = $rs[$j];
                         }
 
-                        if ($this->dbgRes) $this->asUtil->dbgRecord($this->groupResults[$ig], "AjaxSearch - group results");
+                        if ($this->dbgRes) $this->asUtil->dbgRecord($this->groupResults, "AjaxSearch - group results");
                     }
                 }
             }
@@ -484,8 +484,8 @@ class AjaxSearchResults {
             $tvs = explode(',', $listTvs);
             $tblName = $modx->getFullTableName('site_tmplvars');
             foreach ($tvs as $tv) {
-                $tplRS = $modx->db->select('id', $tblName, 'name="' . $tv . '"');
-                if (!$modx->db->getRecordCount($tplRS)) {
+                $tplRS = $modx->db->select('count(id)', $tblName, "name='{$tv}'");
+                if (!$modx->db->getValue($tplRS)) {
                     $msgErr = "<br /><h3>AjaxSearch error: tv $tv not defined - Check your withTvs parameter !</h3><br />";
                     return false;
                 }
@@ -529,7 +529,7 @@ class AjaxSearchResults {
                 $wordLength = $mbStrlen($searchTerm);
                 $wordLength2 = $wordLength / 2;
                 // $pattern = '/' . preg_quote($searchTerm, '/') . $lookAhead . '/' . $pcreModifier;
-                if ($advSearch == EXACTPHRASE) $pattern = '/\b' . preg_quote($searchTerm, '/') . '\b/' . $pcreModifier;
+                if ($advSearch == EXACTPHRASE) $pattern = '/(\b|\W)' . preg_quote($searchTerm, '/') . '(\b|\W)/' . $pcreModifier;
                 else $pattern = '/' . preg_quote($searchTerm, '/') . '/' . $pcreModifier;
                 $matches = array();
                 $nbr = preg_match_all($pattern, $text, $matches, PREG_OFFSET_CAPTURE);
@@ -592,7 +592,7 @@ class AjaxSearchResults {
                 if ($this->asCfg->cfg['highlightResult']) {
                     $rank = $extracts[$i]['rank'];
                     $searchTerm = $searchList[$rank - 1];
-                    if ($advSearch == EXACTPHRASE) $pattern = '/\b' . preg_quote($searchTerm, '/') . '\b/' . $pcreModifier;
+                    if ($advSearch == EXACTPHRASE) $pattern = '/(\b|\W)' . preg_quote($searchTerm, '/') . '(\b|\W)/' . $pcreModifier;
                     else $pattern = '/' . preg_quote($searchTerm, '/') . '/' . $pcreModifier;
                     $subject = '<span class="' . $highlightClass . ' ' . $highlightClass . $rank . '">\0</span>';
                     $extract = preg_replace($pattern, $subject, $extract);
@@ -859,7 +859,7 @@ class AjaxSearchResults {
         return $Ids;
     }
     /*
-    *  Filter the search results when the search terms are found inside HTML or MODx tags
+    *  Filter the search results when the search terms are found inside HTML or MODX tags
     */
     function _doFilterTags($results, $searchString, $advSearch) {
         $filteredResults = array();
@@ -881,7 +881,7 @@ class AjaxSearchResults {
                     $searchList = $this->asCtrl->getSearchWords($searchString, $advSearch);
                     $pcreModifier = $this->asCfg->pcreModifier;
                     foreach ($searchList as $searchTerm) {
-                        if ($advSearch == EXACTPHRASE) $pattern = '/\b' . preg_quote($searchTerm, '/') . '\b/' . $pcreModifier;
+                        if ($advSearch == EXACTPHRASE) $pattern = '/(\b|\W)' . preg_quote($searchTerm, '/') . '(\b|\W)/' . $pcreModifier;
                         else $pattern = '/' . preg_quote($searchTerm, '/') . '/' . $pcreModifier;
                         $matches = array();
                         $found = preg_match($pattern, $text, $matches, PREG_OFFSET_CAPTURE);
@@ -950,12 +950,14 @@ class AjaxSearchResults {
     * Default ouput strip function
     */
     function defaultStripOutput($text) {
+        global $modx;
+
         if ($text !== '') {
             // $text = $modx->parseDocumentSource($text); // parse document
 
             $text = $this->stripLineBreaking($text);
 
-            $text = $this->stripTags($text);
+            $text = $modx->stripTags($text);
 
             $text = $this->stripJscripts($text);
 
@@ -972,7 +974,7 @@ class AjaxSearchResults {
         return $text;
     }
     /*
-    *  stripTags : Remove MODx sensitive tags
+    *  stripTags : Remove MODX sensitive tags
     */
     function stripTags($text) {
 
@@ -1318,5 +1320,3 @@ function code_to_utf8($num) {
     }
     return ' '; // default value
 }
-
-?>

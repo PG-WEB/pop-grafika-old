@@ -14,7 +14,7 @@ $BINDINGS = array (
     'DIRECTORY'
 );
 
-function ProcessTVCommand($value, $name = '', $docid = '', $src='docform') {
+function ProcessTVCommand($value, $name = '', $docid = '', $src='docform', $tvsArray = array()) {
     global $modx;
     $etomite = & $modx;
     $docid = intval($docid) ? intval($docid) : $modx->documentIdentifier;
@@ -27,14 +27,14 @@ function ProcessTVCommand($value, $name = '', $docid = '', $src='docform') {
     else {
         list ($cmd, $param) = ParseCommand($nvalue);
         $cmd = trim($cmd);
+        $param = parseTvValues($param, $tvsArray);
         switch ($cmd) {
             case "FILE" :
-                $output = ProcessFile(trim($param));
-                $output = str_replace('@FILE ' . $param, $output, $nvalue);
+                $output = $modx->atBindFileContent($nvalue);
                 break;
 
             case "CHUNK" : // retrieve a chunk and process it's content
-                $chunk = $modx->getChunk($param);
+                $chunk = $modx->getChunk(trim($param));
                 $output = $chunk;
                 break;
 
@@ -78,15 +78,11 @@ function ProcessTVCommand($value, $name = '', $docid = '', $src='docform') {
 
                     $tv = $modx->getTemplateVar($name, '*', $doc['id'], $doc['published']);
 
-                    // inheritance allows other @ bindings to be inherited
-                    // if no value is inherited and there is content following the @INHERIT binding,
-                    // that content will be used as the output
-                    // @todo consider reimplementing *appending* the output the follows an @INHERIT as opposed
-                    //       to using it as a default/fallback value; perhaps allow choice in behavior with
-                    //       system setting
+                    // if an inherited value is found and if there is content following the @INHERIT binding
+                    // remove @INHERIT and output that following content. This content could contain other 
+                    // @ bindings, that are processed in the next step                    
                     if ((string) $tv['value'] !== '' && !preg_match('%^@INHERIT[\s\n\r]*$%im', $tv['value'])) {
-                        $output = (string) $tv['value'];
-                        //$output = str_replace('@INHERIT', $output, $nvalue);
+                        $output = trim(str_replace('@INHERIT', '', (string) $tv['value']));
                         break 2;
                     }
                 }
@@ -118,36 +114,52 @@ function ProcessTVCommand($value, $name = '', $docid = '', $src='docform') {
 
         }
         // support for nested bindings
-        return is_string($output) && ($output != $value) ? ProcessTVCommand($output, $name, $docid, $src) : $output;
+        return is_string($output) && ($output != $value) ? ProcessTVCommand($output, $name, $docid, $src, $tvsArray) : $output;
     }
 }
 
 function ProcessFile($file) {
     // get the file
-    if (file_exists($file) && @ $handle = fopen($file, "r")) {
-        $buffer = "";
-        while (!feof($handle)) {
-            $buffer .= fgets($handle, 4096);
-        }
-        fclose($handle);
-    } else {
-        $buffer = " Could not retrieve document '$file'.";
-    }
+	$buffer = @file_get_contents($file);
+	if ($buffer===false) $buffer = " Could not retrieve document '$file'.";
     return $buffer;
 }
 
 // ParseCommand - separate @ cmd from params
-function ParseCommand($binding_string) {
+function ParseCommand($binding_string)
+{
     global $BINDINGS;
-    $match = array ();
-    $regexp = '/@(' . implode('|', $BINDINGS) . ')\s*(.*)/im'; // Split binding on whitespace
-    if (preg_match($regexp, $binding_string, $match)) {
-        // We can't return the match array directly because the first element is the whole string
-        $binding_array = array (
-            strtoupper($match[1]),
-            $match[2]
-        ); // Make command uppercase
-        return $binding_array;
+    $binding_array = array();
+    foreach($BINDINGS as $cmd)
+    {
+        if(strpos($binding_string,'@'.$cmd)===0)
+        {
+            $code = substr($binding_string,strlen($cmd)+1);
+            $binding_array = array($cmd,trim($code));
+            break;
+        }
     }
+    return $binding_array;
 }
-?>
+
+// Parse MODX Template-Variables
+function parseTvValues($param, $tvsArray)
+{
+	global $modx;
+	$tvsArray = is_array($modx->documentObject) ? array_merge($tvsArray, $modx->documentObject) : $tvsArray;
+	if (strpos($param, '[*') !== false) {
+		$matches = $modx->getTagsFromContent($param, '[*', '*]');
+		foreach ($matches[0] as $i=>$match) {
+			if(isset($tvsArray[ $matches[1][$i] ])) {
+				if(is_array($tvsArray[ $matches[1][$i] ])) {
+					$value = $tvsArray[$matches[1][$i]]['value'];
+					$value = $value === '' ? $tvsArray[$matches[1][$i]]['default_text'] : $value;
+				} else {
+					$value = $tvsArray[ $matches[1][$i] ];
+				}
+				$param = str_replace($match, $value, $param);
+			}
+		}
+	}
+	return $param;
+}

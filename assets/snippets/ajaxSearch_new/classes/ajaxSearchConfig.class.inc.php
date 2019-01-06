@@ -4,9 +4,9 @@
 * -----------------------------------------------------------------------------
 * @package  AjaxSearchConfig
 *
-* @author       Coroico - www.modx.wangba.fr
-* @version      1.9.2
-* @date         05/12/2010
+* @author       Coroico - www.evo.wangba.fr
+* @version      1.10.2
+* @date         12/04/2016
 *
 * Purpose:
 *    The AjaxSearchConfig class contains all functions and data used to manage configuration context
@@ -31,9 +31,10 @@ class AjaxSearchConfig {
     // Some others conversions should be added if needed. Otherwise Page charset = Database charset
     var $_pageCharset = array('utf8' => 'UTF-8', 'latin1' => 'ISO-8859-1', 'latin2' => 'ISO-8859-2', 'cp1251' => 'windows-1251');
 
-    function AjaxSearchConfig($dcfg, $cfg) {
+    function __construct($dcfg, $cfg) {
         global $modx;
         $this->dbCharset = $modx->db->config['charset'];
+        if($this->dbCharset=='utf8mb4') $this->dbCharset = 'utf8';
         $this->pcreModifier = ($this->dbCharset == "utf8") ? 'iu' : 'i';
         $this->dcfg = $dcfg;
         $this->cfg = $cfg;
@@ -112,9 +113,9 @@ class AjaxSearchConfig {
                 $valid = true;
             }
         } elseif (!isset($this->dbCharset)) {
-            $msgErr = "AjaxSearch error: database_connection_charset not set. Check your MODx config file";
+            $msgErr = "AjaxSearch error: database_connection_charset not set. Check your MODX config file";
         } elseif (!strlen($this->dbCharset)) {
-            $msgErr = "AjaxSearch error: database_connection_charset is null. Check your MODx config file";
+            $msgErr = "AjaxSearch error: database_connection_charset is null. Check your MODX config file";
         } else {
             // if you get this message, simply update the $pageCharset array in search.class.inc.php file
             // with the appropriate mapping between Mysql Charset and Html charset
@@ -174,7 +175,11 @@ class AjaxSearchConfig {
         $ucfg = array();
         $pattern = '/&([^=]*)=`([^`]*)`/';
         preg_match_all($pattern, $strUcfg, $out);
-        foreach ($out[1] as $key => $values) $ucfg[$out[1][$key]] = $out[2][$key];
+        foreach ($out[1] as $key => $values) {
+            // remove any @BINDINGS in posted user config for security reasons
+            $ucfg[$out[1][$key]] = preg_replace('/@(#|FILE|DIRECTORY|DOCUMENT|CHUNK|INHERIT|SELECT|EVAL|CHUNK)[: ]/i', '', $out[2][$key]);
+                                   
+        }
         return $ucfg;
     }
     /*
@@ -191,11 +196,10 @@ class AjaxSearchConfig {
     */
     function readConfigFile($config) {
         global $modx;
-        $configFile = (substr($config, 0, 5) != "@FILE") ? AS_PATH . "configs/$config.config.php" : $modx->config['base_path'] . trim(substr($config, 5));
+        $configFile = (substr($config, 0, 6) != "@FILE:") ? AS_PATH . "configs/$config.config.php" : $modx->config['base_path'] . trim(substr($config, 6, strlen($config)-6));
         $fh = fopen($configFile, 'r');
         $output = fread($fh, filesize($configFile));
         fclose($fh);
         return "\n" . $output;
     }
 }
-?>

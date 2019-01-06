@@ -1,1034 +1,5 @@
 <?php
-$c=&$this->config;
-$c['manager_theme'] = "MODxCarbon";
-$c['settings_version'] = "";
-$c['show_meta'] = "0";
-$c['server_offset_time'] = "0";
-$c['server_protocol'] = "https";
-$c['manager_language'] = "english";
-$c['modx_charset'] = "UTF-8";
-$c['site_name'] = "Голос ПГ";
-$c['site_start'] = "310";
-$c['error_page'] = "311";
-$c['unauthorized_page'] = "311";
-$c['site_status'] = "1";
-$c['site_unavailable_message'] = "The site is currently unavailable";
-$c['track_visitors'] = "0";
-$c['resolve_hostnames'] = "0";
-$c['top_howmany'] = "10";
-$c['default_template'] = "4";
-$c['old_template'] = "4";
-$c['publish_default'] = "0";
-$c['cache_default'] = "1";
-$c['search_default'] = "1";
-$c['friendly_urls'] = "0";
-$c['friendly_url_prefix'] = "";
-$c['friendly_url_suffix'] = "";
-$c['friendly_alias_urls'] = "1";
-$c['use_alias_path'] = "1";
-$c['use_udperms'] = "1";
-$c['udperms_allowroot'] = "0";
-$c['failed_login_attempts'] = "3";
-$c['blocked_minutes'] = "10";
-$c['use_captcha'] = "0";
-$c['captcha_words'] = "MODx,Access,Better,BitCode,Cache,Desc,Design,Excell,Enjoy,URLs,TechView,Gerald,Griff,Humphrey,Holiday,Intel,Integration,Joystick,Join(),Tattoo,Genetic,Light,Likeness,Marit,Maaike,Niche,Netherlands,Ordinance,Oscillo,Parser,Phusion,Query,Question,Regalia,Righteous,Snippet,Sentinel,Template,Thespian,Unity,Enterprise,Verily,Veri,Website,WideWeb,Yap,Yellow,Zebra,Zygote";
-$c['emailsender'] = "katala@localhost";
-$c['emailsubject'] = "Your login details";
-$c['number_of_logs'] = "100";
-$c['number_of_messages'] = "30";
-$c['number_of_results'] = "20";
-$c['use_editor'] = "0";
-$c['use_browser'] = "1";
-$c['rb_base_dir'] = "/Applications/XAMPP/xamppfiles/htdocs/pop-grafika/assets/";
-$c['rb_base_url'] = "/";
-$c['which_editor'] = "TinyMCE";
-$c['fe_editor_lang'] = "english";
-$c['fck_editor_toolbar'] = "standard";
-$c['fck_editor_autolang'] = "0";
-$c['editor_css_path'] = "";
-$c['editor_css_selectors'] = "";
-$c['strip_image_paths'] = "1";
-$c['upload_images'] = "bmp,ico,gif,jpeg,jpg,png,psd,tif,tiff";
-$c['upload_media'] = "au,avi,mp3,mp4,mpeg,mpg,wav,wmv";
-$c['upload_flash'] = "fla,flv,swf";
-$c['upload_files'] = "aac,au,avi,css,cache,doc,docx,gz,gzip,htaccess,htm,html,js,mp3,mp4,mpeg,mpg,ods,odp,odt,pdf,ppt,pptx,rar,tar,tgz,txt,wav,wmv,xls,xlsx,xml,z,zip";
-$c['upload_maxsize'] = "1048576";
-$c['new_file_permissions'] = "0644";
-$c['new_folder_permissions'] = "0755";
-$c['filemanager_path'] = "/Applications/XAMPP/xamppfiles/htdocs/pop-grafika/";
-$c['theme_refresher'] = "";
-$c['manager_layout'] = "4";
-$c['custom_contenttype'] = "application/rss+xml,application/pdf,application/vnd.ms-word,application/vnd.ms-excel,text/html,text/css,text/xml,text/javascript,text/plain";
-$c['auto_menuindex'] = "1";
-$c['session.cookie.lifetime'] = "604800";
-$c['mail_check_timeperiod'] = "60";
-$c['manager_direction'] = "ltr";
-$c['tinymce_editor_theme'] = "editor";
-$c['tinymce_custom_plugins'] = "style,advimage,advlink,searchreplace,print,contextmenu,paste,fullscreen,nonbreaking,xhtmlxtras,visualchars,media";
-$c['tinymce_custom_buttons1'] = "undo,redo,selectall,separator,pastetext,pasteword,separator,search,replace,separator,nonbreaking,hr,charmap,separator,image,link,unlink,anchor,media,separator,cleanup,removeformat,separator,fullscreen,print,code,help";
-$c['tinymce_custom_buttons2'] = "bold,italic,underline,strikethrough,sub,sup,separator,bullist,numlist,outdent,indent,separator,justifyleft,justifycenter,justifyright,justifyfull,separator,styleselect,formatselect,separator,styleprops";
-$c['tree_show_protected'] = "0";
-$c['rss_url_news'] = "http://feeds.feedburner.com/modx-announce";
-$c['rss_url_security'] = "http://feeds.feedburner.com/modxsecurity";
-$c['validate_referer'] = "1";
-$c['datepicker_offset'] = "-10";
-$c['xhtml_urls'] = "1";
-$c['allow_duplicate_alias'] = "0";
-$c['automatic_alias'] = "1";
-$c['datetime_format'] = "dd-mm-YYYY";
-$c['site_id'] = "5c30fc303bb07";
-$c['site_unavailable_page'] = "311";
-$c['reload_site_unavailable'] = "";
-$c['siteunavailable_message_default'] = "The site is currently unavailable.";
-$c['reload_captcha_words'] = "";
-$c['captcha_words_default'] = "MODx,Access,Better,BitCode,Chunk,Cache,Desc,Design,Excell,Enjoy,URLs,TechView,Gerald,Griff,Humphrey,Holiday,Intel,Integration,Joystick,Join(),Oscope,Genetic,Light,Likeness,Marit,Maaike,Niche,Netherlands,Ordinance,Oscillo,Parser,Phusion,Query,Question,Regalia,Righteous,Snippet,Sentinel,Template,Thespian,Unity,Enterprise,Verily,Tattoo,Veri,Website,WideWeb,Yap,Yellow,Zebra,Zygote";
-$c['reload_emailsubject'] = "";
-$c['emailsubject_default'] = "Your login details";
-$c['reload_signupemail_message'] = "";
-$c['signupemail_message'] = "Hello [+uid+] \r\n\r\nHere are your login details for [+sname+] Content Manager:\r\n\r\nUsername: [+uid+]\r\nPassword: [+pwd+]\r\n\r\nOnce you log into the Content Manager ([+surl+]), you can change your password.\r\n\r\nRegards,\r\nSite Administrator";
-$c['system_email_signup_default'] = "Hello [+uid+] \r\n\r\nHere are your login details for [+sname+] Content Manager:\r\n\r\nUsername: [+uid+]\r\nPassword: [+pwd+]\r\n\r\nOnce you log into the Content Manager ([+surl+]), you can change your password.\r\n\r\nRegards,\r\nSite Administrator";
-$c['reload_websignupemail_message'] = "";
-$c['websignupemail_message'] = "Hello [+uid+]\r\n\r\nHere are your login details for [+sname+]:\r\n\r\nUsername: [+uid+]\r\nPassword: [+pwd+]\r\n\r\nOnce you log into [+sname+] ([+surl+]), you can change your password.\r\n\r\nRegards,\r\nSite Administrator";
-$c['system_email_websignup_default'] = "Hello [+uid+]\r\n\r\nHere are your login details for [+sname+]:\r\n\r\nUsername: [+uid+]\r\nPassword: [+pwd+]\r\n\r\nOnce you log into [+sname+] ([+surl+]), you can change your password.\r\n\r\nRegards,\r\nSite Administrator";
-$c['reload_system_email_webreminder_message'] = "";
-$c['webpwdreminder_message'] = "Hello [+uid+]\r\n\r\nTo activate your new password click the following link:\r\n\r\n[+surl+]\r\n\r\nIf successful you can use the following password to login:\r\n\r\nPassword:[+pwd+]\r\n\r\nIf you did not request this email then please ignore it.\r\n\r\nRegards,\r\nSite Administrator";
-$c['system_email_webreminder_default'] = "Hello [+uid+]\r\n\r\nTo activate your new password click the following link:\r\n\r\n[+surl+]\r\n\r\nIf successful you can use the following password to login:\r\n\r\nPassword:[+pwd+]\r\n\r\nIf you did not request this email then please ignore it.\r\n\r\nRegards,\r\nSite Administrator";
-$c['rb_webuser'] = "0";
-$c['tinymce_custom_buttons3'] = "";
-$c['tinymce_custom_buttons4'] = "";
-$c['tinymce_css_selectors'] = "";
-$c['warning_visibility'] = "1";
-$c['remember_last_tab'] = "0";
-$c['tree_page_click'] = "3";
-$c['auto_template_logic'] = "system";
-$c['enable_bindings'] = "1";
-$this->aliasListing = array();
-$a = &$this->aliasListing;
-$d = &$this->documentListing;
-$m = &$this->documentMap;
-$d['pgnews'] = 6;
-$a[6] = array('id' => 6, 'alias' => 'pgnews', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '6');
-$d['pgmagazines'] = 8;
-$a[8] = array('id' => 8, 'alias' => 'pgmagazines', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '8');
-$d['31'] = 31;
-$a[31] = array('id' => 31, 'alias' => '31', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '31');
-$d['pgkunst'] = 1;
-$a[1] = array('id' => 1, 'alias' => 'pgkunst', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '1');
-$d['pglitra'] = 9;
-$a[9] = array('id' => 9, 'alias' => 'pglitra', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '9');
-$d['pgmusic'] = 7;
-$a[7] = array('id' => 7, 'alias' => 'pgmusic', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '7');
-$d['pgcomix'] = 39;
-$a[39] = array('id' => 39, 'alias' => 'pgcomix', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '39');
-$d['40'] = 40;
-$a[40] = array('id' => 40, 'alias' => '40', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '40');
-$d['pgdopros'] = 41;
-$a[41] = array('id' => 41, 'alias' => 'pgdopros', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '41');
-$d['pgarchive'] = 42;
-$a[42] = array('id' => 42, 'alias' => 'pgarchive', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '42');
-$d['пг-почта'] = 43;
-$a[43] = array('id' => 43, 'alias' => 'пг-почта', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '43');
-$d['tagged'] = 44;
-$a[44] = array('id' => 44, 'alias' => 'tagged', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '44');
-$d['search_res'] = 78;
-$a[78] = array('id' => 78, 'alias' => 'search_res', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '78');
-$d['220'] = 220;
-$a[220] = array('id' => 220, 'alias' => '220', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '220');
-$d['pg_rss'] = 301;
-$a[301] = array('id' => 301, 'alias' => 'pg_rss', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '301');
-$d['sitemap.xml'] = 309;
-$a[309] = array('id' => 309, 'alias' => 'sitemap.xml', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '309');
-$d['1'] = 310;
-$a[310] = array('id' => 310, 'alias' => '1', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '310');
-$d['404'] = 311;
-$a[311] = array('id' => 311, 'alias' => '404', 'path' => '', 'parent' => 0);
-$m[] = array('0' => '311');
-$d['exhibitions'] = 2;
-$a[2] = array('id' => 2, 'alias' => 'exhibitions', 'path' => '', 'parent' => 1);
-$m[] = array('1' => '2');
-$d['postcards'] = 3;
-$a[3] = array('id' => 3, 'alias' => 'postcards', 'path' => '', 'parent' => 1);
-$m[] = array('1' => '3');
-$d['presents'] = 14;
-$a[14] = array('id' => 14, 'alias' => 'presents', 'path' => '', 'parent' => 1);
-$m[] = array('1' => '14');
-$d['theend'] = 49;
-$a[49] = array('id' => 49, 'alias' => 'theend', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '49');
-$d['clishe'] = 297;
-$a[297] = array('id' => 297, 'alias' => 'clishe', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '297');
-$d['somali'] = 4;
-$a[4] = array('id' => 4, 'alias' => 'somali', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '4');
-$d['libcom'] = 5;
-$a[5] = array('id' => 5, 'alias' => 'libcom', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '5');
-$d['purge'] = 79;
-$a[79] = array('id' => 79, 'alias' => 'purge', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '79');
-$d['gods'] = 80;
-$a[80] = array('id' => 80, 'alias' => 'gods', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '80');
-$d['accident'] = 81;
-$a[81] = array('id' => 81, 'alias' => 'accident', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '81');
-$d['outside'] = 82;
-$a[82] = array('id' => 82, 'alias' => 'outside', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '82');
-$d['journey'] = 83;
-$a[83] = array('id' => 83, 'alias' => 'journey', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '83');
-$d['forbiden'] = 84;
-$a[84] = array('id' => 84, 'alias' => 'forbiden', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '84');
-$d['glory'] = 85;
-$a[85] = array('id' => 85, 'alias' => 'glory', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '85');
-$d['camomile'] = 86;
-$a[86] = array('id' => 86, 'alias' => 'camomile', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '86');
-$d['muse'] = 87;
-$a[87] = array('id' => 87, 'alias' => 'muse', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '87');
-$d['bro'] = 88;
-$a[88] = array('id' => 88, 'alias' => 'bro', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '88');
-$d['muromez'] = 89;
-$a[89] = array('id' => 89, 'alias' => 'muromez', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '89');
-$d['kavkaz'] = 90;
-$a[90] = array('id' => 90, 'alias' => 'kavkaz', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '90');
-$d['cells'] = 91;
-$a[91] = array('id' => 91, 'alias' => 'cells', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '91');
-$d['undo'] = 92;
-$a[92] = array('id' => 92, 'alias' => 'undo', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '92');
-$d['love'] = 93;
-$a[93] = array('id' => 93, 'alias' => 'love', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '93');
-$d['have'] = 94;
-$a[94] = array('id' => 94, 'alias' => 'have', 'path' => '', 'parent' => 2);
-$m[] = array('2' => '94');
-$d['animals'] = 45;
-$a[45] = array('id' => 45, 'alias' => 'animals', 'path' => '', 'parent' => 3);
-$m[] = array('3' => '45');
-$d['women'] = 46;
-$a[46] = array('id' => 46, 'alias' => 'women', 'path' => '', 'parent' => 3);
-$m[] = array('3' => '46');
-$d['golospg'] = 47;
-$a[47] = array('id' => 47, 'alias' => 'golospg', 'path' => '', 'parent' => 3);
-$m[] = array('3' => '47');
-$d['anrchogirl'] = 52;
-$a[52] = array('id' => 52, 'alias' => 'anrchogirl', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '52');
-$d['almanach'] = 53;
-$a[53] = array('id' => 53, 'alias' => 'almanach', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '53');
-$d['somali'] = 54;
-$a[54] = array('id' => 54, 'alias' => 'somali', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '54');
-$d['agenda'] = 55;
-$a[55] = array('id' => 55, 'alias' => 'agenda', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '55');
-$d['presentation'] = 56;
-$a[56] = array('id' => 56, 'alias' => 'presentation', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '56');
-$d['avtonom'] = 57;
-$a[57] = array('id' => 57, 'alias' => 'avtonom', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '57');
-$d['critical'] = 167;
-$a[167] = array('id' => 167, 'alias' => 'critical', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '167');
-$d['rma'] = 168;
-$a[168] = array('id' => 168, 'alias' => 'rma', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '168');
-$d['vamp'] = 169;
-$a[169] = array('id' => 169, 'alias' => 'vamp', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '169');
-$d['crisis'] = 170;
-$a[170] = array('id' => 170, 'alias' => 'crisis', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '170');
-$d['georgia'] = 171;
-$a[171] = array('id' => 171, 'alias' => 'georgia', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '171');
-$d['off'] = 172;
-$a[172] = array('id' => 172, 'alias' => 'off', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '172');
-$d['vamban'] = 174;
-$a[174] = array('id' => 174, 'alias' => 'vamban', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '174');
-$d['kitovras'] = 175;
-$a[175] = array('id' => 175, 'alias' => 'kitovras', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '175');
-$d['tema'] = 176;
-$a[176] = array('id' => 176, 'alias' => 'tema', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '176');
-$d['dreli'] = 177;
-$a[177] = array('id' => 177, 'alias' => 'dreli', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '177');
-$d['we'] = 178;
-$a[178] = array('id' => 178, 'alias' => 'we', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '178');
-$d['vokzal'] = 179;
-$a[179] = array('id' => 179, 'alias' => 'vokzal', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '179');
-$d['goagil'] = 180;
-$a[180] = array('id' => 180, 'alias' => 'goagil', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '180');
-$d['dead8'] = 181;
-$a[181] = array('id' => 181, 'alias' => 'dead8', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '181');
-$d['media'] = 182;
-$a[182] = array('id' => 182, 'alias' => 'media', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '182');
-$d['voyna_protiv_musora'] = 316;
-$a[316] = array('id' => 316, 'alias' => 'voyna_protiv_musora', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '316');
-$d['murombro'] = 183;
-$a[183] = array('id' => 183, 'alias' => 'murombro', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '183');
-$d['murom'] = 184;
-$a[184] = array('id' => 184, 'alias' => 'murom', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '184');
-$d['sadulaev'] = 185;
-$a[185] = array('id' => 185, 'alias' => 'sadulaev', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '185');
-$d['slabo'] = 186;
-$a[186] = array('id' => 186, 'alias' => 'slabo', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '186');
-$d['politik'] = 187;
-$a[187] = array('id' => 187, 'alias' => 'politik', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '187');
-$d['zamorochka'] = 188;
-$a[188] = array('id' => 188, 'alias' => 'zamorochka', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '188');
-$d['eburg'] = 189;
-$a[189] = array('id' => 189, 'alias' => 'eburg', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '189');
-$d['rp'] = 191;
-$a[191] = array('id' => 191, 'alias' => 'rp', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '191');
-$d['dp'] = 192;
-$a[192] = array('id' => 192, 'alias' => 'dp', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '192');
-$d['folly'] = 193;
-$a[193] = array('id' => 193, 'alias' => 'folly', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '193');
-$d['lkn'] = 194;
-$a[194] = array('id' => 194, 'alias' => 'lkn', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '194');
-$d['lazy'] = 195;
-$a[195] = array('id' => 195, 'alias' => 'lazy', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '195');
-$d['slam'] = 196;
-$a[196] = array('id' => 196, 'alias' => 'slam', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '196');
-$d['jail'] = 198;
-$a[198] = array('id' => 198, 'alias' => 'jail', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '198');
-$d['black'] = 199;
-$a[199] = array('id' => 199, 'alias' => 'black', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '199');
-$d['antifa'] = 200;
-$a[200] = array('id' => 200, 'alias' => 'antifa', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '200');
-$d['noborder'] = 201;
-$a[201] = array('id' => 201, 'alias' => 'noborder', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '201');
-$d['prezident'] = 202;
-$a[202] = array('id' => 202, 'alias' => 'prezident', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '202');
-$d['fucktheculture'] = 295;
-$a[295] = array('id' => 295, 'alias' => 'fucktheculture', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '295');
-$d['pizdabol'] = 298;
-$a[298] = array('id' => 298, 'alias' => 'pizdabol', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '298');
-$d['paris'] = 299;
-$a[299] = array('id' => 299, 'alias' => 'paris', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '299');
-$d['said'] = 302;
-$a[302] = array('id' => 302, 'alias' => 'said', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '302');
-$d['chimki'] = 304;
-$a[304] = array('id' => 304, 'alias' => 'chimki', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '304');
-$d['pop'] = 305;
-$a[305] = array('id' => 305, 'alias' => 'pop', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '305');
-$d['bajing'] = 306;
-$a[306] = array('id' => 306, 'alias' => 'bajing', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '306');
-$d['anarchokunst'] = 313;
-$a[313] = array('id' => 313, 'alias' => 'anarchokunst', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '313');
-$d['voina'] = 315;
-$a[315] = array('id' => 315, 'alias' => 'voina', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '315');
-$d['razgovor'] = 318;
-$a[318] = array('id' => 318, 'alias' => 'razgovor', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '318');
-$d['malyshi'] = 321;
-$a[321] = array('id' => 321, 'alias' => 'malyshi', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '321');
-$d['beer'] = 325;
-$a[325] = array('id' => 325, 'alias' => 'beer', 'path' => '', 'parent' => 6);
-$m[] = array('6' => '325');
-$d['dveri'] = 32;
-$a[32] = array('id' => 32, 'alias' => 'dveri', 'path' => '', 'parent' => 7);
-$m[] = array('7' => '32');
-$d['granata'] = 33;
-$a[33] = array('id' => 33, 'alias' => 'granata', 'path' => '', 'parent' => 7);
-$m[] = array('7' => '33');
-$d['ktrance'] = 34;
-$a[34] = array('id' => 34, 'alias' => 'ktrance', 'path' => '', 'parent' => 7);
-$m[] = array('7' => '34');
-$d['presents'] = 35;
-$a[35] = array('id' => 35, 'alias' => 'presents', 'path' => '', 'parent' => 7);
-$m[] = array('7' => '35');
-$d['magpg'] = 10;
-$a[10] = array('id' => 10, 'alias' => 'magpg', 'path' => '', 'parent' => 8);
-$m[] = array('8' => '10');
-$d['al-manach'] = 11;
-$a[11] = array('id' => 11, 'alias' => 'al-manach', 'path' => '', 'parent' => 8);
-$m[] = array('8' => '11');
-$d['almanach'] = 12;
-$a[12] = array('id' => 12, 'alias' => 'almanach', 'path' => '', 'parent' => 8);
-$m[] = array('8' => '12');
-$d['folly'] = 13;
-$a[13] = array('id' => 13, 'alias' => 'folly', 'path' => '', 'parent' => 8);
-$m[] = array('8' => '13');
-$d['pizdi'] = 21;
-$a[21] = array('id' => 21, 'alias' => 'pizdi', 'path' => '', 'parent' => 9);
-$m[] = array('9' => '21');
-$d['dinozavr'] = 324;
-$a[324] = array('id' => 324, 'alias' => 'dinozavr', 'path' => '', 'parent' => 9);
-$m[] = array('9' => '324');
-$d['tuva'] = 22;
-$a[22] = array('id' => 22, 'alias' => 'tuva', 'path' => '', 'parent' => 9);
-$m[] = array('9' => '22');
-$d['anochin'] = 23;
-$a[23] = array('id' => 23, 'alias' => 'anochin', 'path' => '', 'parent' => 9);
-$m[] = array('9' => '23');
-$d['poems'] = 24;
-$a[24] = array('id' => 24, 'alias' => 'poems', 'path' => '', 'parent' => 9);
-$m[] = array('9' => '24');
-$d['presents'] = 25;
-$a[25] = array('id' => 25, 'alias' => 'presents', 'path' => '', 'parent' => 9);
-$m[] = array('9' => '25');
-$d['intro'] = 58;
-$a[58] = array('id' => 58, 'alias' => 'intro', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '58');
-$d['zines'] = 59;
-$a[59] = array('id' => 59, 'alias' => 'zines', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '59');
-$d['musica'] = 60;
-$a[60] = array('id' => 60, 'alias' => 'musica', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '60');
-$d['movie'] = 61;
-$a[61] = array('id' => 61, 'alias' => 'movie', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '61');
-$d['bugs'] = 62;
-$a[62] = array('id' => 62, 'alias' => 'bugs', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '62');
-$d['cards'] = 63;
-$a[63] = array('id' => 63, 'alias' => 'cards', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '63');
-$d['stamps'] = 64;
-$a[64] = array('id' => 64, 'alias' => 'stamps', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '64');
-$d['pelevin'] = 65;
-$a[65] = array('id' => 65, 'alias' => 'pelevin', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '65');
-$d['nodj'] = 66;
-$a[66] = array('id' => 66, 'alias' => 'nodj', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '66');
-$d['derrida'] = 67;
-$a[67] = array('id' => 67, 'alias' => 'derrida', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '67');
-$d['minsk'] = 68;
-$a[68] = array('id' => 68, 'alias' => 'minsk', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '68');
-$d['69'] = 69;
-$a[69] = array('id' => 69, 'alias' => '69', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '69');
-$d['fenso'] = 70;
-$a[70] = array('id' => 70, 'alias' => 'fenso', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '70');
-$d['grinberg'] = 71;
-$a[71] = array('id' => 71, 'alias' => 'grinberg', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '71');
-$d['72'] = 72;
-$a[72] = array('id' => 72, 'alias' => '72', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '72');
-$d['73'] = 73;
-$a[73] = array('id' => 73, 'alias' => '73', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '73');
-$d['boomshanka'] = 74;
-$a[74] = array('id' => 74, 'alias' => 'boomshanka', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '74');
-$d['ad'] = 76;
-$a[76] = array('id' => 76, 'alias' => 'ad', 'path' => '', 'parent' => 10);
-$m[] = array('10' => '76');
-$d['circumcision'] = 117;
-$a[117] = array('id' => 117, 'alias' => 'circumcision', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '117');
-$d['pizdi'] = 118;
-$a[118] = array('id' => 118, 'alias' => 'pizdi', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '118');
-$d['imam'] = 119;
-$a[119] = array('id' => 119, 'alias' => 'imam', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '119');
-$d['investigations'] = 125;
-$a[125] = array('id' => 125, 'alias' => 'investigations', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '125');
-$d['heroes'] = 120;
-$a[120] = array('id' => 120, 'alias' => 'heroes', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '120');
-$d['fashion'] = 133;
-$a[133] = array('id' => 133, 'alias' => 'fashion', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '133');
-$d['pgkunst'] = 135;
-$a[135] = array('id' => 135, 'alias' => 'pgkunst', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '135');
-$d['travel'] = 140;
-$a[140] = array('id' => 140, 'alias' => 'travel', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '140');
-$d['sport'] = 142;
-$a[142] = array('id' => 142, 'alias' => 'sport', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '142');
-$d['classics'] = 144;
-$a[144] = array('id' => 144, 'alias' => 'classics', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '144');
-$d['udar'] = 149;
-$a[149] = array('id' => 149, 'alias' => 'udar', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '149');
-$d['porno'] = 154;
-$a[154] = array('id' => 154, 'alias' => 'porno', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '154');
-$d['insider'] = 156;
-$a[156] = array('id' => 156, 'alias' => 'insider', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '156');
-$d['ad'] = 158;
-$a[158] = array('id' => 158, 'alias' => 'ad', 'path' => '', 'parent' => 11);
-$m[] = array('11' => '158');
-$d['manifest'] = 211;
-$a[211] = array('id' => 211, 'alias' => 'manifest', 'path' => '', 'parent' => 12);
-$m[] = array('12' => '211');
-$d['talk'] = 216;
-$a[216] = array('id' => 216, 'alias' => 'talk', 'path' => '', 'parent' => 12);
-$m[] = array('12' => '216');
-$d['songs'] = 218;
-$a[218] = array('id' => 218, 'alias' => 'songs', 'path' => '', 'parent' => 12);
-$m[] = array('12' => '218');
-$d['narration'] = 221;
-$a[221] = array('id' => 221, 'alias' => 'narration', 'path' => '', 'parent' => 12);
-$m[] = array('12' => '221');
-$d['stories'] = 227;
-$a[227] = array('id' => 227, 'alias' => 'stories', 'path' => '', 'parent' => 12);
-$m[] = array('12' => '227');
-$d['project'] = 233;
-$a[233] = array('id' => 233, 'alias' => 'project', 'path' => '', 'parent' => 12);
-$m[] = array('12' => '233');
-$d['bonus'] = 239;
-$a[239] = array('id' => 239, 'alias' => 'bonus', 'path' => '', 'parent' => 12);
-$m[] = array('12' => '239');
-$d['242'] = 242;
-$a[242] = array('id' => 242, 'alias' => '242', 'path' => '', 'parent' => 12);
-$m[] = array('12' => '242');
-$d['ganja'] = 269;
-$a[269] = array('id' => 269, 'alias' => 'ganja', 'path' => '', 'parent' => 13);
-$m[] = array('13' => '269');
-$d['porno'] = 271;
-$a[271] = array('id' => 271, 'alias' => 'porno', 'path' => '', 'parent' => 13);
-$m[] = array('13' => '271');
-$d['poster'] = 273;
-$a[273] = array('id' => 273, 'alias' => 'poster', 'path' => '', 'parent' => 13);
-$m[] = array('13' => '273');
-$d['history'] = 275;
-$a[275] = array('id' => 275, 'alias' => 'history', 'path' => '', 'parent' => 13);
-$m[] = array('13' => '275');
-$d['trip'] = 277;
-$a[277] = array('id' => 277, 'alias' => 'trip', 'path' => '', 'parent' => 13);
-$m[] = array('13' => '277');
-$d['reader'] = 279;
-$a[279] = array('id' => 279, 'alias' => 'reader', 'path' => '', 'parent' => 13);
-$m[] = array('13' => '279');
-$d['postcards'] = 281;
-$a[281] = array('id' => 281, 'alias' => 'postcards', 'path' => '', 'parent' => 13);
-$m[] = array('13' => '281');
-$d['bonus'] = 284;
-$a[284] = array('id' => 284, 'alias' => 'bonus', 'path' => '', 'parent' => 13);
-$m[] = array('13' => '284');
-$d['chernyak'] = 15;
-$a[15] = array('id' => 15, 'alias' => 'chernyak', 'path' => '', 'parent' => 14);
-$m[] = array('14' => '15');
-$d['aksenov'] = 16;
-$a[16] = array('id' => 16, 'alias' => 'aksenov', 'path' => '', 'parent' => 14);
-$m[] = array('14' => '16');
-$d['rostan'] = 17;
-$a[17] = array('id' => 17, 'alias' => 'rostan', 'path' => '', 'parent' => 14);
-$m[] = array('14' => '17');
-$d['razum'] = 18;
-$a[18] = array('id' => 18, 'alias' => 'razum', 'path' => '', 'parent' => 14);
-$m[] = array('14' => '18');
-$d['19'] = 19;
-$a[19] = array('id' => 19, 'alias' => '19', 'path' => '', 'parent' => 14);
-$m[] = array('14' => '19');
-$d['20'] = 20;
-$a[20] = array('id' => 20, 'alias' => '20', 'path' => '', 'parent' => 14);
-$m[] = array('14' => '20');
-$d['vovan'] = 319;
-$a[319] = array('id' => 319, 'alias' => 'vovan', 'path' => '', 'parent' => 14);
-$m[] = array('14' => '319');
-$d['frontheroes'] = 249;
-$a[249] = array('id' => 249, 'alias' => 'frontheroes', 'path' => '', 'parent' => 21);
-$m[] = array('21' => '249');
-$d['dat-pizdi'] = 250;
-$a[250] = array('id' => 250, 'alias' => 'dat-pizdi', 'path' => '', 'parent' => 21);
-$m[] = array('21' => '250');
-$d['russia'] = 251;
-$a[251] = array('id' => 251, 'alias' => 'russia', 'path' => '', 'parent' => 21);
-$m[] = array('21' => '251');
-$d['mails'] = 252;
-$a[252] = array('id' => 252, 'alias' => 'mails', 'path' => '', 'parent' => 21);
-$m[] = array('21' => '252');
-$d['zayavi'] = 253;
-$a[253] = array('id' => 253, 'alias' => 'zayavi', 'path' => '', 'parent' => 21);
-$m[] = array('21' => '253');
-$d['england'] = 254;
-$a[254] = array('id' => 254, 'alias' => 'england', 'path' => '', 'parent' => 21);
-$m[] = array('21' => '254');
-$d['england1'] = 255;
-$a[255] = array('id' => 255, 'alias' => 'england1', 'path' => '', 'parent' => 21);
-$m[] = array('21' => '255');
-$d['epos'] = 256;
-$a[256] = array('id' => 256, 'alias' => 'epos', 'path' => '', 'parent' => 22);
-$m[] = array('22' => '256');
-$d['report'] = 257;
-$a[257] = array('id' => 257, 'alias' => 'report', 'path' => '', 'parent' => 22);
-$m[] = array('22' => '257');
-$d['galuzinoz'] = 258;
-$a[258] = array('id' => 258, 'alias' => 'galuzinoz', 'path' => '', 'parent' => 22);
-$m[] = array('22' => '258');
-$d['eros'] = 259;
-$a[259] = array('id' => 259, 'alias' => 'eros', 'path' => '', 'parent' => 22);
-$m[] = array('22' => '259');
-$d['tuvafoto'] = 260;
-$a[260] = array('id' => 260, 'alias' => 'tuvafoto', 'path' => '', 'parent' => 22);
-$m[] = array('22' => '260');
-$d['kids'] = 265;
-$a[265] = array('id' => 265, 'alias' => 'kids', 'path' => '', 'parent' => 23);
-$m[] = array('23' => '265');
-$d['dad'] = 267;
-$a[267] = array('id' => 267, 'alias' => 'dad', 'path' => '', 'parent' => 23);
-$m[] = array('23' => '267');
-$d['dacha'] = 268;
-$a[268] = array('id' => 268, 'alias' => 'dacha', 'path' => '', 'parent' => 23);
-$m[] = array('23' => '268');
-$d['26'] = 26;
-$a[26] = array('id' => 26, 'alias' => '26', 'path' => '', 'parent' => 25);
-$m[] = array('25' => '26');
-$d['27'] = 27;
-$a[27] = array('id' => 27, 'alias' => '27', 'path' => '', 'parent' => 25);
-$m[] = array('25' => '27');
-$d['28'] = 28;
-$a[28] = array('id' => 28, 'alias' => '28', 'path' => '', 'parent' => 25);
-$m[] = array('25' => '28');
-$d['сергей-пипуркин'] = 29;
-$a[29] = array('id' => 29, 'alias' => 'сергей-пипуркин', 'path' => '', 'parent' => 25);
-$m[] = array('25' => '29');
-$d['95'] = 95;
-$a[95] = array('id' => 95, 'alias' => '95', 'path' => '', 'parent' => 25);
-$m[] = array('25' => '95');
-$d['96'] = 96;
-$a[96] = array('id' => 96, 'alias' => '96', 'path' => '', 'parent' => 25);
-$m[] = array('25' => '96');
-$d['савелий-гринберг'] = 30;
-$a[30] = array('id' => 30, 'alias' => 'савелий-гринберг', 'path' => '', 'parent' => 25);
-$m[] = array('25' => '30');
-$d['36'] = 36;
-$a[36] = array('id' => 36, 'alias' => '36', 'path' => '', 'parent' => 35);
-$m[] = array('35' => '36');
-$d['mono'] = 37;
-$a[37] = array('id' => 37, 'alias' => 'mono', 'path' => '', 'parent' => 35);
-$m[] = array('35' => '37');
-$d['marksheider'] = 38;
-$a[38] = array('id' => 38, 'alias' => 'marksheider', 'path' => '', 'parent' => 35);
-$m[] = array('35' => '38');
-$d['mutantoff'] = 50;
-$a[50] = array('id' => 50, 'alias' => 'mutantoff', 'path' => '', 'parent' => 35);
-$m[] = array('35' => '50');
-$d['intro'] = 286;
-$a[286] = array('id' => 286, 'alias' => 'intro', 'path' => '', 'parent' => 39);
-$m[] = array('39' => '286');
-$d['walk'] = 287;
-$a[287] = array('id' => 287, 'alias' => 'walk', 'path' => '', 'parent' => 39);
-$m[] = array('39' => '287');
-$d['power'] = 288;
-$a[288] = array('id' => 288, 'alias' => 'power', 'path' => '', 'parent' => 39);
-$m[] = array('39' => '288');
-$d['tale'] = 289;
-$a[289] = array('id' => 289, 'alias' => 'tale', 'path' => '', 'parent' => 39);
-$m[] = array('39' => '289');
-$d['dp'] = 97;
-$a[97] = array('id' => 97, 'alias' => 'dp', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '97');
-$d['ustuu'] = 98;
-$a[98] = array('id' => 98, 'alias' => 'ustuu', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '98');
-$d['99'] = 99;
-$a[99] = array('id' => 99, 'alias' => '99', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '99');
-$d['tarakan'] = 100;
-$a[100] = array('id' => 100, 'alias' => 'tarakan', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '100');
-$d['oneyear'] = 101;
-$a[101] = array('id' => 101, 'alias' => 'oneyear', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '101');
-$d['planeta'] = 102;
-$a[102] = array('id' => 102, 'alias' => 'planeta', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '102');
-$d['ppk2'] = 103;
-$a[103] = array('id' => 103, 'alias' => 'ppk2', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '103');
-$d['gerakl'] = 104;
-$a[104] = array('id' => 104, 'alias' => 'gerakl', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '104');
-$d['future'] = 105;
-$a[105] = array('id' => 105, 'alias' => 'future', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '105');
-$d['govno'] = 109;
-$a[109] = array('id' => 109, 'alias' => 'govno', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '109');
-$d['presentation'] = 110;
-$a[110] = array('id' => 110, 'alias' => 'presentation', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '110');
-$d['ppk1'] = 111;
-$a[111] = array('id' => 111, 'alias' => 'ppk1', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '111');
-$d['memory'] = 112;
-$a[112] = array('id' => 112, 'alias' => 'memory', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '112');
-$d['generation'] = 115;
-$a[115] = array('id' => 115, 'alias' => 'generation', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '115');
-$d['recommend'] = 116;
-$a[116] = array('id' => 116, 'alias' => 'recommend', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '116');
-$d['rapcont'] = 294;
-$a[294] = array('id' => 294, 'alias' => 'rapcont', 'path' => '', 'parent' => 42);
-$m[] = array('42' => '294');
-$d['zerzan'] = 203;
-$a[203] = array('id' => 203, 'alias' => 'zerzan', 'path' => '', 'parent' => 55);
-$m[] = array('55' => '203');
-$d['erofeev'] = 204;
-$a[204] = array('id' => 204, 'alias' => 'erofeev', 'path' => '', 'parent' => 55);
-$m[] = array('55' => '204');
-$d['tlostanova'] = 205;
-$a[205] = array('id' => 205, 'alias' => 'tlostanova', 'path' => '', 'parent' => 55);
-$m[] = array('55' => '205');
-$d['xaritonov'] = 206;
-$a[206] = array('id' => 206, 'alias' => 'xaritonov', 'path' => '', 'parent' => 55);
-$m[] = array('55' => '206');
-$d['77'] = 77;
-$a[77] = array('id' => 77, 'alias' => '77', 'path' => '', 'parent' => 76);
-$m[] = array('76' => '77');
-$d['166'] = 166;
-$a[166] = array('id' => 166, 'alias' => '166', 'path' => '', 'parent' => 76);
-$m[] = array('76' => '166');
-$d['iced'] = 247;
-$a[247] = array('id' => 247, 'alias' => 'iced', 'path' => '', 'parent' => 76);
-$m[] = array('76' => '247');
-$d['248'] = 248;
-$a[248] = array('id' => 248, 'alias' => '248', 'path' => '', 'parent' => 76);
-$m[] = array('76' => '248');
-$d['godsvideo'] = 291;
-$a[291] = array('id' => 291, 'alias' => 'godsvideo', 'path' => '', 'parent' => 80);
-$m[] = array('80' => '291');
-$d['im-video'] = 290;
-$a[290] = array('id' => 290, 'alias' => 'im-video', 'path' => '', 'parent' => 89);
-$m[] = array('89' => '290');
-$d['carib'] = 106;
-$a[106] = array('id' => 106, 'alias' => 'carib', 'path' => '', 'parent' => 103);
-$m[] = array('103' => '106');
-$d['positive'] = 107;
-$a[107] = array('id' => 107, 'alias' => 'positive', 'path' => '', 'parent' => 103);
-$m[] = array('103' => '107');
-$d['sorokin'] = 108;
-$a[108] = array('id' => 108, 'alias' => 'sorokin', 'path' => '', 'parent' => 104);
-$m[] = array('104' => '108');
-$d['kings'] = 113;
-$a[113] = array('id' => 113, 'alias' => 'kings', 'path' => '', 'parent' => 111);
-$m[] = array('111' => '113');
-$d['pushkin'] = 114;
-$a[114] = array('id' => 114, 'alias' => 'pushkin', 'path' => '', 'parent' => 111);
-$m[] = array('111' => '114');
-$d['gealizm'] = 121;
-$a[121] = array('id' => 121, 'alias' => 'gealizm', 'path' => '', 'parent' => 120);
-$m[] = array('120' => '121');
-$d['kirill'] = 122;
-$a[122] = array('id' => 122, 'alias' => 'kirill', 'path' => '', 'parent' => 120);
-$m[] = array('120' => '122');
-$d['vovan'] = 123;
-$a[123] = array('id' => 123, 'alias' => 'vovan', 'path' => '', 'parent' => 120);
-$m[] = array('120' => '123');
-$d['barmalei'] = 124;
-$a[124] = array('id' => 124, 'alias' => 'barmalei', 'path' => '', 'parent' => 120);
-$m[] = array('120' => '124');
-$d['mozg'] = 128;
-$a[128] = array('id' => 128, 'alias' => 'mozg', 'path' => '', 'parent' => 120);
-$m[] = array('120' => '128');
-$d['palach'] = 129;
-$a[129] = array('id' => 129, 'alias' => 'palach', 'path' => '', 'parent' => 120);
-$m[] = array('120' => '129');
-$d['dimdim'] = 130;
-$a[130] = array('id' => 130, 'alias' => 'dimdim', 'path' => '', 'parent' => 120);
-$m[] = array('120' => '130');
-$d['bar'] = 131;
-$a[131] = array('id' => 131, 'alias' => 'bar', 'path' => '', 'parent' => 120);
-$m[] = array('120' => '131');
-$d['terrorist'] = 132;
-$a[132] = array('id' => 132, 'alias' => 'terrorist', 'path' => '', 'parent' => 120);
-$m[] = array('120' => '132');
-$d['end'] = 126;
-$a[126] = array('id' => 126, 'alias' => 'end', 'path' => '', 'parent' => 125);
-$m[] = array('125' => '126');
-$d['jews'] = 127;
-$a[127] = array('id' => 127, 'alias' => 'jews', 'path' => '', 'parent' => 125);
-$m[] = array('125' => '127');
-$d['advise'] = 134;
-$a[134] = array('id' => 134, 'alias' => 'advise', 'path' => '', 'parent' => 133);
-$m[] = array('133' => '134');
-$d['garages'] = 136;
-$a[136] = array('id' => 136, 'alias' => 'garages', 'path' => '', 'parent' => 135);
-$m[] = array('135' => '136');
-$d['pioneers'] = 137;
-$a[137] = array('id' => 137, 'alias' => 'pioneers', 'path' => '', 'parent' => 135);
-$m[] = array('135' => '137');
-$d['enemy'] = 138;
-$a[138] = array('id' => 138, 'alias' => 'enemy', 'path' => '', 'parent' => 135);
-$m[] = array('135' => '138');
-$d['tartu'] = 139;
-$a[139] = array('id' => 139, 'alias' => 'tartu', 'path' => '', 'parent' => 135);
-$m[] = array('135' => '139');
-$d['piramids'] = 141;
-$a[141] = array('id' => 141, 'alias' => 'piramids', 'path' => '', 'parent' => 140);
-$m[] = array('140' => '141');
-$d['birdie'] = 143;
-$a[143] = array('id' => 143, 'alias' => 'birdie', 'path' => '', 'parent' => 142);
-$m[] = array('142' => '143');
-$d['sapgir'] = 145;
-$a[145] = array('id' => 145, 'alias' => 'sapgir', 'path' => '', 'parent' => 144);
-$m[] = array('144' => '145');
-$d['raki'] = 146;
-$a[146] = array('id' => 146, 'alias' => 'raki', 'path' => '', 'parent' => 144);
-$m[] = array('144' => '146');
-$d['pepperstein'] = 147;
-$a[147] = array('id' => 147, 'alias' => 'pepperstein', 'path' => '', 'parent' => 144);
-$m[] = array('144' => '147');
-$d['pipurkin'] = 148;
-$a[148] = array('id' => 148, 'alias' => 'pipurkin', 'path' => '', 'parent' => 144);
-$m[] = array('144' => '148');
-$d['pochki'] = 153;
-$a[153] = array('id' => 153, 'alias' => 'pochki', 'path' => '', 'parent' => 149);
-$m[] = array('149' => '153');
-$d['play'] = 155;
-$a[155] = array('id' => 155, 'alias' => 'play', 'path' => '', 'parent' => 154);
-$m[] = array('154' => '155');
-$d['egg'] = 157;
-$a[157] = array('id' => 157, 'alias' => 'egg', 'path' => '', 'parent' => 156);
-$m[] = array('156' => '157');
-$d['bluesoup'] = 159;
-$a[159] = array('id' => 159, 'alias' => 'bluesoup', 'path' => '', 'parent' => 158);
-$m[] = array('158' => '159');
-$d['tyaga'] = 160;
-$a[160] = array('id' => 160, 'alias' => 'tyaga', 'path' => '', 'parent' => 158);
-$m[] = array('158' => '160');
-$d['osk'] = 161;
-$a[161] = array('id' => 161, 'alias' => 'osk', 'path' => '', 'parent' => 158);
-$m[] = array('158' => '161');
-$d['ok'] = 162;
-$a[162] = array('id' => 162, 'alias' => 'ok', 'path' => '', 'parent' => 158);
-$m[] = array('158' => '162');
-$d['xyz'] = 163;
-$a[163] = array('id' => 163, 'alias' => 'xyz', 'path' => '', 'parent' => 158);
-$m[] = array('158' => '163');
-$d['netslov'] = 164;
-$a[164] = array('id' => 164, 'alias' => 'netslov', 'path' => '', 'parent' => 158);
-$m[] = array('158' => '164');
-$d['belomor'] = 165;
-$a[165] = array('id' => 165, 'alias' => 'belomor', 'path' => '', 'parent' => 158);
-$m[] = array('158' => '165');
-$d['diskurs'] = 207;
-$a[207] = array('id' => 207, 'alias' => 'diskurs', 'path' => '', 'parent' => 167);
-$m[] = array('167' => '207');
-$d['kandvideo'] = 292;
-$a[292] = array('id' => 292, 'alias' => 'kandvideo', 'path' => '', 'parent' => 167);
-$m[] = array('167' => '292');
-$d['off-program-full'] = 173;
-$a[173] = array('id' => 173, 'alias' => 'off-program-full', 'path' => '', 'parent' => 172);
-$m[] = array('172' => '173');
-$d['kitvideo'] = 293;
-$a[293] = array('id' => 293, 'alias' => 'kitvideo', 'path' => '', 'parent' => 175);
-$m[] = array('175' => '293');
-$d['pitekantrop'] = 190;
-$a[190] = array('id' => 190, 'alias' => 'pitekantrop', 'path' => '', 'parent' => 189);
-$m[] = array('189' => '190');
-$d['lkn1'] = 208;
-$a[208] = array('id' => 208, 'alias' => 'lkn1', 'path' => '', 'parent' => 194);
-$m[] = array('194' => '208');
-$d['lkn2'] = 209;
-$a[209] = array('id' => 209, 'alias' => 'lkn2', 'path' => '', 'parent' => 194);
-$m[] = array('194' => '209');
-$d['lkn3'] = 210;
-$a[210] = array('id' => 210, 'alias' => 'lkn3', 'path' => '', 'parent' => 194);
-$m[] = array('194' => '210');
-$d['197'] = 197;
-$a[197] = array('id' => 197, 'alias' => '197', 'path' => '', 'parent' => 196);
-$m[] = array('196' => '197');
-$d['child'] = 212;
-$a[212] = array('id' => 212, 'alias' => 'child', 'path' => '', 'parent' => 211);
-$m[] = array('211' => '212');
-$d['cables'] = 213;
-$a[213] = array('id' => 213, 'alias' => 'cables', 'path' => '', 'parent' => 211);
-$m[] = array('211' => '213');
-$d['miracle'] = 214;
-$a[214] = array('id' => 214, 'alias' => 'miracle', 'path' => '', 'parent' => 211);
-$m[] = array('211' => '214');
-$d['manstrubation'] = 215;
-$a[215] = array('id' => 215, 'alias' => 'manstrubation', 'path' => '', 'parent' => 211);
-$m[] = array('211' => '215');
-$d['todd'] = 217;
-$a[217] = array('id' => 217, 'alias' => 'todd', 'path' => '', 'parent' => 216);
-$m[] = array('216' => '217');
-$d['compilation'] = 219;
-$a[219] = array('id' => 219, 'alias' => 'compilation', 'path' => '', 'parent' => 218);
-$m[] = array('218' => '219');
-$d['hoffman'] = 222;
-$a[222] = array('id' => 222, 'alias' => 'hoffman', 'path' => '', 'parent' => 221);
-$m[] = array('221' => '222');
-$d['bon'] = 223;
-$a[223] = array('id' => 223, 'alias' => 'bon', 'path' => '', 'parent' => 221);
-$m[] = array('221' => '223');
-$d['comittee'] = 224;
-$a[224] = array('id' => 224, 'alias' => 'comittee', 'path' => '', 'parent' => 221);
-$m[] = array('221' => '224');
-$d['burroughs'] = 225;
-$a[225] = array('id' => 225, 'alias' => 'burroughs', 'path' => '', 'parent' => 221);
-$m[] = array('221' => '225');
-$d['ross'] = 226;
-$a[226] = array('id' => 226, 'alias' => 'ross', 'path' => '', 'parent' => 221);
-$m[] = array('221' => '226');
-$d['outcome'] = 228;
-$a[228] = array('id' => 228, 'alias' => 'outcome', 'path' => '', 'parent' => 227);
-$m[] = array('227' => '228');
-$d['avdei'] = 229;
-$a[229] = array('id' => 229, 'alias' => 'avdei', 'path' => '', 'parent' => 227);
-$m[] = array('227' => '229');
-$d['measure'] = 230;
-$a[230] = array('id' => 230, 'alias' => 'measure', 'path' => '', 'parent' => 227);
-$m[] = array('227' => '230');
-$d['machno'] = 231;
-$a[231] = array('id' => 231, 'alias' => 'machno', 'path' => '', 'parent' => 227);
-$m[] = array('227' => '231');
-$d['vagon'] = 232;
-$a[232] = array('id' => 232, 'alias' => 'vagon', 'path' => '', 'parent' => 227);
-$m[] = array('227' => '232');
-$d['david'] = 234;
-$a[234] = array('id' => 234, 'alias' => 'david', 'path' => '', 'parent' => 233);
-$m[] = array('233' => '234');
-$d['romanova'] = 235;
-$a[235] = array('id' => 235, 'alias' => 'romanova', 'path' => '', 'parent' => 233);
-$m[] = array('233' => '235');
-$d['galkina'] = 236;
-$a[236] = array('id' => 236, 'alias' => 'galkina', 'path' => '', 'parent' => 233);
-$m[] = array('233' => '236');
-$d['jir'] = 237;
-$a[237] = array('id' => 237, 'alias' => 'jir', 'path' => '', 'parent' => 233);
-$m[] = array('233' => '237');
-$d['ryaba'] = 238;
-$a[238] = array('id' => 238, 'alias' => 'ryaba', 'path' => '', 'parent' => 233);
-$m[] = array('233' => '238');
-$d['cd'] = 240;
-$a[240] = array('id' => 240, 'alias' => 'cd', 'path' => '', 'parent' => 239);
-$m[] = array('239' => '240');
-$d['243'] = 243;
-$a[243] = array('id' => 243, 'alias' => '243', 'path' => '', 'parent' => 242);
-$m[] = array('242' => '243');
-$d['spliff'] = 270;
-$a[270] = array('id' => 270, 'alias' => 'spliff', 'path' => '', 'parent' => 269);
-$m[] = array('269' => '270');
-$d['mudyankin'] = 272;
-$a[272] = array('id' => 272, 'alias' => 'mudyankin', 'path' => '', 'parent' => 271);
-$m[] = array('271' => '272');
-$d['chuiman'] = 274;
-$a[274] = array('id' => 274, 'alias' => 'chuiman', 'path' => '', 'parent' => 273);
-$m[] = array('273' => '274');
-$d['flat'] = 276;
-$a[276] = array('id' => 276, 'alias' => 'flat', 'path' => '', 'parent' => 275);
-$m[] = array('275' => '276');
-$d['untitled'] = 278;
-$a[278] = array('id' => 278, 'alias' => 'untitled', 'path' => '', 'parent' => 277);
-$m[] = array('277' => '278');
-$d['feed'] = 280;
-$a[280] = array('id' => 280, 'alias' => 'feed', 'path' => '', 'parent' => 279);
-$m[] = array('279' => '280');
-$d['winter'] = 282;
-$a[282] = array('id' => 282, 'alias' => 'winter', 'path' => '', 'parent' => 281);
-$m[] = array('281' => '282');
-$d['hello'] = 283;
-$a[283] = array('id' => 283, 'alias' => 'hello', 'path' => '', 'parent' => 281);
-$m[] = array('281' => '283');
-$d['opera'] = 285;
-$a[285] = array('id' => 285, 'alias' => 'opera', 'path' => '', 'parent' => 284);
-$m[] = array('284' => '285');
-$d['fucktheculturefull'] = 296;
-$a[296] = array('id' => 296, 'alias' => 'fucktheculturefull', 'path' => '', 'parent' => 295);
-$m[] = array('295' => '296');
-$d['onedayinparis'] = 300;
-$a[300] = array('id' => 300, 'alias' => 'onedayinparis', 'path' => '', 'parent' => 299);
-$m[] = array('299' => '300');
-$d['bajing_full'] = 307;
-$a[307] = array('id' => 307, 'alias' => 'bajing_full', 'path' => '', 'parent' => 306);
-$m[] = array('306' => '307');
-$d['anarchokunsttxt'] = 314;
-$a[314] = array('id' => 314, 'alias' => 'anarchokunsttxt', 'path' => '', 'parent' => 313);
-$m[] = array('313' => '314');
-$d['pomozh_zaderzhannym_uchastnikam'] = 323;
-$a[323] = array('id' => 323, 'alias' => 'pomozh_zaderzhannym_uchastnikam', 'path' => '', 'parent' => 315);
-$m[] = array('315' => '323');
-$d['voyna_protiv_musora_long'] = 317;
-$a[317] = array('id' => 317, 'alias' => 'voyna_protiv_musora_long', 'path' => '', 'parent' => 316);
-$m[] = array('316' => '317');
-$d['hvatit-valyat_malysha'] = 322;
-$a[322] = array('id' => 322, 'alias' => 'hvatit-valyat_malysha', 'path' => '', 'parent' => 321);
-$m[] = array('321' => '322');
-$c = &$this->contentTypes;
-$c[301] = 'text/xml';
-$c[309] = 'text/xml';
-$c = &$this->chunkCache;
-$c['WebLoginSidebar'] = '<!-- #declare:separator <hr> -->
+$c=&$this->config;$c['manager_theme']="MODxRE2";$c['settings_version']="";$c['show_meta']="0";$c['server_offset_time']="0";$c['server_protocol']="https";$c['manager_language']="english";$c['modx_charset']="UTF-8";$c['site_name']="Голос ПГ";$c['site_start']="310";$c['error_page']="311";$c['unauthorized_page']="311";$c['site_status']="1";$c['site_unavailable_message']="The site is currently unavailable";$c['track_visitors']="0";$c['resolve_hostnames']="0";$c['top_howmany']="10";$c['default_template']="4";$c['old_template']="4";$c['publish_default']="0";$c['cache_default']="1";$c['search_default']="1";$c['friendly_urls']="0";$c['friendly_url_prefix']="";$c['friendly_url_suffix']="";$c['friendly_alias_urls']="1";$c['use_alias_path']="1";$c['use_udperms']="1";$c['udperms_allowroot']="0";$c['failed_login_attempts']="3";$c['blocked_minutes']="10";$c['use_captcha']="0";$c['captcha_words']="MODx,Access,Better,BitCode,Cache,Desc,Design,Excell,Enjoy,URLs,TechView,Gerald,Griff,Humphrey,Holiday,Intel,Integration,Joystick,Join(),Tattoo,Genetic,Light,Likeness,Marit,Maaike,Niche,Netherlands,Ordinance,Oscillo,Parser,Phusion,Query,Question,Regalia,Righteous,Snippet,Sentinel,Template,Thespian,Unity,Enterprise,Verily,Veri,Website,WideWeb,Yap,Yellow,Zebra,Zygote";$c['emailsender']="katala@localhost";$c['emailsubject']="Your login details";$c['number_of_logs']="100";$c['number_of_messages']="30";$c['number_of_results']="20";$c['use_editor']="0";$c['use_browser']="1";$c['rb_base_dir']="/Applications/XAMPP/xamppfiles/htdocs/pop-grafika/assets/";$c['rb_base_url']="/";$c['which_editor']="TinyMCE";$c['fe_editor_lang']="english";$c['fck_editor_toolbar']="standard";$c['fck_editor_autolang']="0";$c['editor_css_path']="";$c['editor_css_selectors']="";$c['strip_image_paths']="1";$c['upload_images']="bmp,ico,gif,jpeg,jpg,png,psd,tif,tiff";$c['upload_media']="au,avi,mp3,mp4,mpeg,mpg,wav,wmv";$c['upload_flash']="fla,flv,swf";$c['upload_files']="aac,au,avi,css,cache,doc,docx,gz,gzip,htaccess,htm,html,js,mp3,mp4,mpeg,mpg,ods,odp,odt,pdf,ppt,pptx,rar,tar,tgz,txt,wav,wmv,xls,xlsx,xml,z,zip";$c['upload_maxsize']="1048576";$c['new_file_permissions']="0644";$c['new_folder_permissions']="0755";$c['filemanager_path']="/Applications/XAMPP/xamppfiles/htdocs/pop-grafika/";$c['theme_refresher']="";$c['manager_layout']="4";$c['custom_contenttype']="application/rss+xml,application/pdf,application/vnd.ms-word,application/vnd.ms-excel,text/html,text/css,text/xml,text/javascript,text/plain,application/json";$c['auto_menuindex']="1";$c['session.cookie.lifetime']="604800";$c['mail_check_timeperiod']="60";$c['manager_direction']="ltr";$c['tinymce_editor_theme']="editor";$c['tinymce_custom_plugins']="style,advimage,advlink,searchreplace,print,contextmenu,paste,fullscreen,nonbreaking,xhtmlxtras,visualchars,media";$c['tinymce_custom_buttons1']="undo,redo,selectall,separator,pastetext,pasteword,separator,search,replace,separator,nonbreaking,hr,charmap,separator,image,link,unlink,anchor,media,separator,cleanup,removeformat,separator,fullscreen,print,code,help";$c['tinymce_custom_buttons2']="bold,italic,underline,strikethrough,sub,sup,separator,bullist,numlist,outdent,indent,separator,justifyleft,justifycenter,justifyright,justifyfull,separator,styleselect,formatselect,separator,styleprops";$c['tree_show_protected']="0";$c['rss_url_news']="http://feeds.feedburner.com/modx-announce";$c['rss_url_security']="http://feeds.feedburner.com/modxsecurity";$c['validate_referer']="1";$c['datepicker_offset']="-10";$c['xhtml_urls']="1";$c['allow_duplicate_alias']="0";$c['automatic_alias']="1";$c['datetime_format']="dd-mm-YYYY";$c['site_id']="5c3100c984f9f";$c['site_unavailable_page']="311";$c['reload_site_unavailable']="";$c['siteunavailable_message_default']="The site is currently unavailable.";$c['reload_captcha_words']="";$c['captcha_words_default']="MODx,Access,Better,BitCode,Chunk,Cache,Desc,Design,Excell,Enjoy,URLs,TechView,Gerald,Griff,Humphrey,Holiday,Intel,Integration,Joystick,Join(),Oscope,Genetic,Light,Likeness,Marit,Maaike,Niche,Netherlands,Ordinance,Oscillo,Parser,Phusion,Query,Question,Regalia,Righteous,Snippet,Sentinel,Template,Thespian,Unity,Enterprise,Verily,Tattoo,Veri,Website,WideWeb,Yap,Yellow,Zebra,Zygote";$c['reload_emailsubject']="";$c['emailsubject_default']="Your login details";$c['reload_signupemail_message']="";$c['signupemail_message']="Hello [+uid+] \r\n\r\nHere are your login details for [+sname+] Content Manager:\r\n\r\nUsername: [+uid+]\r\nPassword: [+pwd+]\r\n\r\nOnce you log into the Content Manager ([+surl+]), you can change your password.\r\n\r\nRegards,\r\nSite Administrator";$c['system_email_signup_default']="Hello [+uid+] \r\n\r\nHere are your login details for [+sname+] Content Manager:\r\n\r\nUsername: [+uid+]\r\nPassword: [+pwd+]\r\n\r\nOnce you log into the Content Manager ([+surl+]), you can change your password.\r\n\r\nRegards,\r\nSite Administrator";$c['reload_websignupemail_message']="";$c['websignupemail_message']="Hello [+uid+]\r\n\r\nHere are your login details for [+sname+]:\r\n\r\nUsername: [+uid+]\r\nPassword: [+pwd+]\r\n\r\nOnce you log into [+sname+] ([+surl+]), you can change your password.\r\n\r\nRegards,\r\nSite Administrator";$c['system_email_websignup_default']="Hello [+uid+]\r\n\r\nHere are your login details for [+sname+]:\r\n\r\nUsername: [+uid+]\r\nPassword: [+pwd+]\r\n\r\nOnce you log into [+sname+] ([+surl+]), you can change your password.\r\n\r\nRegards,\r\nSite Administrator";$c['reload_system_email_webreminder_message']="";$c['webpwdreminder_message']="Hello [+uid+]\r\n\r\nTo activate your new password click the following link:\r\n\r\n[+surl+]\r\n\r\nIf successful you can use the following password to login:\r\n\r\nPassword:[+pwd+]\r\n\r\nIf you did not request this email then please ignore it.\r\n\r\nRegards,\r\nSite Administrator";$c['system_email_webreminder_default']="Hello [+uid+]\r\n\r\nTo activate your new password click the following link:\r\n\r\n[+surl+]\r\n\r\nIf successful you can use the following password to login:\r\n\r\nPassword:[+pwd+]\r\n\r\nIf you did not request this email then please ignore it.\r\n\r\nRegards,\r\nSite Administrator";$c['rb_webuser']="0";$c['tinymce_custom_buttons3']="";$c['tinymce_custom_buttons4']="";$c['tinymce_css_selectors']="";$c['warning_visibility']="1";$c['remember_last_tab']="0";$c['tree_page_click']="3";$c['auto_template_logic']="system";$c['enable_bindings']="1";$c['cache_type']="1";$this->aliasListing=array();$a=&$this->aliasListing;$d=&$this->documentListing;$m=&$this->documentMap;$d['pgnews'] = 6;$a[6] = array('id' => 6, 'alias' => 'pgnews', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('0' => '6');$d['pgmagazines'] = 8;$a[8] = array('id' => 8, 'alias' => 'pgmagazines', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('0' => '8');$d['31'] = 31;$a[31] = array('id' => 31, 'alias' => '31', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('0' => '31');$d['pgkunst'] = 1;$a[1] = array('id' => 1, 'alias' => 'pgkunst', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('0' => '1');$d['pglitra'] = 9;$a[9] = array('id' => 9, 'alias' => 'pglitra', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('0' => '9');$d['pgmusic'] = 7;$a[7] = array('id' => 7, 'alias' => 'pgmusic', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('0' => '7');$d['pgcomix'] = 39;$a[39] = array('id' => 39, 'alias' => 'pgcomix', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('0' => '39');$d['40'] = 40;$a[40] = array('id' => 40, 'alias' => '40', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('0' => '40');$d['pgdopros'] = 41;$a[41] = array('id' => 41, 'alias' => 'pgdopros', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('0' => '41');$d['pgarchive'] = 42;$a[42] = array('id' => 42, 'alias' => 'pgarchive', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('0' => '42');$d['пг-почта'] = 43;$a[43] = array('id' => 43, 'alias' => 'пг-почта', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('0' => '43');$d['tagged'] = 44;$a[44] = array('id' => 44, 'alias' => 'tagged', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('0' => '44');$d['search_res'] = 78;$a[78] = array('id' => 78, 'alias' => 'search_res', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('0' => '78');$d['220'] = 220;$a[220] = array('id' => 220, 'alias' => '220', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('0' => '220');$d['pg_rss'] = 301;$a[301] = array('id' => 301, 'alias' => 'pg_rss', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('0' => '301');$d['sitemap.xml'] = 309;$a[309] = array('id' => 309, 'alias' => 'sitemap.xml', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('0' => '309');$d['1'] = 310;$a[310] = array('id' => 310, 'alias' => '1', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('0' => '310');$d['404'] = 311;$a[311] = array('id' => 311, 'alias' => '404', 'path' => '', 'parent' => 0, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('0' => '311');$d['exhibitions'] = 2;$a[2] = array('id' => 2, 'alias' => 'exhibitions', 'path' => '', 'parent' => 1, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('1' => '2');$d['postcards'] = 3;$a[3] = array('id' => 3, 'alias' => 'postcards', 'path' => '', 'parent' => 1, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('1' => '3');$d['presents'] = 14;$a[14] = array('id' => 14, 'alias' => 'presents', 'path' => '', 'parent' => 1, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('1' => '14');$d['clishe'] = 297;$a[297] = array('id' => 297, 'alias' => 'clishe', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '297');$d['theend'] = 49;$a[49] = array('id' => 49, 'alias' => 'theend', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '49');$d['somali'] = 4;$a[4] = array('id' => 4, 'alias' => 'somali', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '4');$d['libcom'] = 5;$a[5] = array('id' => 5, 'alias' => 'libcom', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '5');$d['purge'] = 79;$a[79] = array('id' => 79, 'alias' => 'purge', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '79');$d['gods'] = 80;$a[80] = array('id' => 80, 'alias' => 'gods', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('2' => '80');$d['accident'] = 81;$a[81] = array('id' => 81, 'alias' => 'accident', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '81');$d['outside'] = 82;$a[82] = array('id' => 82, 'alias' => 'outside', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '82');$d['journey'] = 83;$a[83] = array('id' => 83, 'alias' => 'journey', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '83');$d['forbiden'] = 84;$a[84] = array('id' => 84, 'alias' => 'forbiden', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '84');$d['glory'] = 85;$a[85] = array('id' => 85, 'alias' => 'glory', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '85');$d['camomile'] = 86;$a[86] = array('id' => 86, 'alias' => 'camomile', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '86');$d['muse'] = 87;$a[87] = array('id' => 87, 'alias' => 'muse', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '87');$d['bro'] = 88;$a[88] = array('id' => 88, 'alias' => 'bro', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '88');$d['muromez'] = 89;$a[89] = array('id' => 89, 'alias' => 'muromez', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('2' => '89');$d['kavkaz'] = 90;$a[90] = array('id' => 90, 'alias' => 'kavkaz', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '90');$d['cells'] = 91;$a[91] = array('id' => 91, 'alias' => 'cells', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '91');$d['undo'] = 92;$a[92] = array('id' => 92, 'alias' => 'undo', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '92');$d['love'] = 93;$a[93] = array('id' => 93, 'alias' => 'love', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '93');$d['have'] = 94;$a[94] = array('id' => 94, 'alias' => 'have', 'path' => '', 'parent' => 2, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('2' => '94');$d['animals'] = 45;$a[45] = array('id' => 45, 'alias' => 'animals', 'path' => '', 'parent' => 3, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('3' => '45');$d['women'] = 46;$a[46] = array('id' => 46, 'alias' => 'women', 'path' => '', 'parent' => 3, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('3' => '46');$d['golospg'] = 47;$a[47] = array('id' => 47, 'alias' => 'golospg', 'path' => '', 'parent' => 3, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('3' => '47');$d['anrchogirl'] = 52;$a[52] = array('id' => 52, 'alias' => 'anrchogirl', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '52');$d['almanach'] = 53;$a[53] = array('id' => 53, 'alias' => 'almanach', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '53');$d['somali'] = 54;$a[54] = array('id' => 54, 'alias' => 'somali', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '54');$d['agenda'] = 55;$a[55] = array('id' => 55, 'alias' => 'agenda', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '55');$d['presentation'] = 56;$a[56] = array('id' => 56, 'alias' => 'presentation', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '56');$d['avtonom'] = 57;$a[57] = array('id' => 57, 'alias' => 'avtonom', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '57');$d['critical'] = 167;$a[167] = array('id' => 167, 'alias' => 'critical', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '167');$d['rma'] = 168;$a[168] = array('id' => 168, 'alias' => 'rma', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '168');$d['vamp'] = 169;$a[169] = array('id' => 169, 'alias' => 'vamp', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '169');$d['crisis'] = 170;$a[170] = array('id' => 170, 'alias' => 'crisis', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '170');$d['georgia'] = 171;$a[171] = array('id' => 171, 'alias' => 'georgia', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '171');$d['off'] = 172;$a[172] = array('id' => 172, 'alias' => 'off', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '172');$d['vamban'] = 174;$a[174] = array('id' => 174, 'alias' => 'vamban', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '174');$d['kitovras'] = 175;$a[175] = array('id' => 175, 'alias' => 'kitovras', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '175');$d['tema'] = 176;$a[176] = array('id' => 176, 'alias' => 'tema', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '176');$d['dreli'] = 177;$a[177] = array('id' => 177, 'alias' => 'dreli', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '177');$d['we'] = 178;$a[178] = array('id' => 178, 'alias' => 'we', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '178');$d['vokzal'] = 179;$a[179] = array('id' => 179, 'alias' => 'vokzal', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '179');$d['goagil'] = 180;$a[180] = array('id' => 180, 'alias' => 'goagil', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '180');$d['dead8'] = 181;$a[181] = array('id' => 181, 'alias' => 'dead8', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '181');$d['voyna_protiv_musora'] = 316;$a[316] = array('id' => 316, 'alias' => 'voyna_protiv_musora', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '316');$d['media'] = 182;$a[182] = array('id' => 182, 'alias' => 'media', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '182');$d['murombro'] = 183;$a[183] = array('id' => 183, 'alias' => 'murombro', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '183');$d['murom'] = 184;$a[184] = array('id' => 184, 'alias' => 'murom', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '184');$d['sadulaev'] = 185;$a[185] = array('id' => 185, 'alias' => 'sadulaev', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '185');$d['slabo'] = 186;$a[186] = array('id' => 186, 'alias' => 'slabo', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '186');$d['politik'] = 187;$a[187] = array('id' => 187, 'alias' => 'politik', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '187');$d['zamorochka'] = 188;$a[188] = array('id' => 188, 'alias' => 'zamorochka', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '188');$d['eburg'] = 189;$a[189] = array('id' => 189, 'alias' => 'eburg', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '189');$d['rp'] = 191;$a[191] = array('id' => 191, 'alias' => 'rp', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '191');$d['dp'] = 192;$a[192] = array('id' => 192, 'alias' => 'dp', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '192');$d['folly'] = 193;$a[193] = array('id' => 193, 'alias' => 'folly', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '193');$d['lkn'] = 194;$a[194] = array('id' => 194, 'alias' => 'lkn', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '194');$d['lazy'] = 195;$a[195] = array('id' => 195, 'alias' => 'lazy', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '195');$d['slam'] = 196;$a[196] = array('id' => 196, 'alias' => 'slam', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '196');$d['jail'] = 198;$a[198] = array('id' => 198, 'alias' => 'jail', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '198');$d['black'] = 199;$a[199] = array('id' => 199, 'alias' => 'black', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '199');$d['antifa'] = 200;$a[200] = array('id' => 200, 'alias' => 'antifa', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '200');$d['noborder'] = 201;$a[201] = array('id' => 201, 'alias' => 'noborder', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '201');$d['prezident'] = 202;$a[202] = array('id' => 202, 'alias' => 'prezident', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '202');$d['fucktheculture'] = 295;$a[295] = array('id' => 295, 'alias' => 'fucktheculture', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '295');$d['pizdabol'] = 298;$a[298] = array('id' => 298, 'alias' => 'pizdabol', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '298');$d['paris'] = 299;$a[299] = array('id' => 299, 'alias' => 'paris', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '299');$d['said'] = 302;$a[302] = array('id' => 302, 'alias' => 'said', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '302');$d['chimki'] = 304;$a[304] = array('id' => 304, 'alias' => 'chimki', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '304');$d['pop'] = 305;$a[305] = array('id' => 305, 'alias' => 'pop', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '305');$d['bajing'] = 306;$a[306] = array('id' => 306, 'alias' => 'bajing', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '306');$d['anarchokunst'] = 313;$a[313] = array('id' => 313, 'alias' => 'anarchokunst', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '313');$d['voina'] = 315;$a[315] = array('id' => 315, 'alias' => 'voina', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '315');$d['razgovor'] = 318;$a[318] = array('id' => 318, 'alias' => 'razgovor', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '318');$d['malyshi'] = 321;$a[321] = array('id' => 321, 'alias' => 'malyshi', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('6' => '321');$d['beer'] = 325;$a[325] = array('id' => 325, 'alias' => 'beer', 'path' => '', 'parent' => 6, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('6' => '325');$d['dveri'] = 32;$a[32] = array('id' => 32, 'alias' => 'dveri', 'path' => '', 'parent' => 7, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('7' => '32');$d['granata'] = 33;$a[33] = array('id' => 33, 'alias' => 'granata', 'path' => '', 'parent' => 7, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('7' => '33');$d['ktrance'] = 34;$a[34] = array('id' => 34, 'alias' => 'ktrance', 'path' => '', 'parent' => 7, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('7' => '34');$d['presents'] = 35;$a[35] = array('id' => 35, 'alias' => 'presents', 'path' => '', 'parent' => 7, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('7' => '35');$d['magpg'] = 10;$a[10] = array('id' => 10, 'alias' => 'magpg', 'path' => '', 'parent' => 8, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('8' => '10');$d['al-manach'] = 11;$a[11] = array('id' => 11, 'alias' => 'al-manach', 'path' => '', 'parent' => 8, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('8' => '11');$d['almanach'] = 12;$a[12] = array('id' => 12, 'alias' => 'almanach', 'path' => '', 'parent' => 8, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('8' => '12');$d['351'] = 351;$a[351] = array('id' => 351, 'alias' => '351', 'path' => '', 'parent' => 8, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('8' => '351');$d['folly'] = 13;$a[13] = array('id' => 13, 'alias' => 'folly', 'path' => '', 'parent' => 8, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('8' => '13');$d['dinozavr'] = 324;$a[324] = array('id' => 324, 'alias' => 'dinozavr', 'path' => '', 'parent' => 9, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('9' => '324');$d['pizdi'] = 21;$a[21] = array('id' => 21, 'alias' => 'pizdi', 'path' => '', 'parent' => 9, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('9' => '21');$d['tuva'] = 22;$a[22] = array('id' => 22, 'alias' => 'tuva', 'path' => '', 'parent' => 9, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('9' => '22');$d['anochin'] = 23;$a[23] = array('id' => 23, 'alias' => 'anochin', 'path' => '', 'parent' => 9, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('9' => '23');$d['poems'] = 24;$a[24] = array('id' => 24, 'alias' => 'poems', 'path' => '', 'parent' => 9, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('9' => '24');$d['presents'] = 25;$a[25] = array('id' => 25, 'alias' => 'presents', 'path' => '', 'parent' => 9, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('9' => '25');$d['intro'] = 58;$a[58] = array('id' => 58, 'alias' => 'intro', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '58');$d['zines'] = 59;$a[59] = array('id' => 59, 'alias' => 'zines', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '59');$d['musica'] = 60;$a[60] = array('id' => 60, 'alias' => 'musica', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '60');$d['movie'] = 61;$a[61] = array('id' => 61, 'alias' => 'movie', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '61');$d['bugs'] = 62;$a[62] = array('id' => 62, 'alias' => 'bugs', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '62');$d['cards'] = 63;$a[63] = array('id' => 63, 'alias' => 'cards', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '63');$d['stamps'] = 64;$a[64] = array('id' => 64, 'alias' => 'stamps', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '64');$d['pelevin'] = 65;$a[65] = array('id' => 65, 'alias' => 'pelevin', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '65');$d['nodj'] = 66;$a[66] = array('id' => 66, 'alias' => 'nodj', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '66');$d['derrida'] = 67;$a[67] = array('id' => 67, 'alias' => 'derrida', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '67');$d['minsk'] = 68;$a[68] = array('id' => 68, 'alias' => 'minsk', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '68');$d['69'] = 69;$a[69] = array('id' => 69, 'alias' => '69', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '69');$d['fenso'] = 70;$a[70] = array('id' => 70, 'alias' => 'fenso', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '70');$d['grinberg'] = 71;$a[71] = array('id' => 71, 'alias' => 'grinberg', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '71');$d['72'] = 72;$a[72] = array('id' => 72, 'alias' => '72', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '72');$d['73'] = 73;$a[73] = array('id' => 73, 'alias' => '73', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '73');$d['ad'] = 76;$a[76] = array('id' => 76, 'alias' => 'ad', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('10' => '76');$d['boomshanka'] = 74;$a[74] = array('id' => 74, 'alias' => 'boomshanka', 'path' => '', 'parent' => 10, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('10' => '74');$d['circumcision'] = 117;$a[117] = array('id' => 117, 'alias' => 'circumcision', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('11' => '117');$d['pizdi'] = 118;$a[118] = array('id' => 118, 'alias' => 'pizdi', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('11' => '118');$d['imam'] = 119;$a[119] = array('id' => 119, 'alias' => 'imam', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('11' => '119');$d['investigations'] = 125;$a[125] = array('id' => 125, 'alias' => 'investigations', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('11' => '125');$d['heroes'] = 120;$a[120] = array('id' => 120, 'alias' => 'heroes', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('11' => '120');$d['fashion'] = 133;$a[133] = array('id' => 133, 'alias' => 'fashion', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('11' => '133');$d['pgkunst'] = 135;$a[135] = array('id' => 135, 'alias' => 'pgkunst', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('11' => '135');$d['travel'] = 140;$a[140] = array('id' => 140, 'alias' => 'travel', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('11' => '140');$d['sport'] = 142;$a[142] = array('id' => 142, 'alias' => 'sport', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('11' => '142');$d['classics'] = 144;$a[144] = array('id' => 144, 'alias' => 'classics', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('11' => '144');$d['udar'] = 149;$a[149] = array('id' => 149, 'alias' => 'udar', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('11' => '149');$d['porno'] = 154;$a[154] = array('id' => 154, 'alias' => 'porno', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('11' => '154');$d['insider'] = 156;$a[156] = array('id' => 156, 'alias' => 'insider', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('11' => '156');$d['ad'] = 158;$a[158] = array('id' => 158, 'alias' => 'ad', 'path' => '', 'parent' => 11, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('11' => '158');$d['manifest'] = 211;$a[211] = array('id' => 211, 'alias' => 'manifest', 'path' => '', 'parent' => 12, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('12' => '211');$d['talk'] = 216;$a[216] = array('id' => 216, 'alias' => 'talk', 'path' => '', 'parent' => 12, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('12' => '216');$d['songs'] = 218;$a[218] = array('id' => 218, 'alias' => 'songs', 'path' => '', 'parent' => 12, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('12' => '218');$d['narration'] = 221;$a[221] = array('id' => 221, 'alias' => 'narration', 'path' => '', 'parent' => 12, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('12' => '221');$d['stories'] = 227;$a[227] = array('id' => 227, 'alias' => 'stories', 'path' => '', 'parent' => 12, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('12' => '227');$d['project'] = 233;$a[233] = array('id' => 233, 'alias' => 'project', 'path' => '', 'parent' => 12, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('12' => '233');$d['bonus'] = 239;$a[239] = array('id' => 239, 'alias' => 'bonus', 'path' => '', 'parent' => 12, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('12' => '239');$d['242'] = 242;$a[242] = array('id' => 242, 'alias' => '242', 'path' => '', 'parent' => 12, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('12' => '242');$d['ganja'] = 269;$a[269] = array('id' => 269, 'alias' => 'ganja', 'path' => '', 'parent' => 13, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('13' => '269');$d['porno'] = 271;$a[271] = array('id' => 271, 'alias' => 'porno', 'path' => '', 'parent' => 13, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('13' => '271');$d['poster'] = 273;$a[273] = array('id' => 273, 'alias' => 'poster', 'path' => '', 'parent' => 13, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('13' => '273');$d['history'] = 275;$a[275] = array('id' => 275, 'alias' => 'history', 'path' => '', 'parent' => 13, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('13' => '275');$d['trip'] = 277;$a[277] = array('id' => 277, 'alias' => 'trip', 'path' => '', 'parent' => 13, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('13' => '277');$d['reader'] = 279;$a[279] = array('id' => 279, 'alias' => 'reader', 'path' => '', 'parent' => 13, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('13' => '279');$d['postcards'] = 281;$a[281] = array('id' => 281, 'alias' => 'postcards', 'path' => '', 'parent' => 13, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('13' => '281');$d['bonus'] = 284;$a[284] = array('id' => 284, 'alias' => 'bonus', 'path' => '', 'parent' => 13, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('13' => '284');$d['chernyak'] = 15;$a[15] = array('id' => 15, 'alias' => 'chernyak', 'path' => '', 'parent' => 14, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('14' => '15');$d['aksenov'] = 16;$a[16] = array('id' => 16, 'alias' => 'aksenov', 'path' => '', 'parent' => 14, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('14' => '16');$d['rostan'] = 17;$a[17] = array('id' => 17, 'alias' => 'rostan', 'path' => '', 'parent' => 14, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('14' => '17');$d['razum'] = 18;$a[18] = array('id' => 18, 'alias' => 'razum', 'path' => '', 'parent' => 14, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('14' => '18');$d['19'] = 19;$a[19] = array('id' => 19, 'alias' => '19', 'path' => '', 'parent' => 14, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('14' => '19');$d['20'] = 20;$a[20] = array('id' => 20, 'alias' => '20', 'path' => '', 'parent' => 14, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('14' => '20');$d['vovan'] = 319;$a[319] = array('id' => 319, 'alias' => 'vovan', 'path' => '', 'parent' => 14, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('14' => '319');$d['frontheroes'] = 249;$a[249] = array('id' => 249, 'alias' => 'frontheroes', 'path' => '', 'parent' => 21, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('21' => '249');$d['dat-pizdi'] = 250;$a[250] = array('id' => 250, 'alias' => 'dat-pizdi', 'path' => '', 'parent' => 21, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('21' => '250');$d['russia'] = 251;$a[251] = array('id' => 251, 'alias' => 'russia', 'path' => '', 'parent' => 21, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('21' => '251');$d['mails'] = 252;$a[252] = array('id' => 252, 'alias' => 'mails', 'path' => '', 'parent' => 21, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('21' => '252');$d['zayavi'] = 253;$a[253] = array('id' => 253, 'alias' => 'zayavi', 'path' => '', 'parent' => 21, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('21' => '253');$d['england'] = 254;$a[254] = array('id' => 254, 'alias' => 'england', 'path' => '', 'parent' => 21, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('21' => '254');$d['england1'] = 255;$a[255] = array('id' => 255, 'alias' => 'england1', 'path' => '', 'parent' => 21, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('21' => '255');$d['epos'] = 256;$a[256] = array('id' => 256, 'alias' => 'epos', 'path' => '', 'parent' => 22, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('22' => '256');$d['report'] = 257;$a[257] = array('id' => 257, 'alias' => 'report', 'path' => '', 'parent' => 22, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('22' => '257');$d['galuzinoz'] = 258;$a[258] = array('id' => 258, 'alias' => 'galuzinoz', 'path' => '', 'parent' => 22, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('22' => '258');$d['eros'] = 259;$a[259] = array('id' => 259, 'alias' => 'eros', 'path' => '', 'parent' => 22, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('22' => '259');$d['tuvafoto'] = 260;$a[260] = array('id' => 260, 'alias' => 'tuvafoto', 'path' => '', 'parent' => 22, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('22' => '260');$d['kids'] = 265;$a[265] = array('id' => 265, 'alias' => 'kids', 'path' => '', 'parent' => 23, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('23' => '265');$d['dad'] = 267;$a[267] = array('id' => 267, 'alias' => 'dad', 'path' => '', 'parent' => 23, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('23' => '267');$d['dacha'] = 268;$a[268] = array('id' => 268, 'alias' => 'dacha', 'path' => '', 'parent' => 23, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('23' => '268');$d['26'] = 26;$a[26] = array('id' => 26, 'alias' => '26', 'path' => '', 'parent' => 25, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('25' => '26');$d['27'] = 27;$a[27] = array('id' => 27, 'alias' => '27', 'path' => '', 'parent' => 25, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('25' => '27');$d['28'] = 28;$a[28] = array('id' => 28, 'alias' => '28', 'path' => '', 'parent' => 25, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('25' => '28');$d['сергей-пипуркин'] = 29;$a[29] = array('id' => 29, 'alias' => 'сергей-пипуркин', 'path' => '', 'parent' => 25, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('25' => '29');$d['95'] = 95;$a[95] = array('id' => 95, 'alias' => '95', 'path' => '', 'parent' => 25, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('25' => '95');$d['96'] = 96;$a[96] = array('id' => 96, 'alias' => '96', 'path' => '', 'parent' => 25, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('25' => '96');$d['савелий-гринберг'] = 30;$a[30] = array('id' => 30, 'alias' => 'савелий-гринберг', 'path' => '', 'parent' => 25, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('25' => '30');$d['36'] = 36;$a[36] = array('id' => 36, 'alias' => '36', 'path' => '', 'parent' => 35, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('35' => '36');$d['mono'] = 37;$a[37] = array('id' => 37, 'alias' => 'mono', 'path' => '', 'parent' => 35, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('35' => '37');$d['marksheider'] = 38;$a[38] = array('id' => 38, 'alias' => 'marksheider', 'path' => '', 'parent' => 35, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('35' => '38');$d['mutantoff'] = 50;$a[50] = array('id' => 50, 'alias' => 'mutantoff', 'path' => '', 'parent' => 35, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('35' => '50');$d['intro'] = 286;$a[286] = array('id' => 286, 'alias' => 'intro', 'path' => '', 'parent' => 39, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('39' => '286');$d['walk'] = 287;$a[287] = array('id' => 287, 'alias' => 'walk', 'path' => '', 'parent' => 39, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('39' => '287');$d['power'] = 288;$a[288] = array('id' => 288, 'alias' => 'power', 'path' => '', 'parent' => 39, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('39' => '288');$d['tale'] = 289;$a[289] = array('id' => 289, 'alias' => 'tale', 'path' => '', 'parent' => 39, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('39' => '289');$d['dp'] = 97;$a[97] = array('id' => 97, 'alias' => 'dp', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('42' => '97');$d['ustuu'] = 98;$a[98] = array('id' => 98, 'alias' => 'ustuu', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('42' => '98');$d['99'] = 99;$a[99] = array('id' => 99, 'alias' => '99', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('42' => '99');$d['tarakan'] = 100;$a[100] = array('id' => 100, 'alias' => 'tarakan', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('42' => '100');$d['oneyear'] = 101;$a[101] = array('id' => 101, 'alias' => 'oneyear', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('42' => '101');$d['planeta'] = 102;$a[102] = array('id' => 102, 'alias' => 'planeta', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('42' => '102');$d['ppk2'] = 103;$a[103] = array('id' => 103, 'alias' => 'ppk2', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('42' => '103');$d['gerakl'] = 104;$a[104] = array('id' => 104, 'alias' => 'gerakl', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('42' => '104');$d['future'] = 105;$a[105] = array('id' => 105, 'alias' => 'future', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('42' => '105');$d['govno'] = 109;$a[109] = array('id' => 109, 'alias' => 'govno', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('42' => '109');$d['ppk1'] = 111;$a[111] = array('id' => 111, 'alias' => 'ppk1', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('42' => '111');$d['presentation'] = 110;$a[110] = array('id' => 110, 'alias' => 'presentation', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('42' => '110');$d['memory'] = 112;$a[112] = array('id' => 112, 'alias' => 'memory', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('42' => '112');$d['generation'] = 115;$a[115] = array('id' => 115, 'alias' => 'generation', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('42' => '115');$d['recommend'] = 116;$a[116] = array('id' => 116, 'alias' => 'recommend', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('42' => '116');$d['rapcont'] = 294;$a[294] = array('id' => 294, 'alias' => 'rapcont', 'path' => '', 'parent' => 42, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('42' => '294');$d['zerzan'] = 203;$a[203] = array('id' => 203, 'alias' => 'zerzan', 'path' => '', 'parent' => 55, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('55' => '203');$d['erofeev'] = 204;$a[204] = array('id' => 204, 'alias' => 'erofeev', 'path' => '', 'parent' => 55, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('55' => '204');$d['tlostanova'] = 205;$a[205] = array('id' => 205, 'alias' => 'tlostanova', 'path' => '', 'parent' => 55, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('55' => '205');$d['xaritonov'] = 206;$a[206] = array('id' => 206, 'alias' => 'xaritonov', 'path' => '', 'parent' => 55, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('55' => '206');$d['77'] = 77;$a[77] = array('id' => 77, 'alias' => '77', 'path' => '', 'parent' => 76, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('76' => '77');$d['166'] = 166;$a[166] = array('id' => 166, 'alias' => '166', 'path' => '', 'parent' => 76, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('76' => '166');$d['iced'] = 247;$a[247] = array('id' => 247, 'alias' => 'iced', 'path' => '', 'parent' => 76, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('76' => '247');$d['248'] = 248;$a[248] = array('id' => 248, 'alias' => '248', 'path' => '', 'parent' => 76, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('76' => '248');$d['godsvideo'] = 291;$a[291] = array('id' => 291, 'alias' => 'godsvideo', 'path' => '', 'parent' => 80, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('80' => '291');$d['im-video'] = 290;$a[290] = array('id' => 290, 'alias' => 'im-video', 'path' => '', 'parent' => 89, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('89' => '290');$d['carib'] = 106;$a[106] = array('id' => 106, 'alias' => 'carib', 'path' => '', 'parent' => 103, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('103' => '106');$d['positive'] = 107;$a[107] = array('id' => 107, 'alias' => 'positive', 'path' => '', 'parent' => 103, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('103' => '107');$d['sorokin'] = 108;$a[108] = array('id' => 108, 'alias' => 'sorokin', 'path' => '', 'parent' => 104, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('104' => '108');$d['kings'] = 113;$a[113] = array('id' => 113, 'alias' => 'kings', 'path' => '', 'parent' => 111, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('111' => '113');$d['pushkin'] = 114;$a[114] = array('id' => 114, 'alias' => 'pushkin', 'path' => '', 'parent' => 111, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('111' => '114');$d['gealizm'] = 121;$a[121] = array('id' => 121, 'alias' => 'gealizm', 'path' => '', 'parent' => 120, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('120' => '121');$d['kirill'] = 122;$a[122] = array('id' => 122, 'alias' => 'kirill', 'path' => '', 'parent' => 120, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('120' => '122');$d['vovan'] = 123;$a[123] = array('id' => 123, 'alias' => 'vovan', 'path' => '', 'parent' => 120, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('120' => '123');$d['barmalei'] = 124;$a[124] = array('id' => 124, 'alias' => 'barmalei', 'path' => '', 'parent' => 120, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('120' => '124');$d['mozg'] = 128;$a[128] = array('id' => 128, 'alias' => 'mozg', 'path' => '', 'parent' => 120, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('120' => '128');$d['palach'] = 129;$a[129] = array('id' => 129, 'alias' => 'palach', 'path' => '', 'parent' => 120, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('120' => '129');$d['dimdim'] = 130;$a[130] = array('id' => 130, 'alias' => 'dimdim', 'path' => '', 'parent' => 120, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('120' => '130');$d['bar'] = 131;$a[131] = array('id' => 131, 'alias' => 'bar', 'path' => '', 'parent' => 120, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('120' => '131');$d['terrorist'] = 132;$a[132] = array('id' => 132, 'alias' => 'terrorist', 'path' => '', 'parent' => 120, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('120' => '132');$d['end'] = 126;$a[126] = array('id' => 126, 'alias' => 'end', 'path' => '', 'parent' => 125, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('125' => '126');$d['jews'] = 127;$a[127] = array('id' => 127, 'alias' => 'jews', 'path' => '', 'parent' => 125, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('125' => '127');$d['advise'] = 134;$a[134] = array('id' => 134, 'alias' => 'advise', 'path' => '', 'parent' => 133, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('133' => '134');$d['garages'] = 136;$a[136] = array('id' => 136, 'alias' => 'garages', 'path' => '', 'parent' => 135, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('135' => '136');$d['pioneers'] = 137;$a[137] = array('id' => 137, 'alias' => 'pioneers', 'path' => '', 'parent' => 135, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('135' => '137');$d['enemy'] = 138;$a[138] = array('id' => 138, 'alias' => 'enemy', 'path' => '', 'parent' => 135, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('135' => '138');$d['tartu'] = 139;$a[139] = array('id' => 139, 'alias' => 'tartu', 'path' => '', 'parent' => 135, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('135' => '139');$d['piramids'] = 141;$a[141] = array('id' => 141, 'alias' => 'piramids', 'path' => '', 'parent' => 140, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('140' => '141');$d['birdie'] = 143;$a[143] = array('id' => 143, 'alias' => 'birdie', 'path' => '', 'parent' => 142, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('142' => '143');$d['sapgir'] = 145;$a[145] = array('id' => 145, 'alias' => 'sapgir', 'path' => '', 'parent' => 144, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('144' => '145');$d['raki'] = 146;$a[146] = array('id' => 146, 'alias' => 'raki', 'path' => '', 'parent' => 144, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('144' => '146');$d['pepperstein'] = 147;$a[147] = array('id' => 147, 'alias' => 'pepperstein', 'path' => '', 'parent' => 144, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('144' => '147');$d['pipurkin'] = 148;$a[148] = array('id' => 148, 'alias' => 'pipurkin', 'path' => '', 'parent' => 144, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('144' => '148');$d['pochki'] = 153;$a[153] = array('id' => 153, 'alias' => 'pochki', 'path' => '', 'parent' => 149, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('149' => '153');$d['play'] = 155;$a[155] = array('id' => 155, 'alias' => 'play', 'path' => '', 'parent' => 154, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('154' => '155');$d['egg'] = 157;$a[157] = array('id' => 157, 'alias' => 'egg', 'path' => '', 'parent' => 156, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('156' => '157');$d['bluesoup'] = 159;$a[159] = array('id' => 159, 'alias' => 'bluesoup', 'path' => '', 'parent' => 158, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('158' => '159');$d['tyaga'] = 160;$a[160] = array('id' => 160, 'alias' => 'tyaga', 'path' => '', 'parent' => 158, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('158' => '160');$d['osk'] = 161;$a[161] = array('id' => 161, 'alias' => 'osk', 'path' => '', 'parent' => 158, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('158' => '161');$d['ok'] = 162;$a[162] = array('id' => 162, 'alias' => 'ok', 'path' => '', 'parent' => 158, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('158' => '162');$d['xyz'] = 163;$a[163] = array('id' => 163, 'alias' => 'xyz', 'path' => '', 'parent' => 158, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('158' => '163');$d['netslov'] = 164;$a[164] = array('id' => 164, 'alias' => 'netslov', 'path' => '', 'parent' => 158, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('158' => '164');$d['belomor'] = 165;$a[165] = array('id' => 165, 'alias' => 'belomor', 'path' => '', 'parent' => 158, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('158' => '165');$d['diskurs'] = 207;$a[207] = array('id' => 207, 'alias' => 'diskurs', 'path' => '', 'parent' => 167, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('167' => '207');$d['kandvideo'] = 292;$a[292] = array('id' => 292, 'alias' => 'kandvideo', 'path' => '', 'parent' => 167, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('167' => '292');$d['off-program-full'] = 173;$a[173] = array('id' => 173, 'alias' => 'off-program-full', 'path' => '', 'parent' => 172, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('172' => '173');$d['kitvideo'] = 293;$a[293] = array('id' => 293, 'alias' => 'kitvideo', 'path' => '', 'parent' => 175, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('175' => '293');$d['pitekantrop'] = 190;$a[190] = array('id' => 190, 'alias' => 'pitekantrop', 'path' => '', 'parent' => 189, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('189' => '190');$d['lkn1'] = 208;$a[208] = array('id' => 208, 'alias' => 'lkn1', 'path' => '', 'parent' => 194, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('194' => '208');$d['lkn2'] = 209;$a[209] = array('id' => 209, 'alias' => 'lkn2', 'path' => '', 'parent' => 194, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('194' => '209');$d['lkn3'] = 210;$a[210] = array('id' => 210, 'alias' => 'lkn3', 'path' => '', 'parent' => 194, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('194' => '210');$d['197'] = 197;$a[197] = array('id' => 197, 'alias' => '197', 'path' => '', 'parent' => 196, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('196' => '197');$d['child'] = 212;$a[212] = array('id' => 212, 'alias' => 'child', 'path' => '', 'parent' => 211, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('211' => '212');$d['cables'] = 213;$a[213] = array('id' => 213, 'alias' => 'cables', 'path' => '', 'parent' => 211, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('211' => '213');$d['miracle'] = 214;$a[214] = array('id' => 214, 'alias' => 'miracle', 'path' => '', 'parent' => 211, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('211' => '214');$d['manstrubation'] = 215;$a[215] = array('id' => 215, 'alias' => 'manstrubation', 'path' => '', 'parent' => 211, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('211' => '215');$d['todd'] = 217;$a[217] = array('id' => 217, 'alias' => 'todd', 'path' => '', 'parent' => 216, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('216' => '217');$d['compilation'] = 219;$a[219] = array('id' => 219, 'alias' => 'compilation', 'path' => '', 'parent' => 218, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('218' => '219');$d['hoffman'] = 222;$a[222] = array('id' => 222, 'alias' => 'hoffman', 'path' => '', 'parent' => 221, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('221' => '222');$d['bon'] = 223;$a[223] = array('id' => 223, 'alias' => 'bon', 'path' => '', 'parent' => 221, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('221' => '223');$d['comittee'] = 224;$a[224] = array('id' => 224, 'alias' => 'comittee', 'path' => '', 'parent' => 221, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('221' => '224');$d['burroughs'] = 225;$a[225] = array('id' => 225, 'alias' => 'burroughs', 'path' => '', 'parent' => 221, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('221' => '225');$d['ross'] = 226;$a[226] = array('id' => 226, 'alias' => 'ross', 'path' => '', 'parent' => 221, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('221' => '226');$d['outcome'] = 228;$a[228] = array('id' => 228, 'alias' => 'outcome', 'path' => '', 'parent' => 227, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('227' => '228');$d['avdei'] = 229;$a[229] = array('id' => 229, 'alias' => 'avdei', 'path' => '', 'parent' => 227, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('227' => '229');$d['measure'] = 230;$a[230] = array('id' => 230, 'alias' => 'measure', 'path' => '', 'parent' => 227, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('227' => '230');$d['machno'] = 231;$a[231] = array('id' => 231, 'alias' => 'machno', 'path' => '', 'parent' => 227, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('227' => '231');$d['vagon'] = 232;$a[232] = array('id' => 232, 'alias' => 'vagon', 'path' => '', 'parent' => 227, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('227' => '232');$d['david'] = 234;$a[234] = array('id' => 234, 'alias' => 'david', 'path' => '', 'parent' => 233, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('233' => '234');$d['romanova'] = 235;$a[235] = array('id' => 235, 'alias' => 'romanova', 'path' => '', 'parent' => 233, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('233' => '235');$d['galkina'] = 236;$a[236] = array('id' => 236, 'alias' => 'galkina', 'path' => '', 'parent' => 233, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('233' => '236');$d['jir'] = 237;$a[237] = array('id' => 237, 'alias' => 'jir', 'path' => '', 'parent' => 233, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('233' => '237');$d['ryaba'] = 238;$a[238] = array('id' => 238, 'alias' => 'ryaba', 'path' => '', 'parent' => 233, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('233' => '238');$d['cd'] = 240;$a[240] = array('id' => 240, 'alias' => 'cd', 'path' => '', 'parent' => 239, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('239' => '240');$d['243'] = 243;$a[243] = array('id' => 243, 'alias' => '243', 'path' => '', 'parent' => 242, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('242' => '243');$d['spliff'] = 270;$a[270] = array('id' => 270, 'alias' => 'spliff', 'path' => '', 'parent' => 269, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('269' => '270');$d['mudyankin'] = 272;$a[272] = array('id' => 272, 'alias' => 'mudyankin', 'path' => '', 'parent' => 271, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('271' => '272');$d['chuiman'] = 274;$a[274] = array('id' => 274, 'alias' => 'chuiman', 'path' => '', 'parent' => 273, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('273' => '274');$d['flat'] = 276;$a[276] = array('id' => 276, 'alias' => 'flat', 'path' => '', 'parent' => 275, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('275' => '276');$d['untitled'] = 278;$a[278] = array('id' => 278, 'alias' => 'untitled', 'path' => '', 'parent' => 277, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('277' => '278');$d['feed'] = 280;$a[280] = array('id' => 280, 'alias' => 'feed', 'path' => '', 'parent' => 279, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('279' => '280');$d['winter'] = 282;$a[282] = array('id' => 282, 'alias' => 'winter', 'path' => '', 'parent' => 281, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('281' => '282');$d['hello'] = 283;$a[283] = array('id' => 283, 'alias' => 'hello', 'path' => '', 'parent' => 281, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('281' => '283');$d['opera'] = 285;$a[285] = array('id' => 285, 'alias' => 'opera', 'path' => '', 'parent' => 284, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('284' => '285');$d['fucktheculturefull'] = 296;$a[296] = array('id' => 296, 'alias' => 'fucktheculturefull', 'path' => '', 'parent' => 295, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('295' => '296');$d['onedayinparis'] = 300;$a[300] = array('id' => 300, 'alias' => 'onedayinparis', 'path' => '', 'parent' => 299, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('299' => '300');$d['bajing_full'] = 307;$a[307] = array('id' => 307, 'alias' => 'bajing_full', 'path' => '', 'parent' => 306, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('306' => '307');$d['anarchokunsttxt'] = 314;$a[314] = array('id' => 314, 'alias' => 'anarchokunsttxt', 'path' => '', 'parent' => 313, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('313' => '314');$d['pomozh_zaderzhannym_uchastnikam'] = 323;$a[323] = array('id' => 323, 'alias' => 'pomozh_zaderzhannym_uchastnikam', 'path' => '', 'parent' => 315, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('315' => '323');$d['voyna_protiv_musora_long'] = 317;$a[317] = array('id' => 317, 'alias' => 'voyna_protiv_musora_long', 'path' => '', 'parent' => 316, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('316' => '317');$d['hvatit-valyat_malysha'] = 322;$a[322] = array('id' => 322, 'alias' => 'hvatit-valyat_malysha', 'path' => '', 'parent' => 321, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('321' => '322');$d['352'] = 352;$a[352] = array('id' => 352, 'alias' => '352', 'path' => '', 'parent' => 351, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('351' => '352');$d['357'] = 357;$a[357] = array('id' => 357, 'alias' => '357', 'path' => '', 'parent' => 351, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('351' => '357');$d['359'] = 359;$a[359] = array('id' => 359, 'alias' => '359', 'path' => '', 'parent' => 351, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('351' => '359');$d['361'] = 361;$a[361] = array('id' => 361, 'alias' => '361', 'path' => '', 'parent' => 351, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('351' => '361');$d['367'] = 367;$a[367] = array('id' => 367, 'alias' => '367', 'path' => '', 'parent' => 351, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('351' => '367');$d['373'] = 373;$a[373] = array('id' => 373, 'alias' => '373', 'path' => '', 'parent' => 351, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('351' => '373');$d['379'] = 379;$a[379] = array('id' => 379, 'alias' => '379', 'path' => '', 'parent' => 351, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('351' => '379');$d['381'] = 381;$a[381] = array('id' => 381, 'alias' => '381', 'path' => '', 'parent' => 351, 'alias_visible' => 1, 'isfolder' => 1);$m[] = array('351' => '381');$d['353'] = 353;$a[353] = array('id' => 353, 'alias' => '353', 'path' => '', 'parent' => 352, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('352' => '353');$d['354'] = 354;$a[354] = array('id' => 354, 'alias' => '354', 'path' => '', 'parent' => 352, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('352' => '354');$d['355'] = 355;$a[355] = array('id' => 355, 'alias' => '355', 'path' => '', 'parent' => 352, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('352' => '355');$d['356'] = 356;$a[356] = array('id' => 356, 'alias' => '356', 'path' => '', 'parent' => 352, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('352' => '356');$d['358'] = 358;$a[358] = array('id' => 358, 'alias' => '358', 'path' => '', 'parent' => 357, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('357' => '358');$d['360'] = 360;$a[360] = array('id' => 360, 'alias' => '360', 'path' => '', 'parent' => 359, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('359' => '360');$d['362'] = 362;$a[362] = array('id' => 362, 'alias' => '362', 'path' => '', 'parent' => 361, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('361' => '362');$d['363'] = 363;$a[363] = array('id' => 363, 'alias' => '363', 'path' => '', 'parent' => 361, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('361' => '363');$d['364'] = 364;$a[364] = array('id' => 364, 'alias' => '364', 'path' => '', 'parent' => 361, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('361' => '364');$d['365'] = 365;$a[365] = array('id' => 365, 'alias' => '365', 'path' => '', 'parent' => 361, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('361' => '365');$d['366'] = 366;$a[366] = array('id' => 366, 'alias' => '366', 'path' => '', 'parent' => 361, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('361' => '366');$d['368'] = 368;$a[368] = array('id' => 368, 'alias' => '368', 'path' => '', 'parent' => 367, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('367' => '368');$d['369'] = 369;$a[369] = array('id' => 369, 'alias' => '369', 'path' => '', 'parent' => 367, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('367' => '369');$d['370'] = 370;$a[370] = array('id' => 370, 'alias' => '370', 'path' => '', 'parent' => 367, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('367' => '370');$d['371'] = 371;$a[371] = array('id' => 371, 'alias' => '371', 'path' => '', 'parent' => 367, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('367' => '371');$d['372'] = 372;$a[372] = array('id' => 372, 'alias' => '372', 'path' => '', 'parent' => 367, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('367' => '372');$d['374'] = 374;$a[374] = array('id' => 374, 'alias' => '374', 'path' => '', 'parent' => 373, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('373' => '374');$d['375'] = 375;$a[375] = array('id' => 375, 'alias' => '375', 'path' => '', 'parent' => 373, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('373' => '375');$d['376'] = 376;$a[376] = array('id' => 376, 'alias' => '376', 'path' => '', 'parent' => 373, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('373' => '376');$d['377'] = 377;$a[377] = array('id' => 377, 'alias' => '377', 'path' => '', 'parent' => 373, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('373' => '377');$d['378'] = 378;$a[378] = array('id' => 378, 'alias' => '378', 'path' => '', 'parent' => 373, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('373' => '378');$d['380'] = 380;$a[380] = array('id' => 380, 'alias' => '380', 'path' => '', 'parent' => 379, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('379' => '380');$d['382'] = 382;$a[382] = array('id' => 382, 'alias' => '382', 'path' => '', 'parent' => 381, 'alias_visible' => 1, 'isfolder' => 0);$m[] = array('381' => '382');$c = &$this->contentTypes;$c[301] = 'text/xml';$c[309] = 'text/xml';$c = &$this->chunkCache;$c['WebLoginSidebar'] = '<!-- #declare:separator <hr> -->
 <!-- login form section-->
 <form method="post" name="loginfrm" action="[+action+]">
     <input type="hidden" value="[+rememberme+]" name="rememberme" />
@@ -1057,8 +28,7 @@ Do you wish to <a href="[+action+]" class="button">[+logouttext+]</a>?
     </fieldset>
 </form>
 
-';
-$c['mm_demo_rules-1_0_9'] = '// more example rules are in assets/plugins/managermanager/example_mm_rules.inc.php
+';$c['mm_demo_rules-1_0_9'] = '// more example rules are in assets/plugins/managermanager/example_mm_rules.inc.php
 
 // example of how PHP is allowed - check that a TV named documentTags exists before creating rule
 if($modx->db->getValue("SELECT COUNT(id) FROM " . $modx->getFullTableName(\'site_tmplvars\') . " WHERE name=\'documentTags\'")) {
@@ -1066,8 +36,7 @@ if($modx->db->getValue("SELECT COUNT(id) FROM " . $modx->getFullTableName(\'site
 }
 
 mm_widget_showimagetvs(); // Always give a preview of Image TVs
-';
-$c['mm_demo_rules'] = '// PHP *is* allowed
+';$c['mm_demo_rules'] = '// PHP *is* allowed
 // $news_role and $news_tpl will not apply to demo content but are left as a demonstration of what can be done
 
 // For everyone
@@ -1099,34 +68,27 @@ mm_changeFieldHelp(\'longtitle\', \'The story\\\'s headline\', \'\', $news_tpl);
 mm_changeFieldHelp(\'introtext\', \'A short summary of the story\', \'\', $news_tpl);
 mm_changeFieldHelp(\'parent\', \'To move this story to a different folder: Click this icon to activate, then choose a new folder in the tree on the left.\', \'\', $news_tpl);
 
-';
-$c['dittoTpl'] = '<div class="ditto_item">
+';$c['dittoTpl'] = '<div class="ditto_item">
 <div class="ditto_item_content">
 [+content+]
 </div>
 </div>
-';
-$c['rss_chunk'] = '<item>
+';$c['rss_chunk'] = '<item>
                <description><![CDATA[ [+content+] ]]></description>
 		<pubDate>[+rss_date+]</pubDate>
 		<title>[+rss_pagetitle+]</title>
 		<link>[(site_url)][~[+id+]~]</link>
 		<guid isPermaLink="false">[(site_url)][~[+id+]~]</guid>
-</item>';
-$c['menu_category_tpl'] = '<li[+wf.classes+]>
+</item>';$c['menu_category_tpl'] = '<li[+wf.classes+]>
 	<a href="#" title="[+wf.title+]" class="menu_cat_link">[+wf.linktext+]</a>
 	[+wf.wrapper+]
-</li>';
-$c['dittoTags'] = '[+url:is=``:then=``:else=``+] [+tvtags:split_tags=`[+url+]`+]';
-$c['mag_menu_category_tpl'] = '<li[+wf.classes+]>
+</li>';$c['dittoTags'] = '[+url:is=``:then=``:else=``+] [+tvtags:split_tags=`[+url+]`+]';$c['mag_menu_category_tpl'] = '<li[+wf.classes+]>
 	<span class="mag_menu_cat_link">[+wf.linktext+]</span>
 	[+wf.wrapper+]
-</li>';
-$c['mag_menu_row_tpl'] = '<li[+wf.id+][+wf.classes+]>
+</li>';$c['mag_menu_row_tpl'] = '<li[+wf.id+][+wf.classes+]>
 	<a href="[+wf.link+]" title="[+wf.title+]" [+wf.attributes+]>> [+wf.linktext+]</a>
 	[+wf.wrapper+]
-</li>';
-$c['search_form'] = '[+as.showForm:is=`1`:then=`
+</li>';$c['search_form'] = '[+as.showForm:is=`1`:then=`
 <form [+as.formId+] action="[(site_url)][+as.formAction+]" method="post">
     <fieldset>
     <input type="hidden" name="advSearch" value="[+as.advSearch+]" />
@@ -1141,8 +103,7 @@ $c['search_form'] = '[+as.showForm:is=`1`:then=`
 [+as.showResults:is=`1`:then=`
 [+as.results+]
 `+]
-';
-$c['search_result'] = '<div class="[+as.resultClass+]">
+';$c['search_result'] = '<div class="[+as.resultClass+]">
   <a class="[+as.resultLinkClass+]" href="[+as.resultLink+]" title="[+as.longtitle+]">[+as.pagetitle+]</a>
 [+as.descriptionShow:is=`1`:then=`
   <span class="[+as.descriptionClass+]">[+as.description+]</span>
@@ -1153,18 +114,14 @@ $c['search_result'] = '<div class="[+as.resultClass+]">
 [+as.breadcrumbsShow:is=`1`:then=`
   <span class="[+as.breadcrumbsClass+]">[+as.breadcrumbs+]</span>
 `+]
-</div>';
-$c['pagination'] = '[+totalPages:ne=`1`:then=`<div id="bottom_lenta"><span class="up">[+previous+][+pages+][+next+]</span></div>`:else=``+]
+</div>';$c['pagination'] = '[+totalPages:ne=`1`:then=`<div id="bottom_lenta"><span class="up">[+previous+][+pages+][+next+]</span></div>`:else=``+]
 
-';
-$c['ajax_ditto_tags'] = '[+url+]: [+tvtags:split_tags=`[+url+]`+] <br>';
-$c['google-sitemap-tpl'] = '<url>      
+';$c['ajax_ditto_tags'] = '[+url+]: [+tvtags:split_tags=`[+url+]`+] <br>';$c['google-sitemap-tpl'] = '<url>      
 <loc>[(site_url)][~[+id+]~]</loc>      
 <lastmod>[+date+]</lastmod>      
 <priority>[+priority+]</priority>
 <changefreq>[+changefreq+]</changefreq>
-</url>';
-$c['mm_demo_rules-1_0_4'] = '// more example rules are in assets/plugins/managermanager/example_mm_rules.inc.php
+</url>';$c['mm_demo_rules-1_0_4'] = '// more example rules are in assets/plugins/managermanager/example_mm_rules.inc.php
 
 // example of how PHP is allowed - check that a TV named documentTags exists before creating rule
 if($modx->db->getValue("SELECT COUNT(id) FROM " . $modx->getFullTableName(\'site_tmplvars\') . " WHERE name=\'documentTags\'")) {
@@ -1172,37 +129,277 @@ if($modx->db->getValue("SELECT COUNT(id) FROM " . $modx->getFullTableName(\'site
 }
 
 mm_widget_showimagetvs(); // Always give a preview of Image TVs
-';
-$s = &$this->snippetCache;
-$s['WebSignup'] = '# Created By Raymond Irving April, 2005
-#::::::::::::::::::::::::::::::::::::::::
-# Usage:     
-#    Allows a web user to signup for a new web account from the website
-#    This snippet provides a basic set of form fields for the signup form
-#    You can customize this snippet to create your own signup form
-#
-# Params:    
-#
-#    &tpl        - (Optional) Chunk name or document id to use as a template
-#    &groups     - Web users groups to be assigned to users
-#    &useCaptcha - (Optional) Determine to use (1) or not to use (0) captcha
-#                  on signup form - if not defined, will default to system
-#                  setting. GD is required for this feature. If GD is not 
-#                  available, useCaptcha will automatically be set to false;
-#                  
-#    Note: Templats design:
-#        section 1: signup template
-#        section 2: notification template 
-#
-# Examples:
-#
-#    [[WebSignup? &tpl=`SignupForm` &groups=`NewsReaders,WebUsers`]] 
+';$c['Comments_tplComments'] = '<a name="jc[+jot.link.id+][+comment.id+]"></a>
+<div class="panel panel-[+chunk.rowclass:ne=``:then=`primary`:else=`info`+] [+comment.published:is=`0`:then=`jot-row-up`+]">
+	<div class="panel-heading"><span class="jot-subject">[+comment.title:limit:esc+]<span class="pull-right">
+		[+phx:userinfo=`lastlogin`:ifempty=`9999999999`:lt=`[+comment.createdon+]`:then=`
+		<i class="fa fa-fw fa-comment-o" aria-hidden="true"></i>
+		`:else=`
+		<i class="fa fa-fw fa-commenting-o" aria-hidden="true"></i>
+		`:strip+]
+		</span></span>
+	</div>
+	<div class="panel-body">
+		<div class="jot-comment">
+			<div class="jot-user">
+				[+comment.createdby:isnt=`0`:then=`<b>`+][+comment.createdby:userinfo=`username`:ifempty=`[+comment.custom.name:ifempty=`[+jot.guestname+]`:esc+]`+]
+				[+comment.createdby:isnt=`0`:then=`</b>`+]
+				<br>Posts: [+comment.userpostcount+]
+			</div>
+			<div class="jot-content">
+				<div class="pull-right btn-group">
+					[+jot.moderation.enabled:is=`1`:then=`
+					<a class="btn btn-xs btn-danger" href="[+jot.link.delete:esc+][+jot.querykey.id+]=[+comment.id+]#jotmod[+jot.link.id+]" onclick="return confirm(\'Are you sure you wish to delete this comment?\')" title="Delete Comment"><i class="fa fa-fw fa-trash" aria-hidden="true"></i></a> 
+					[+comment.published:is=`0`:then=`
+					<a class="btn btn-xs btn-info"href="[+jot.link.publish:esc+][+jot.querykey.id+]=[+comment.id+]#jotmod[+jot.link.id+]" onclick="return confirm(\'Are you sure you wish to publish this comment?\')" title="Publish Comment"><i class="fa fa-fw fa-arrow-up" aria-hidden="true"></i></a> 
+					`+]
+					[+comment.published:is=`1`:then=`
+					<a class="btn btn-xs btn-warning" href="[+jot.link.unpublish:esc+][+jot.querykey.id+]=[+comment.id+]#jotmod[+jot.link.id+]" onclick="return confirm(\'Are you sure you wish to unpublish this comment?\')" title="Unpublish Comment"><i class="fa fa-fw fa-arrow-down" aria-hidden="true"></i></a> 
+					`+]
+					`:strip+]
+					[+jot.user.canedit:is=`1`:and:if=`[+comment.createdby+]`:is=`[+jot.user.id+]`:or:if=`[+jot.moderation.enabled+]`:is=`1`:then=`
+					<a class="btn btn-xs btn-success" href="[+jot.link.edit:esc+][+jot.querykey.id+]=[+comment.id+]#jf[+jot.link.id+]" onclick="return confirm(\'Are you sure you wish to edit this comment?\')" title="Edit Comment"><i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"></i></a>
+					`:strip+]
+				</div>
+				<span class="jot-poster"><b>Reply #[+comment.postnumber+] on :</b> [+comment.createdon:date=`%a %B %d, %Y, %H:%M:%S`+]</span>
+				<hr>
+				<div class="jot-message">[+comment.content:wordwrap:esc:nl2br+]</div>
+				<div class="jot-extra">
+					[+comment.editedon:isnt=`0`:then=`
+					<span class="jot-editby">Last Edit: [+comment.editedon:date=`%B %d, %Y, %H:%M:%S`+] by [+comment.editedby:userinfo=`username`:ifempty=` * `+]</span>
+					&nbsp;`+] [+jot.moderation.enabled:is=`1`:then=`<a target="_blank" href="http://www.ripe.net/perl/whois?searchtext=[+comment.secip+]">[+comment.secip+]</a>`+]
+				</div>
+			</div>
+		</div>
+	</div>
+</div>';$c['WebLogin_tplForm'] = '<!-- #declare:separator <hr> -->
+<!-- login form section-->
+<form method="post" name="loginfrm" action="[+action+]">
+	<input type="hidden" value="[+rememberme+]" name="rememberme">
+	<div class="form-group">
+		<label for="username">User:</label>
+		<input type="text" name="username" id="username" tabindex="1" class="form-control" onkeypress="return webLoginEnter(document.loginfrm.password);" value="[+username+]">
+	</div>
+	<div class="form-group">
+		<label for="password">Password:</label>
+		<input type="password" name="password" id="password" tabindex="2" class="form-control" onkeypress="return webLoginEnter(document.loginfrm.cmdweblogin);" value="">
+	</div>
+	<div class="checkbox">
+		<label>
+			<input type="checkbox" id="checkbox_1" name="checkbox_1" tabindex="3" size="1" value="" [+checkbox+] onclick="webLoginCheckRemember()"> Remember me
+		</label>
+	</div>
+	<input type="submit" value="[+logintext+]" name="cmdweblogin" class="btn btn-primary">
+	<a href="#" onclick="webLoginShowForm(2);return false;" id="forgotpsswd" class="btn btn-text">Forget Your Password?</a>
+</form>
+<hr>
+<!-- log out hyperlink section -->
+<h4>You\'re already logged in</h4>
+Do you wish to <a href="[+action+]" class="button">[+logouttext+]</a>?
+<hr>
+<!-- Password reminder form section -->
+<form name="loginreminder" method="post" action="[+action+]">
+	<input type="hidden" name="txtpwdrem" value="0">
+	<h4>It happens to everyone...</h4>
+	<div class="form-group">
+		<label for="txtwebemail">Enter the email address of your account to reset your password:</label>
+		<input type="text" name="txtwebemail" id="txtwebemail">
+	</div>
+	<label>To return to the login form, press the cancel button.</label>
+	<input type="submit" value="Submit" name="cmdweblogin" class="btn btn-primary">
+	<input type="reset" value="Cancel" name="cmdcancel" onclick="webLoginShowForm(1);" class="btn btn-default">
+</form>
+';$c['AjaxSearch_tplInput'] = '[+as.showInputForm:is=`1`:then=`
+<form id="[+as.formId+]" action="[+as.formAction+]" method="post">
+    [+as.showAsId:is=`1`:then=`<input type="hidden" name="[+as.asName+]" value="[+as.asId+]" />`+]
+    <input type="hidden" name="advsearch" value="[+as.advSearch+]" />
+	<div class="input-group">
+		<input id="[+as.inputId+]" class="form-control cleardefault" type="text" name="search" value="[+as.inputValue+]"[+as.inputOptions+] />
+		[+as.liveSearch:is=`0`:then=`
+		<span class="input-group-btn">
+			<button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>	
+		</span>
+		`:else=`
+		<div class="input-group-addon"><i class="fa fa-search"></i></div>
+		`+]		
+	</div>
+</form>
+`+]
+[+as.showIntro:is=`1`:then=`
+<p class="ajaxSearch_intro" id="ajaxSearch_intro">[+as.introMessage+]</p>
+`+]';$c['AjaxSearch_tplAjaxResult'] = '<div class="[+as.resultClass+]">
+  <strong><a class="[+as.resultLinkClass+]" href="[+as.resultLink+]" title="[+as.longtitle+]">[+as.pagetitle+]</a></strong>
+[+as.descriptionShow:is=`1`:then=`
+  <small><span class="[+as.descriptionClass+]">[+as.description+]</span></small>
+`+]
+[+as.extractShow:is=`1`:then=`
+  <div class="[+as.extractClass+]"><p>[+as.extract+]</p></div>
+`+]
+[+as.breadcrumbsShow:is=`1`:then=`
+  <span class="[+as.breadcrumbsClass+]">[+as.breadcrumbs+]</span>
+`+]
+</div>';$c['AjaxSearch_tplAjaxGrpResult'] = '[+as.grpResultsDef:is=`1`:then=`
+<div id="[+as.grpResultId+]" class="AS_ajax_grpResult">
+[+as.headerGrpResult+]
+[+as.listResults+]
+[+as.footerGrpResult+]
+</div>
+`:else=`
+<div class="AS_ajax_grpResultName">[+as.grpResultNameShow:is=`1`:then=`[+as.grpResultName+]`+]
+<span class="ajaxSearch_grpResultsDisplayed">[+as.grpResultsDisplayedText+]</span></div>
+`+]';$c['mm_rules'] = '// more example rules are in assets/plugins/managermanager/example_mm_rules.inc.php
+// example of how PHP is allowed - check that a TV named documentTags exists before creating rule
+
+if ($modx->db->getValue($modx->db->select(\'count(id)\', $modx->getFullTableName(\'site_tmplvars\'), "name=\'documentTags\'"))) {
+	mm_widget_tags(\'documentTags\', \' \'); // Give blog tag editing capabilities to the \'documentTags (3)\' TV
+}
+mm_widget_showimagetvs(); // Always give a preview of Image TVs
+';$c['AjaxSearch_tplAjaxResults'] = '<div id="search_results" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Search Results</h3>
+      </div>
+      <div class="modal-body">
+        [+as.noResults:is=`1`:then=`
+		  <div class="[+as.noResultClass+]">
+			[+as.noResultText+]
+		  </div>
+		`:else=`
+		<p class="AS_ajax_resultsInfos">[+as.resultsFoundText+]<span class="AS_ajax_resultsDisplayed">[+as.resultsDisplayedText+]</span></p>
+		[+as.listGrpResults+]
+		`+]
+		[+as.moreResults:is=`1`:then=`
+		  <div class="[+as.moreClass+]">
+			<a href="[+as.moreLink+]" title="[+as.moreTitle+]">[+as.moreText+]</a>
+		  </div>
+		`+]
+		[+as.showCmt:is=`1`:then=`
+		[+as.comment+]
+		`+]
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>$(\'#search_results\').modal(\'show\')</script>';$c['Comments_tplForm'] = '<a name="jf[+jot.link.id+]"></a>
+<h2>[+form.edit:is=`1`:then=`Edit comment`:else=`Write a comment`+]</h2>
+<div class="jot-list">
+<ul>
+	<li>Required fields are marked with <b>*</b>.</li>
+</ul>
+</div>
+[+form.error:isnt=`0`:then=`
+<div class="jot-err">
+[+form.error:select=`
+&-3=You are trying to re-submit the same post. You have probably clicked the submit button more than once.
+&-2=Your comment has been rejected.
+&-1=Your comment has been saved, it will first be reviewed before it is published.
+&1=You are trying to re-submit the same post. You have probably clicked the submit button more than once.
+&2=The security code you entered was incorrect.
+&3=You can only post once each [+jot.postdelay+] seconds.
+&4=Your comment has been rejected.
+&5=[+form.errormsg:ifempty=`You didn\'t enter all the required fields`+]
+`+]
+</div>
+`:strip+]
+[+form.confirm:isnt=`0`:then=`
+<div class="jot-cfm">
+[+form.confirm:select=`
+&1=Your comment has been published.
+&2=Your comment has been saved, it will first be reviewed before it is published.
+&3=Comment saved.
+`+]
+</div>
+`:strip+]
+<form method="post" action="[+form.action:esc+]#jf[+jot.link.id+]" class="jot-form">
+	<fieldset>
+	<input name="JotForm" type="hidden" value="[+jot.id+]" />
+	<input name="JotNow" type="hidden" value="[+jot.seed+]" />
+	<input name="parent" type="hidden" value="[+form.field.parent+]" />
+	
+	[+form.moderation:is=`1`:then=`
+		<div class="jot-row">
+			<b>Created on:</b> [+form.field.createdon:date=`%a %B %d, %Y at %H:%M`+]<br />
+			<b>Created by:</b> [+form.field.createdby:userinfo=`username`:ifempty=`[+jot.guestname+]`+]<br />
+			<b>IP address:</b> [+form.field.secip+]<br />
+			<b>Published:</b> [+form.field.published:select=`0=No&1=Yes`+]<br />
+			[+form.field.publishedon:gt=`0`:then=`
+				<b>Published on:</b> [+form.field.publishedon:date=`%a %B %d, %Y at %H:%M`+]<br />
+				<b>Published by:</b> [+form.field.publishedby:userinfo=`username`:ifempty=` - `+]<br />
+			`+]
+			[+form.field.editedon:gt=`0`:then=`
+				<b>Edited on:</b> [+form.field.editedon:date=`%a %B %d, %Y at %H:%M`+]<br />
+				<b>Edited by:</b> [+form.field.editedby:userinfo=`username`:ifempty=` -`+]<br />
+			`+]
+		</div>
+	`:strip+]
+	
+	[+form.guest:is=`1`:then=`
+		<div class="form-group">
+			<label for="name[+jot.id+]">Name:</label>
+			<input tabindex="[+jot.seed:math=`?+1`+]" name="name" class="form-control" type="text" size="40" value="[+form.field.custom.name:esc+]" id="name[+jot.id+]" />
+		</div>
+		<div class="form-group">
+			<label for="email[+jot.id+]">Email:</label>
+			<input tabindex="[+jot.seed:math=`?+2`+]" name="email" class="form-control" type="text" size="40" value="[+form.field.custom.email:esc+]" id="email[+jot.id+]"/>
+		</div>
+	`:strip+]
+	<div class="form-group">
+		<label for="title[+jot.id+]">Subject:</label>
+		<input tabindex="[+jot.seed:math=`?+3`+]" name="title" class="form-control" type="text" size="40" value="[+form.field.title:esc+]" id="title[+jot.id+]"/>
+	</div>
+	<div class="form-group">
+		<label for="content[+jot.id+]">Comment: *</label>
+		<textarea tabindex="[+jot.seed:math=`?+4`+]" name="content" class="form-control" rows="8" id="content[+jot.id+]">[+form.field.content:esc+]</textarea>
+	</div>
+	
+[+jot.captcha:is=`1`:then=`
+	<div style="width:150px;margin-top: 5px;margin-bottom: 5px;">
+		<a href="[+jot.link.current:esc+]">
+			<img src="[(modx_manager_url)]includes/veriword.php?rand=[+jot.seed+]" width="148" height="60" alt="If you have trouble reading the code, click on the code itself to generate a new random code." style="border: 1px solid #003399" />
+		</a>
+	</div>
+	<div class="form-group">
+		<label for="vericode[+jot.id+]">Help prevent spam - enter security code above:</label>
+		<input type="text" name="vericode" style="width:150px;" size="20" id="vericode[+jot.id+]" />
+	</div>
+`:strip+]
+
+	<input tabindex="[+jot.seed:math=`?+5`+]" name="submit" class="btn btn-primary" type="submit" value="[+form.edit:is=`1`:then=`Save Comment`:else=`Post Comment`+]" />
+	[+form.edit:is=`1`:then=`
+		<input tabindex="[+jot.seed:math=`?+5`+]" name="submit" class="btn btn-default" type="submit" value="Cancel" onclick="history.go(-1);return false;" />
+	`+] 
+	</fieldset>
+</form>';$s=&$this->snippetCache;$s['WebSignup']='/**
+ * WebSignup
+ * 
+ * Basic Web User account creation/signup system
+ *
+ * @category 	snippet
+ * @version 	1.1.2
+ * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
+ * @internal	@properties &tpl=Template;string;
+ * @internal	@modx_category Login
+ * @internal    @installset base, sample
+ * @documentation [+site_url+]assets/snippets/weblogin/docs/websignup.html
+ * @documentation http://www.opensourcecms.com/news/details.php?newsid=660
+ * @reportissues https://github.com/modxcms/evolution
+ * @author      Created By Raymond Irving April, 2005
+ * @author      Ryan Thrash http://thrash.me
+ * @author      Jason Coward http://opengeek.com
+ * @author      Shaun McCormick, garryn, Dmi3yy
+ * @lastupdate  09/02/2016
+ */
 
 # Set Snippet Paths 
 $snipPath = $modx->config[\'base_path\'] . "assets/snippets/";
 
 # check if inside manager
-if ($m = $modx->insideManager()) {
+if ($m = $modx->isBackend()) {
     return \'\'; # don\'t go any further when inside manager
 }
 
@@ -1214,8 +411,7 @@ $useCaptcha = isset($useCaptcha)? $useCaptcha : $modx->config[\'use_captcha\'] ;
 if ($useCaptcha && !gd_info()) $useCaptcha = 0;
 
 # setup web groups
-$groups = isset($groups) ? explode(\',\',$groups):array();
-for($i=0;$i<count($groups);$i++) $groups[$i] = trim($groups[$i]);
+$groups = isset($groups) ? array_filter(array_map(\'trim\', explode(\',\', $groups))):array();
 
 # System settings
 $isPostBack        = count($_POST) && isset($_POST[\'cmdwebsignup\']);
@@ -1227,106 +423,33 @@ include_once $snipPath."weblogin/weblogin.common.inc.php";
 include_once $snipPath."weblogin/websignup.inc.php";
 
 # Return
-return $output;';
-$s['WebSignupProps'] = '&tpl=Template;string;  ';
-$s['UltimateParent'] = '/*
- * @name UltimateParent
- * @version 2.0 beta (requires MODx 0.9.5+)
- * @author Jason Coward <modx@opengeek.com>
+return $output;';$s['WebSignupProps']='{"tpl":""}';$s['UltimateParent']='return require MODX_BASE_PATH.\'assets/snippets/ultimateparent/snippet.ultimateparent.php\';';$s['FirstChildRedirect']='return require MODX_BASE_PATH.\'assets/snippets/firstchildredirect/snippet.firstchildredirect.php\';';$s['WebChangePwd']='/**
+ * WebChangePwd
  * 
- * @param &id The id of the document whose parent you want to find.
- * @param &top The top node for the search.
- * @param &topLevel The top level node for the search (root = level 1)
- * 
- * @license Public Domain, use as you like.
- * 
- * @example [[UltimateParent? &id=`45` &top=`6`]] 
- * Will find the ultimate parent of document 45 if it is a child of document 6;
- * otherwise it will return 45.
- * 
- * @example [[UltimateParent? &topLevel=`2`]]
- * Will find the ultimate parent of the current document at a depth of 2 levels
- * in the document hierarchy, with the root level being level 1.
- * 
- * This snippet travels up the document tree from a specified document and
- * returns the "ultimate" parent.  Version 2.0 was rewritten to use the new
- * getParentIds function features available only in MODx 0.9.5 or later.
- * 
- * Based on the original UltimateParent 1.x snippet by Susan Ottwell
- * <sottwell@sottwell.com>.  The topLevel parameter was introduced by staed and
- * adopted here.
+ * Allows Web User to change their password from the front-end of the website
+ *
+ * @category 	snippet
+ * @version 	1.1.2
+ * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
+ * @internal	@properties
+ * @internal	@modx_category Login
+ * @internal    @installset base
+ * @documentation [+site_url+]assets/snippets/weblogin/docs/webchangepwd.html
+ * @documentation http://www.opensourcecms.com/news/details.php?newsid=660
+ * @reportissues https://github.com/modxcms/evolution
+ * @author      Created By Raymond Irving April, 2005
+ * @author      Ryan Thrash http://thrash.me
+ * @author      Jason Coward http://opengeek.com
+ * @author      Shaun McCormick, garryn, Dmi3yy
+ * @lastupdate  09/02/2016
  */
-$top= isset ($top) && intval($top) ? $top : 0;
-$id= isset ($id) && intval($id) ? intval($id) : $modx->documentIdentifier;
-$topLevel= isset ($topLevel) && intval($topLevel) ? intval($topLevel) : 0;
-if ($id && $id != $top) {
-    $pid= $id;
-    if (!$topLevel || count($modx->getParentIds($id)) >= $topLevel) {
-        while ($parentIds= $modx->getParentIds($id, 1)) {
-            $pid= array_pop($parentIds);
-            if ($pid == $top) {
-                break;
-            }
-            $id= $pid;
-            if ($topLevel && count($modx->getParentIds($id)) < $topLevel) {
-                break;
-            }
-        }
-    }
-}
-return $id;';
-$s['FirstChildRedirect'] = '/*
- * @name FirstChildRedirect
- * @author Jason Coward <jason@opengeek.com>
- * @modified-by Ryan Thrash <ryan@vertexworks.com>
- * @license Public Domain
- * @version 1.0
- * 
- * This snippet redirects to the first child document of a folder in which this
- * snippet is included within the content (e.g. [!FirstChildRedirect!]).  This
- * allows MODx folders to emulate the behavior of real folders since MODx
- * usually treats folders as actual documents with their own content.
- * 
- * Modified to make Doc ID a required parameter... now defaults to the current 
- * Page/Folder you call the snippet from.
- * 
- * &docid=`12` 
- * Use the docid parameter to have this snippet redirect to the
- * first child document of the specified document.
- */
-
-$docid = (isset($docid))? $docid: $modx->documentIdentifier;
-
-$children= $modx->getActiveChildren($docid, \'menuindex\', \'ASC\');
-if (!$children === false) {
-    $firstChild= $children[0];
-    $firstChildUrl= $modx->makeUrl($firstChild[\'id\']);
-} else {
-    $firstChildUrl= $modx->makeUrl($modx->config[\'site_start\']);
-}
-return $modx->sendRedirect($firstChildUrl,0,\'REDIRECT_HEADER\',\'HTTP/1.1 301 Moved Permanently\');
-';
-$s['WebChangePwd'] = '# Created By Raymond Irving April, 2005
-#::::::::::::::::::::::::::::::::::::::::
-# Params:	
-#
-#	&tpl			- (Optional)
-#		Chunk name or document id to use as a template
-#				  
-#	Note: Templats design:
-#			section 1: change pwd template
-#			section 2: notification template 
-#
-# Examples:
-#
-#	[[WebChangePwd? &tpl=`ChangePwd`]] 
 
 # Set Snippet Paths 
-$snipPath  = (($modx->insideManager())? "../":"");
+$snipPath  = (($modx->isBackend())? "../":"");
 $snipPath .= "assets/snippets/";
 
 # check if inside manager
-if ($m = $modx->insideManager()) {
+if ($m = $modx->isBackend()) {
 	return \'\'; # don\'t go any further when inside manager
 }
 
@@ -1342,688 +465,58 @@ include_once $snipPath."weblogin/weblogin.common.inc.php";
 include_once $snipPath."weblogin/webchangepwd.inc.php";
 
 # Return
-return $output;
-
-
-
-';
-$s['eForm'] = '# eForm 1.4.4.7 - Electronic Form Snippet
-# Original created by Raymond Irving 15-Dec-2004.
-# Version 1.3+ extended by Jelle Jager (TobyL) September 2006
-# -----------------------------------------------------
-# Captcha image support - thanks to Djamoer
-# Multi checkbox, radio, select support - thanks to Djamoer
-# Form Parser and extened validation - by Jelle Jager
-#
-# see eform/docs/eform.htm for history, usage and examples
-#
-
-# Set Snippet Paths
-$snipFolder = isset($snipFolder)?$snipFolder:\'eform\';
-$snipPath = $modx->config["base_path"].\'assets/snippets/\'.$snipFolder.\'/\';
-
-
-# check if inside manager
-if ($modx->isBackend()) {
-return \'\'; # don\'t go any further when inside manager
-}
-
-//tidying up some casing errors in parameters
-if(isset($eformOnValidate)) $eFormOnValidate = $eformOnValidate;
-if(isset($eformOnBeforeMailSent)) $eFormOnBeforeMailSent = $eformOnBeforeMailSent;
-if(isset($eformOnMailSent)) $eFormOnMailSent = $eformOnMailSent;
-if(isset($eformOnValidate)) $eFormOnValidate = $eformOnValidate;
-if(isset($eformOnBeforeFormMerge)) $eFormOnBeforeFormMerge = $eformOnBeforeFormMerge;
-if(isset($eformOnBeforeFormParse)) $eFormOnBeforeFormParse = $eformOnBeforeFormParse;
-//for sottwell :)
-if(isset($eFormCSS)) $cssStyle = $eFormCSS;
-
-# Snippet customize settings
-$params = array (
-   // Snippet Path
-   \'snipPath\' => $snipPath, //includes $snipFolder
-	 \'snipFolder\' => $snipFolder,
-
-// eForm Params
-   \'vericode\' => isset($vericode)? $vericode:"",
-   \'formid\' => isset($formid)? $formid:"",
-   \'from\' => isset($from)? $from:$modx->config[\'emailsender\'],
-   \'fromname\' => isset($fromname)? $fromname:$modx->config[\'site_name\'],
-   \'to\' => isset($to)? $to:$modx->config[\'emailsender\'],
-   \'cc\' => isset($cc)? $cc:"",
-   \'bcc\' => isset($bcc)? $bcc:"",
-   \'subject\' => isset($subject)? $subject:"",
-   \'ccsender\' => isset($ccsender)?$ccsender:0,
-   \'sendirect\' => isset($sendirect)? $sendirect:0,
-   \'mselector\' => isset($mailselector)? $mailselector:0,
-   \'mobile\' => isset($mobile)? $mobile:\'\',
-   \'mobiletext\' => isset($mobiletext)? $mobiletext:\'\',
-   \'autosender\' => isset($autosender)? $autosender:$from,
-   \'autotext\' => isset($automessage)? $automessage:"",
-   \'category\' => isset($category)? $category:0,
-   \'keywords\' => isset($keywords)? $keywords:"",
-   \'gid\' => isset($gotoid)? $gotoid:$modx->documentIdentifier,
-   \'noemail\' => isset($noemail)? ($noemail):false,
-   \'saveform\' => isset($saveform)? ($saveform? true:false):true,
-   \'tpl\' => isset($tpl)? $tpl:"",
-   \'report\' => isset($report)? $report:"",
-   \'allowhtml\' => isset($allowhtml)? $allowhtml:0,
-   //Added by JJ
-   \'replyto\' => isset($replyto)? $replyto:"",
-   \'language\' => isset($language)? $language:$modx->config[\'manager_language\'],
-   \'thankyou\' => isset($thankyou)? $thankyou:"",
-   \'isDebug\' => isset($debug)? $debug:0,
-   \'reportAbuse\' => isset($reportAbuse)? $reportAbuse:false,
-   \'disclaimer\' => isset($disclaimer)?$disclaimer:\'\',
-   \'sendAsHtml\' => isset($sendAsHtml)?$sendAsHtml:false,
-   \'sendAsText\' => isset($sendAsText)?$sendAsText:false,
-   \'sessionVars\' => isset($sessionVars)?$sessionVars:false,
-   \'postOverides\' => isset($postOverides)?$postOverides:0,
-   \'eFormOnBeforeMailSent\' => isset($eFormOnBeforeMailSent)?$eFormOnBeforeMailSent:\'\',
-   \'eFormOnMailSent\' => isset($eFormOnMailSent)?$eFormOnMailSent:\'\',
-   \'eFormOnValidate\' => isset($eFormOnValidate)?$eFormOnValidate:\'\',
-   \'eFormOnBeforeFormMerge\' => isset($eFormOnBeforeFormMerge)?$eFormOnBeforeFormMerge:\'\',
-   \'eFormOnBeforeFormParse\' => isset($eFormOnBeforeFormParse)?$eFormOnBeforeFormParse:\'\',
-   \'cssStyle\' => isset($cssStyle)?$cssStyle:\'\',
-   \'jScript\' => isset($jScript)?$jScript:\'\',
-   \'submitLimit\' => (isset($submitLimit) &&  is_numeric($submitLimit))?$submitLimit*60:0,
-   \'protectSubmit\' => isset($protectSubmit)?$protectSubmit:1,
-   \'requiredClass\' => isset($requiredClass)?$requiredClass:"required",
-   \'invalidClass\' => isset($invalidClass)?$invalidClass:"invalid",
-   \'runSnippet\' => ( isset($runSnippet) && !is_numeric($runSnippet) )?$runSnippet:\'\',
-   \'autoSenderName\' => isset($autoSenderName)?$autoSenderName:\'\',
-   \'version\' => \'1.4.4\'
-);
-
-// pixelchutes PHx workaround
-foreach( $params as $key=>$val ) $params[ $key ] = str_replace( array(\'((\',\'))\'), array(\'[+\',\'+]\'), $val );
-
-# Start processing
-
-include_once ($snipPath."eform.inc.php");
-
-$output = eForm($modx,$params);
-
-# Return
-return $output;';
-$s['Reflect'] = '/*
- * Author: 
- *      Mark Kaplan for MODx CMF
+return $output;';$s['eForm']='return require MODX_BASE_PATH.\'assets/snippets/eform/snippet.eform.php\';';$s['phpthumb']='return require MODX_BASE_PATH.\'assets/snippets/phpthumb/snippet.phpthumb.php\';';$s['Reflect']='/**
+ * Reflect
  * 
- * Note: 
- *      If Reflect is not retrieving its own documents, make sure that the
- *          Ditto call feeding it has all of the fields in it that you plan on
- *       calling in your Reflect template. Furthermore, Reflect will ONLY
- *          show what is currently in the Ditto result set.
- *       Thus, if pagination is on it will ONLY show that page\'s items.
-*/
- 
+ * Generates date-based archives using Ditto
+ *
+ * @category 	snippet
+ * @version 	2.2
+ * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
+ * @internal	@properties
+ * @internal	@modx_category Content
+ * @internal    @installset base, sample
+ * @documentation Cheatsheet https://de.scribd.com/doc/55919355/MODx-Ditto-and-Reflect-Cheatsheet-v1-2
+ * @documentation Inside snippet-code
+ * @reportissues https://github.com/modxcms/evolution
+ * @author      Mark Kaplan
+ * @author      Ryan Thrash http://thrash.me
+ * @author      netProphET, Dmi3yy, bossloper, yamamoto
+ * @lastupdate  2016-11-21
+ */
 
-// ---------------------------------------------------
-//  Includes
-// ---------------------------------------------------
-
-$reflect_base = isset($reflect_base) ? $modx->config[\'base_path\'].$reflect_base : $modx->config[\'base_path\']."assets/snippets/reflect/";
 /*
-    Param: ditto_base
-    
-    Purpose:
-    Location of Ditto files
-
-    Options:
-    Any valid folder location containing the Ditto source code with a trailing slash
-
-    Default:
-    [(base_path)]assets/snippets/ditto/
-*/
-
-$config = (isset($config)) ? $config : "default";
-/*
-    Param: config
-
-    Purpose:
-    Load a custom configuration
-
-    Options:
-    "default" - default blank config file
-    CONFIG_NAME - Other configs installed in the configs folder or in any folder within the MODx base path via @FILE
-
-    Default:
-    "default"
-    
-    Related:
-    - <extenders>
+ *  Note: 
+ *  If Reflect is not retrieving its own documents, make sure that the
+ *  Ditto call feeding it has all of the fields in it that you plan on
+ *  calling in your Reflect template. Furthermore, Reflect will ONLY
+ *  show what is currently in the Ditto result set.
+ *  Thus, if pagination is on it will ONLY show that page\'s items.
 */
 
-require($reflect_base."configs/default.config.php");
-require($reflect_base."default.templates.php");
-if ($config != "default") {
-    require((substr($config, 0, 5) != "@FILE") ? $reflect_base."configs/$config.config.php" : $modx->config[\'base_path\'].trim(substr($config, 5)));
-}
-
-// ---------------------------------------------------
-//  Parameters
-// ---------------------------------------------------
-
-$id = isset($id) ? $id."_" : false;
-/*
-    Param: id
-
-    Purpose:
-    Unique ID for this Ditto instance for connection with other scripts (like Reflect) and unique URL parameters
-
-    Options:
-    Any valid folder location containing the Ditto source code with a trailing slash
-
-    Default:
-    "" - blank
-*/
-$getDocuments = isset($getDocuments) ? $getDocuments : 0;
-/*
-    Param: getDocuments
-
-    Purpose:
-    Force Reflect to get documents
-
-    Options:
-    0 - off
-    1 - on
-    
-    Default:
-    0 - off
-*/
-$showItems = isset($showItems) ? $showItems : 1;
-/*
-    Param: showItems
-
-    Purpose:
-    Show individual items in the archive
-
-    Options:
-    0 - off
-    1 - on
-    
-    Default:
-    1 - on
-*/
-$groupByYears = isset($groupByYears)? $groupByYears : 1;
-/*
-    Param: groupByYears
-
-    Purpose:
-    Group the archive by years
-
-    Options:
-    0 - off
-    1 - on
-    
-    Default:
-    1 - on
-*/
-$targetID = isset($targetID) ? $targetID : $modx->documentObject[\'id\'];
-/*
-    Param: targetID
-
-    Purpose:
-    ID for archive links to point to
-
-    Options:
-    Any MODx document with a Ditto call setup with extenders=`dateFilter`
-    
-    Default:
-    Current MODx Document
-*/
-$dateSource = isset($dateSource) ? $dateSource : "createdon";
-/*
-    Param: dateSource
-
-    Purpose:
-    Date source to display for archive items
-
-    Options:
-    # - Any UNIX timestamp from MODx fields or TVs such as createdon, pub_date, or editedon
-    
-    Default:
-    "createdon"
-    
-    Related:
-    - <dateFormat>
-*/
-$dateFormat = isset($dateFormat) ? $dateFormat : "%d-%b-%y %H:%M";  
-/*
-    Param: dateFormat
-
-    Purpose:
-    Format the [+date+] placeholder in human readable form
-
-    Options:
-    Any PHP valid strftime option
-
-    Default:
-    "%d-%b-%y %H:%M"
-    
-    Related:
-    - <dateSource>
-*/
-$yearSortDir = isset($yearSortDir) ? $yearSortDir : "DESC";
-/*
-    Param: yearSortDir
-
-    Purpose:
-    Direction to sort documents
-
-    Options:
-    ASC - ascending
-    DESC - descending
-
-    Default:
-    "DESC"
-    
-    Related:
-    - <monthSortDir>
-*/
-$monthSortDir = isset($monthSortDir) ? $monthSortDir : "ASC";
-/*
-    Param: monthSortDir
-
-    Purpose:
-    Direction to sort the months
-
-    Options:
-    ASC - ascending
-    DESC - descending
-
-    Default:
-    "ASC"
-    
-    Related:
-    - <yearSortDir>
-*/
-$start = isset($start)? intval($start) : 0;
-/*
-    Param: start
-
-    Purpose:
-    Number of documents to skip in the results
-    
-    Options:
-    Any number
-
-    Default:
-    0
-*/  
-$phx = (isset($phx))? $phx : 1;
-/*
-    Param: phx
-
-    Purpose:
-    Use PHx formatting
-
-    Options:
-    0 - off
-    1 - on
-    
-    Default:
-    1 - on
-*/
-
-// ---------------------------------------------------
-//  Initialize Ditto
-// ---------------------------------------------------
-$placeholder = ($id != false && $getDocuments == 0) ? true : false;
-if ($placeholder === false) {
-    $rID = "reflect_".rand(1,1000);
-    $itemTemplate = isset($tplItem) ? $tplItem: "@CODE:".$defaultTemplates[\'item\'];
-    $dParams = array(
-        "id" => "$rID",
-        "save" => "3",  
-        "summarize" => "all",
-        "tpl" => $itemTemplate,
-    );
-    
-    $source = $dittoSnippetName;
-    $params = $dittoSnippetParameters;
-        // TODO: Remove after 3.0
-        
-    if (isset($params)) {
-        $givenParams = explode("|",$params);
-        foreach ($givenParams as $parameter) {
-            $p = explode(":",$parameter);
-            $dParams[$p[0]] = $p[1];
-        }
-    }
-    /*
-        Param: params
-
-        Purpose:
-        Pass parameters to the Ditto instance used to retreive the documents
-
-        Options:
-        Any valid ditto parameters in the format name:value 
-        with multiple parameters separated by a pipe (|)
-        
-        Note:
-        This parameter is only needed for config, start, and phx as you can
-        now simply use the parameter as if Reflect was Ditto
-
-        Default:
-        [NULL]
-    */
-    
-    $reflectParameters = array(\'reflect_base\',\'config\',\'id\',\'getDocuments\',\'showItems\',\'groupByYears\',\'targetID\',\'yearSortDir\',\'monthSortDir\',\'start\',\'phx\',\'tplContainer\',\'tplYear\',\'tplMonth\',\'tplMonthInner\',\'tplItem\',\'save\');
-    $params =& $modx->event->params;
-    if(is_array($params)) {
-        foreach ($params as $param=>$value) {
-            if (!in_array($param,$reflectParameters) && substr($param,-3) != \'tpl\') {
-                $dParams[$param] = $value;
-            }
-        }
-    }
-
-    $source = isset($source) ? $source : "Ditto";
-    /*
-        Param: source
-
-        Purpose:
-        Name of the Ditto snippet to use
-
-        Options:
-        Any valid snippet name
-
-        Default:
-        "Ditto"
-    */
-    $snippetOutput = $modx->runSnippet($source,$dParams);
-    $ditto = $modx->getPlaceholder($rID."_ditto_object");
-    $resource = $modx->getPlaceholder($rID."_ditto_resource");
-} else {
-    $ditto = $modx->getPlaceholder($id."ditto_object");
-    $resource = $modx->getPlaceholder($id."ditto_resource");
-}
-if (!is_object($ditto) || !isset($ditto) || !isset($resource)) {
-    return !empty($snippetOutput) ? $snippetOutput : "The Ditto object is invalid. Please check it.";
-}
-
-// ---------------------------------------------------
-//  Templates
-// ---------------------------------------------------
-
-$templates[\'tpl\'] = isset($tplContainer) ? $ditto->template->fetch($tplContainer): $defaultTemplates[\'tpl\'];
-/*
-    Param: tplContainer
-
-    Purpose:
-    Container template for the archive
-
-    Options:
-    - Any valid chunk name
-    - Code via @CODE:
-    - File via @FILE:
-
-    Default:
-    See default.tempates.php
-*/
-$templates[\'year\'] = isset($tplYear) ? $ditto->template->fetch($tplYear): $defaultTemplates[\'year\'];
-/*
-    Param: tplYear
-
-    Purpose:
-    Template for the year item
-
-    Options:
-    - Any valid chunk name
-    - Code via @CODE:
-    - File via @FILE:
-
-    Default:
-    See default.tempates.php
-*/
-$templates[\'year_inner\'] = isset($tplYearInner) ? $ditto->template->fetch($tplYearInner): $defaultTemplates[\'year_inner\'];
-/*
-    Param: tplYearInner
-
-    Purpose:
-    Template for the year item (the ul to hold the year template)
-
-    Options:
-    - Any valid chunk name
-    - Code via @CODE:
-    - File via @FILE:
-
-    Default:
-    See default.tempates.php
-*/
-$templates[\'month\'] = isset($tplMonth) ? $ditto->template->fetch($tplMonth): $defaultTemplates[\'month\'];
-/*
-    Param: tplMonth
-
-    Purpose:
-    Template for the month item
-
-    Options:
-    - Any valid chunk name
-    - Code via @CODE:
-    - File via @FILE:
-
-    Default:
-    See default.tempates.php
-*/
-$templates[\'month_inner\'] = isset($tplMonthInner) ? $ditto->template->fetch($tplMonthInner): $defaultTemplates[\'month_inner\'];
-/*
-    Param: tplMonthInner
-
-    Purpose:
-    Template for the month item  (the ul to hold the month template)
-
-    Options:
-    - Any valid chunk name
-    - Code via @CODE:
-    - File via @FILE:
-
-    Default:
-    See default.tempates.php
-*/
-$templates[\'item\'] = isset($tplItem) ? $ditto->template->fetch($tplItem): $defaultTemplates[\'item\'];
-/*
-    Param: tplItem
-
-    Purpose:
-    Template for the individual item
-
-    Options:
-    - Any valid chunk name
-    - Code via @CODE:
-    - File via @FILE:
-
-    Default:
-    See default.tempates.php
-*/
-
-$ditto->addField("date","display","custom");
-    // force add the date field if receiving data from a Ditto instance
-
-// ---------------------------------------------------
-//  Reflect
-// ---------------------------------------------------
-
-if (function_exists("reflect") === FALSE) {
-function reflect($templatesDocumentID, $showItems, $groupByYears, $resource, $templatesDateSource, $dateFormat, $ditto, $templates,$id,$start,$yearSortDir,$monthSortDir) {
-    global $modx;
-    $cal = array();
-    $output = \'\';
-    $ph = array(\'year\'=>\'\',\'month\'=>\'\',\'item\'=>\'\',\'out\'=>\'\');
-    $build = array();
-    $stop = count($resource);
-
-    // loop and fetch all the results
-    for ($i = $start; $i < $stop; $i++) {
-        $date = getdate($resource[$i][$templatesDateSource]);
-        $year = $date["year"];
-        $month = $date["mon"];
-        $cal[$year][$month][] = $resource[$i];
-    }
-    if ($yearSortDir == "DESC") {
-        krsort($cal);
-    } else {
-        ksort($cal);
-    }
-    foreach ($cal as $year=>$months) {
-        if ($monthSortDir == "ASC") {
-            ksort($months);
-        } else {
-            krsort($months);
-        }
-        $build[$year] = $months;
-    }
-    
-    foreach ($build as $year=>$months) {
-        $r_year = \'\';
-        $r_month = \'\';
-        $r_month_2 = \'\';
-        $year_count = 0;
-        $items = array();
-        
-        foreach ($months as $mon=>$month) {
-            $month_text = strftime("%B", mktime(10, 10, 10, $mon, 10, $year));
-            $month_url = $ditto->buildURL("month=".$mon."&year=".$year."&day=false&start=0",$templatesDocumentID,$id);
-            $month_count = count($month);
-            $year_count += $month_count;
-            $r_month = $ditto->template->replace(array("year"=>$year,"month"=>$month_text,"url"=>$month_url,"count"=>$month_count),$templates[\'month\']);
-            if ($showItems) {
-                foreach ($month as $item) {
-                    $items[$year][$mon][\'items\'][] = $ditto->render($item, $templates[\'item\'], false, $templatesDateSource, $dateFormat, array(),$phx);
-                }
-                $r_month_2 = $ditto->template->replace(array(\'wrapper\' => implode(\'\',$items[$year][$mon][\'items\'])),$templates[\'month_inner\']);
-                $items[$year][$mon] = $ditto->template->replace(array(\'wrapper\' => $r_month_2),$r_month);
-            } else {
-                $items[$year][$mon] = $r_month;
-            }
-        }
-        if ($groupByYears) {
-            $year_url = $ditto->buildURL("year=".$year."&month=false&day=false&start=0",$templatesDocumentID,$id);
-            $r_year =  $ditto->template->replace(array("year"=>$year,"url"=>$year_url,"count"=>$year_count),$templates[\'year\']);
-            $var = $ditto->template->replace(array(\'wrapper\'=>implode(\'\',$items[$year])),$templates[\'year_inner\']);
-            $output .= $ditto->template->replace(array(\'wrapper\'=>$var),$r_year);
-        } else {
-            $output .= implode(\'\',$items[$year]);
-        }
-    }
-
-    $output = $ditto->template->replace(array(\'wrapper\'=>$output),$templates[\'tpl\']);
-    $modx->setPlaceholder($id.\'reset\',$ditto->buildURL(\'year=false&month=false&day=false\',$templatesDocumentID,$id));
-
-return $output;
-    
-}
-}
-
-return reflect($targetID, $showItems, $groupByYears, $resource, $dateSource, $dateFormat, $ditto, $templates,$id,$start,$yearSortDir,$monthSortDir);';
-$s['WebLogin'] = '# Created By Raymond Irving 2004
-#::::::::::::::::::::::::::::::::::::::::
-# Params:	
-#
-#	&loginhomeid 	- (Optional)
-#		redirects the user to first authorized page in the list.
-#		If no id was specified then the login home page id or 
-#		the current document id will be used
-#
-#	&logouthomeid 	- (Optional)
-#		document id to load when user logs out	
-#
-#	&pwdreqid 	- (Optional)
-#		document id to load after the user has submited
-#		a request for a new password
-#
-#	&pwdactid 	- (Optional)
-#		document id to load when the after the user has activated
-#		their new password
-#
-#	&logintext		- (Optional) 
-#		Text to be displayed inside login button (for built-in form)
-#
-#	&logouttext 	- (Optional)
-#		Text to be displayed inside logout link (for built-in form)
-#	
-#	&tpl			- (Optional)
-#		Chunk name or document id to as a template
-#				  
-#	Note: Templats design:
-#			section 1: login template
-#			section 2: logout template 
-#			section 3: password reminder template 
-#
-#			See weblogin.tpl for more information
-#
-# Examples:
-#
-#	[[WebLogin? &loginhomeid=`8` &logouthomeid=`1`]] 
-#
-#	[[WebLogin? &loginhomeid=`8,18,7,5` &tpl=`Login`]] 
-
-# Set Snippet Paths 
-$snipPath = $modx->config[\'base_path\'] . "assets/snippets/";
-
-# check if inside manager
-if ($m = $modx->insideManager()) {
-	return \'\'; # don\'t go any further when inside manager
-}
-
-# deprecated params - only for backward compatibility
-if(isset($loginid)) $loginhomeid=$loginid;
-if(isset($logoutid)) $logouthomeid = $logoutid;
-if(isset($template)) $tpl = $template;
-
-# Snippet customize settings
-$liHomeId	= isset($loginhomeid)? explode(",",$loginhomeid):array($modx->config[\'login_home\'],$modx->documentIdentifier);
-$loHomeId	= isset($logouthomeid)? $logouthomeid:$modx->documentIdentifier;
-$pwdReqId	= isset($pwdreqid)? $pwdreqid:0;
-$pwdActId	= isset($pwdactid)? $pwdactid:0;
-$loginText	= isset($logintext)? $logintext:\'Login\';
-$logoutText	= isset($logouttext)? $logouttext:\'Logout\';
-$tpl		= isset($tpl)? $tpl:"";
-
-# System settings
-$webLoginMode = isset($_REQUEST[\'webloginmode\'])? $_REQUEST[\'webloginmode\']: \'\';
-$isLogOut		= $webLoginMode==\'lo\' ? 1:0;
-$isPWDActivate	= $webLoginMode==\'actp\' ? 1:0;
-$isPostBack		= count($_POST) && (isset($_POST[\'cmdweblogin\']) || isset($_POST[\'cmdweblogin_x\']));
-$txtPwdRem 		= isset($_REQUEST[\'txtpwdrem\'])? $_REQUEST[\'txtpwdrem\']: 0;
-$isPWDReminder	= $isPostBack && $txtPwdRem==\'1\' ? 1:0;
-
-$site_id = isset($site_id)? $site_id: \'\';
-$cookieKey = substr(md5($site_id."Web-User"),0,15);
-
-# Start processing
-include_once $snipPath."weblogin/weblogin.common.inc.php";
-include_once ($modx->config[\'base_path\'] . "manager/includes/crypt.class.inc.php");
-
-if ($isPWDActivate || $isPWDReminder || $isLogOut || $isPostBack) {
-	# include the logger class
-	include_once $modx->config[\'base_path\'] . "manager/includes/log.class.inc.php";
-	include_once $snipPath."weblogin/weblogin.processor.inc.php";
-}
-
-include_once $snipPath."weblogin/weblogin.inc.php";
-
-# Return
-return $output;
-';
-$s['WebLoginProps'] = '&loginhomeid=Login Home Id;string; &logouthomeid=Logout Home Id;string; &logintext=Login Button Text;string; &logouttext=Logout Button Text;string; &tpl=Template;string;  ';
-$s['Jot'] = '/*####
-#
-# Author: Armand "bS" Pondman (apondman@zerobarrier.nl)
-#
-# Latest Version: http://modxcms.com/Jot-998.html
-# Jot Demo Site: http://projects.zerobarrier.nl/modx/
-# Documentation: http://wiki.modxcms.com/index.php/Jot (wiki)
-#
-####*/
-
+return require MODX_BASE_PATH.\'assets/snippets/reflect/snippet.reflect.php\';';$s['WebLogin']='return require MODX_BASE_PATH.\'assets/snippets/weblogin/snippet.weblogin.php\';';$s['WebLoginProps']='{"loginhomeid":"","logouthomeid":"","logintext":"","logouttext":"","tpl":""}';$s['Jot']='/**
+ * Jot
+ * 
+ * User comments with moderation and email subscription
+ *
+ * @category 	snippet
+ * @version 	1.1.5
+ * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
+ * @internal	@properties
+ * @internal	@modx_category Content
+ * @internal    @installset base, sample
+ * @documentation MODX Wiki http://wiki.modxcms.com/index.php/Jot
+ * @reportissues https://github.com/modxcms/evolution
+ * @link 		Latest Version http://modx.com/extras/package/jot
+ * @link 		Jot Demo Site http://projects.zerobarrier.nl/modx/
+ * @author      Armand "bS" Pondman apondman@zerobarrier.nl
+ * @lastupdate  09/02/2016
+ */
 $jotPath = $modx->config[\'base_path\'] . \'assets/snippets/jot/\';
 include_once($jotPath.\'jot.class.inc.php\');
 
 $Jot = new CJot;
-$Jot->VersionCheck("1.1.4");
+$Jot->VersionCheck("1.1.5");
 $Jot->Set("path",$jotPath);
 $Jot->Set("action", $action);
 $Jot->Set("postdelay", $postdelay);
@@ -2068,1485 +561,7 @@ $Jot->Set("tplNotifyAuthor", $tplNotifyAuthor);
 $Jot->Set("tplSubscribe", $tplSubscribe);
 $Jot->Set("debug", $debug);
 $Jot->Set("output", $output);
-return $Jot->Run();';
-$s['MemberCheck'] = '#::::::::::::::::::::::::::::::::::::::::
-# Version: 1.0
-# Created By Ryan Thrash (vertexworks.com)
-# Sanitized By Jason Coward (opengeek.com)
-#
-# Date: November 29, 2005
-#
-# Changelog: 
-# Nov 29, 05 -- initial release
-# Jul 13, 06 -- adjusted Singleton to work under PHP4, added placeholder code (by: garryn)
-#
-#::::::::::::::::::::::::::::::::::::::::
-# Description: 	
-#	Checks to see if users belong to a certain group and 
-#	displays the specified chunk if they do. Performs several
-#	sanity checks and allows to be used multiple times on a page.
-#
-# Params:
-#	&groups [array] (REQUIRED)
-#		array of webuser group-names to check against
-#
-#	&chunk [string] (REQUIRED)
-#		name of the chunk to use if passes the check
-#
-#	&ph [string] (optional)
-#		name of the placeholder to set instead of directly retuning chunk
-#
-#	&debug [boolean] (optional | false) 
-#		turn on debug mode for extra troubleshooting
-#
-# Example Usage:
-#
-#	[[MemberCheck? &groups=`siteadmin, registered users` &chunk=`privateSiteNav` &ph=`MemberMenu` &debug=`true`]]
-#
-#	This would place the \'members-only\' navigation store in the chunk \'privateSiteNav\'
-#	into a placeholder (called \'MemberMenu\'). It will only do this as long as the user 
-#	is logged in as a webuser and is a member of the \'siteadmin\' or the \'registered users\'
-#	groups. The optional debug parameter can be used to display informative error messages 
-#	when configuring this snippet for your site. For example, if the developer had 
-#	mistakenly typed \'siteowners\' for the first group, and none existed with debug mode on, 
-#	it would have returned the error message: The group siteowners could not be found....
-#
-#::::::::::::::::::::::::::::::::::::::::
-
-# debug parameter
-$debug = isset ($debug) ? $debug : false;
-
-# check if inside manager
-if ($m = $modx->insideManager()) {
-	return \'\'; # don\'t go any further when inside manager
-}
-
-if (!isset ($groups)) {
-	return $debug ? \'<p>Error: No Group Specified</p>\' : \'\';
-}
-
-if (!isset ($chunk)) {
-	return $debug ? \'<p>Error: No Chunk Specified</p>\' : \'\';
-}
-
-# turn comma-delimited list of groups into an array
-$groups = explode(\',\', $groups);
-
-if (!class_exists(\'MemberCheck\')) {
-	class MemberCheck {
-		var $allGroups = NULL;
-		var $debug;
-
-		function getInstance($debug) {
-			static $instance;
-			if (!isset ($instance)) {
-				$instance = new MemberCheck($debug);
-			}
-			return $instance;
-		}
-
-		function MemberCheck($debug = false) {
-			global $modx;
-
-			$this->debug = $debug;
-			if ($debug) {
-				$this->allGroups = array ();
-				$tableName = $modx->getFullTableName(\'webgroup_names\');
-				$sql = "SELECT name FROM $tableName";
-				if ($rs = $modx->db->query($sql)) {
-					while ($row = $modx->db->getRow($rs)) {
-						array_push($this->allGroups, stripslashes($row[\'name\']));
-					}
-				}
-			}
-		}
-
-		function isValidGroup($groupName) {
-			$isValid = !(array_search($groupName, $this->allGroups) === false);
-			return $isValid;
-		}
-
-		function getMemberChunk(& $groups, $chunk) {
-			global $modx;
-			$o = \'\';
-			if (is_array($groups)) {
-				for ($i = 0; $i < count($groups); $i++) {
-					$groups[$i] = trim($groups[$i]);
-					if ($this->debug) {
-						if (!$this->isValidGroup($groups[$i])) {
-							return "<p>The group <strong>" . $groups[$i] . "</strong> could not be found...</p>";
-						}
-					}
-				}
-
-				$check = $modx->isMemberOfWebGroup($groups);
-
-				$chunkcheck = $modx->getChunk($chunk);
-
-				$o .= ($check && $chunkcheck) ? $chunkcheck : \'\';
-				if (!$chunkcheck)
-					$o .= $this->debug ? "<p>The chunk <strong>$chunk</strong> not found...</p>" : \'\';
-			} else {
-				$o .= "<p>No valid group names were specified!</p>";
-			}
-
-			return $o;
-		}
-	}
-}
-
-$memberCheck = MemberCheck :: getInstance($debug);
-
-if (!isset ($ph)) {
-	return $memberCheck->getMemberChunk($groups, $chunk);
-} else {
-	$modx->setPlaceholder($ph, $memberCheck->getMemberChunk($groups, $chunk));
-	return \'\';
-}';
-$s['Personalize'] = '#::::::::::::::::::::::::::::::::::::::::
-# Created By:Ryan Thrash (modx@vertexworks.com),
-#	and then powered up by kudo (kudo@kudolink.com)
-#
-# Date: Aug 03, 2006
-#
-# Changelog:
-# Dec 01, 05 -- initial release
-# Jun 19, 06 -- updated description
-# Jul 19, 06 -- hacked by kudo to output chunks
-# Aug 03, 06 -- added placeholder for username
-# Aug 27, 10 -- powered up all code
-#
-#::::::::::::::::::::::::::::::::::::::::
-# Description:
-#	Checks to see if webusers are logged in and displays yesChunk if the user
-#	is logged or noChunk if user is not logged. Insert only the chunk name as
-#	param, without {{}}. Can use a placeholder to output the username.
-#	TESTED: can be used more than once per page.
-#	TESTED: chunks can contain snippets.
-#
-#
-# Params:
-#	&yesChunk [string] (optional)
-#		Output for LOGGED users
-#
-#	&noChunk [string] (optional)
-#		Output for NOT logged users
-#
-#	&ph [string] (optional)
-#		Placeholder for placing the username
-#		ATTENTION!: place this ph only in yesChunk!
-#
-#	&context [string] (optional)
-#		web|mgr
-#
-#	&yesTV [string] (optional)
-#		Output for LOGGED users
-#
-#	&noTV [string] (optional)
-#		Output for NOT logged users
-#
-# Example Usage:
-#
-#	[[Personalize? &yesChunk=`Link` &noChunk=`Register` &ph=`name`]]
-#
-#	Having Chunks named {{Link}} and another {{Register}}, the first will be
-#	published to registered user, the second to non-registered users.
-#
-#::::::::::::::::::::::::::::::::::::::::
-
-# prepare params and variables
-
-if     ($this->isFrontend() && isset ($_SESSION[\'webValidated\'])) $current_context = \'web\';
-elseif ($this->isBackend()  && isset ($_SESSION[\'mgrValidated\'])) $current_context = \'mgr\';
-
-$output = \'\';
-$yesChunk = (isset($yesChunk))? $yesChunk : \'\';
-$noChunk  = (isset($noChunk)) ? $noChunk  : \'\';
-$ph       = (isset($ph))      ? $ph       : \'username\';
-$context  = (isset($context)) ? $context     : $current_context;
-$yesTV    = (isset($yesTV))   ? $yesTV : \'\';
-$noTV     = (isset($noTV))    ? $noTV  : \'\';
-
-/*
-$referer = htmlspecialchars($_SERVER[\'HTTP_REFERER\'], ENT_QUOTES);
-$ua =      htmlspecialchars($_SERVER[\'HTTP_USER_AGENT\'], ENT_QUOTES);
-$ip =      htmlspecialchars($_SERVER[\'REMOTE_ADDR\'], ENT_QUOTES);
-$host =    htmlspecialchars($_SERVER[\'REMOTE_HOST\'], ENT_QUOTES);
-
-$ua_strtolower = strtolower($_SERVER[\'HTTP_USER_AGENT\']);
-if    (strpos($ua_strtolower, \'firefox\') !== false)     $browser = \'firefox\';
-elseif(strpos($ua_strtolower, \'trident/4.0\') !== false) $browser = \'internet explorer 8\';
-elseif(strpos($ua_strtolower, \'msie\') !== false)        $browser = \'internet explorer\';
-elseif(strpos($ua_strtolower, \'chrome\') !== false)      $browser = \'chrome\';
-elseif(strpos($ua_strtolower, \'safari\') !== false)      $browser = \'safari\';
-elseif(strpos($ua_strtolower, \'opera\') !== false)       $browser = \'opera\';
-else $browser = \'other\';
-
-$modx->setPlaceholder(\'referer\', $referer);
-$modx->setPlaceholder(\'ua\',      $ua);
-$modx->setPlaceholder(\'browser\', $browser);
-$modx->setPlaceholder(\'ip\',      $ip);
-$modx->setPlaceholder(\'host\',    $host);
-*/
-
-switch($context)
-{
-    case \'web\':
-        $short_name = $_SESSION[\'webShortname\'];
-        $full_name  = $_SESSION[\'webFullname\'];
-        $email      = $_SESSION[\'webEmail\'];
-        $last_login = $_SESSION[\'webLastlogin\'];
-        break;
-    case \'mgr\':
-    case \'manager\':
-        $short_name = $_SESSION[\'mgrShortname\'];
-        $full_name  = $_SESSION[\'mgrFullname\'];
-        $email      = $_SESSION[\'mgrEmail\'];
-        $last_login = $_SESSION[\'mgrLastlogin\'];
-        break;
-    default:
-        $short_name = \'\';
-}
-if (!empty($context))
-{
-    if($yesTV !== \'\')
-    {
-        $pre_output = $modx->documentObject[$yesTV];
-        if(is_array($pre_output))
-        {
-            $output = $pre_output[1];
-        }
-        else
-        {
-            $output = $pre_output;
-        }
-    }
-    elseif($yesChunk !== \'\')
-    {
-        $output = $modx->getChunk($yesChunk);
-    }
-    else
-    {
-        $output = \'username : \' . $short_name;
-    }
-
-    if(empty($last_login)) $last_login_text = \'first login\';
-    else                   $last_login_text = $modx->toDateFormat($last_login);
-
-    $modx->setPlaceholder($ph,$short_name);
-    $modx->setPlaceholder(\'short_name\',  $short_name);
-    $modx->setPlaceholder(\'full_name\',   $full_name);
-    $modx->setPlaceholder(\'email\',       $email);
-    $modx->setPlaceholder(\'last_login\', $last_login_text);
-}
-else
-{
-    if($noTV !== \'\')
-    {
-        $pre_output = $modx->documentObject[$noTV];
-        if(is_array($pre_output))
-        {
-            $output = $pre_output[1];
-        }
-        else
-        {
-            $output = $pre_output;
-        }
-    }
-    elseif($noChunk!==\'\')
-    {
-        $output = $modx->getChunk($noChunk);
-    }
-    else
-    {
-        $output = \'guest\';
-    }
-}
-return $output;';
-$s['Wayfinder'] = '/*
-::::::::::::::::::::::::::::::::::::::::
- Snippet name: Wayfinder
- Short Desc: builds site navigation
- Version: 2.0
- Authors: 
-	Kyle Jaebker (muddydogpaws.com)
-	Ryan Thrash (vertexworks.com)
- Date: February 27, 2006
-::::::::::::::::::::::::::::::::::::::::
-Description:
-    Totally refactored from original DropMenu nav builder to make it easier to
-    create custom navigation by using chunks as output templates. By using templates,
-    many of the paramaters are no longer needed for flexible output including tables,
-    unordered- or ordered-lists (ULs or OLs), definition lists (DLs) or in any other
-    format you desire.
-::::::::::::::::::::::::::::::::::::::::
-Example Usage:
-    [[Wayfinder? &startId=`0`]]
-::::::::::::::::::::::::::::::::::::::::
-*/
-
-$wayfinder_base = $modx->config[\'base_path\']."assets/snippets/wayfinder/";
-
-//Include a custom config file if specified
-$config = (isset($config)) ? "{$wayfinder_base}configs/{$config}.config.php" : "{$wayfinder_base}configs/default.config.php";
-if (file_exists($config)) {
-	include("$config");
-}
-
-include_once("{$wayfinder_base}wayfinder.inc.php");
-
-if (class_exists(\'Wayfinder\')) {
-   $wf = new Wayfinder();
-} else {
-    return \'error: Wayfinder class not found\';
-}
-
-$wf->_config = array(
-	\'id\' => isset($startId) ? $startId : $modx->documentIdentifier,
-	\'level\' => isset($level) ? $level : 0,
-	\'includeDocs\' => isset($includeDocs) ? $includeDocs : 0,
-	\'excludeDocs\' => isset($excludeDocs) ? $excludeDocs : 0,
-	\'ph\' => isset($ph) ? $ph : FALSE,
-	\'debug\' => isset($debug) ? TRUE : FALSE,
-	\'ignoreHidden\' => isset($ignoreHidden) ? $ignoreHidden : FALSE,
-	\'hideSubMenus\' => isset($hideSubMenus) ? $hideSubMenus : FALSE,
-	\'useWeblinkUrl\' => isset($useWeblinkUrl) ? $useWeblinkUrl : TRUE,
-	\'fullLink\' => isset($fullLink) ? $fullLink : FALSE,
-	\'nl\' => isset($removeNewLines) ? \'\' : "\\n",
-	\'sortOrder\' => isset($sortOrder) ? strtoupper($sortOrder) : \'ASC\',
-	\'sortBy\' => isset($sortBy) ? $sortBy : \'menuindex\',
-	\'limit\' => isset($limit) ? $limit : 0,
-	\'cssTpl\' => isset($cssTpl) ? $cssTpl : FALSE,
-	\'jsTpl\' => isset($jsTpl) ? $jsTpl : FALSE,
-	\'rowIdPrefix\' => isset($rowIdPrefix) ? $rowIdPrefix : FALSE,
-	\'textOfLinks\' => isset($textOfLinks) ? $textOfLinks : \'menutitle\',
-	\'titleOfLinks\' => isset($titleOfLinks) ? $titleOfLinks : \'pagetitle\',
-	\'displayStart\' => isset($displayStart) ? $displayStart : FALSE,
-);
-
-//get user class definitions
-$wf->_css = array(
-	\'first\' => isset($firstClass) ? $firstClass : \'\',
-	\'last\' => isset($lastClass) ? $lastClass : \'last\',
-	\'here\' => isset($hereClass) ? $hereClass : \'active\',
-	\'parent\' => isset($parentClass) ? $parentClass : \'\',
-	\'row\' => isset($rowClass) ? $rowClass : \'\',
-	\'outer\' => isset($outerClass) ? $outerClass : \'\',
-	\'inner\' => isset($innerClass) ? $innerClass : \'\',
-	\'level\' => isset($levelClass) ? $levelClass: \'\',
-	\'self\' => isset($selfClass) ? $selfClass : \'\',
-	\'weblink\' => isset($webLinkClass) ? $webLinkClass : \'\',
-);
-
-//get user templates
-$wf->_templates = array(
-	\'outerTpl\' => isset($outerTpl) ? $outerTpl : \'\',
-	\'rowTpl\' => isset($rowTpl) ? $rowTpl : \'\',
-	\'parentRowTpl\' => isset($parentRowTpl) ? $parentRowTpl : \'\',
-	\'parentRowHereTpl\' => isset($parentRowHereTpl) ? $parentRowHereTpl : \'\',
-	\'hereTpl\' => isset($hereTpl) ? $hereTpl : \'\',
-	\'innerTpl\' => isset($innerTpl) ? $innerTpl : \'\',
-	\'innerRowTpl\' => isset($innerRowTpl) ? $innerRowTpl : \'\',
-	\'innerHereTpl\' => isset($innerHereTpl) ? $innerHereTpl : \'\',
-	\'activeParentRowTpl\' => isset($activeParentRowTpl) ? $activeParentRowTpl : \'\',
-	\'categoryFoldersTpl\' => isset($categoryFoldersTpl) ? $categoryFoldersTpl : \'\',
-	\'startItemTpl\' => isset($startItemTpl) ? $startItemTpl : \'\',
-);
-
-//Process Wayfinder
-$output = $wf->run();
-
-if ($wf->_config[\'debug\']) {
-	$output .= $wf->renderDebugOutput();
-}
-
-//Ouput Results
-if ($wf->_config[\'ph\']) {
-    $modx->setPlaceholder($wf->_config[\'ph\'],$output);
-} else {
-    return $output;
-}';
-$s['Ditto'] = '/* Description:
- *      Aggregates documents to create blogs, article/news
- *      collections, and more,with full support for templating.
- * 
- * Author: 
- *      Mark Kaplan for MODx CMF
-*/
-
-//---Core Settings---------------------------------------------------- //
-
-$ditto_version = "2.1.0";
-    // Ditto version being executed
-
-$ditto_base = isset($ditto_base) ? $modx->config[\'base_path\'].$ditto_base : $modx->config[\'base_path\']."assets/snippets/ditto/";
-/*
-    Param: ditto_base
-    
-    Purpose:
-    Location of Ditto files
-
-    Options:
-    Any valid folder location containing the Ditto source code with a trailing slash
-
-    Default:
-    [(base_path)]assets/snippets/ditto/
-*/
-$dittoID = (!isset($id)) ? "" : $id."_";
-$GLOBALS["dittoID"] = $dittoID;
-/*
-    Param: id
-
-    Purpose:
-    Unique ID for this Ditto instance for connection with other scripts (like Reflect) and unique URL parameters
-
-    Options:
-    Any combination of characters a-z, underscores, and numbers 0-9
-    
-    Note:
-    This is case sensitive
-
-    Default:
-    "" - blank
-*/      
-$language = (isset($language))? $language : $modx->config[\'manager_language\'];
-if (!file_exists($ditto_base."lang/".$language.".inc.php")) {
-    $language ="english";
-}
-/*
-    Param: language
-
-    Purpose:
-    language for defaults, debug, and error messages
-
-    Options:
-    Any language name with a corresponding file in the &ditto_base/lang folder
-
-    Default:
-    "english"
-*/
-$format = (isset($format)) ? strtolower($format) : "html" ;
-/*
-    Param: format
-
-    Purpose:
-    Output format to use
-
-    Options:
-    - "html"
-    - "json"
-    - "xml"
-    - "atom"
-    - "rss"
-
-    Default:
-    "html"
-*/
-$config = (isset($config)) ? $config : "default";
-/*
-    Param: config
-
-    Purpose:
-    Load a custom configuration
-
-    Options:
-    "default" - default blank config file
-    CONFIG_NAME - Other configs installed in the configs folder or in any folder within the MODx base path via @FILE
-
-    Default:
-    "default"
-    
-    Related:
-    - <extenders>
-*/
-$debug = isset($debug)? $debug : 0;
-/*
-    Param: debug
-
-    Purpose:
-    Output debugging information
-
-    Options:
-    0 - off
-    1 - on
-    
-    Default:
-    0 - off
-    
-    Related:
-    - <debug>
-*/
-$phx = (isset($phx))? $phx : 1;
-/*
-    Param: phx
-
-    Purpose:
-    Use PHx formatting
-
-    Options:
-    0 - off
-    1 - on
-    
-    Default:
-    1 - on
-*/      
-$extenders = isset($extenders) ? explode(",",$extenders) : array();
-/*
-    Param: extenders
-
-    Purpose:
-    Load an extender which adds functionality to Ditto
-
-    Options:
-    Any extender in the extenders folder or in any folder within the MODx base path via @FILE
-
-    Default:
-    [NULL]
-
-    Related:
-    - <config>
-*/
-    // Variable: extenders
-    // Array that can be added to by configs or formats to load that extender
-    
-$placeholders = array();
-    // Variable: placeholders
-    // Initialize custom placeholders array for configs or extenders to add to
-
-$filters = array("custom"=>array(),"parsed"=>array());
-    // Variable: filters
-    // Holds both the custom filters array for configs or extenders to add to 
-    // and the parsed filters array. To add to this array, use the following format
-    // (code)
-    // $filters["parsed"][] = array("name" => array("source"=>$source,"value"=>$value,"mode"=>$mode));
-    // $filters["custom"][] = array("source","callback_function");
-
-$orderBy = array(\'parsed\'=>array(),\'custom\'=>array(),\'unparsed\'=>$orderBy);
-    // Variable: orderBy
-    // An array that holds all criteria to sort the result set by. 
-    // Note that using a custom sort will disable all other sorting.
-    // (code)
-    // $orderBy["parsed"][] = array("sortBy","sortDir");
-    // $orderBy["custom"][] = array("sortBy","callback_function");
-        
-//---Includes-------------------------------------------------------- //
-
-$files = array (
-    "base_language" => $ditto_base."lang/english.inc.php",
-    "language" => $ditto_base."lang/$language.inc.php",
-    "main_class" => $ditto_base."classes/ditto.class.inc.php",
-    "template_class" => $ditto_base."classes/template.class.inc.php",
-    "filter_class" => $ditto_base."classes/filter.class.inc.php",
-    "format" => $ditto_base."formats/$format.format.inc.php",
-    "config" => $ditto_base."configs/default.config.php",
-    "user_config" => (substr($config, 0, 5) != "@FILE") ? $ditto_base."configs/$config.config.php" : $modx->config[\'base_path\'].trim(substr($config, 5))
-);
-
-if ($phx == 1) {
-    $files["prePHx_class"] = $ditto_base."classes/phx.pre.class.inc.php";
-}
-if (isset($randomize)) {
-    $files["randomize_class"] = $ditto_base."classes/random.class.inc.php";
-}
-if ($debug == 1) {
-    $files["modx_debug_class"] = $ditto_base."debug/modxDebugConsole.class.php";
-    $files["debug_class"] = $ditto_base."classes/debug.class.inc.php";
-    $files["debug_templates"] = $ditto_base."debug/debug.templates.php";
-}
-
-$files = array_unique($files);
-foreach ($files as $filename => $filevalue) {
-    if (file_exists($filevalue) && strpos($filename,"class")) {
-        include_once($filevalue);
-    } else if (file_exists($filevalue)) {
-        include($filevalue);
-    } else if ($filename == "language") {
-        $modx->logEvent(1, 3, "Language file does not exist Please check: " . $filevalue, "Ditto " . $ditto_version);
-        return "Language file does not exist Please check: " . $filevalue;
-    } else {
-        $modx->logEvent(1, 3, $filevalue . " " . $_lang[\'file_does_not_exist\'], "Ditto " . $ditto_version);
-        return $filevalue . " " . $_lang[\'file_does_not_exist\'];
-    }
-}
-
-//---Initiate Class-------------------------------------------------- //
-if (class_exists(\'ditto\')) {
-    $ditto = new ditto($dittoID,$format,$_lang,$dbg_templates);
-        // create a new Ditto instance in the specified format and language with the requested debug level
-} else {
-    $modx->logEvent(1,3,$_lang[\'invalid_class\'],"Ditto ".$ditto_version);
-    return $_lang[\'invalid_class\'];
-}
-
-//---Initiate Extenders---------------------------------------------- //
-if (isset($tagData)) {
-    $extenders[] = "tagging";
-}
-if(count($extenders) > 0) {
-    $extenders = array_unique($extenders);
-    foreach ($extenders as $extender) {
-            if(substr($extender, 0, 5) != "@FILE") {
-                $extender_path = $ditto_base."extenders/".$extender.".extender.inc.php";                
-            } else {
-                $extender_path = $modx->config[\'base_path\'].trim(substr($extender, 5));
-            }
-            
-            if (file_exists($extender_path)){
-                include($extender_path);
-            } else {
-                $modx->logEvent(1, 3, $extender . " " . $_lang[\'extender_does_not_exist\'], "Ditto ".$ditto_version);
-                return $extender . " " . $_lang[\'extender_does_not_exist\'];
-            }       
-    }   
-}
-
-//---Parameters------------------------------------------------------- /*
-if (isset($startID)) {$parents = $startID;}
-if (isset($summarize)) {$display = $summarize;}
-if (isset($limit)) {$queryLimit = $limit;}
-if (isset($sortBy) || isset($sortDir) || is_null($orderBy[\'unparsed\'])) {
-    $sortDir = isset($sortDir) ? strtoupper($sortDir) : \'DESC\';
-    $sortBy = isset($sortBy) ? $sortBy : "createdon";
-    $orderBy[\'parsed\'][]=array($sortBy,$sortDir);
-}
-    // Allow backwards compatibility
-
-$idType = isset($documents) ? "documents" : "parents";
-    // Variable: idType
-    // type of IDs provided; can be either parents or documents
-
-$parents = isset($parents) ? $ditto->cleanIDs($parents) : $modx->documentIdentifier;
-
-/*
-    Param: parents
-
-    Purpose:
-    IDs of containers for Ditto to retrieve their children to &depth depth
-
-    Options:
-    Any valid MODx document marked as a container
-
-    Default:
-    Current MODx Document
-
-    Related:
-    - <documents>
-    - <depth>
-*/
-$documents = isset($documents) ? $ditto->cleanIDs($documents) : false;
-/*
-    Param: documents
-
-    Purpose:
-    IDs of documents for Ditto to retrieve
-
-    Options:
-    Any valid MODx document marked as a container
-
-    Default:
-    None
-
-    Related:
-    - <parents>
-*/
-
-$IDs = ($idType == "parents") ? $parents : $documents;
-    // Variable: IDs
-    // Internal variable which holds the set of IDs for Ditto to fetch
-
-$depth = isset($depth) ? $depth : 1;
-/*
-    Param: depth
-
-    Purpose:
-    Number of levels deep to retrieve documents
-
-    Options:
-    Any number greater than or equal to 1
-    0 - infinite depth
-
-    Default:
-    1
-
-    Related:
-    - <seeThruUnpub>
-*/
-$paginate = isset($paginate)? $paginate : 0;
-/*
-    Param: paginate
-
-    Purpose:
-    Paginate the results set into pages of &display length.
-    Use &total to limit the number of documents retreived.
-
-    Options:
-    0 - off
-    1 - on
-    
-    Default:
-    0 - off
-    
-    Related:
-    - <paginateAlwaysShowLinks>
-    - <paginateSplitterCharacter>
-    - <display>
-*/
-$dateSource = isset($dateSource) ? $dateSource : "createdon";
-/*
-    Param: dateSource
-
-    Purpose:
-    Source of the [+date+] placeholder
-
-    Options:
-    # - Any UNIX timestamp from MODx fields or TVs such as createdon, pub_date, or editedon
-    
-    Default:
-    "createdon"
-    
-    Related:
-    - <dateFormat>
-*/
-$dateFormat = isset($dateFormat)? $dateFormat : $_lang["dateFormat"];
-/*
-    Param: dateFormat
-
-    Purpose:
-    Format the [+date+] placeholder in human readable form
-
-    Options:
-    Any PHP valid strftime option
-
-    Default:
-    [LANG]
-    
-    Related:
-    - <dateSource>
-*/
-$display = isset($display) ? $display : "all";
-/*
-    Param: display
-
-    Purpose:
-    Number of documents to display in the results
-
-    Options:
-    # - Any number
-    "all" - All documents found
-
-    Default:
-    "all"
-    
-    Related:
-    - <queryLimit>
-    - <total>
-*/
-$total = isset($total) ? $total : "all";
-/*
-    Param: total
-
-    Purpose:
-    Number of documents to retrieve
-    
-    Options:
-    # - Any number
-    "all" - All documents found
-
-    Default:
-    "all" - All documents found
-    
-    Related:
-    - <display>
-    - <queryLimit>
-*/
-$showPublishedOnly = isset($showPublishedOnly) ? $showPublishedOnly : 1;
-/*
-    Param: showPublishedOnly
-
-    Purpose:
-    Show only published documents
-
-    Options:
-    0 - show only unpublished documents
-    1 - show both published and unpublished documents
-    
-    Default:
-    1 - show both published and unpublished documents
-    
-    Related:
-    - <seeThruUnpub>
-    - <hideFolders>
-    - <showPublishedOnly>
-    - <where>
-*/
-$showInMenuOnly = isset($showInMenuOnly) ? $showInMenuOnly : 0;
-/*
-    Param: showInMenuOnly
-
-    Purpose:
-    Show only documents visible in the menu
-
-    Options:
-    0 - show all documents
-    1 - show only documents with the show in menu flag checked
-    
-    Default:
-    0 - show all documents
-    
-    Related:
-    - <seeThruUnpub>
-    - <hideFolders>
-    - <where>
-*/
-$hideFolders = isset($hideFolders)? $hideFolders : 0;
-/*
-    Param: hideFolders
-
-    Purpose:
-    Don\'t show folders in the returned results
-
-    Options:
-    0 - keep folders
-    1 - remove folders
-    
-    Default:
-    0 - keep folders
-    
-    Related:
-    - <seeThruUnpub>
-    - <showInMenuOnly>
-    - <where>
-*/
-$hidePrivate = isset($hidePrivate)? $hidePrivate : 1;
-/*
-    Param: hidePrivate
-
-    Purpose:
-    Don\'t show documents the guest or user does not have permission to see
-
-    Options:
-    0 - show private documents
-    1 - hide private documents
-    
-    Default:
-    1 - hide private documents
-    
-    Related:
-    - <seeThruUnpub>
-    - <showInMenuOnly>
-    - <where>
-*/
-$seeThruUnpub = (isset($seeThruUnpub))? $seeThruUnpub : 1 ;
-/*
-    Param: seeThruUnpub
-
-    Purpose:
-    See through unpublished folders to retrive their children
-    Used when depth is greater than 1
-
-    Options:
-    0 - off
-    1 - on
-    
-    Default:
-    0 - off
-    
-    Related:
-    - <hideFolders>
-    - <showInMenuOnly>
-    - <where>
-*/
-$queryLimit = (isset($queryLimit))? $queryLimit : 0;
-/*
-    Param: queryLimit
-
-    Purpose:
-    Number of documents to retrieve from the database, same as MySQL LIMIT
-
-    Options:
-    # - Any number
-    0 - automatic
-
-    Default:
-    0 - automatic
-    
-    Related:
-    - <where>
-*/
-$where = (isset($where))? $where : "";
-/*
-    Param: where
-
-    Purpose:
-    Custom MySQL WHERE statement
-
-    Options:
-    A valid MySQL WHERE statement using only document object items (no TVs)
-
-    Default:
-    [NULL]
-    
-    Related:
-    - <queryLimit>
-*/
-$noResults = isset($noResults)? $ditto->getParam($noResults,"no_documents") : $_lang[\'no_documents\'];
-/*
-    Param: noResults
-
-    Purpose:
-    Text or chunk to display when there are no results
-
-    Options:
-    Any valid chunk name or text
-
-    Default:
-    [LANG]
-*/
-$removeChunk = isset($removeChunk) ? explode(",",$removeChunk) : false;
-/*
-    Param: removeChunk
-
-    Purpose:
-    Name of chunks to be stripped from content separated by commas
-    - Commonly used to remove comments
-
-    Options:
-    Any valid chunkname that appears in the output
-
-    Default:
-    [NULL]
-*/
-$hiddenFields = isset($hiddenFields) ? explode(",",$hiddenFields) : false;
-/*
-    Param: hiddenFields
-
-    Purpose:
-    Allow Ditto to retrieve fields its template parser cannot handle such as nested placeholders and [*fields*]
-
-    Options:
-    Any valid MODx fieldnames or TVs comma separated
-
-    Default:
-    [NULL]
-*/
-$offset = isset($start) ? $start : 0;
-$start = (isset($_GET[$dittoID.\'start\'])) ? intval($_GET[$dittoID.\'start\']) : 0;
-/*
-    Param: start
-
-    Purpose:
-    Number of documents to skip in the results
-    
-    Options:
-    Any number
-
-    Default:
-    0
-*/
-$globalFilterDelimiter = isset($globalFilterDelimiter) ? $globalFilterDelimiter : "|";
-/*
-    Param: globalFilterDelimiter
-
-    Purpose:
-    Filter delimiter used to separate filters in the filter string
-    
-    Options:
-    Any character not used in the filters
-
-    Default:
-    "|"
-    
-    Related:
-    - <localFilterDelimiter>
-    - <filter>
-    - <parseFilters>
-*/
-    
-$localFilterDelimiter = isset($localFilterDelimiter) ? $localFilterDelimiter : ",";
-/*
-    Param: localFilterDelimiter
-
-    Purpose:
-    Delimiter used to separate individual parameters within each filter string
-    
-    Options:
-    Any character not used in the filter itself
-
-    Default:
-    ","
-    
-    Related:
-    - <globalFilterDelimiter>
-    - <filter>
-    - <parseFilters>
-*/
-$filters["custom"] = isset($cFilters) ? array_merge($filters["custom"],$cFilters) : $filters["custom"];
-$filters["parsed"] = isset($parsedFilters) ? array_merge($filters["parsed"],$parsedFilters) : $filters["parsed"];
-    // handle 2.0.0 compatibility
-$filter = (isset($filter) || ($filters["custom"] != false) || ($filters["parsed"] != false)) ? $ditto->parseFilters($filter,$filters["custom"],$filters["parsed"],$globalFilterDelimiter,$localFilterDelimiter) : false;
-/*
-    Param: filter
-
-    Purpose:
-    Removes items not meeting a critera. Thus, if pagetitle == joe then it will be removed.
-    Use in the format field,criteria,mode with the comma being the local delimiter
-
-    *Mode* *Meaning*
-    
-    1 - !=
-    2 - ==
-    3 - <
-    4 - >
-    5 - <=
-    6 - >=
-    7 - Text not in field value
-    8 - Text in field value
-    9 - case insenstive version of #7
-    10 - case insenstive version of #8
-    11 - checks leading character of the field
-    
-    @EVAL:
-        @EVAL in filters works the same as it does in MODx exect it can only be used 
-        with basic filtering, not custom filtering (tagging, etc). Make sure that
-        you return the value you wish Ditto to filter by and that the code is valid PHP.
-
-    Default:
-    [NULL]
-    
-    Related:
-    - <localFilterDelimiter>
-    - <globalFilterDelimiter>
-    - <parseFilters>
-*/
-$keywords = (isset($keywords))? $keywords : 0;
-/*  
-    Param: keywords
-    
-    Purpose: 
-    Enable fetching of associated keywords for each document
-    Can be used as [+keywords+] or as a tagData source
-    
-    Options:
-    0 - off
-    1 - on
-    
-    Default:
-    0 - off
-*/
-
-$randomize = (isset($randomize))? $randomize : 0;
-/*  
-    Param: randomize
-    
-    Purpose: 
-    Randomize the order of the output
-    
-    Options:
-    0 - off
-    1 - on
-    Any MODx field or TV for weighted random
-    
-    Default:
-    0 - off
-*/
-$save = (isset($save))? $save : 0;
-/*
-    Param: save
-
-    Purpose:
-    Saves the ditto object and results set to placeholders
-    for use by other snippets
-
-    Options:
-    0 - off; returns output
-    1 - remaining; returns output
-    2 - all;
-    3 - all; returns ph only
-
-    Default:
-        0 - off; returns output
-*/
-$templates = array(
-    "default" => "@CODE".$_lang[\'default_template\'],
-    "base" => $tpl,
-    "alt" => $tplAlt,
-    "first" => $tplFirst,
-    "last" => $tplLast,
-    "current" => $tplCurrentDocument
-);
-/*
-    Param: tpl
-
-    Purpose:
-    User defined chunk to format the documents 
-
-    Options:
-    - Any valid chunk name
-    - Code via @CODE
-    - File via @FILE
-
-    Default:
-    [LANG]
-*/
-/*
-    Param: tplAlt
-
-    Purpose:
-    User defined chunk to format every other document
-
-    Options:
-    - Any valid chunk name
-    - Code via @CODE
-    - File via @FILE
-
-    Default:
-    &tpl
-*/
-/*
-    Param: tplFirst
-
-    Purpose:
-    User defined chunk to format the first document 
-
-    Options:
-    - Any valid chunk name
-    - Code via @CODE
-    - File via @FILE
-
-    Default:
-    &tpl
-*/
-/*
-    Param: tplLast
-
-    Purpose:
-    User defined chunk to format the last document 
-
-    Options:
-    - Any valid chunk name
-    - Code via @CODE
-    - File via @FILE
-
-    Default:
-    &tpl
-*/
-/*
-    Param: tplCurrentDocument
-
-    Purpose:
-    User defined chunk to format the current document
-
-    Options:
-    - Any valid chunk name
-    - Code via @CODE
-    - File via @FILE
-
-    Default:
-    &tpl
-*/
-$orderBy = $ditto->parseOrderBy($orderBy,$randomize);
-/*
-    Param: orderBy
-
-    Purpose:
-    Sort the result set
-
-    Options:
-    Any valid MySQL style orderBy statement
-
-    Default:
-    createdon DESC
-*/
-//-------------------------------------------------------------------- */
-$templates = $ditto->template->process($templates);
-    // parse the templates for TV\'s and store them for later use
-
-$ditto->setDisplayFields($ditto->template->fields,$hiddenFields);
-    // parse hidden fields
-    
-$ditto->parseFields($placeholders,$seeThruUnpub,$dateSource,$randomize);
-    // parse the fields into the field array
-    
-$documentIDs = $ditto->determineIDs($IDs, $idType, $ditto->fields["backend"]["tv"], $orderBy, $depth, $showPublishedOnly, $seeThruUnpub, $hideFolders, $hidePrivate, $showInMenuOnly, $where, $keywords, $dateSource, $queryLimit, $display, $filter,$paginate, $randomize);
-    // retrieves a list of document IDs that meet the criteria and populates the $resources array with them
-$count = count($documentIDs);
-    // count the number of documents to be retrieved
-$count = $count-$offset;
-    // handle the offset
-
-if ($count > 0) {
-    // if documents are returned continue with execution
-    
-    $total = ($total == "all") ? $count : min($total,$count);
-        // set total equal to count if all documents are to be included
-    
-    $display = ($display == "all") ? min($count,$total) : min($display,$total);
-        // allow show to use all option
-
-    $stop = ($save != "1") ? min($total-$start,$display) : min($count,$total);
-        // set initial stop count
-
-    if($paginate == 1) {
-        $paginateAlwaysShowLinks = isset($paginateAlwaysShowLinks)? $paginateAlwaysShowLinks : 0;
-        /*
-            Param: paginateAlwaysShowLinks
-
-            Purpose:
-            Determine whether or not to always show previous next links
-
-            Options:
-            0 - off
-            1 - on
-
-            Default:
-            0 - off
-        
-            Related:
-            - <paginate>
-            - <paginateSplitterCharacter>
-        */
-        $paginateSplitterCharacter = isset($paginateSplitterCharacter)? $paginateSplitterCharacter : $_lang[\'button_splitter\'];
-        /*
-            Param: paginateSplitterCharacter
-
-            Purpose:
-            Splitter to use if always show is disabled
-
-            Options:
-            Any valid character
-
-            Default:
-            [LANG]
-        
-            Related:
-            - <paginate>
-            - <paginateSplitterCharacter>
-        */
-        $tplPaginatePrevious = isset($tplPaginatePrevious)? $ditto->template->fetch($tplPaginatePrevious) : "<a href=\'[+url+]\' class=\'ditto_previous_link\'>[+lang:previous+]</a>";
-        /*
-            Param: tplPaginatePrevious
-
-            Purpose:
-            Template for the previous link
-
-            Options:
-            - Any valid chunk name
-            - Code via @CODE
-            - File via @FILE
-
-            Placeholders:
-            url - URL for the previous link
-            lang:previous - value of \'prev\' from the language file
-        
-            Related:
-            - <tplPaginateNext>
-            - <paginateSplitterCharacter>
-        */
-        $tplPaginateNext = isset($tplPaginateNext)? $ditto->template->fetch($tplPaginateNext) : "<a href=\'[+url+]\' class=\'ditto_next_link\'>[+lang:next+]</a>";
-        /*
-            Param: tplPaginateNext
-
-            Purpose:
-            Template for the next link
-
-            Options:
-            - Any valid chunk name
-            - Code via @CODE
-            - File via @FILE
-
-            Placeholders:
-            url - URL for the next link
-            lang:next - value of \'next\' from the language file
-        
-            Related:
-            - <tplPaginatePrevious>
-            - <paginateSplitterCharacter>
-        */
-        $tplPaginateNextOff = isset($tplPaginateNextOff)? $ditto->template->fetch($tplPaginateNextOff) : "<span class=\'ditto_next_off ditto_off\'>[+lang:next+]</span>";
-        /*
-            Param: tplPaginateNextOff
-
-            Purpose:
-            Template for the inside of the next link
-
-            Options:
-            - Any valid chunk name
-            - Code via @CODE
-            - File via @FILE
-
-            Placeholders:
-            lang:next - value of \'next\' from the language file
-        
-            Related:
-            - <tplPaginatePrevious>
-            - <paginateSplitterCharacter>
-        */
-        $tplPaginatePreviousOff = isset($tplPaginatePreviousOff)? $ditto->template->fetch($tplPaginatePreviousOff) : "<span class=\'ditto_previous_off ditto_off\'>[+lang:previous+]</span>";
-        /*
-            Param: tplPaginatePreviousOff
-
-            Purpose:
-            Template for the previous link when it is off
-
-            Options:
-            - Any valid chunk name
-            - Code via @CODE
-            - File via @FILE
-
-            Placeholders:
-            lang:previous - value of \'prev\' from the language file
-    
-            Related:
-            - <tplPaginatePrevious>
-            - <paginateSplitterCharacter>
-        */
-        $tplPaginatePage = isset($tplPaginatePage)? $ditto->template->fetch($tplPaginatePage) : "<a class=\'ditto_page\' href=\'[+url+]\'>[+page+]</a>";
-        /*
-            Param: tplPaginatePage
-
-            Purpose:
-            Template for the page link
-
-            Options:
-            - Any valid chunk name
-            - Code via @CODE
-            - File via @FILE
-
-            Placeholders:
-            url - url for the page
-            page - number of the page
-    
-            Related:
-            - <tplPaginatePrevious>
-            - <paginateSplitterCharacter>
-        */
-        $tplPaginateCurrentPage = isset($tplPaginateCurrentPage)? $ditto->template->fetch($tplPaginateCurrentPage) : "<span class=\'ditto_currentpage\'>[+page+]</span>";
-        /*
-            Param: tplPaginateCurrentPage
-
-            Purpose:
-            Template for the current page link
-
-            Options:
-            - Any valid chunk name
-            - Code via @CODE
-            - File via @FILE
-
-            Placeholders:
-            page - number of the page
-    
-            Related:
-            - <tplPaginatePrevious>
-            - <paginateSplitterCharacter>
-        */
-        
-        $ditto->paginate($start, $stop, $total, $display, $tplPaginateNext, $tplPaginatePrevious, $tplPaginateNextOff, $tplPaginatePreviousOff, $tplPaginatePage, $tplPaginateCurrentPage, $paginateAlwaysShowLinks, $paginateSplitterCharacter);
-            // generate the pagination placeholders
-    }
-
-    $dbFields = $ditto->fields["display"]["db"];
-        // get the database fields
-    $TVs = $ditto->fields["display"]["tv"];
-        // get the TVs
-    
-    switch($orderBy[\'parsed\'][0][1]) {
-        case "DESC":
-            $stop = ($ditto->prefetch === false) ? $stop + $start + $offset : $stop + $offset; 
-            $start += $offset;
-        break;
-        case "ASC":
-            $start += $offset;
-            $stop += $start;
-        break;
-    }
-
-    if ($ditto->prefetch !== false) {
-        $documentIDs = array_slice($documentIDs,$start,$stop);
-            // set the document IDs equal to the trimmed array
-        $dbFields = array_diff($dbFields,$ditto->prefetch["fields"]["db"]);
-            // calculate the difference between the database fields and those already prefetched
-        $dbFields[] = "id";
-            // append id to the db fields array
-        $TVs = array_diff($TVs,$ditto->prefetch["fields"]["tv"]);
-            // calculate the difference between the tv fields and those already prefetched
-        $start = 0;
-        $stop = min($display,($queryLimit != 0) ? $queryLimit : $display,count($documentIDs));
-    } else {
-        $queryLimit = ($queryLimit == 0) ? "" : $queryLimit;
-    }
-    
-    $resource = $ditto->getDocuments($documentIDs, $dbFields, $TVs, $orderBy, $showPublishedOnly, 0, $hidePrivate, $where, $queryLimit, $keywords, $randomize, $dateSource);
-        // retrieves documents
-    $output = $header;
-        // initialize the output variable and send the header
-
-    if ($resource) {
-        if ($randomize != "0" && $randomize != "1") {
-            $resource = $ditto->weightedRandom($resource,$randomize,$stop);
-                // randomize the documents
-        }
-        
-        $resource = array_values($resource);
-
-        for ($x=$start;$x<$stop;$x++) {
-            $template = $ditto->template->determine($templates,$x,0,$stop,$resource[$x]["id"]);
-                // choose the template to use and set the code of that template to the template variable
-            $renderedOutput = $ditto->render($resource[$x], $template, $removeChunk, $dateSource, $dateFormat, $placeholders,$phx,abs($start-$x));
-                // render the output using the correct template, in the correct format and language
-            $modx->setPlaceholder($dittoID."item[".abs($start-$x)."]",$renderedOutput);
-            /*
-                Placeholder: item[x]
-
-                Content:
-                Individual items rendered output
-            */
-            $output .= $renderedOutput;
-                // send the rendered output to the buffer
-        }
-    } else {
-        $output .= $ditto->noResults($noResults,$paginate);
-            // if no documents are found return a no documents found string
-    }
-    $output .= $footer;
-        // send the footer
-
-    // ---------------------------------------------------
-    // Save Object
-    // ---------------------------------------------------
-
-    if($save) {
-        $modx->setPlaceholder($dittoID."ditto_object", $ditto);
-        $modx->setPlaceholder($dittoID."ditto_resource", ($save == "1") ? array_slice($resource,$display) : $resource);
-    }
-} else {
-    $output = $header.$ditto->noResults($noResults,$paginate).$footer;
-}
-// ---------------------------------------------------
-// Handle Debugging
-// ---------------------------------------------------
-
-if ($debug == 1) {
-    $ditto_params =& $modx->event_params;
-    if (!isset($_GET["ditto_".$dittoID."debug"])) {
-    $_SESSION["ditto_debug_$dittoID"] = $ditto->debug->render_popup($ditto, $ditto_base, $ditto_version, $ditto_params, $documentIDs, array("db"=>$dbFields,"tv"=>$TVs), $display, $templates, $orderBy, $start, $stop, $total,$filter,$resource);
-    }
-    if (isset($_GET["ditto_".$dittoID."debug"])) {
-        switch ($_GET["ditto_".$dittoID."debug"]) {
-            case "open" :
-                exit($_SESSION["ditto_debug_$dittoID"]);
-            break;
-            case "save" :
-                $ditto->debug->save($_SESSION["ditto_debug_$dittoID"],"ditto".strtolower($ditto_version)."_debug_doc".$modx->documentIdentifier.".html");
-            break;
-        }
-    } else {
-        $output = $ditto->debug->render_link($dittoID,$ditto_base).$output;
-    }
-}
-
-return ($save != 3) ? $output : "";';
-$s['AjaxSearch'] = '
-/* -----------------------------------------------------------------------------
+return $Jot->Run();';$s['MemberCheck']='return require MODX_BASE_PATH.\'assets/snippets/membercheck/snippet.membercheck.php\';';$s['Personalize']='return require MODX_BASE_PATH.\'assets/snippets/personalize/snippet.personalize.php\';';$s['Wayfinder']='return require MODX_BASE_PATH.\'assets/snippets/wayfinder/snippet.wayfinder.php\';';$s['Ditto']='return require MODX_BASE_PATH.\'assets/snippets/ditto/snippet.ditto.php\';';$s['AjaxSearch']='/* -----------------------------------------------------------------------------
 :: Snippet: AjaxSearch
 --------------------------------------------------------------------------------
   Short Description:
@@ -3965,660 +980,7 @@ if (class_exists(\'AjaxSearch\')) {
 } else {
   $output = "<h3>error: AjaxSearch class not found</h3>";
 }
-return $output;
-?>
-';
-$s['Breadcrumbs'] = '/*
- * This snippet shows the path through the various levels of site structure. It
- * is NOT necessarily the path the user took to arrive at a given page.
- */
-
-/* -----------------------------------------------------------------------------
- * CONFIGURATION
- * -----------------------------------------------------------------------------
- * This section contains brief explanations of the available parameters.
- */
-
-/* General setup
- * -----------------------------------------------------------------------------
- */
-
-/* $maxCrumbs [ integer ]
- * Max number of elemetns to have in a breadcrumb path. The default 100 is an
- * arbitrarily high number that will essentially include everything. If you were
- * to set it to 2, and you were 5 levels deep, it would appear like:
- * HOME > ... > Level 3 > Level 4 > CURRENT PAGE
- * It should be noted that the "home" link, and the current page do not count as
- * they are managed by their own configuration settings.
- */
-( isset($maxCrumbs) ) ? $maxCrumbs : $maxCrumbs = 100;
-
-/* $pathThruUnPub [ 1 | 0 ]
- * When your path includes an unpublished folder, setting this to 1 (true) will
- * show all documents in path EXCEPT the unpublished. When set to 0 (false), the
- * path will not go "through" that unpublished folder and will stop there.
- */
-( isset($pathThruUnPub) ) ? $pathThruUnPub : $pathThruUnPub = 1;
-
-/* $respectHidemenu [ 0 | 1 ]
- * Setting this to 1 (true) will respect the hidemenu setting of the document
- * and not include it in trail.
- */
-( isset($respectHidemenu) ) ? (int)$respectHidemenu : $respectHidemenu = 1;
-
-/* $showCurrentCrumb [ 1 | 0 ]
- * Include the current page at the end of the trail. On by default.
- */
-( isset($showCurrentCrumb) ) ? $showCurrentCrumb : $showCurrentCrumb = 1;
-
-/* $currentAsLink [ 1 | 0 ]
- * If the current page is included, this parameter will show it as a link (1) or
- * just plain text (0).
- */
-( $currentAsLink ) ? $currentAsLink : $currentAsLink = 0;
-
-/* $linkTextField [ string ]
- * Prioritized list of fields to use as link text. Options are: pagetitle,
- * longtitle, description, menutitle. The first of these fields that has a value
- * will be the title.
- */
-( isset($linkTextField) ) ? $linkTextField : $linkTextField = \'menutitle,pagetitle,longtitle\';
-
-/* $linkDescField [ string ]
- * Prioritized list of fields to use as link title text. Options are: pagetitle,
- * longtitle, description, menutitle. The first of these fields that has a value
- * will be the title.
- */
-( isset($linkDescField) ) ? $linkDescField : $linkDescField = \'description,longtitle,pagetitle,menutitle\';
-
-/* $showCrumbsAsLinks [ 1 | 0 ]
- * If for some reason you want breadcrumbs to be text and not links, set to 0
- * (false).
- */
-( isset($showCrumbsAsLinks) ) ? $showCrumbsAsLinks : $showCrumbsAsLinks = 1;
-
-/* $templateSet [ string ]
- * The set of templates you\'d like to use. (Templates are defined below.) It
- * will default to defaultString which replicates the output of previous
- * versions.
- */
-( isset($templateSet) ) ? $templateSet : $templateSet = \'defaultString\';
-
-/* $crumbGap [ string ]
- * String to be shown to represent gap if there are more crumbs in trail than
- * can be shown. Note: if you would like to use an image, the entire image tag
- * must be provided. When making a snippet call, you cannot use "=", so use "||"
- * instead and it will be converted for you.
- */
-( isset($crumbGap) ) ? $crumbGap : $crumbGap = \'...\';
-
-/* $stylePrefix [ string ]
- * Breadcrumbs will add style classes to various parts of the trail. To avoid
- * class name conflicts, you can determine your own prefix. The following
- * classes will be attached:
- * crumbBox: Span that surrounds all crumb output
- * hideCrumb: Span that surrounds the "..." if there are more crumbs than will
- * be shown
- * currentCrumb: Span or A tag surrounding the current crumb
- * firstCrumb: Span that will be applied to first crumb, whether it is "home" or
- * not
- * lastCrumb: Span surrounding last crumb, whether it is the current page or
- * not
- * crumb: Class given to each A tag surrounding the intermediate crumbs (not
- * "home", "current", or "hide")
- * homeCrumb: Class given to the home crumb
- */
-( isset($stylePrefix) ) ? $stylePrefix : $stylePrefix = \'B_\';
-
-
-
-/* Home link parameters
- * -----------------------------------------------------------------------------
- * The home link is unique. It is a link that can be placed at the head of the
- * breadcrumb trail, even if it is not truly in the hierarchy.
- */
-
-/* $showHomeCrumb [ 1 | 0 ]
- * This toggles the "home" crumb to be added to the beginning of your trail.
- */
-( isset($showHomeCrumb) ) ? $showHomeCrumb : $showHomeCrumb = 1;
-
-/* $homeId [ integer ]
- * Usually the page designated as "site start" in MODx configuration is
- * considered the home page. But if you would like to use some other document,
- * you may explicitly define it.
- */
-( isset($homeId) ) ? (int)$homeId : $homeId = $modx->config[\'site_start\'];
-
-/* $homeCrumbTitle [ string ]
- * If you\'d like to use something other than the menutitle (or pagetitle) for
- * the home link.
- */
-( isset($homeCrumbTitle) ) ? $homeCrumbTitle : $homeCrumbTitle = \'\';
-
-/* $homeCrumbDescription [ string ]
- * If you\'d like to use a custom description (link title) on the home link. If
- * left blank, the title will follow the title order set in $titleField.
- */
-( isset($homeCrumbDescription) ) ? $homeCrumbDescription : $homeCrumbDescription = \'\';
-
-
-/* Custom behaviors
- * -----------------------------------------------------------------------------
- * The following parameters will alter the behavior of the Breadcrumbs based on
- * the page it is on.
- */
-
-/* $showCrumbsAtHome [ 1 | 0 ]
- * You can turn off Breadcrumbs all together on the home page by setting this to
- * 1 (true);
- */
-( isset($showCrumbsAtHome) ) ? $showCrumbsAtHome : $showCrumbsAtHome = 0;
-
-/* $hideOn [ string ]
- * Comma separated list of documents you don\'t want Breadcrumbs on at all. If
- * you have a LOT of pages like this, you might try $hideUnder or use another
- * template. This parameter is best for those rare odd balls - otherwise it will
- * become a pain to manage.
- */
-( isset($hideOn) ) ? $hideOn : $hideOn = \'\';
-
-/* $hideUnder [ string ]
- * Comma separated list of parent documents, whose CHILDREN you don\'t want
- * Breadcrumbs to appear on at all. This enables you to hide Breadcrumbs on a
- * whole folders worth of documents by specifying the parent only. The PARENT
- * will not have Breadcrumbs hidden however. If you wanted to hide the parent
- * and the children, put the parent ID in hideUnder AND hideOn.
- */
-( isset($hideUnder) ) ? $hideUnder : $hideUnder = \'\';
-
-/* $stopIds [ string ]
- * Comma separated list of document IDs that when reached, stops Breadcrumbs
- * from going any further. This is useful in situations like where you have
- * language branches, and you don\'t want the Breadcrumbs going past the "home"
- * of the language you\'re in.
- */
-( isset($stopIds) ) ? $stopIds : $stopIds = \'\';
-
-/* $ignoreIds [ string ]
- * Comma separated list of document IDs to explicitly ignore.
- */
-( isset($ignoreIds) ) ? $ignoreids : $ignoreids = \'\';
-
-/* $crumbSeparator [ string ]
- * The set of templates you\'d like to use for crumbSeparator.
- */
-( isset($crumbSeparator) ) ? $crumbSeparator : $crumbSeparator = \'&raquo;\';
-
-/* Templates
- * -----------------------------------------------------------------------------
- * In an effort to keep the MODx chunks manager from getting mired down in lots
- * of templates, Breadcrumbs templates are included here. Two sets are provided
- * prefixed with defaultString, and defaultList. You can create as many more as
- * you like, each set with it\'s own prefix
- */
-$templates = array(
-    \'defaultString\' => array(
-        \'crumb\' => \'[+crumb+]\',
-        \'separator\' => \' \'.$crumbSeparator.\' \',
-        \'crumbContainer\' => \'<span class="[+crumbBoxClass+]">[+crumbs+]</span>\',
-        \'lastCrumbWrapper\' => \'<span class="[+lastCrumbClass+]">[+lastCrumbSpanA+]</span>\',
-        \'firstCrumbWrapper\' => \'<span class="[+firstCrumbClass+]">[+firstCrumbSpanA+]</span>\'
-    ),
-    \'defaultList\' => array(
-        \'crumb\' => \'<li>[+crumb+]</li>\',
-        \'separator\' => \'\',
-        \'crumbContainer\' => \'<ul class="[+crumbBoxClass+]">[+crumbs+]</ul>\',
-        \'lastCrumbWrapper\' => \'<span class="[+lastCrumbClass+]">[+lastCrumbSpanA+]</span>\',
-        \'firstCrumbWrapper\' => \'<span class="[+firstCrumbClass+]">[+firstCrumbSpanA+]</span>\'
-    ),
-);
-
-
-/* -----------------------------------------------------------------------------
- * END CONFIGURATION
- * -----------------------------------------------------------------------------
- */
-
-// Return blank if necessary: on home page
-if ( !$showCrumbsAtHome && $homeId == $modx->documentObject[\'id\'] )
-{
-    return \'\';
-}
-// Return blank if necessary: specified pages
-if ( $hideOn || $hideUnder )
-{
-    // Create array of hide pages
-    $hideOn = str_replace(\' \',\'\',$hideOn);
-    $hideOn = explode(\',\',$hideOn);
-
-    // Get more hide pages based on parents if needed
-    if ( $hideUnder )
-    {
-        $hiddenKids = array();
-        // Get child pages to hide
-        $hideKidsQuery = $modx->db->select(\'id\',$modx->getFullTableName("site_content"),"parent IN ($hideUnder)");
-        while ( $hideKid = $modx->db->getRow($hideKidsQuery) )
-        {
-            $hiddenKids[] = $hideKid[\'id\'];
-        }
-        // Merge with hideOn pages
-        $hideOn = array_merge($hideOn,$hiddenKids);
-    }
-
-    if ( in_array($modx->documentObject[\'id\'],$hideOn) )
-    {
-        return \'\';
-    }
-
-}
-
-
-// Initialize ------------------------------------------------------------------
-
-// Put certain parameters in arrays
-$stopIds = str_replace(\' \',\'\',$stopIds);
-$stopIds = explode(\',\',$stopIds);
-$linkTextField = str_replace(\' \',\'\',$linkTextField);
-$linkTextField = explode(\',\',$linkTextField);
-$linkDescField = str_replace(\' \',\'\',$linkDescField);
-$linkDescField = explode(\',\',$linkDescField);
-$ignoreIds = str_replace(\' \',\'\',$ignoreIds);
-$ignoreIds = explode(\',\',$ignoreIds);
-
-/* $crumbs
- * Crumb elements are: id, parent, pagetitle, longtitle, menutitle, description,
- * published, hidemenu
- */
-$crumbs = array();
-$parent = $modx->documentObject[\'parent\'];
-$output = \'\';
-$maxCrumbs += ($showCurrentCrumb) ? 1 : 0;
-
-// Replace || in snippet parameters that accept them with =
-$crumbGap = str_replace(\'||\',\'=\',$crumbGap);
-
-// Curent crumb ----------------------------------------------------------------
-
-// Decide if current page is to be a crumb
-if ( $showCurrentCrumb )
-{
-    $crumbs[] = array(
-        \'id\' => $modx->documentObject[\'id\'],
-        \'parent\' => $modx->documentObject[\'parent\'],
-        \'pagetitle\' => $modx->documentObject[\'pagetitle\'],
-        \'longtitle\' => $modx->documentObject[\'longtitle\'],
-        \'menutitle\' => $modx->documentObject[\'menutitle\'],
-        \'description\' => $modx->documentObject[\'description\']);
-}
-
-// Intermediate crumbs ---------------------------------------------------------
-
-
-// Iterate through parents till we hit root or a reason to stop
-$loopSafety = 0;
-while ( $parent && $parent!=$modx->config[\'site_start\'] && $loopSafety < 1000 )
-{
-    // Get next crumb
-    $tempCrumb = $modx->getPageInfo($parent,0,"id,parent,pagetitle,longtitle,menutitle,description,published,hidemenu");
-
-    // Check for include conditions & add to crumbs
-    if (
-        $tempCrumb[\'published\'] &&
-        ( !$tempCrumb[\'hidemenu\'] || !$respectHidemenu ) &&
-        !in_array($tempCrumb[\'id\'],$ignoreIds)
-    )
-    {
-        // Add crumb
-        $crumbs[] = array(
-        \'id\' => $tempCrumb[\'id\'],
-        \'parent\' => $tempCrumb[\'parent\'],
-        \'pagetitle\' => $tempCrumb[\'pagetitle\'],
-        \'longtitle\' => $tempCrumb[\'longtitle\'],
-        \'menutitle\' => $tempCrumb[\'menutitle\'],
-        \'description\' => $tempCrumb[\'description\']);
-    }
-
-    // Check stop conditions
-    if (
-        in_array($tempCrumb[\'id\'],$stopIds) ||  // Is one of the stop IDs
-        !$tempCrumb[\'parent\'] || // At root
-        ( !$tempCrumb[\'published\'] && !$pathThruUnPub ) // Unpublished
-    )
-    {
-        // Halt making crumbs
-        break;
-    }
-
-    // Reset parent
-    $parent = $tempCrumb[\'parent\'];
-
-    // Increment loop safety
-    $loopSafety++;
-}
-
-// Home crumb ------------------------------------------------------------------
-
-if ( $showHomeCrumb && $homeId != $modx->documentObject[\'id\'] && $homeCrumb = $modx->getPageInfo($homeId,0,"id,parent,pagetitle,longtitle,menutitle,description,published,hidemenu") )
-{
-    $crumbs[] = array(
-    \'id\' => $homeCrumb[\'id\'],
-    \'parent\' => $homeCrumb[\'parent\'],
-    \'pagetitle\' => $homeCrumb[\'pagetitle\'],
-    \'longtitle\' => $homeCrumb[\'longtitle\'],
-    \'menutitle\' => $homeCrumb[\'menutitle\'],
-    \'description\' => $homeCrumb[\'description\']);
-}
-
-
-// Process each crumb ----------------------------------------------------------
-$pretemplateCrumbs = array();
-
-foreach ( $crumbs as $c )
-{
-
-    // Skip if we\'ve exceeded our crumb limit but we\'re waiting to get to home
-    if ( count($pretemplateCrumbs) > $maxCrumbs && $c[\'id\'] != $homeId )
-    {
-        continue;
-    }
-
-    $text = \'\';
-    $title = \'\';
-    $pretemplateCrumb = \'\';
-
-    // Determine appropriate span/link text: home link specified
-    if ( $c[\'id\'] == $homeId && $homeCrumbTitle )
-    {
-        $text = $homeCrumbTitle;
-    }
-    else
-    // Determine appropriate span/link text: home link not specified
-    {
-        for ($i = 0; !$text && $i < count($linkTextField); $i++)
-        {
-            if ( $c[$linkTextField[$i]] )
-            {
-                $text = $c[$linkTextField[$i]];
-            }
-        }
-    }
-
-    // Determine link/span class(es)
-    if ( $c[\'id\'] == $homeId )
-    {
-        $crumbClass = $stylePrefix.\'homeCrumb\';
-    }
-    else if ( $modx->documentObject[\'id\'] == $c[\'id\'] )
-    {
-        $crumbClass = $stylePrefix.\'currentCrumb\';
-    }
-    else
-    {
-        $crumbClass = $stylePrefix.\'crumb\';
-    }
-
-    // Make link
-    if (
-        ( $c[\'id\'] != $modx->documentObject[\'id\'] && $showCrumbsAsLinks ) ||
-        ( $c[\'id\'] == $modx->documentObject[\'id\'] && $currentAsLink )
-    )
-    {
-        // Determine appropriate title for link: home link specified
-        if ( $c[\'id\'] == $homeId && $homeCrumbDescription )
-        {
-            $title = htmlspecialchars($homeCrumbDescription);
-        }
-        else
-        // Determine appropriate title for link: home link not specified
-        {
-            for ($i = 0; !$title && $i < count($linkDescField); $i++)
-            {
-                if ( $c[$linkDescField[$i]] )
-                {
-                    $title = htmlspecialchars($c[$linkDescField[$i]]);
-                }
-            }
-        }
-
-
-        $pretemplateCrumb .= \'<a class="\'.$crumbClass.\'" href="\'.($c[\'id\'] == $modx->config[\'site_start\'] ? $modx->config[\'base_url\'] : $modx->makeUrl($c[\'id\'])).\'" title="\'.$title.\'">\'.$text.\'</a>\';
-    }
-    else
-    // Make a span instead of a link
-    {
-       $pretemplateCrumb .= \'<span class="\'.$crumbClass.\'">\'.$text.\'</span>\';
-    }
-
-    // Add crumb to pretemplate crumb array
-    $pretemplateCrumbs[] = $pretemplateCrumb;
-
-    // If we have hit the crumb limit
-    if ( count($pretemplateCrumbs) == $maxCrumbs )
-    {
-        if ( count($crumbs) > ($maxCrumbs + (($showHomeCrumb) ? 1 : 0)) )
-        {
-            // Add gap
-            $pretemplateCrumbs[] = \'<span class="\'.$stylePrefix.\'hideCrumb\'.\'">\'.$crumbGap.\'</span>\';
-        }
-
-        // Stop here if we\'re not looking for the home crumb
-        if ( !$showHomeCrumb )
-        {
-            break;
-        }
-    }
-}
-
-// Put in correct order for output
-$pretemplateCrumbs = array_reverse($pretemplateCrumbs);
-
-// Wrap first/last spans
-$pretemplateCrumbs[0] = str_replace(
-    array(\'[+firstCrumbClass+]\',\'[+firstCrumbSpanA+]\'),
-    array($stylePrefix.\'firstCrumb\',$pretemplateCrumbs[0]),
-    $templates[$templateSet][\'firstCrumbWrapper\']
-);
-$pretemplateCrumbs[(count($pretemplateCrumbs)-1)] = str_replace(
-    array(\'[+lastCrumbClass+]\',\'[+lastCrumbSpanA+]\'),
-    array($stylePrefix.\'lastCrumb\',$pretemplateCrumbs[(count($pretemplateCrumbs)-1)]),
-    $templates[$templateSet][\'lastCrumbWrapper\']
-);
-
-// Insert crumbs into crumb template
-$processedCrumbs = array();
-foreach ( $pretemplateCrumbs as $pc )
-{
-    $processedCrumbs[] = str_replace(\'[+crumb+]\',$pc,$templates[$templateSet][\'crumb\']);
-}
-
-// Combine crumbs together into one string with separator
-$processedCrumbs = implode($templates[$templateSet][\'separator\'],$processedCrumbs);
-
-// Put crumbs into crumb container template
-$container = str_replace(
-    array(\'[+crumbBoxClass+]\',\'[+crumbs+]\'),
-    array($stylePrefix.\'crumbBox\',$processedCrumbs),
-    $templates[$templateSet][\'crumbContainer\']
-    );
-
-// Return crumbs
-return $container;';
-$s['if'] = '/**
-* if snippet  
-* Date: Jan 03, 2013
-*
-* [[if? &is=`[*id*]:is:4:or:[*parent*]:in:5,6,5,7,8,9` &then=`[[if? &is=`0||is||0` &then=`true` &else=`false` &separator=`||`]]` &else=`@TPL:else`]]
-* [[if? &is=`[*id*]:is:1:or:[*id*]:is:2:and:[*parent*]:is:5:or:[*parent*]:in:2,3,4` &then=`true` &else=`false`]]
-*
-* All expressions are logically (....:or:is:.... ) :and: (...:!empty:.....)
-* expression and divides the condition into 2 parts, which in the end compared to the true
-*
-* Sample №1
-* Output action is necessary only in the parent ID = 5 
-* [[if? &is=`[*parent*]:is:5` &then=`@TPL:chunk-name`]]
-*
-* Sample №2
-* Output action is necessary only in the parent ID = 5 or template IDs in (7,8,9)
-* [[if? &is=`[*parent*]:is:5:or:[*template*]:in:7,8,9` &then=`@TPL:chunk-name`]]
-*
-* Sample №3
-* Output action is necessary only in the parent ID = 5 and only the resource with the template ID = 7
-* [[if? &is=`[*parent*]:is:5:and:[*template*]:is:7` &then=`@TPL:chunk-name`]]
-*
-* Sample №4
-* Output action is necessary only in the parent ID = 5 and (only in the template ID = 7 or in other templates but with TV `new` = 1
-* [[if? &is=`[*parent*]:is:5:and:[*template*]:is:7:or:[*new*]:is:1` &then=`@TPL:chunk-name`]]
-*
-* Sample №5
-* Output share for the goods with a price in the range of > 300 <= 700
-* [[if? &is=`[*price*]:gt:300:and:[*price*]:lte:700` &then=`@TPL:chunk-name`]]
-*
-* Sample №6
-* Output in the multiplicity of records Ditto 3
-* [[if? &is=`[+ditto_iteration+]:%:3` &then=`true` &else=`false`]]
-*
-* Sample №7
-* Output in the multiplicity of records Ditto 3 but by multiplying the
-* [[if? &is=`[+ditto_iteration+]*2:%:3` &then=`true` &else=`false` &math=`on`]]
-*
-* Sample №8
-* Print the value of the mathematical expression
-* [[if? &is=`[+ditto_iteration+]*2` &math=`on`]]
-*
-* Operator:
-* (is,=) , (not,!=) , (>,gt) , (<,lt) , (>=,gte) , (lte,<=) , (isempty,empty) , (not_empty,!empty)
-* (null, is_null) , (in_array, inarray, in) , (not_in,!in)
-*
-* More samples
-* [[if? &is=`eval(\'global $iteration;$iteration++;echo $iteration;\')` &math=`on`]]   // iteration in Ditto,Wayfinder and others
-* [[if? &is=`:is:` &then=`@eval: echo str_replace(\'<br/>\',\'\',\'[*pagetitle*]\');`]]    // \'our<br/>works\' -> \'our works\' 
-* [[if? &is=`:is:` &then=`@eval: echo number_format(\'[*price*]\', 2, \',\', \' \');`]]    // \'1000000,89\' -> \'1 000 000,89\'
-*
-*  RussAndRussky.org.ua
-**/
-
-$s=empty($separator)?\':\':$separator;
-$opers=explode($s,$is);
-$subject=$opers[0];
-$eq=true;
-$and=false;
-for ($i=1;$i<count($opers);$i++){
-  	if ($opers[$i]==\'or\') {$or=true;$part_eq=$eq;$eq=true;continue;}
-    if ($or) {$subject=$opers[$i];$or=false;continue;}
-  
-    if ($opers[$i]==\'and\') {
-      $lp=1;
-      $and=true;
-      if (!empty($part_eq)){if ($part_eq||$eq){$left_part=true;}} else {$left_part=$eq?true:false;}
-      $eq=true;unset($part_eq);
-      continue;
-    }
-	if ($and) {$subject=$opers[$i];$and=false;continue;}
-	
-	$operator = $opers[$i];
-	$operand  = $opers[$i+1];
-  
-	if (isset($subject)) {
-		if (!empty($operator)) {
-      if ($math==\'on\' && !empty($subject)) {eval(\'$subject=\'.$subject.\';\');}
-			$operator = strtolower($operator);
-      
-			switch ($operator) {
-   
-        case \'%\':
-        $output = ($subject %$operand==0) ? true: false;$i++;
-        break;
-       
-				case \'!=\':
-				case \'not\':$output = ($subject != $operand) ? true: false;$i++;
-					break;
-				case \'<\':
-				case \'lt\':$output = ($subject < $operand) ? true : false;$i++;
-					break;
-				case \'>\':
-				case \'gt\':$output = ($subject > $operand) ? true : false;$i++;
-					break;
-				case \'<=\':
-				case \'lte\':$output = ($subject <= $operand) ? true : false;$i++;
-					break;
-				case \'>=\':
-				case \'gte\':$output = ($subject >= $operand) ? true : false;$i++;
-					break;
-				case \'isempty\':
-				case \'empty\':$output = empty($subject) ? true : false;
-					break;
-				case \'!empty\':
-				case \'notempty\':
-				case \'isnotempty\':$output = !empty($subject) && $subject != \'\' ? true : false;
-					break;
-				case \'isnull\':
-				case \'null\':$output = $subject == null || strtolower($subject) == \'null\' ? true : false;
-					break;
-				case \'inarray\':
-				case \'in_array\':
-				case \'in\':
-					$operand = explode(\',\',$operand);
-					$output = in_array($subject,$operand) ? true : false;
-					$i++;
-					break;
-				 case \'not_in\':
-				 case \'!in\':
-				 case \'!inarray\':
-					$operand = explode(\',\',$operand);
-					$output = in_array($subject,$operand) ? false : true;
-					$i++;
-					break;
-			  
-				case \'==\':
-				case \'=\':
-				case \'eq\':
-				case \'is\':
-				default:
-        $output = ((string)$subject == (string)$operand) ? true : false;
-        $i++;
-				break;
-			}     
-     
-			$eq=$output?$eq:false;
-   
-		}
-	}
-}
-if ($lp==1){
-  if ($left_part) {
-	if (!empty($part_eq)){
-    	if ($part_eq||$eq){$output=$then;}
-  	} else {
-    	$output=$eq?$then:$else;
-  	}
-  } 
-  else 
-  {
-    $output=$else;
-  }
-} else {
-	if (!empty($part_eq)){
-		if ($part_eq||$eq){
-			$output=$then;
-		}
-	} else {$output=$eq?$then:$else;}
-}
-if (strpos($output,\'@TPL:\')!==FALSE){$output=\'{{\'.(str_replace(\'@TPL:\',\'\',$output)).\'}}\';}
-
-if (substr($output,0,6) == "@eval:") {
-  ob_start();
-	eval(substr($output,6));
-	$output = ob_get_contents();  
-	ob_end_clean(); 
-}
-if (empty($then)&&empty($else)) {
-  if ($math==\'on\') {eval(\'$subject=\'.$subject.\';\');}
-  return $subject;
-}
-
-return $output;';
-$s['ListIndexer'] = '// added in 1.0.1: hidePrivate (hide items from unauthorized users)
+return $output;';$s['Breadcrumbs']='return require MODX_BASE_PATH.\'assets/snippets/breadcrumbs/snippet.breadcrumbs.php\';';$s['if']='return require MODX_BASE_PATH.\'assets/snippets/if/snippet.if.php\';';$s['ListIndexer']='// added in 1.0.1: hidePrivate (hide items from unauthorized users)
 //
 // Derived from ListIndex 0.6j by jaredc@honeydewdesign.com
 // Now supports Show In Menu
@@ -5101,9 +1463,7 @@ if ($linkToIndex) {
 // Send to browser
 // ---------------------------------------------------
 
-return $output;';
-$s['tagLinks'] = '
-/**
+return $output;';$s['tagLinks']='/**
 
 * Gets the tags for the current page (if any are set),
 
@@ -5475,11 +1835,7 @@ if ($tvarray[\'0\'] == \'\'){
 
 return $link;
 
-}
-';
-$s['TvTagCloud'] = '
-
-/****************************************************
+}';$s['TvTagCloud']='/****************************************************
 
 * Name: TvTagCloud
 
@@ -6069,11 +2425,7 @@ if ($displayType == \'cloud\') {
 
 
 
-return $output;
-
-';
-$s['phx:split_tags'] = '
-$result = "";
+return $output;';$s['phx:split_tags']='$result = "";
 if (trim($input) == "")
     return "";
 
@@ -6083,53 +2435,7 @@ foreach ($tags as $tag) {
     $result = $result . "<a href=\\"" . $url . "\\">" . $tag . "</a>" . "&nbsp;&bull; " ;
 }
 
-return $result;
-';
-$p = &$this->pluginCache;
-$p['TransAlias'] = '/*
- * Initialize parameters
- */
-if (!isset ($alias)) { return ; }
-if (!isset ($plugin_dir) ) { $plugin_dir = \'transalias\'; }
-if (!isset ($plugin_path) ) { $plugin_path = $modx->config[\'base_path\'].\'assets/plugins/\'.$plugin_dir; }
-if (!isset ($table_name)) { $table_name = \'common\'; }
-if (!isset ($char_restrict)) { $char_restrict = \'lowercase alphanumeric\'; }
-if (!isset ($remove_periods)) { $remove_periods = \'No\'; }
-if (!isset ($word_separator)) { $word_separator = \'dash\'; }
-if (!isset ($override_tv)) { $override_tv = \'\'; }
-
-if (!class_exists(\'TransAlias\')) {
-    require_once $plugin_path.\'/transalias.class.php\';
-}
-$trans = new TransAlias($modx);
-
-/*
- * see if TV overrides the table name
- */
-if(!empty($override_tv)) {
-    $tvval = $trans->getTVValue($override_tv);
-    if(!empty($tvval)) {
-        $table_name = $tvval;
-    }
-}
-
-/*
- * Handle events
- */
-$e =& $modx->event;
-switch ($e->name ) {
-    case \'OnStripAlias\':
-        if ($trans->loadTable($table_name, $remove_periods)) {
-            $output = $trans->stripAlias($alias,$char_restrict,$word_separator);
-            $e->output($output);
-            $e->stopPropagation();
-        }
-        break ;
-    default:
-        return ;
-}';
-$p['TransAliasProps'] = '&table_name=Trans table;list;common,russian,utf8,utf8lowercase;utf8lowercase &char_restrict=Restrict alias to;list;lowercase alphanumeric,alphanumeric,legal characters;legal characters &remove_periods=Remove Periods;list;Yes,No;No &word_separator=Word Separator;list;dash,underscore,none;dash &override_tv=Override TV name;string;  ';
-$p['PHx'] = '/*####
+return $result;';$s['DocLister']='return require MODX_BASE_PATH.\'assets/snippets/DocLister/snippet.DocLister.php\';';$p=&$this->pluginCache;$p['PHx']='/*####
 
 #
 
@@ -6161,9 +2467,23 @@ switch($e->name) {
 
 		break;
 
-}';
-$p['PHxProps'] = '&phxdebug=Log events;int;0 &phxmaxpass=Max. Passes;int;50 ';
-$p['Search Highlight'] = '/*
+}';$p['PHxProps']='&phxdebug=Log events;int;0 &phxmaxpass=Max. Passes;int;50 ';$p['Search Highlight']='/**
+ * Search Highlight
+ * 
+ * Used with AjaxSearch to show search terms highlighted on page linked from search results
+ *
+ * @category 	plugin
+ * @version 	1.5
+ * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
+ * @internal	@properties
+ * @internal	@events OnWebPagePrerender 
+ * @internal	@modx_category Search
+ * @internal    @legacy_names Search Highlighting
+ * @internal    @installset base, sample
+ * @internal    @disabled 1
+ */
+ 
+ /*
   ------------------------------------------------------------------------
   Plugin: Search_Highlight v1.5
   ------------------------------------------------------------------------
@@ -6184,10 +2504,10 @@ $p['Search Highlight'] = '/*
   Created By:  Susan Ottwell (sottwell@sottwell.com)
                Kyle Jaebker (kjaebker@muddydogpaws.com)
 
-  Refactored by Coroico (www.modx.wangba.fr) and TS
+  Refactored by Coroico (www.evo.wangba.fr) and TS
   ------------------------------------------------------------------------
   Based off the the code by Susan Ottwell (www.sottwell.com)
-    http://modxcms.com/forums/index.php/topic,1237.0.html
+    http://forums.modx.com/thread/47775/plugin-highlight-search-terms
   ------------------------------------------------------------------------
   CSS:
     The classes used for the highlighting are the same as the AjaxSearch
@@ -6299,265 +2619,101 @@ if (isset($_REQUEST[\'searched\']) && isset($_REQUEST[\'highlight\'])) {
     $output = str_replace(\'<!--search_terms-->\',$highlightText,$output);
     $modx->documentOutput = $output;
   }
-}';
-$p['Quick Manager+'] = '// In manager
-if (isset($_SESSION[\'mgrValidated\'])) {
-
-    $show = TRUE;
-
-    if ($disabled  != \'\') {
-        $arr = explode(",", $disabled );
-        if (in_array($modx->documentIdentifier, $arr)) {
-            $show = FALSE;
-        }
-    }
-
-    if ($show) {
-        // Replace [*#tv*] with QM+ edit TV button placeholders
-        if ($tvbuttons == \'true\') {
-            $e = $modx->Event;
-            if ($e->name == \'OnParseDocument\') {
-                 $output = &$modx->documentOutput;
-                 $output = preg_replace(\'~\\[\\*#(.*?)\\*\\]~\', \'<!-- \'.$tvbclass.\' $1 -->[*$1*]\', $output);
-                 $modx->documentOutput = $output;
-             }
-         }
-        // In manager
-        if (isset($_SESSION[\'mgrValidated\'])) {
-            include_once($modx->config[\'base_path\'].\'assets/plugins/qm/qm.inc.php\');
-            $qm = new Qm($modx, $jqpath, $loadmanagerjq, $loadfrontendjq, $noconflictjq, $loadtb, $tbwidth, $tbheight, $hidefields, $hidetabs, $hidesections, $addbutton, $tpltype, $tplid, $custombutton, $managerbutton, $logout, $autohide, $editbuttons, $editbclass, $newbuttons, $newbclass, $tvbuttons, $tvbclass);
-        }
-    }
-}';
-$p['Quick Manager+Props'] = '&jqpath=Path to jQuery;text;assets/js/jquery-1.4.4.min.js &loadmanagerjq=Load jQuery in manager;list;true,false;false &loadfrontendjq=Load jQuery in front-end;list;true,false;true &noconflictjq=jQuery noConflict mode in front-end;list;true,false;true &loadtb=Load modal box in front-end;list;true,false;true &tbwidth=Modal box window width;text;80% &tbheight=Modal box window height;text;90% &hidefields=Hide document fields from front-end editors;text;parent &hidetabs=Hide document tabs from front-end editors;text; &hidesections=Hide document sections from front-end editors;text; &addbutton=Show add document here button;list;true,false;true &tpltype=New document template type;list;parent,id,selected;parent &tplid=New document template id;int;3 &custombutton=Custom buttons;textarea; &1=undefined;; &managerbutton=Show go to manager button;list;true,false;true &logout=Logout to;list;manager,front-end;manager &disabled=Plugin disabled on documents;text; &autohide=Autohide toolbar;list;true,false;true &editbuttons=Inline edit buttons;list;true,false;false &editbclass=Edit button CSS class;text;qm-edit &newbuttons=Inline new resource buttons;list;true,false;false &newbclass=New resource button CSS class;text;qm-new &tvbuttons=Inline template variable buttons;list;true,false;false &tvbclass=Template variable button CSS class;text;qm-tv  ';
-$p['Forgot Manager Login'] = 'if(!class_exists(\'ForgotManagerPassword\')) {
-    class ForgotManagerPassword{
-        function ForgotManagerPassword(){
-            $this->errors = array();
-            $this->checkLang();
-        }
-
-        function getLink() {
-            global $_lang;
-
-            $link = <<<EOD
-<a id="ForgotManagerPassword-show_form" href="index.php?action=show_form">{$_lang[\'forgot_your_password\']}</a>
-EOD;
-
-            return $link;
-        }
-
-        function getForm() {
-            global $_lang;
-
-            $form = <<<EOD
-<label id="FMP-email_label" for="FMP_email">{$_lang[\'account_email\']}:</label>
-<input id="FMP-email" type="text" />
-<button id="FMP-email_button" type="button" onclick="window.location = \'index.php?action=send_email&email=\'+document.getElementById(\'FMP-email\').value;">{$_lang[\'send\']}</button>
-EOD;
-
-            return $form;
-        }
-
-        /* Get user info including a hash unique to this user, password, and day */
-        function getUser($user_id=false, $username=\'\', $email=\'\', $hash=\'\') {
-            global $modx, $_lang;
-
-            $user_id = $user_id == false ? false : $modx->db->escape($user_id);
-            $username = $modx->db->escape($username);
-            $email = $modx->db->escape($email);
-            $hash = $modx->db->escape($hash);
-
-            $pre = $modx->db->config[\'table_prefix\'];
-            $site_id = $modx->config[\'site_id\'];
-            $today = date(\'Yz\'); // Year and day of the year
-            $wheres = array();
-            $where = \'\';
-            $user = null;
-
-            if($user_id !== false) { $wheres[] = "usr.id = \'{$user_id}\'"; }
-            if(!empty($username)) { $wheres[] = "usr.username = \'{$username}\'"; }
-            if(!empty($email)) { $wheres[] = "attr.email = \'{$email}\'"; }
-            if(!empty($hash)) { $wheres[] = "MD5(CONCAT(usr.username,usr.password,\'{$site_id}\',\'{$today}\')) = \'{$hash}\'"; }
-
-            if($wheres) {
-                $where = \' WHERE \'.implode(\' AND \',$wheres);
-                $sql = "SELECT usr.id, usr.username, attr.email, MD5(CONCAT(usr.username,usr.password,\'{$site_id}\',\'{$today}\')) AS hash
-                    FROM `{$pre}manager_users` usr
-                    INNER JOIN `{$pre}user_attributes` attr ON usr.id = attr.internalKey
-                    {$where}
-                    LIMIT 1;";
-
-                if($result = $modx->db->query($sql)){
-                    if($modx->db->getRecordCount($result)==1) {
-                        $user = $modx->db->getRow($result);
-                    }
-                }
-            }
-
-            if($user == null) { $this->errors[] = $_lang[\'could_not_find_user\']; }
-
-            return $user;
-        }
-
-
-
-        /* Send an email with a link to login */
-        function sendEmail($to) {
-            global $modx, $_lang;
-
-            $subject = $_lang[\'password_change_request\'];
-            $headers  = "MIME-Version: 1.0\\r\\n".
-                "Content-type: text/html; charset=\\"{$modx->config[\'modx_charset\']}\\"\\r\\n".
-                "From: MODx <{$modx->config[\'emailsender\']}>\\r\\n".
-                "Reply-To: no-reply@{$_SERVER[\'HTTP_HOST\']}\\r\\n".
-                "X-Mailer: PHP/".phpversion();
-
-            $user = $this->getUser(0, \'\', $to);
-
-            if($user[\'username\']) {
-                $body = <<<EOD
-<p>{$_lang[\'forgot_password_email_intro\']} <a href="{$modx->config[\'site_url\']}manager/processors/login.processor.php?username={$user[\'username\']}&hash={$user[\'hash\']}">{$_lang[\'forgot_password_email_link\']}</a></p>
-<p>{$_lang[\'forgot_password_email_instructions\']}</p>
-<p><small>{$_lang[\'forgot_password_email_fine_print\']}</small></p>
-EOD;
-
-                $mail = mail($to, $subject, $body, $headers);
-                if(!$mail) { $this->errors[] = $_lang[\'error_sending_email\']; }
-
-                return $mail;
-            }
-        }
-
-        function unblockUser($user_id) {
-            global $modx, $_lang;
-
-            $pre = $modx->db->config[\'table_prefix\'];
-            $modx->db->update(array(\'blocked\' => 0, \'blockeduntil\' => 0, \'failedlogincount\' => 0), "`{$pre}user_attributes`", "internalKey = \'{$user_id}\'");
-
-            if(!$modx->db->getAffectedRows()) { $this->errors[] = $_lang[\'user_doesnt_exist\']; return; }
-
-            return true;
-        }
-
-        function checkLang() {
-            global $_lang;
-
-            $eng = array();
-            $eng[\'forgot_your_password\'] = \'Forgot your password?\';
-            $eng[\'account_email\'] = \'Account email\';
-            $eng[\'send\'] = \'Send\';
-            $eng[\'password_change_request\'] = \'Password change request\';
-            $eng[\'forgot_password_email_intro\'] = \'A request has been made to change the password on your account.\';
-            $eng[\'forgot_password_email_link\'] = \'Click here to complete the process.\';
-            $eng[\'forgot_password_email_instructions\'] = \'From there you will be able to change your password from the My Account menu.\';
-            $eng[\'forgot_password_email_fine_print\'] = \'* The URL above will expire once you change your password or after today.\';
-            $eng[\'error_sending_email\'] = \'Error sending email\';
-            $eng[\'could_not_find_user\'] = \'Could not find user\';
-            $eng[\'user_doesnt_exist\'] = \'User does not exist\';
-            $eng[\'email_sent\'] = \'Email sent\';
-
-            foreach($eng as $key=>$value) {
-                if(empty($_lang[$key])) { $_lang[$key] = $value; }
-            }
-        }
-
-        function getErrorOutput() {
-            $output = \'\';
-
-            if($this->errors) {
-                $output = \'<span class="error">\'.implode(\'</span><span class="errors">\', $this->errors).\'</span>\';
-            }
-
-            return $output;
-        }
-    }
-}
-
-global $_lang;
-
-$output = \'\';
-$event_name = $modx->Event->name;
-$action = (empty($_GET[\'action\']) ? \'\' : (is_string($_GET[\'action\']) ? $_GET[\'action\'] : \'\'));
-$username = (empty($_GET[\'username\']) ? false : (is_string($_GET[\'username\']) ? $_GET[\'username\'] : \'\'));
-$to = (empty($_GET[\'email\']) ? \'\' : (is_string($_GET[\'email\']) ? $_GET[\'email\'] : \'\'));
-$hash = (empty($_GET[\'hash\']) ? false : (is_string($_GET[\'hash\']) ? $_GET[\'hash\'] : \'\'));
-$forgot = new ForgotManagerPassword();
-
-if($event_name == \'OnManagerLoginFormRender\') {
-    switch($action) {
-        case \'show_form\':
-            $output = $forgot->getForm();
-            break;
-        case \'send_email\':
-            if($forgot->sendEmail($to)) { $output = $_lang[\'email_sent\']; }
-            break;
-        default:
-            $output = $forgot->getLink();
-            break;
-    }
-
-    if($forgot->errors) { $output = $forgot->getErrorOutput() . $forgot->getLink(); }
-}
-
-if($event_name == \'OnBeforeManagerLogin\' && $hash && $username) {
-    $user = $forgot->getUser(false, $username, \'\', $hash);
-    if($user && is_array($user) && !$forgot->errors) {
-        $forgot->unblockUser($user[\'id\']);
-    }
-}
-
-if($event_name == \'OnManagerAuthentication\' && $hash && $username) {
-    $user = $forgot->getUser(false, $username, \'\', $hash);
-    $output = ($user !== null && count($forgot->errors) == 0) ? true : false;
-}
-
-$modx->Event->output($output);
-';
-$p['ManagerManager'] = '// You can put your ManagerManager rules EITHER in a chunk OR in an external file - whichever suits your development style the best
-
-// To use an external file, put your rules in /assets/plugins/managermanager/mm_rules.inc.php
-// (you can rename default.mm_rules.inc.php and use it as an example)
-// The chunk SHOULD have php opening tags at the beginning and end
-
-// If you want to put your rules in a chunk (so you can edit them through the Manager),
-// create the chunk, and enter its name in the configuration tab.
-// The chunk should NOT have php tags at the beginning or end
-
-// ManagerManager requires jQuery 1.3+
-// The URL to the jQuery library. Choose from the configuration tab whether you want to use
-// a local copy (which defaults to the jQuery library distributed with ModX 1.0.1)
-// a remote copy (which defaults to the Google Code hosted version)
-// or specify a URL to a custom location.
-// Here we set some default values, because this is a convenient place to change them if we need to,
-// but you should configure your preference via the Configuration tab.
-$js_default_url_local = $modx->config[\'site_url\']. \'/assets/js/jquery-1.4.4.min.js\';
-$js_default_url_remote = \'http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js\';
-
-// You don\'t need to change anything else from here onwards
-//-------------------------------------------------------
+}';$p['Forgot Manager Login']='require MODX_BASE_PATH.\'assets/plugins/forgotmanagerlogin/plugin.forgotmanagerlogin.php\';';$p['ManagerManager']='/**
+ * ManagerManager
+ *
+ * Customize the MODX Manager to offer bespoke admin functions for end users or manipulate the display of document fields in the manager.
+ *
+ * @category plugin
+ * @version 0.6.2
+ * @license http://creativecommons.org/licenses/GPL/2.0/ GNU Public License (GPL v2)
+ * @internal @properties &remove_deprecated_tv_types_pref=Remove deprecated TV types;list;yes,no;yes &config_chunk=Configuration Chunk;text;mm_rules
+ * @internal @events OnDocFormRender,OnDocFormPrerender,OnBeforeDocFormSave,OnDocFormSave,OnDocDuplicate,OnPluginFormRender,OnTVFormRender
+ * @internal @modx_category Manager and Admin
+ * @internal @installset base
+ * @internal @legacy_names Image TV Preview, Show Image TVs
+ * @reportissues https://github.com/DivanDesign/MODXEvo.plugin.ManagerManager/
+ * @documentation README [+site_url+]assets/plugins/managermanager/readme.html
+ * @documentation Official docs http://code.divandesign.biz/modx/managermanager
+ * @link        Latest version http://code.divandesign.biz/modx/managermanager
+ * @link        Additional tools http://code.divandesign.biz/modx
+ * @link        Full changelog http://code.divandesign.biz/modx/managermanager/changelog
+ * @author      Inspired by: HideEditor plugin by Timon Reinhard and Gildas; HideManagerFields by Brett @ The Man Can!
+ * @author      DivanDesign studio http://www.DivanDesign.biz
+ * @author      Nick Crossland http://www.rckt.co.uk
+ * @author      Many others
+ * @lastupdate  06/03/2016
+ */
 
 // Run the main code
-$asset_path = $modx->config[\'base_path\'] . \'assets/plugins/managermanager/mm.inc.php\';
-include $asset_path;';
-$p['ManagerManagerProps'] = '&config_chunk=Configuration Chunk;text;mm_demo_rules; &remove_deprecated_tv_types_pref=Remove deprecated TV types;list;yes,no;yes &which_jquery=jQuery source;list;local (assets/js),remote (google code),manual url (specify below);local (assets/js) &js_src_type=jQuery URL override;text;  ';
-$p['TinyMCE Rich Text Editor'] = 'require MODX_BASE_PATH.\'assets/plugins/tinymce/plugin.tinymce.php\';
-';
-$p['TinyMCE Rich Text EditorProps'] = '&customparams=Custom Parameters;textarea;valid_elements : "*[*]", &mce_formats=Block Formats;text;p,h1,h2,h3,h4,h5,h6,div,blockquote,code,pre &entity_encoding=Entity Encoding;list;named,numeric,raw;named &entities=Entities;text; &mce_path_options=Path Options;list;Site config,Absolute path,Root relative,URL,No convert;Site config &mce_resizing=Advanced Resizing;list;true,false;true &disabledButtons=Disabled Buttons;text; &link_list=Link List;list;enabled,disabled;enabled &webtheme=Web Theme;list;simple,editor,creative,custom;simple &webPlugins=Web Plugins;text;style,advimage,advlink,searchreplace,contextmenu,paste,fullscreen,xhtmlxtras,media &webButtons1=Web Buttons 1;text;undo,redo,selectall,|,pastetext,pasteword,|,search,replace,|,hr,charmap,|,image,link,unlink,anchor,media,|,cleanup,removeformat,|,fullscreen,code,help &webButtons2=Web Buttons 2;text;bold,italic,underline,strikethrough,sub,sup,|,|,blockquote,bullist,numlist,outdent,indent,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,|,styleprops &webButtons3=Web Buttons 3;text; &webButtons4=Web Buttons 4;text; &webAlign=Web Toolbar Alignment;list;ltr,rtl;ltr &width=Width;text;95% &height=Height;text;500  ';
-$e = &$this->pluginEvent;
-$e['OnBeforeManagerLogin'] = array('Forgot Manager Login');
-$e['OnDocFormPrerender'] = array('ManagerManager','Quick Manager+');
-$e['OnDocFormRender'] = array('ManagerManager');
-$e['OnDocFormSave'] = array('Quick Manager+');
-$e['OnInterfaceSettingsRender'] = array('TinyMCE Rich Text Editor');
-$e['OnManagerAuthentication'] = array('Forgot Manager Login');
-$e['OnManagerLoginFormRender'] = array('Forgot Manager Login');
-$e['OnManagerLogout'] = array('Quick Manager+');
-$e['OnParseDocument'] = array('Quick Manager+','PHx');
-$e['OnPluginFormRender'] = array('ManagerManager');
-$e['OnRichTextEditorInit'] = array('TinyMCE Rich Text Editor');
-$e['OnRichTextEditorRegister'] = array('TinyMCE Rich Text Editor');
-$e['OnStripAlias'] = array('TransAlias');
-$e['OnTVFormRender'] = array('ManagerManager');
-$e['OnWebPagePrerender'] = array('Search Highlight','Quick Manager+');
+include($modx->config[\'base_path\'].\'assets/plugins/managermanager/mm.inc.php\');';$p['ManagerManagerProps']='&remove_deprecated_tv_types_pref=Remove deprecated TV types;list;yes,no;yes &config_chunk=Configuration Chunk;text;mm_rules ';$p['TransAlias']='require MODX_BASE_PATH.\'assets/plugins/transalias/plugin.transalias.php\';';$p['TransAliasProps']='&table_name=Trans table;list;common,russian,dutch,german,czech,utf8,utf8lowercase;utf8lowercase &char_restrict=Restrict alias to;list;lowercase alphanumeric,alphanumeric,legal characters;legal characters &remove_periods=Remove Periods;list;Yes,No;No &word_separator=Word Separator;list;dash,underscore,none;dash &override_tv=Override TV name;string; ';$p['FileSource']='require MODX_BASE_PATH.\'assets/plugins/filesource/plugin.filesource.php\';';$p['TinyMCE Rich Text Editor']='require MODX_BASE_PATH.\'assets/plugins/tinymce/plugin.tinymce.php\';';$p['TinyMCE Rich Text EditorProps']='&customparams=Custom Parameters;textarea;valid_elements : "*[*]", &mce_formats=Block Formats;text;p,h1,h2,h3,h4,h5,h6,div,blockquote,code,pre &entity_encoding=Entity Encoding;list;named,numeric,raw;named &entities=Entities;text; &mce_path_options=Path Options;list;Site config,Absolute path,Root relative,URL,No convert;Site config &mce_resizing=Advanced Resizing;list;true,false;true &disabledButtons=Disabled Buttons;text; &link_list=Link List;list;enabled,disabled;enabled &webtheme=Web Theme;list;simple,editor,creative,custom;simple &webPlugins=Web Plugins;text;style,advimage,advlink,searchreplace,contextmenu,paste,fullscreen,xhtmlxtras,media &webButtons1=Web Buttons 1;text;undo,redo,selectall,|,pastetext,pasteword,|,search,replace,|,hr,charmap,|,image,link,unlink,anchor,media,|,cleanup,removeformat,|,fullscreen,code,help &webButtons2=Web Buttons 2;text;bold,italic,underline,strikethrough,sub,sup,|,|,blockquote,bullist,numlist,outdent,indent,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,|,styleprops &webButtons3=Web Buttons 3;text; &webButtons4=Web Buttons 4;text; &webAlign=Web Toolbar Alignment;list;ltr,rtl;ltr &width=Width;text;95% &height=Height;text;500  ';$p['CodeMirror']='/**
+ * CodeMirror
+ *
+ * JavaScript library that can be used to create a relatively pleasant editor interface based on CodeMirror 5.12
+ *
+ * @category    plugin
+ * @version     1.4
+ * @license     http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
+ * @package     modx
+ * @internal    @events OnDocFormRender,OnChunkFormRender,OnModFormRender,OnPluginFormRender,OnSnipFormRender,OnTempFormRender,OnRichTextEditorInit
+ * @internal    @modx_category Manager and Admin
+ * @internal    @properties &theme=Theme;list;default,ambiance,blackboard,cobalt,eclipse,elegant,erlang-dark,lesser-dark,midnight,monokai,neat,night,rubyblue,solarized,twilight,vibrant-ink,xq-dark,xq-light;default &indentUnit=Indent unit;int;4 &tabSize=The width of a tab character;int;4 &lineWrapping=lineWrapping;list;true,false;true &matchBrackets=matchBrackets;list;true,false;true &activeLine=activeLine;list;true,false;false &emmet=emmet;list;true,false;true &search=search;list;true,false;false &indentWithTabs=indentWithTabs;list;true,false;true &undoDepth=undoDepth;int;200 &historyEventDelay=historyEventDelay;int;1250
+ * @internal    @installset base
+ * @reportissues https://github.com/modxcms/evolution
+ * @documentation Official docs https://codemirror.net/doc/manual.html
+ * @author      hansek from http://www.modxcms.cz
+ * @author      update Mihanik71
+ * @author      update Deesen
+ * @lastupdate  11/04/2016
+ */
 
+$_CM_BASE = \'assets/plugins/codemirror/\';
+
+$_CM_URL = $modx->config[\'site_url\'] . $_CM_BASE;
+
+require(MODX_BASE_PATH. $_CM_BASE .\'codemirror.plugin.php\');';$p['CodeMirrorProps']='&theme=Theme;list;default,ambiance,blackboard,cobalt,eclipse,elegant,erlang-dark,lesser-dark,midnight,monokai,neat,night,rubyblue,solarized,twilight,vibrant-ink,xq-dark,xq-light;default &indentUnit=Indent unit;int;4 &tabSize=The width of a tab character;int;4 &lineWrapping=lineWrapping;list;true,false;true &matchBrackets=matchBrackets;list;true,false;true &activeLine=activeLine;list;true,false;false &emmet=emmet;list;true,false;true &search=search;list;true,false;false &indentWithTabs=indentWithTabs;list;true,false;true &undoDepth=undoDepth;int;200 &historyEventDelay=historyEventDelay;int;1250 ';$p['TinyMCE4']='require MODX_BASE_PATH.\'assets/plugins/tinymce4/plugin.tinymce.php\';';$p['TinyMCE4Props']='&styleFormats=Custom Style Formats;textarea;Title,cssClass|Title2,cssClass &customParams=Custom Parameters <b>(Be careful or leave empty!)</b>;textarea; &entityEncoding=Entity Encoding;list;named,numeric,raw;named &entities=Entities;text; &pathOptions=Path Options;list;Site config,Absolute path,Root relative,URL,No convert;Site config &resizing=Advanced Resizing;list;true,false;false &disabledButtons=Disabled Buttons;text; &webTheme=Web Theme;test;webuser &webPlugins=Web Plugins;text; &webButtons1=Web Buttons 1;text;bold italic underline strikethrough removeformat alignleft aligncenter alignright &webButtons2=Web Buttons 2;text;link unlink image undo redo &webButtons3=Web Buttons 3;text; &webButtons4=Web Buttons 4;text; &webAlign=Web Toolbar Alignment;list;ltr,rtl;ltr &width=Width;text;100% &height=Height;text;400px &introtextRte=<b>Introtext RTE</b><br/>add richtext-features to "introtext";list;enabled,disabled;disabled &inlineMode=<b>Inline-Mode</b>;list;enabled,disabled;disabled &inlineTheme=<b>Inline-Mode</b><br/>Theme;text;inline &browser_spellcheck=<b>Browser Spellcheck</b><br/>At least one dictionary must be installed inside your browser;list;enabled,disabled;disabled ';$p['Quick Manager+']='/**
+ * Quick Manager+
+ * 
+ * Enables QuickManager+ front end content editing support
+ *
+ * @category 	plugin
+ * @version 	1.5.6
+ * @license 	http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL v3)
+ * @internal    @properties &jqpath=Path to jQuery;text;assets/js/jquery.min.js &loadmanagerjq=Load jQuery in manager;list;true,false;false &loadfrontendjq=Load jQuery in front-end;list;true,false;true &noconflictjq=jQuery noConflict mode in front-end;list;true,false;true &loadtb=Load modal box in front-end;list;true,false;true &tbwidth=Modal box window width;text;80% &tbheight=Modal box window height;text;90% &hidefields=Hide document fields from front-end editors;text;parent &hidetabs=Hide document tabs from front-end editors;text; &hidesections=Hide document sections from front-end editors;text; &addbutton=Show add document here button;list;true,false;true &tpltype=New document template type;list;parent,id,selected;parent &tplid=New document template id;int;3 &custombutton=Custom buttons;textarea; &managerbutton=Show go to manager button;list;true,false;true &logout=Logout to;list;manager,front-end;manager &disabled=Plugin disabled on documents;text; &autohide=Autohide toolbar;list;true,false;true &editbuttons=Inline edit buttons;list;true,false;false &editbclass=Edit button CSS class;text;qm-edit &newbuttons=Inline new resource buttons;list;true,false;false &newbclass=New resource button CSS class;text;qm-new &tvbuttons=Inline template variable buttons;list;true,false;false &tvbclass=Template variable button CSS class;text;qm-tv
+ * @internal	@events OnParseDocument,OnWebPagePrerender,OnDocFormPrerender,OnDocFormSave,OnManagerLogout 
+ * @internal	@modx_category Manager and Admin
+ * @internal    @legacy_names QM+,QuickEdit
+ * @internal    @installset base, sample
+ * @internal    @disabled 1
+ * @reportissues https://github.com/modxcms/evolution
+ * @documentation Official docs [+site_url+]assets/plugins/qm/readme.html
+ * @link        http://www.maagit.fi/modx/quickmanager-plus
+ * @author      Mikko Lammi
+ * @author      Since 2011: yama, dmi3yy, segr
+ * @lastupdate  31/03/2014
+ */
+
+// In manager
+if (!$modx->checkSession()) return;
+
+$show = TRUE;
+
+if ($disabled  != \'\') {
+    $arr = array_filter(array_map(\'intval\', explode(\',\', $disabled)));
+    if (in_array($modx->documentIdentifier, $arr)) {
+        $show = FALSE;
+    }
+}
+
+if ($show) {
+    // Replace [*#tv*] with QM+ edit TV button placeholders
+    if ($tvbuttons == \'true\') {
+        if ($modx->event->name == \'OnParseDocument\') {
+             $output = &$modx->documentOutput;
+             $output = preg_replace(\'~\\[\\*#(.*?)\\*\\]~\', \'<!-- \'.$tvbclass.\' $1 -->[*$1*]\', $output);
+             $modx->documentOutput = $output;
+         }
+     }
+    include_once($modx->config[\'base_path\'].\'assets/plugins/qm/qm.inc.php\');
+    $qm = new Qm($modx, $jqpath, $loadmanagerjq, $loadfrontendjq, $noconflictjq, $loadtb, $tbwidth, $tbheight, $hidefields, $hidetabs, $hidesections, $addbutton, $tpltype, $tplid, $custombutton, $managerbutton, $logout, $autohide, $editbuttons, $editbclass, $newbuttons, $newbclass, $tvbuttons, $tvbclass);
+}';$p['Quick Manager+Props']='&jqpath=Path to jQuery;text;assets/js/jquery.min.js &loadmanagerjq=Load jQuery in manager;list;true,false;false &loadfrontendjq=Load jQuery in front-end;list;true,false;true &noconflictjq=jQuery noConflict mode in front-end;list;true,false;true &loadtb=Load modal box in front-end;list;true,false;true &tbwidth=Modal box window width;text;80% &tbheight=Modal box window height;text;90% &hidefields=Hide document fields from front-end editors;text;parent &hidetabs=Hide document tabs from front-end editors;text; &hidesections=Hide document sections from front-end editors;text; &addbutton=Show add document here button;list;true,false;true &tpltype=New document template type;list;parent,id,selected;parent &tplid=New document template id;int;3 &custombutton=Custom buttons;textarea; &managerbutton=Show go to manager button;list;true,false;true &logout=Logout to;list;manager,front-end;manager &disabled=Plugin disabled on documents;text; &autohide=Autohide toolbar;list;true,false;true &editbuttons=Inline edit buttons;list;true,false;false &editbclass=Edit button CSS class;text;qm-edit &newbuttons=Inline new resource buttons;list;true,false;false &newbclass=New resource button CSS class;text;qm-new &tvbuttons=Inline template variable buttons;list;true,false;false &tvbclass=Template variable button CSS class;text;qm-tv ';$p['ElementsInTree']='require MODX_BASE_PATH.\'assets/plugins/elementsintree/plugin.elementsintree.php\';';$p['ElementsInTreeProps']='&tabTreeTitle=Tree Tab Title;text;Site Tree;;Custom title of Site Tree tab. &useIcons=Use icons in tabs;list;yes,no;yes;;Icons available in MODX version 1.2 or newer. &treeButtonsInTab=Tree Buttons in tab;list;yes,no;yes;;Move Tree Buttons into Site Tree tab. &unifyFrames=Unify Frames;list;yes,no;yes;;Unify Tree and Main frame style. Right now supports MODxRE2 theme only. ';$e = &$this->pluginEvent;$e['OnBeforeDocFormSave']=array('ManagerManager');$e['OnBeforeManagerLogin']=array('Forgot Manager Login');$e['OnBeforePluginFormSave']=array('FileSource');$e['OnBeforeSnipFormSave']=array('FileSource');$e['OnChunkFormDelete']=array('ElementsInTree');$e['OnChunkFormRender']=array('CodeMirror');$e['OnChunkFormSave']=array('ElementsInTree');$e['OnDocDuplicate']=array('ManagerManager');$e['OnDocFormPrerender']=array('ManagerManager','Quick Manager+');$e['OnDocFormRender']=array('CodeMirror','ManagerManager');$e['OnDocFormSave']=array('Quick Manager+','ManagerManager');$e['OnInterfaceSettingsRender']=array('TinyMCE Rich Text Editor','TinyMCE4');$e['OnLoadWebDocument']=array('TinyMCE4');$e['OnLoadWebPageCache']=array('TinyMCE4');$e['OnManagerAuthentication']=array('Forgot Manager Login');$e['OnManagerLoginFormRender']=array('Forgot Manager Login');$e['OnManagerLogout']=array('Quick Manager+');$e['OnManagerMainFrameHeaderHTMLBlock']=array('ElementsInTree');$e['OnManagerTreePrerender']=array('ElementsInTree');$e['OnManagerTreeRender']=array('ElementsInTree');$e['OnModFormDelete']=array('ElementsInTree');$e['OnModFormRender']=array('CodeMirror');$e['OnModFormSave']=array('ElementsInTree');$e['OnParseDocument']=array('TinyMCE4','Quick Manager+','PHx');$e['OnPluginFormDelete']=array('ElementsInTree');$e['OnPluginFormPrerender']=array('FileSource');$e['OnPluginFormRender']=array('ManagerManager','FileSource','CodeMirror');$e['OnPluginFormSave']=array('ElementsInTree');$e['OnRichTextEditorInit']=array('CodeMirror','TinyMCE4','TinyMCE Rich Text Editor');$e['OnRichTextEditorRegister']=array('TinyMCE4','TinyMCE Rich Text Editor');$e['OnSnipFormDelete']=array('ElementsInTree');$e['OnSnipFormPrerender']=array('FileSource');$e['OnSnipFormRender']=array('CodeMirror','FileSource');$e['OnSnipFormSave']=array('ElementsInTree');$e['OnStripAlias']=array('TransAlias');$e['OnTempFormDelete']=array('ElementsInTree');$e['OnTempFormRender']=array('CodeMirror');$e['OnTempFormSave']=array('ElementsInTree');$e['OnTVFormDelete']=array('ElementsInTree');$e['OnTVFormRender']=array('ManagerManager');$e['OnTVFormSave']=array('ElementsInTree');$e['OnWebPagePrerender']=array('Search Highlight','TinyMCE4','Quick Manager+');

@@ -4,16 +4,16 @@
 * -----------------------------------------------------------------------------
 * @package  AjaxSearch
 *
-* @author       Coroico - www.modx.wangba.fr
-* @version      1.9.2
-* @date         05/12/2010
+* @author       Coroico - www.evo.wangba.fr
+* @version      1.10.2
+* @date         12/04/2016
 *
 * Purpose:
 *    The AjaxSearch class contains all functions and data used to manage AjaxSearch
 *
 */
 
-define('MIN_CHARS', 3); // minimum number of characters
+define('MIN_CHARS', 2); // minimum number of characters
 define('MAX_CHARS', 30); // maximum number of characters
 define('MIN_WORDS', 1); // minimum number of words
 define('MAX_WORDS', 10); // maximum number of words
@@ -50,7 +50,7 @@ class AjaxSearch {
     *
     *  @access public
     */
-    function AjaxSearch() {
+    function __construct() {
     }
     /*
     *  Run ajaxSearch
@@ -62,8 +62,6 @@ class AjaxSearch {
     *  @return the ajaxSearch output
     */
     function run($tstart, $dcfg, $cfg = null) {
-        global $modx;
-
         include_once AS_PATH . "classes/ajaxSearchConfig.class.inc.php";
         if (!class_exists('AjaxSearchConfig')) return "<h3>error: AjaxSearchConfig classe not found</h3>";
         $asCfg = new AjaxSearchConfig($dcfg,$cfg);
@@ -75,7 +73,7 @@ class AjaxSearch {
         if ($msgErr) return $msgErr;
 
         $dbg = $asUtil->dbg; // first level of debug log
-        set_time_limit($asCfg->cfg['timeLimit']);
+        @set_time_limit($asCfg->cfg['timeLimit']);
 
         include_once AS_PATH . "classes/ajaxSearchCtrl.class.inc.php";
         include_once AS_PATH . "classes/ajaxSearchInput.class.inc.php";
@@ -170,4 +168,3 @@ if (!function_exists('stripLineBreaking')) {
         return $text;
     }
 }
-?>

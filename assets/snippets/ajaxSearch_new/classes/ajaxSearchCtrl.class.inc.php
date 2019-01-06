@@ -4,9 +4,9 @@
 * -----------------------------------------------------------------------------
 * @package  AjaxSearchCtrl
 *
-* @author       Coroico - www.modx.wangba.fr
-* @version      1.9.2
-* @date         05/12/2010
+* @author       Coroico - www.evo.wangba.fr
+* @version      1.10.2
+* @date         12/04/2016
 *
 * Purpose:
 *    The AjaxSearchCtrl class contains the logic and synchronisation between model and views
@@ -38,7 +38,7 @@ class AjaxSearchCtrl {
     var $fClause;
     var $fParams = array();
 
-    function AjaxSearchCtrl() {
+    function __construct() {
     }
     function init(&$asCfg, &$asInput, &$asResults, &$asOutput, &$asUtil, &$asLog){
         // initialize the controler instance
@@ -194,4 +194,3 @@ class AjaxSearchCtrl {
         $this->subSearch = $subSearch;
     }
 }
-?>
