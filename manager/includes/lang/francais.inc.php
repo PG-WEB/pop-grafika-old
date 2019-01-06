@@ -3,10 +3,10 @@
  * Filename:       includes/lang/francais-utf8.inc.php
  * Function:       French language file
  * Encoding:       iso-8859-1
- * Author:         Nicolas Martignoni (Nissai), David Mollière (davidm) pour la 0.9.6.2, Jean-Christophe Brebion (Fairytree) et Coroico pour Evolution 1.0.4
- * Date:           16 Mai 2010
+ * Author:         Nicolas Martignoni (Nissai), David Mollière (davidm) pour la 0.9.6.2, Jean-Christophe Brebion (Fairytree) et Coroico pour Evolution 1.0.4 / 1.0.5
+ * Date:           30 Decembre 2010
  * Version:        2.0.5
- * MODx version:   Evolution 1.0.4
+ * MODx version:   Evolution 1.0.5
 */
 //$modx_textdir = 'rtl'; // uncomment this line for RTL langages
 $modx_lang_attribute = 'fr'; // Manager HTML and XML Language Attribute
@@ -98,6 +98,8 @@ $_lang["chunk_code"] = 'Code source du Chunk (html)';
 $_lang["chunk_multiple_id"] = 'Erreur: Plusieurs Chunks possèdent le même ID.';
 $_lang["chunk_no_exist"] = 'Le Chunk n\'existe pas.';
 $_lang["cleaningup"] = 'Nettoyage';
+$_lang["clean_uploaded_filename"] = 'Utiliser la translittération lors du chargement de fichier';
+$_lang["clean_uploaded_filename_message"] = 'Utiliser le paramétrage transalias ou la valeur par défaut pour nettoyer les caractères spéciaux des noms de fichiers téléchargés. Conserve le caractère point.';
 $_lang["clear_log"] = 'Vider l\'historique';
 $_lang["click_to_context"] = 'Cliquer pour accéder au menu contextuel';
 $_lang["click_to_edit_title"] = 'Cliquer ici pour modifier cet enregistrement';
@@ -116,6 +118,7 @@ $_lang["configcheck_errorpage_unavailable"] = 'La page d\'erreur de votre site n
 $_lang["configcheck_errorpage_unavailable_msg"] = 'Cela signifie que votre page d\'erreur n\'est pas accessible à vos visiteurs ou qu\'elle n\'existe pas. Cela peut provoquer une boucle infinie, générer des erreurs dans vos logs. Assurez vous qu\'aucun Groupe d\'Utilisateurs Web n\'est associé à cette page.';
 $_lang["configcheck_errorpage_unpublished"] = 'La page d\'erreur de votre site n\'est pas publiée ou n\'existe pas.';
 $_lang["configcheck_errorpage_unpublished_msg"] = 'Cela signifie que votre page d\'erreur n\'est pas accessible au public. Publiez cette page ou assurez vous qu\'elle est associée à une Ressource existante dans votre Arbre de Site dans le menu Outils &gt; Configuration.';
+$_lang["configcheck_hide_warning"] = '<a href="javascript:hideConfigCheckWarning(\'%s\');"><em>Ne plus afficher de nouveau.</em></a>';
 $_lang["configcheck_images"] = 'Le répertoire d\'images n\'est pas accessible en écriture';
 $_lang["configcheck_images_msg"] = 'Le répertoire des images n\'est pas accessible en écriture ou n\'existe pas. Par conséquent, les fonctions de gestion d\'images de l\'éditeur WYSIWYG ne fonctionneront pas!';
 $_lang["configcheck_installer"] = 'L\'installateur est encore présent';
@@ -129,6 +132,10 @@ $_lang["configcheck_php_gdzip_msg"] = 'MODx a besoin de l\'extension GD et Zip a
 $_lang["configcheck_register_globals"] = 'register_globals est sur "ON" dans votre fichier de configuration php (php.ini)';
 $_lang["configcheck_register_globals_msg"] = 'Cette configuration rend votre site vulnérable aux attaques <a href="http://www.commentcamarche.net/contents/attaques/cross-site-scripting.php3">XCSS</a> (cross site scripting). Consultez votre hébergeur sur la marche à suivre pour désactiver ce réglage.';
 $_lang["configcheck_title"] = 'Contrôle de configuration';
+$_lang["configcheck_templateswitcher_present"] = 'Plugin TemplateSwitcher détecté';
+$_lang["configcheck_templateswitcher_present_delete"] = '<a href="javascript:deleteTemplateSwitcher();">Supprime TemplateSwitcher</a>';
+$_lang["configcheck_templateswitcher_present_disable"] = '<a href="javascript:disableTemplateSwitcher();">Désactive TemplateSwitcher</a>';
+$_lang["configcheck_templateswitcher_present_msg"] = 'Le plugin TemplateSwitcher peut causer des problèmes de performance et de cache. Il devrait être utilisé que si la fonctionalité est requise pour votre site.';
 $_lang["configcheck_unauthorizedpage_unavailable"] = 'La page "Accès non autorisé" n\'est pas publiée ou n\'existe pas.';
 $_lang["configcheck_unauthorizedpage_unavailable_msg"] = 'Cela signifie que la page "Accès non autorisé" n\'est pas accessible à vos visiteurs ou n\'existe pas. Cela peut provoquer une boucle infinie, générer des erreurs dans vos logs. Assurez vous qu\'aucun Groupe d\'Utilisateurs Web n\'est associé à cette page.';
 $_lang["configcheck_unauthorizedpage_unpublished"] = 'La page "Accès non autorisé" définie dans la configuration du site n\'est pas publiée.';
@@ -209,6 +216,11 @@ $_lang["defaultsearch_message"] = 'Choisissez «Oui» pour rendre toutes les nouve
 $_lang["defaultsearch_title"] = 'Recherchable par défaut';
 $_lang["defaulttemplate_message"] = 'Sélectionnez le Modèle que vous souhaitez utiliser par défaut pour les nouvelles Ressources. Vous pourrez choisir un Modèle différent lors de la modification de la Ressource. Ce réglage indique simplement le Modèle sélectionné initialement.';
 $_lang["defaulttemplate_title"] = 'Modèle par défaut';
+$_lang["defaulttemplate_logic_title"] = 'Assignation automatique du template';
+$_lang["defaulttemplate_logic_general_message"] = 'Les nouvelles resources auront les templates suivants, en prenant ceux des niveaux supérieurs si non trouvés:';
+$_lang["defaulttemplate_logic_system_message"] = '<strong>Système</strong>: le template système par défaut.';
+$_lang["defaulttemplate_logic_parent_message"] = '<strong>Parent</strong>: le même template que le template du parent.';
+$_lang["defaulttemplate_logic_sibling_message"] = '<strong>Frères</strong>: le même template que les autres resources du containeur.';
 $_lang["delete"] = 'Supprimer';
 $_lang["delete_resource"] = 'Supprimer la Ressource';
 $_lang["delete_tags"] = 'Supprimer les balises';
@@ -666,6 +678,7 @@ $_lang["refresh_site"] = 'Vider le cache';
 $_lang["refresh_title"] = 'Recharger le site';
 $_lang["refresh_tree"] = 'Recharger l\'Arbre du Site';
 $_lang["refresh_unpublished"] = '<b>%s</b> Ressources ont été dépubliées.';
+$_lang["release_date"] = 'Date de version';
 $_lang["remember_last_tab"] = 'Rappel du dernier onglet:';
 $_lang["remember_last_tab_message"] = 'Pages du manager chargées avec le dernier onglet vu plutôt que l\'onglet par défaut';
 $_lang["remember_username"] = 'Se souvenir de moi';
@@ -676,10 +689,9 @@ $_lang["rename"] = 'Renommer';
 $_lang["reports"] = 'Rapports';
 $_lang["require_tagname"] = 'Un nom de balise est requis';
 $_lang["require_tagvalue"] = 'Une valeur est requise pour la balise';
+$_lang["reserved_name_warning"] = 'Vous avez utilisé un nom réservé.';
 $_lang["reset"] = 'Vider';
 $_lang["reset_failedlogins"] = 'Mise à zéro';
-$_lang["resolve_hostnames_message"] = 'Voulez-vous que MODx résolve les noms de domaines de vos visiteurs? La résolution des noms de domaines engendre une charge supplémentaire sur le serveur, mais vos visiteurs ne s\'en apercevront pas.';
-$_lang["resolve_hostnames_title"] = 'Résolution des noms de domaine';
 $_lang["resource"] = 'Ressource';
 $_lang["resource_alias"] = 'Alias de la Ressource';
 $_lang["resource_alias_help"] = 'Définissez un alias pour que la Ressource soit accessible à l\'adresse : http://exemple.com/alias. Cette fonctionnalité n\'est effective que si vous avez activé les URLs simples dans la configuration de votre site.';
@@ -1031,7 +1043,6 @@ $_lang["users"] = 'Utilisateurs';
 $_lang["validate_referer_message"] = 'Valider les en-têtes HTTP_REFERER réduit le risque que les éditeurs de contenu soient piégés en effectuant des actions non-autorisées, en étant victimes d\'attaques CSRF (Cross Site Request Forgery). Si le serveur n\'envoie pas d\'en-tête HTTP_REFERER, il est possible que sur certaines configurations, cette option ne puisse pas être activée.';
 $_lang["validate_referer_title"] = 'Valider les en-têtes HTTP_REFERER?';
 $_lang["value"] = 'Valeur';
-$_lang["version_codename"] = 'Nom de code de version';
 $_lang["view"] = 'Afficher';
 $_lang["view_child_resources_in_container"] = 'Afficher les enfants';
 $_lang["view_log"] = 'Afficher l\'historique';
@@ -1049,7 +1060,6 @@ $_lang["web_user_management_title"] = 'Gestion des Utilisateurs Web';
 $_lang["web_user_title"] = 'Créer/modifier un Utilisateur Web';
 $_lang["web_users"] = 'Utilisateurs Web';
 $_lang["weblink"] = 'Lien Web';
-$_lang["weblink_message"] = 'Un Lien Web est une référence à un objet sur Internet. Ce peut être une Ressource dans MODx, une page sur un autre site, une image ou tout autre fichier accessible sur Internet.';
 $_lang["webpwdreminder_message"] = 'Entrez ici le message envoyé à vos Utilisateurs Web lorsqu\'ils demandent un nouveau mot de passe. Le Gestionnaire de Contenu leur enverra un message avec leur nouveau mot de passe et les informations d\'activation. <br /><b>NOTE:</b> Le Gestionnaire de Contenu remplacera les Placeholders suivants avant l\'envoi du message: <br /><br />[+sname+] - Nom de votre site web, <br />[+saddr+] - Adresse email du site web, <br />[+surl+] - URL de votre site web, <br />[+uid+] - Nom d\'utilisateur ou ID, <br />[+pwd+] - Mot de passe, <br />[+ufn+] - Nom complet de l\'utilisateur. <br /><br /><b>Ne pas retirer les Placeholders [+uid+] et [+pwd+] du message, sans quoi le nom d\'utilisateur et le mot de passe ne seront pas envoyés et vos Utilisateurs ne pourront pas se connecter!</b>';
 $_lang["webpwdreminder_title"] = 'Message pour un nouveau mot de passe:';
 $_lang["websignupemail_message"] = 'Entrez ici le message envoyé à vos Utilisateurs Web lorsque vous leur créez un compte. Le système leur enverra par email leur nom d\'utilisateur et leur mot de passe. <br /><b>NOTE:</b> Le Gestionnaire de Contenu remplacera les Placeholders suivants avant l\'envoi du message: <br /><br />[+sname+] - Nom de votre site web, <br />[+saddr+] - Adresse email du site web, <br />[+surl+] - URL de votre site web, <br />[+uid+] - Nom d\'utilisateur, <br />[+pwd+] - Mot de passe, <br />[+ufn+] - Nom complet de l\'utilisateur. <br /><br /><b>Ne pas retirer les Placeholders [+uid+] et [+pwd+] du message, sans quoi le nom d\'utilisateur et le mot de passe ne seront pas envoyés et vos Utilisateurs ne pourront pas se connecter!</b>';

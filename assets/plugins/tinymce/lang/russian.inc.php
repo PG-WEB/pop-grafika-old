@@ -2,27 +2,46 @@
 /*
  * Filename:       assets/plugins/tinymce/lang/russian.inc.php
  * Function:       Russian language file for TinyMCE
- * Encoding:       ISO-Latin-1
+ * Encoding:       Windows-1251
  * Author:         Jeff Whitfield / translated by Victor Safronovich
- * Date:           29.06.2008
- * Version:        0.9.6.2
- * MODx version:   0.9.6.2
- */
+ * Date:           2013-03-10
+ * Version:        3.5.8
+ * MODX version:   0.9.5-1.0.9
+*/
 
-$_lang['tinymce_editor_theme_title'] = "РўРµРјР° WYSIWYG-СЂРµРґР°РєС‚РѕСЂР°:";
-$_lang['tinymce_editor_theme_message'] = "Р’С‹Р±РµСЂРёС‚Рµ РєР°РєСѓСЋ С‚РµРјСѓ РёР»Рё С€Р°Р±Р»РѕРЅ РІС‹ Р±СѓРґРµС‚Рµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РґР»СЏ WYSIWYG-СЂРµРґР°РєС‚РѕСЂР°.";
-$_lang['tinymce_editor_custom_plugins_title'] = "РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Рµ РїР»Р°РіРёРЅС‹:";
-$_lang['tinymce_editor_custom_plugins_message'] = "Р’РІРµРґРёС‚Рµ, С‡РµСЂРµР· Р·Р°РїСЏС‚СѓСЋ, РїР»Р°РіРёРЅС‹ РґР»СЏ &laquo;РРЅРґРёРІРёРґСѓР°Р»СЊРЅРѕР№&raquo; С‚РµРјС‹.";
-$_lang['tinymce_editor_custom_buttons_title'] = "РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Рµ РєРЅРѕРїРєРё:";
-$_lang['tinymce_editor_custom_buttons_message'] = "Р’РІРµРґРёС‚Рµ, С‡РµСЂРµР· Р·Р°РїСЏС‚СѓСЋ, РєРЅРѕРїРєРё РґР»СЏ &laquo;РРЅРґРёРІРёРґСѓР°Р»СЊРЅРѕР№&raquo; С‚РµРјС‹. РЈР±РµРґРёС‚РµСЃСЊ С‡С‚Рѕ РґРѕРїРѕР»РЅРµРЅРёСЏ, Рє РєРѕС‚РѕСЂС‹Рј РѕС‚РЅРѕСЃСЏС‚СЃСЏ РґР°РЅРЅС‹Рµ РєРЅРѕРїРєРё, РїСЂРѕРїРёСЃР°РЅРЅС‹ РІ РЅР°СЃС‚СЂРѕР№РєРµ &laquo;РРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹Рµ РїР»Р°РіРёРЅС‹&raquo;.";
-$_lang['tinymce_editor_css_selectors_title'] = "РЎРµР»РµРєС‚РѕСЂС‹ CSS:";
-$_lang['tinymce_editor_css_selectors_message'] = "Р’РІРµРґРёС‚Рµ СЃРїРёСЃРѕРє СЃРµР»РµРєС‚РѕСЂРѕРІ, РєРѕС‚РѕСЂС‹Р№ Р±СѓРґРµС‚ РґРѕСЃС‚СѓРїРµРЅ РІ WYSIWYG-СЂРµРґР°РєС‚РѕСЂРµ. Р’РІРµРґРёС‚Рµ РёС… СЃР»РµРґСѓСЋС‰РёРј РѕР±СЂР°Р·РѕРј:<br />&laquo;РёРјСЏ, РєРѕС‚РѕСЂРѕРµ Р±СѓРґРµС‚ РїРѕРєР°Р·Р°РЅРѕ РІ WYSIWYG-СЂРµРґР°РєС‚РѕСЂРµ&raquo;=&laquo;РёРјСЏ СЃРµР»РµРєС‚РѕСЂР°&raquo;;displayName2=selectorName2<br />РќР°РїСЂРёРјРµСЂ, РІ РІР°С€РµРј CSS С„Р°Р№Р»Рµ РµСЃС‚СЊ <b>.mono</b> Рё <b>.smallText</b> СЃРµР»РµРєС‚РѕСЂС‹, С‡С‚РѕР±С‹ РёС… РґРѕР±Р°РІРёС‚СЊ РЅР°РґРѕ РїСЂРѕРїРёСЃР°С‚СЊ:<br />'РњРѕРЅРѕС…СЂРѕРјРЅС‹Р№ С‚РµРєСЃС‚=mono;РњРµР»РєРёР№ С‚РµРєСЃС‚=smallText'<br />NB: РЅРµ СЃС‚Р°РІСЊС‚Рµ С‚РѕС‡РєСѓ СЃ Р·Р°РїСЏС‚РѕР№(;) РїРѕСЃР»Рµ РїРѕСЃР»РµРґРЅРµР№ Р·Р°РїРёСЃРё.";
-$_lang['tinymce_settings'] = "РќР°СЃС‚СЂРѕР№РєРё TinyMCE";
-$_lang['tinymce_theme_simple'] = "РџСЂРѕСЃС‚Р°СЏ";
-$_lang['tinymce_theme_advanced'] = "РџСЂРѕРґРІРёРЅСѓС‚Р°СЏ";
-$_lang['tinymce_theme_editor'] = "Р РµРґР°РєС‚РѕСЂ РєРѕРЅС‚РµРЅС‚Р°";
-$_lang['tinymce_theme_custom'] = "РРЅРґРёРІРёРґСѓР°Р»СЊРЅР°СЏ";
-$_lang['tinymce_theme_creative'] = 'Creative';
-$_lang['tinymce_theme_logic'] = 'xhtml';
-$_lang['tinymce_theme_global_settings'] = "РСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РіР»РѕР±Р°Р»СЊРЅС‹Рµ РЅР°СЃС‚СЂРѕР№РєРё";
-?>
+$_lang['mce_editor_theme_title'] = "Тема WYSIWYG-редактора:";
+$_lang['mce_editor_theme_message'] = "Выберите какую тему или шаблон вы будете использовать для WYSIWYG-редактора.";
+$_lang['mce_editor_custom_plugins_title'] = "Индивидуальные плагины:";
+$_lang['mce_editor_custom_plugins_message'] = "Введите, через запятую, плагины для &laquo;Индивидуальной&raquo; темы.";
+$_lang['mce_editor_custom_buttons_title'] = "Индивидуальные кнопки:";
+$_lang['mce_editor_custom_buttons_message'] = "Введите, через запятую, кнопки для &laquo;Индивидуальной&raquo; темы. Убедитесь что дополнения, к которым относятся данные кнопки, прописанны в настройке &laquo;Индивидуальные плагины&raquo;.";
+$_lang['mce_editor_css_selectors_title'] = "Селекторы CSS:";
+$_lang['mce_editor_css_selectors_message'] = "Введите список селекторов, который будет доступен в WYSIWYG-редакторе. Введите их следующим образом:<br />&laquo;имя, которое будет показано в WYSIWYG-редакторе&raquo;=&laquo;имя селектора&raquo;;displayName2=selectorName2<br />Например, в вашем CSS файле есть <b>.mono</b> и <b>.smallText</b> селекторы, чтобы их добавить надо прописать:<br />'Монохромный текст=mono;Мелкий текст=smallText'<br />NB: не ставьте точку с запятой(;) после последней записи.";
+$_lang['mce_settings'] = "Настройки TinyMCE";
+$_lang['mce_theme_simple'] = "Простая";
+$_lang['mce_theme_advanced'] = "Продвинутая";
+$_lang['mce_theme_editor'] = "Редактор контента";
+$_lang['mce_theme_custom'] = "Индивидуальная";
+$_lang['mce_theme_creative'] = 'Creative';
+$_lang['mce_theme_logic'] = 'xhtml';
+$_lang['mce_theme_legacy'] = 'legacy style';
+$_lang['mce_theme_global_settings'] = "Использовать глобальные настройки";
+$_lang['mce_editor_skin_title'] = 'Skin';
+$_lang['mce_editor_skin_message'] = 'Design of toolbar. see tinymce/tiny_mce/themes/advanced/skins/<br />';
+$_lang['mce_editor_entermode_title'] = 'Enter key mode';
+$_lang['mce_editor_entermode_message'] = 'Operation when the enter key is pressed is set up.';
+$_lang['mce_entermode_opt1'] = 'Wrap &lt;p&gt;&lt;/p&gt;';
+$_lang['mce_entermode_opt2'] = 'Insert &lt;br /&gt;';
+
+$_lang['mce_element_format_title'] = 'Element format';
+$_lang['mce_element_format_message'] = 'This option enables control if elements should be in html or xhtml mode. xhtml is the default state for this option. This means that for example &lt;br /&gt; will be &lt;br&gt; if you set this option to &quot;html&quot;.';
+$_lang['mce_schema_title'] = 'Schema';
+$_lang['mce_schema_message'] = 'The schema option enables you to switch between the HTML4 and HTML5 schema. This controls the valid elements and attributes that can be placed in the HTML. This value can either be the default html4 or html5.';
+
+$_lang['mce_toolbar1_msg'] = 'Default : undo,redo,|,bold,forecolor,backcolor,strikethrough,formatselect,fontsizeselect, pastetext,pasteword,code,|,fullscreen,help';
+$_lang['mce_toolbar2_msg'] = 'Default : image,media,link,unlink,anchor,|,justifyleft,justifycenter,justifyright,|,bullist, numlist,|,blockquote,outdent,indent,|,table,hr,|,template,visualblocks,styleprops,removeformat';
+
+$_lang['mce_tpl_title'] = 'Template button';
+$_lang['mce_tpl_msg'] = 'You can insert the HTML block which you registered beforehand from toolbar. You make HTML block as resource or a chunk, and can appoint plural number with a comma.';
+$_lang['mce_tpl_docid'] = 'Resource IDs';
+$_lang['mce_tpl_chunkname'] = 'Chunk names';

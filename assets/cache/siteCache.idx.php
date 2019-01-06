@@ -1,7 +1,7 @@
 <?php
 $c=&$this->config;
 $c['manager_theme'] = "MODxCarbon";
-$c['settings_version'] = "1.0.4";
+$c['settings_version'] = "1.0.9";
 $c['show_meta'] = "0";
 $c['server_offset_time'] = "0";
 $c['server_protocol'] = "https";
@@ -39,7 +39,7 @@ $c['number_of_messages'] = "30";
 $c['number_of_results'] = "20";
 $c['use_editor'] = "0";
 $c['use_browser'] = "1";
-$c['rb_base_dir'] = "/Applications/XAMPP/xamppfiles/htdocs/pop-grafika/assets/";
+$c['rb_base_dir'] = "/home/popgrafi/public_html/assets/";
 $c['rb_base_url'] = "/";
 $c['which_editor'] = "TinyMCE";
 $c['fe_editor_lang'] = "english";
@@ -55,7 +55,7 @@ $c['upload_files'] = "aac,au,avi,css,cache,doc,docx,gz,gzip,htaccess,htm,html,js
 $c['upload_maxsize'] = "1048576";
 $c['new_file_permissions'] = "0644";
 $c['new_folder_permissions'] = "0755";
-$c['filemanager_path'] = "/Applications/XAMPP/xamppfiles/htdocs/pop-grafika/";
+$c['filemanager_path'] = "/home/popgrafi/public_html/";
 $c['theme_refresher'] = "";
 $c['manager_layout'] = "4";
 $c['custom_contenttype'] = "application/rss+xml,application/pdf,application/vnd.ms-word,application/vnd.ms-excel,text/html,text/css,text/xml,text/javascript,text/plain";
@@ -76,7 +76,7 @@ $c['xhtml_urls'] = "1";
 $c['allow_duplicate_alias'] = "0";
 $c['automatic_alias'] = "1";
 $c['datetime_format'] = "dd-mm-YYYY";
-$c['site_id'] = "5c3012914402a";
+$c['site_id'] = "5c31844ff29d5";
 $c['site_unavailable_page'] = "311";
 $c['reload_site_unavailable'] = "";
 $c['siteunavailable_message_default'] = "The site is currently unavailable.";
@@ -100,987 +100,970 @@ $c['tinymce_css_selectors'] = "";
 $c['warning_visibility'] = "1";
 $c['remember_last_tab'] = "0";
 $c['tree_page_click'] = "3";
+$c['auto_template_logic'] = "system";
+$c['enable_bindings'] = "1";
+$c['error_reporting'] = "1";
+$c['pwd_hash_algo'] = "UNCRYPT";
+$c['clean_uploaded_filename'] = "0";
+$c['mce_editor_skin'] = "default";
+$c['mce_template_docs'] = "";
+$c['mce_template_chunks'] = "";
+$c['mce_entermode'] = "p";
+$c['mce_element_format'] = "xhtml";
+$c['mce_schema'] = "html4";
 $this->aliasListing = array();
 $a = &$this->aliasListing;
 $d = &$this->documentListing;
 $m = &$this->documentMap;
 $d['pgnews'] = 6;
-$a[6] = array('id' => 6, 'alias' => 'pgnews', 'path' => '');
+$a[6] = array('id' => 6, 'alias' => 'pgnews', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '6');
 $d['pgmagazines'] = 8;
-$a[8] = array('id' => 8, 'alias' => 'pgmagazines', 'path' => '');
+$a[8] = array('id' => 8, 'alias' => 'pgmagazines', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '8');
 $d['31'] = 31;
-$a[31] = array('id' => 31, 'alias' => '31', 'path' => '');
+$a[31] = array('id' => 31, 'alias' => '31', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '31');
 $d['pgkunst'] = 1;
-$a[1] = array('id' => 1, 'alias' => 'pgkunst', 'path' => '');
+$a[1] = array('id' => 1, 'alias' => 'pgkunst', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '1');
 $d['pglitra'] = 9;
-$a[9] = array('id' => 9, 'alias' => 'pglitra', 'path' => '');
+$a[9] = array('id' => 9, 'alias' => 'pglitra', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '9');
 $d['pgmusic'] = 7;
-$a[7] = array('id' => 7, 'alias' => 'pgmusic', 'path' => '');
+$a[7] = array('id' => 7, 'alias' => 'pgmusic', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '7');
 $d['pgcomix'] = 39;
-$a[39] = array('id' => 39, 'alias' => 'pgcomix', 'path' => '');
+$a[39] = array('id' => 39, 'alias' => 'pgcomix', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '39');
 $d['40'] = 40;
-$a[40] = array('id' => 40, 'alias' => '40', 'path' => '');
+$a[40] = array('id' => 40, 'alias' => '40', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '40');
 $d['pgdopros'] = 41;
-$a[41] = array('id' => 41, 'alias' => 'pgdopros', 'path' => '');
+$a[41] = array('id' => 41, 'alias' => 'pgdopros', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '41');
 $d['pgarchive'] = 42;
-$a[42] = array('id' => 42, 'alias' => 'pgarchive', 'path' => '');
+$a[42] = array('id' => 42, 'alias' => 'pgarchive', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '42');
 $d['пг-почта'] = 43;
-$a[43] = array('id' => 43, 'alias' => 'пг-почта', 'path' => '');
+$a[43] = array('id' => 43, 'alias' => 'пг-почта', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '43');
 $d['tagged'] = 44;
-$a[44] = array('id' => 44, 'alias' => 'tagged', 'path' => '');
+$a[44] = array('id' => 44, 'alias' => 'tagged', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '44');
 $d['search_res'] = 78;
-$a[78] = array('id' => 78, 'alias' => 'search_res', 'path' => '');
+$a[78] = array('id' => 78, 'alias' => 'search_res', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '78');
 $d['220'] = 220;
-$a[220] = array('id' => 220, 'alias' => '220', 'path' => '');
+$a[220] = array('id' => 220, 'alias' => '220', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '220');
 $d['pg_rss'] = 301;
-$a[301] = array('id' => 301, 'alias' => 'pg_rss', 'path' => '');
+$a[301] = array('id' => 301, 'alias' => 'pg_rss', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '301');
 $d['sitemap.xml'] = 309;
-$a[309] = array('id' => 309, 'alias' => 'sitemap.xml', 'path' => '');
+$a[309] = array('id' => 309, 'alias' => 'sitemap.xml', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '309');
 $d['1'] = 310;
-$a[310] = array('id' => 310, 'alias' => '1', 'path' => '');
+$a[310] = array('id' => 310, 'alias' => '1', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '310');
 $d['404'] = 311;
-$a[311] = array('id' => 311, 'alias' => '404', 'path' => '');
+$a[311] = array('id' => 311, 'alias' => '404', 'path' => '', 'parent' => 0);
 $m[] = array('0' => '311');
 $d['exhibitions'] = 2;
-$a[2] = array('id' => 2, 'alias' => 'exhibitions', 'path' => '');
+$a[2] = array('id' => 2, 'alias' => 'exhibitions', 'path' => '', 'parent' => 1);
 $m[] = array('1' => '2');
 $d['postcards'] = 3;
-$a[3] = array('id' => 3, 'alias' => 'postcards', 'path' => '');
+$a[3] = array('id' => 3, 'alias' => 'postcards', 'path' => '', 'parent' => 1);
 $m[] = array('1' => '3');
 $d['presents'] = 14;
-$a[14] = array('id' => 14, 'alias' => 'presents', 'path' => '');
+$a[14] = array('id' => 14, 'alias' => 'presents', 'path' => '', 'parent' => 1);
 $m[] = array('1' => '14');
 $d['theend'] = 49;
-$a[49] = array('id' => 49, 'alias' => 'theend', 'path' => '');
+$a[49] = array('id' => 49, 'alias' => 'theend', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '49');
 $d['clishe'] = 297;
-$a[297] = array('id' => 297, 'alias' => 'clishe', 'path' => '');
+$a[297] = array('id' => 297, 'alias' => 'clishe', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '297');
 $d['somali'] = 4;
-$a[4] = array('id' => 4, 'alias' => 'somali', 'path' => '');
+$a[4] = array('id' => 4, 'alias' => 'somali', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '4');
 $d['libcom'] = 5;
-$a[5] = array('id' => 5, 'alias' => 'libcom', 'path' => '');
+$a[5] = array('id' => 5, 'alias' => 'libcom', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '5');
 $d['purge'] = 79;
-$a[79] = array('id' => 79, 'alias' => 'purge', 'path' => '');
+$a[79] = array('id' => 79, 'alias' => 'purge', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '79');
 $d['gods'] = 80;
-$a[80] = array('id' => 80, 'alias' => 'gods', 'path' => '');
+$a[80] = array('id' => 80, 'alias' => 'gods', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '80');
 $d['accident'] = 81;
-$a[81] = array('id' => 81, 'alias' => 'accident', 'path' => '');
+$a[81] = array('id' => 81, 'alias' => 'accident', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '81');
 $d['outside'] = 82;
-$a[82] = array('id' => 82, 'alias' => 'outside', 'path' => '');
+$a[82] = array('id' => 82, 'alias' => 'outside', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '82');
 $d['journey'] = 83;
-$a[83] = array('id' => 83, 'alias' => 'journey', 'path' => '');
+$a[83] = array('id' => 83, 'alias' => 'journey', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '83');
 $d['forbiden'] = 84;
-$a[84] = array('id' => 84, 'alias' => 'forbiden', 'path' => '');
+$a[84] = array('id' => 84, 'alias' => 'forbiden', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '84');
 $d['glory'] = 85;
-$a[85] = array('id' => 85, 'alias' => 'glory', 'path' => '');
+$a[85] = array('id' => 85, 'alias' => 'glory', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '85');
 $d['camomile'] = 86;
-$a[86] = array('id' => 86, 'alias' => 'camomile', 'path' => '');
+$a[86] = array('id' => 86, 'alias' => 'camomile', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '86');
 $d['muse'] = 87;
-$a[87] = array('id' => 87, 'alias' => 'muse', 'path' => '');
+$a[87] = array('id' => 87, 'alias' => 'muse', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '87');
 $d['bro'] = 88;
-$a[88] = array('id' => 88, 'alias' => 'bro', 'path' => '');
+$a[88] = array('id' => 88, 'alias' => 'bro', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '88');
 $d['muromez'] = 89;
-$a[89] = array('id' => 89, 'alias' => 'muromez', 'path' => '');
+$a[89] = array('id' => 89, 'alias' => 'muromez', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '89');
 $d['kavkaz'] = 90;
-$a[90] = array('id' => 90, 'alias' => 'kavkaz', 'path' => '');
+$a[90] = array('id' => 90, 'alias' => 'kavkaz', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '90');
 $d['cells'] = 91;
-$a[91] = array('id' => 91, 'alias' => 'cells', 'path' => '');
+$a[91] = array('id' => 91, 'alias' => 'cells', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '91');
 $d['undo'] = 92;
-$a[92] = array('id' => 92, 'alias' => 'undo', 'path' => '');
+$a[92] = array('id' => 92, 'alias' => 'undo', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '92');
 $d['love'] = 93;
-$a[93] = array('id' => 93, 'alias' => 'love', 'path' => '');
+$a[93] = array('id' => 93, 'alias' => 'love', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '93');
 $d['have'] = 94;
-$a[94] = array('id' => 94, 'alias' => 'have', 'path' => '');
+$a[94] = array('id' => 94, 'alias' => 'have', 'path' => '', 'parent' => 2);
 $m[] = array('2' => '94');
 $d['animals'] = 45;
-$a[45] = array('id' => 45, 'alias' => 'animals', 'path' => '');
+$a[45] = array('id' => 45, 'alias' => 'animals', 'path' => '', 'parent' => 3);
 $m[] = array('3' => '45');
 $d['women'] = 46;
-$a[46] = array('id' => 46, 'alias' => 'women', 'path' => '');
+$a[46] = array('id' => 46, 'alias' => 'women', 'path' => '', 'parent' => 3);
 $m[] = array('3' => '46');
 $d['golospg'] = 47;
-$a[47] = array('id' => 47, 'alias' => 'golospg', 'path' => '');
+$a[47] = array('id' => 47, 'alias' => 'golospg', 'path' => '', 'parent' => 3);
 $m[] = array('3' => '47');
 $d['anrchogirl'] = 52;
-$a[52] = array('id' => 52, 'alias' => 'anrchogirl', 'path' => '');
+$a[52] = array('id' => 52, 'alias' => 'anrchogirl', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '52');
 $d['almanach'] = 53;
-$a[53] = array('id' => 53, 'alias' => 'almanach', 'path' => '');
+$a[53] = array('id' => 53, 'alias' => 'almanach', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '53');
 $d['somali'] = 54;
-$a[54] = array('id' => 54, 'alias' => 'somali', 'path' => '');
+$a[54] = array('id' => 54, 'alias' => 'somali', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '54');
 $d['agenda'] = 55;
-$a[55] = array('id' => 55, 'alias' => 'agenda', 'path' => '');
+$a[55] = array('id' => 55, 'alias' => 'agenda', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '55');
 $d['presentation'] = 56;
-$a[56] = array('id' => 56, 'alias' => 'presentation', 'path' => '');
+$a[56] = array('id' => 56, 'alias' => 'presentation', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '56');
 $d['avtonom'] = 57;
-$a[57] = array('id' => 57, 'alias' => 'avtonom', 'path' => '');
+$a[57] = array('id' => 57, 'alias' => 'avtonom', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '57');
 $d['critical'] = 167;
-$a[167] = array('id' => 167, 'alias' => 'critical', 'path' => '');
+$a[167] = array('id' => 167, 'alias' => 'critical', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '167');
 $d['rma'] = 168;
-$a[168] = array('id' => 168, 'alias' => 'rma', 'path' => '');
+$a[168] = array('id' => 168, 'alias' => 'rma', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '168');
 $d['vamp'] = 169;
-$a[169] = array('id' => 169, 'alias' => 'vamp', 'path' => '');
+$a[169] = array('id' => 169, 'alias' => 'vamp', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '169');
 $d['crisis'] = 170;
-$a[170] = array('id' => 170, 'alias' => 'crisis', 'path' => '');
+$a[170] = array('id' => 170, 'alias' => 'crisis', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '170');
 $d['georgia'] = 171;
-$a[171] = array('id' => 171, 'alias' => 'georgia', 'path' => '');
+$a[171] = array('id' => 171, 'alias' => 'georgia', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '171');
 $d['off'] = 172;
-$a[172] = array('id' => 172, 'alias' => 'off', 'path' => '');
+$a[172] = array('id' => 172, 'alias' => 'off', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '172');
 $d['vamban'] = 174;
-$a[174] = array('id' => 174, 'alias' => 'vamban', 'path' => '');
+$a[174] = array('id' => 174, 'alias' => 'vamban', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '174');
 $d['kitovras'] = 175;
-$a[175] = array('id' => 175, 'alias' => 'kitovras', 'path' => '');
+$a[175] = array('id' => 175, 'alias' => 'kitovras', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '175');
 $d['tema'] = 176;
-$a[176] = array('id' => 176, 'alias' => 'tema', 'path' => '');
+$a[176] = array('id' => 176, 'alias' => 'tema', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '176');
 $d['dreli'] = 177;
-$a[177] = array('id' => 177, 'alias' => 'dreli', 'path' => '');
+$a[177] = array('id' => 177, 'alias' => 'dreli', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '177');
 $d['we'] = 178;
-$a[178] = array('id' => 178, 'alias' => 'we', 'path' => '');
+$a[178] = array('id' => 178, 'alias' => 'we', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '178');
 $d['vokzal'] = 179;
-$a[179] = array('id' => 179, 'alias' => 'vokzal', 'path' => '');
+$a[179] = array('id' => 179, 'alias' => 'vokzal', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '179');
 $d['goagil'] = 180;
-$a[180] = array('id' => 180, 'alias' => 'goagil', 'path' => '');
+$a[180] = array('id' => 180, 'alias' => 'goagil', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '180');
 $d['dead8'] = 181;
-$a[181] = array('id' => 181, 'alias' => 'dead8', 'path' => '');
+$a[181] = array('id' => 181, 'alias' => 'dead8', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '181');
 $d['media'] = 182;
-$a[182] = array('id' => 182, 'alias' => 'media', 'path' => '');
+$a[182] = array('id' => 182, 'alias' => 'media', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '182');
 $d['voyna_protiv_musora'] = 316;
-$a[316] = array('id' => 316, 'alias' => 'voyna_protiv_musora', 'path' => '');
+$a[316] = array('id' => 316, 'alias' => 'voyna_protiv_musora', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '316');
 $d['murombro'] = 183;
-$a[183] = array('id' => 183, 'alias' => 'murombro', 'path' => '');
+$a[183] = array('id' => 183, 'alias' => 'murombro', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '183');
 $d['murom'] = 184;
-$a[184] = array('id' => 184, 'alias' => 'murom', 'path' => '');
+$a[184] = array('id' => 184, 'alias' => 'murom', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '184');
 $d['sadulaev'] = 185;
-$a[185] = array('id' => 185, 'alias' => 'sadulaev', 'path' => '');
+$a[185] = array('id' => 185, 'alias' => 'sadulaev', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '185');
 $d['slabo'] = 186;
-$a[186] = array('id' => 186, 'alias' => 'slabo', 'path' => '');
+$a[186] = array('id' => 186, 'alias' => 'slabo', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '186');
 $d['politik'] = 187;
-$a[187] = array('id' => 187, 'alias' => 'politik', 'path' => '');
+$a[187] = array('id' => 187, 'alias' => 'politik', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '187');
 $d['zamorochka'] = 188;
-$a[188] = array('id' => 188, 'alias' => 'zamorochka', 'path' => '');
+$a[188] = array('id' => 188, 'alias' => 'zamorochka', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '188');
 $d['eburg'] = 189;
-$a[189] = array('id' => 189, 'alias' => 'eburg', 'path' => '');
+$a[189] = array('id' => 189, 'alias' => 'eburg', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '189');
 $d['rp'] = 191;
-$a[191] = array('id' => 191, 'alias' => 'rp', 'path' => '');
+$a[191] = array('id' => 191, 'alias' => 'rp', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '191');
 $d['dp'] = 192;
-$a[192] = array('id' => 192, 'alias' => 'dp', 'path' => '');
+$a[192] = array('id' => 192, 'alias' => 'dp', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '192');
 $d['folly'] = 193;
-$a[193] = array('id' => 193, 'alias' => 'folly', 'path' => '');
+$a[193] = array('id' => 193, 'alias' => 'folly', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '193');
 $d['lkn'] = 194;
-$a[194] = array('id' => 194, 'alias' => 'lkn', 'path' => '');
+$a[194] = array('id' => 194, 'alias' => 'lkn', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '194');
 $d['lazy'] = 195;
-$a[195] = array('id' => 195, 'alias' => 'lazy', 'path' => '');
+$a[195] = array('id' => 195, 'alias' => 'lazy', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '195');
 $d['slam'] = 196;
-$a[196] = array('id' => 196, 'alias' => 'slam', 'path' => '');
+$a[196] = array('id' => 196, 'alias' => 'slam', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '196');
 $d['jail'] = 198;
-$a[198] = array('id' => 198, 'alias' => 'jail', 'path' => '');
+$a[198] = array('id' => 198, 'alias' => 'jail', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '198');
 $d['black'] = 199;
-$a[199] = array('id' => 199, 'alias' => 'black', 'path' => '');
+$a[199] = array('id' => 199, 'alias' => 'black', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '199');
 $d['antifa'] = 200;
-$a[200] = array('id' => 200, 'alias' => 'antifa', 'path' => '');
+$a[200] = array('id' => 200, 'alias' => 'antifa', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '200');
 $d['noborder'] = 201;
-$a[201] = array('id' => 201, 'alias' => 'noborder', 'path' => '');
+$a[201] = array('id' => 201, 'alias' => 'noborder', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '201');
 $d['prezident'] = 202;
-$a[202] = array('id' => 202, 'alias' => 'prezident', 'path' => '');
+$a[202] = array('id' => 202, 'alias' => 'prezident', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '202');
 $d['fucktheculture'] = 295;
-$a[295] = array('id' => 295, 'alias' => 'fucktheculture', 'path' => '');
+$a[295] = array('id' => 295, 'alias' => 'fucktheculture', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '295');
 $d['pizdabol'] = 298;
-$a[298] = array('id' => 298, 'alias' => 'pizdabol', 'path' => '');
+$a[298] = array('id' => 298, 'alias' => 'pizdabol', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '298');
 $d['paris'] = 299;
-$a[299] = array('id' => 299, 'alias' => 'paris', 'path' => '');
+$a[299] = array('id' => 299, 'alias' => 'paris', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '299');
 $d['said'] = 302;
-$a[302] = array('id' => 302, 'alias' => 'said', 'path' => '');
+$a[302] = array('id' => 302, 'alias' => 'said', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '302');
 $d['chimki'] = 304;
-$a[304] = array('id' => 304, 'alias' => 'chimki', 'path' => '');
+$a[304] = array('id' => 304, 'alias' => 'chimki', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '304');
 $d['pop'] = 305;
-$a[305] = array('id' => 305, 'alias' => 'pop', 'path' => '');
+$a[305] = array('id' => 305, 'alias' => 'pop', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '305');
 $d['bajing'] = 306;
-$a[306] = array('id' => 306, 'alias' => 'bajing', 'path' => '');
+$a[306] = array('id' => 306, 'alias' => 'bajing', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '306');
 $d['anarchokunst'] = 313;
-$a[313] = array('id' => 313, 'alias' => 'anarchokunst', 'path' => '');
+$a[313] = array('id' => 313, 'alias' => 'anarchokunst', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '313');
 $d['voina'] = 315;
-$a[315] = array('id' => 315, 'alias' => 'voina', 'path' => '');
+$a[315] = array('id' => 315, 'alias' => 'voina', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '315');
 $d['razgovor'] = 318;
-$a[318] = array('id' => 318, 'alias' => 'razgovor', 'path' => '');
+$a[318] = array('id' => 318, 'alias' => 'razgovor', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '318');
 $d['malyshi'] = 321;
-$a[321] = array('id' => 321, 'alias' => 'malyshi', 'path' => '');
+$a[321] = array('id' => 321, 'alias' => 'malyshi', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '321');
 $d['beer'] = 325;
-$a[325] = array('id' => 325, 'alias' => 'beer', 'path' => '');
+$a[325] = array('id' => 325, 'alias' => 'beer', 'path' => '', 'parent' => 6);
 $m[] = array('6' => '325');
 $d['dveri'] = 32;
-$a[32] = array('id' => 32, 'alias' => 'dveri', 'path' => '');
+$a[32] = array('id' => 32, 'alias' => 'dveri', 'path' => '', 'parent' => 7);
 $m[] = array('7' => '32');
 $d['granata'] = 33;
-$a[33] = array('id' => 33, 'alias' => 'granata', 'path' => '');
+$a[33] = array('id' => 33, 'alias' => 'granata', 'path' => '', 'parent' => 7);
 $m[] = array('7' => '33');
 $d['ktrance'] = 34;
-$a[34] = array('id' => 34, 'alias' => 'ktrance', 'path' => '');
+$a[34] = array('id' => 34, 'alias' => 'ktrance', 'path' => '', 'parent' => 7);
 $m[] = array('7' => '34');
 $d['presents'] = 35;
-$a[35] = array('id' => 35, 'alias' => 'presents', 'path' => '');
+$a[35] = array('id' => 35, 'alias' => 'presents', 'path' => '', 'parent' => 7);
 $m[] = array('7' => '35');
 $d['magpg'] = 10;
-$a[10] = array('id' => 10, 'alias' => 'magpg', 'path' => '');
+$a[10] = array('id' => 10, 'alias' => 'magpg', 'path' => '', 'parent' => 8);
 $m[] = array('8' => '10');
 $d['al-manach'] = 11;
-$a[11] = array('id' => 11, 'alias' => 'al-manach', 'path' => '');
+$a[11] = array('id' => 11, 'alias' => 'al-manach', 'path' => '', 'parent' => 8);
 $m[] = array('8' => '11');
 $d['almanach'] = 12;
-$a[12] = array('id' => 12, 'alias' => 'almanach', 'path' => '');
+$a[12] = array('id' => 12, 'alias' => 'almanach', 'path' => '', 'parent' => 8);
 $m[] = array('8' => '12');
 $d['folly'] = 13;
-$a[13] = array('id' => 13, 'alias' => 'folly', 'path' => '');
+$a[13] = array('id' => 13, 'alias' => 'folly', 'path' => '', 'parent' => 8);
 $m[] = array('8' => '13');
 $d['pizdi'] = 21;
-$a[21] = array('id' => 21, 'alias' => 'pizdi', 'path' => '');
+$a[21] = array('id' => 21, 'alias' => 'pizdi', 'path' => '', 'parent' => 9);
 $m[] = array('9' => '21');
 $d['dinozavr'] = 324;
-$a[324] = array('id' => 324, 'alias' => 'dinozavr', 'path' => '');
+$a[324] = array('id' => 324, 'alias' => 'dinozavr', 'path' => '', 'parent' => 9);
 $m[] = array('9' => '324');
 $d['tuva'] = 22;
-$a[22] = array('id' => 22, 'alias' => 'tuva', 'path' => '');
+$a[22] = array('id' => 22, 'alias' => 'tuva', 'path' => '', 'parent' => 9);
 $m[] = array('9' => '22');
 $d['anochin'] = 23;
-$a[23] = array('id' => 23, 'alias' => 'anochin', 'path' => '');
+$a[23] = array('id' => 23, 'alias' => 'anochin', 'path' => '', 'parent' => 9);
 $m[] = array('9' => '23');
 $d['poems'] = 24;
-$a[24] = array('id' => 24, 'alias' => 'poems', 'path' => '');
+$a[24] = array('id' => 24, 'alias' => 'poems', 'path' => '', 'parent' => 9);
 $m[] = array('9' => '24');
 $d['presents'] = 25;
-$a[25] = array('id' => 25, 'alias' => 'presents', 'path' => '');
+$a[25] = array('id' => 25, 'alias' => 'presents', 'path' => '', 'parent' => 9);
 $m[] = array('9' => '25');
 $d['intro'] = 58;
-$a[58] = array('id' => 58, 'alias' => 'intro', 'path' => '');
+$a[58] = array('id' => 58, 'alias' => 'intro', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '58');
 $d['zines'] = 59;
-$a[59] = array('id' => 59, 'alias' => 'zines', 'path' => '');
+$a[59] = array('id' => 59, 'alias' => 'zines', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '59');
 $d['musica'] = 60;
-$a[60] = array('id' => 60, 'alias' => 'musica', 'path' => '');
+$a[60] = array('id' => 60, 'alias' => 'musica', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '60');
 $d['movie'] = 61;
-$a[61] = array('id' => 61, 'alias' => 'movie', 'path' => '');
+$a[61] = array('id' => 61, 'alias' => 'movie', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '61');
 $d['bugs'] = 62;
-$a[62] = array('id' => 62, 'alias' => 'bugs', 'path' => '');
+$a[62] = array('id' => 62, 'alias' => 'bugs', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '62');
 $d['cards'] = 63;
-$a[63] = array('id' => 63, 'alias' => 'cards', 'path' => '');
+$a[63] = array('id' => 63, 'alias' => 'cards', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '63');
 $d['stamps'] = 64;
-$a[64] = array('id' => 64, 'alias' => 'stamps', 'path' => '');
+$a[64] = array('id' => 64, 'alias' => 'stamps', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '64');
 $d['pelevin'] = 65;
-$a[65] = array('id' => 65, 'alias' => 'pelevin', 'path' => '');
+$a[65] = array('id' => 65, 'alias' => 'pelevin', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '65');
 $d['nodj'] = 66;
-$a[66] = array('id' => 66, 'alias' => 'nodj', 'path' => '');
+$a[66] = array('id' => 66, 'alias' => 'nodj', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '66');
 $d['derrida'] = 67;
-$a[67] = array('id' => 67, 'alias' => 'derrida', 'path' => '');
+$a[67] = array('id' => 67, 'alias' => 'derrida', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '67');
 $d['minsk'] = 68;
-$a[68] = array('id' => 68, 'alias' => 'minsk', 'path' => '');
+$a[68] = array('id' => 68, 'alias' => 'minsk', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '68');
 $d['69'] = 69;
-$a[69] = array('id' => 69, 'alias' => '69', 'path' => '');
+$a[69] = array('id' => 69, 'alias' => '69', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '69');
 $d['fenso'] = 70;
-$a[70] = array('id' => 70, 'alias' => 'fenso', 'path' => '');
+$a[70] = array('id' => 70, 'alias' => 'fenso', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '70');
 $d['grinberg'] = 71;
-$a[71] = array('id' => 71, 'alias' => 'grinberg', 'path' => '');
+$a[71] = array('id' => 71, 'alias' => 'grinberg', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '71');
 $d['72'] = 72;
-$a[72] = array('id' => 72, 'alias' => '72', 'path' => '');
+$a[72] = array('id' => 72, 'alias' => '72', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '72');
 $d['73'] = 73;
-$a[73] = array('id' => 73, 'alias' => '73', 'path' => '');
+$a[73] = array('id' => 73, 'alias' => '73', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '73');
 $d['boomshanka'] = 74;
-$a[74] = array('id' => 74, 'alias' => 'boomshanka', 'path' => '');
+$a[74] = array('id' => 74, 'alias' => 'boomshanka', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '74');
 $d['ad'] = 76;
-$a[76] = array('id' => 76, 'alias' => 'ad', 'path' => '');
+$a[76] = array('id' => 76, 'alias' => 'ad', 'path' => '', 'parent' => 10);
 $m[] = array('10' => '76');
 $d['circumcision'] = 117;
-$a[117] = array('id' => 117, 'alias' => 'circumcision', 'path' => '');
+$a[117] = array('id' => 117, 'alias' => 'circumcision', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '117');
 $d['pizdi'] = 118;
-$a[118] = array('id' => 118, 'alias' => 'pizdi', 'path' => '');
+$a[118] = array('id' => 118, 'alias' => 'pizdi', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '118');
 $d['imam'] = 119;
-$a[119] = array('id' => 119, 'alias' => 'imam', 'path' => '');
+$a[119] = array('id' => 119, 'alias' => 'imam', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '119');
 $d['investigations'] = 125;
-$a[125] = array('id' => 125, 'alias' => 'investigations', 'path' => '');
+$a[125] = array('id' => 125, 'alias' => 'investigations', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '125');
 $d['heroes'] = 120;
-$a[120] = array('id' => 120, 'alias' => 'heroes', 'path' => '');
+$a[120] = array('id' => 120, 'alias' => 'heroes', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '120');
 $d['fashion'] = 133;
-$a[133] = array('id' => 133, 'alias' => 'fashion', 'path' => '');
+$a[133] = array('id' => 133, 'alias' => 'fashion', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '133');
 $d['pgkunst'] = 135;
-$a[135] = array('id' => 135, 'alias' => 'pgkunst', 'path' => '');
+$a[135] = array('id' => 135, 'alias' => 'pgkunst', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '135');
 $d['travel'] = 140;
-$a[140] = array('id' => 140, 'alias' => 'travel', 'path' => '');
+$a[140] = array('id' => 140, 'alias' => 'travel', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '140');
 $d['sport'] = 142;
-$a[142] = array('id' => 142, 'alias' => 'sport', 'path' => '');
+$a[142] = array('id' => 142, 'alias' => 'sport', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '142');
 $d['classics'] = 144;
-$a[144] = array('id' => 144, 'alias' => 'classics', 'path' => '');
+$a[144] = array('id' => 144, 'alias' => 'classics', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '144');
 $d['udar'] = 149;
-$a[149] = array('id' => 149, 'alias' => 'udar', 'path' => '');
+$a[149] = array('id' => 149, 'alias' => 'udar', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '149');
 $d['porno'] = 154;
-$a[154] = array('id' => 154, 'alias' => 'porno', 'path' => '');
+$a[154] = array('id' => 154, 'alias' => 'porno', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '154');
 $d['insider'] = 156;
-$a[156] = array('id' => 156, 'alias' => 'insider', 'path' => '');
+$a[156] = array('id' => 156, 'alias' => 'insider', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '156');
 $d['ad'] = 158;
-$a[158] = array('id' => 158, 'alias' => 'ad', 'path' => '');
+$a[158] = array('id' => 158, 'alias' => 'ad', 'path' => '', 'parent' => 11);
 $m[] = array('11' => '158');
 $d['manifest'] = 211;
-$a[211] = array('id' => 211, 'alias' => 'manifest', 'path' => '');
+$a[211] = array('id' => 211, 'alias' => 'manifest', 'path' => '', 'parent' => 12);
 $m[] = array('12' => '211');
 $d['talk'] = 216;
-$a[216] = array('id' => 216, 'alias' => 'talk', 'path' => '');
+$a[216] = array('id' => 216, 'alias' => 'talk', 'path' => '', 'parent' => 12);
 $m[] = array('12' => '216');
 $d['songs'] = 218;
-$a[218] = array('id' => 218, 'alias' => 'songs', 'path' => '');
+$a[218] = array('id' => 218, 'alias' => 'songs', 'path' => '', 'parent' => 12);
 $m[] = array('12' => '218');
 $d['narration'] = 221;
-$a[221] = array('id' => 221, 'alias' => 'narration', 'path' => '');
+$a[221] = array('id' => 221, 'alias' => 'narration', 'path' => '', 'parent' => 12);
 $m[] = array('12' => '221');
 $d['stories'] = 227;
-$a[227] = array('id' => 227, 'alias' => 'stories', 'path' => '');
+$a[227] = array('id' => 227, 'alias' => 'stories', 'path' => '', 'parent' => 12);
 $m[] = array('12' => '227');
 $d['project'] = 233;
-$a[233] = array('id' => 233, 'alias' => 'project', 'path' => '');
+$a[233] = array('id' => 233, 'alias' => 'project', 'path' => '', 'parent' => 12);
 $m[] = array('12' => '233');
 $d['bonus'] = 239;
-$a[239] = array('id' => 239, 'alias' => 'bonus', 'path' => '');
+$a[239] = array('id' => 239, 'alias' => 'bonus', 'path' => '', 'parent' => 12);
 $m[] = array('12' => '239');
 $d['242'] = 242;
-$a[242] = array('id' => 242, 'alias' => '242', 'path' => '');
+$a[242] = array('id' => 242, 'alias' => '242', 'path' => '', 'parent' => 12);
 $m[] = array('12' => '242');
 $d['ganja'] = 269;
-$a[269] = array('id' => 269, 'alias' => 'ganja', 'path' => '');
+$a[269] = array('id' => 269, 'alias' => 'ganja', 'path' => '', 'parent' => 13);
 $m[] = array('13' => '269');
 $d['porno'] = 271;
-$a[271] = array('id' => 271, 'alias' => 'porno', 'path' => '');
+$a[271] = array('id' => 271, 'alias' => 'porno', 'path' => '', 'parent' => 13);
 $m[] = array('13' => '271');
 $d['poster'] = 273;
-$a[273] = array('id' => 273, 'alias' => 'poster', 'path' => '');
+$a[273] = array('id' => 273, 'alias' => 'poster', 'path' => '', 'parent' => 13);
 $m[] = array('13' => '273');
 $d['history'] = 275;
-$a[275] = array('id' => 275, 'alias' => 'history', 'path' => '');
+$a[275] = array('id' => 275, 'alias' => 'history', 'path' => '', 'parent' => 13);
 $m[] = array('13' => '275');
 $d['trip'] = 277;
-$a[277] = array('id' => 277, 'alias' => 'trip', 'path' => '');
+$a[277] = array('id' => 277, 'alias' => 'trip', 'path' => '', 'parent' => 13);
 $m[] = array('13' => '277');
 $d['reader'] = 279;
-$a[279] = array('id' => 279, 'alias' => 'reader', 'path' => '');
+$a[279] = array('id' => 279, 'alias' => 'reader', 'path' => '', 'parent' => 13);
 $m[] = array('13' => '279');
 $d['postcards'] = 281;
-$a[281] = array('id' => 281, 'alias' => 'postcards', 'path' => '');
+$a[281] = array('id' => 281, 'alias' => 'postcards', 'path' => '', 'parent' => 13);
 $m[] = array('13' => '281');
 $d['bonus'] = 284;
-$a[284] = array('id' => 284, 'alias' => 'bonus', 'path' => '');
+$a[284] = array('id' => 284, 'alias' => 'bonus', 'path' => '', 'parent' => 13);
 $m[] = array('13' => '284');
 $d['chernyak'] = 15;
-$a[15] = array('id' => 15, 'alias' => 'chernyak', 'path' => '');
+$a[15] = array('id' => 15, 'alias' => 'chernyak', 'path' => '', 'parent' => 14);
 $m[] = array('14' => '15');
 $d['aksenov'] = 16;
-$a[16] = array('id' => 16, 'alias' => 'aksenov', 'path' => '');
+$a[16] = array('id' => 16, 'alias' => 'aksenov', 'path' => '', 'parent' => 14);
 $m[] = array('14' => '16');
 $d['rostan'] = 17;
-$a[17] = array('id' => 17, 'alias' => 'rostan', 'path' => '');
+$a[17] = array('id' => 17, 'alias' => 'rostan', 'path' => '', 'parent' => 14);
 $m[] = array('14' => '17');
 $d['razum'] = 18;
-$a[18] = array('id' => 18, 'alias' => 'razum', 'path' => '');
+$a[18] = array('id' => 18, 'alias' => 'razum', 'path' => '', 'parent' => 14);
 $m[] = array('14' => '18');
 $d['19'] = 19;
-$a[19] = array('id' => 19, 'alias' => '19', 'path' => '');
+$a[19] = array('id' => 19, 'alias' => '19', 'path' => '', 'parent' => 14);
 $m[] = array('14' => '19');
 $d['20'] = 20;
-$a[20] = array('id' => 20, 'alias' => '20', 'path' => '');
+$a[20] = array('id' => 20, 'alias' => '20', 'path' => '', 'parent' => 14);
 $m[] = array('14' => '20');
 $d['vovan'] = 319;
-$a[319] = array('id' => 319, 'alias' => 'vovan', 'path' => '');
+$a[319] = array('id' => 319, 'alias' => 'vovan', 'path' => '', 'parent' => 14);
 $m[] = array('14' => '319');
 $d['frontheroes'] = 249;
-$a[249] = array('id' => 249, 'alias' => 'frontheroes', 'path' => '');
+$a[249] = array('id' => 249, 'alias' => 'frontheroes', 'path' => '', 'parent' => 21);
 $m[] = array('21' => '249');
 $d['dat-pizdi'] = 250;
-$a[250] = array('id' => 250, 'alias' => 'dat-pizdi', 'path' => '');
+$a[250] = array('id' => 250, 'alias' => 'dat-pizdi', 'path' => '', 'parent' => 21);
 $m[] = array('21' => '250');
 $d['russia'] = 251;
-$a[251] = array('id' => 251, 'alias' => 'russia', 'path' => '');
+$a[251] = array('id' => 251, 'alias' => 'russia', 'path' => '', 'parent' => 21);
 $m[] = array('21' => '251');
 $d['mails'] = 252;
-$a[252] = array('id' => 252, 'alias' => 'mails', 'path' => '');
+$a[252] = array('id' => 252, 'alias' => 'mails', 'path' => '', 'parent' => 21);
 $m[] = array('21' => '252');
 $d['zayavi'] = 253;
-$a[253] = array('id' => 253, 'alias' => 'zayavi', 'path' => '');
+$a[253] = array('id' => 253, 'alias' => 'zayavi', 'path' => '', 'parent' => 21);
 $m[] = array('21' => '253');
 $d['england'] = 254;
-$a[254] = array('id' => 254, 'alias' => 'england', 'path' => '');
+$a[254] = array('id' => 254, 'alias' => 'england', 'path' => '', 'parent' => 21);
 $m[] = array('21' => '254');
 $d['england1'] = 255;
-$a[255] = array('id' => 255, 'alias' => 'england1', 'path' => '');
+$a[255] = array('id' => 255, 'alias' => 'england1', 'path' => '', 'parent' => 21);
 $m[] = array('21' => '255');
 $d['epos'] = 256;
-$a[256] = array('id' => 256, 'alias' => 'epos', 'path' => '');
+$a[256] = array('id' => 256, 'alias' => 'epos', 'path' => '', 'parent' => 22);
 $m[] = array('22' => '256');
 $d['report'] = 257;
-$a[257] = array('id' => 257, 'alias' => 'report', 'path' => '');
+$a[257] = array('id' => 257, 'alias' => 'report', 'path' => '', 'parent' => 22);
 $m[] = array('22' => '257');
 $d['galuzinoz'] = 258;
-$a[258] = array('id' => 258, 'alias' => 'galuzinoz', 'path' => '');
+$a[258] = array('id' => 258, 'alias' => 'galuzinoz', 'path' => '', 'parent' => 22);
 $m[] = array('22' => '258');
 $d['eros'] = 259;
-$a[259] = array('id' => 259, 'alias' => 'eros', 'path' => '');
+$a[259] = array('id' => 259, 'alias' => 'eros', 'path' => '', 'parent' => 22);
 $m[] = array('22' => '259');
 $d['tuvafoto'] = 260;
-$a[260] = array('id' => 260, 'alias' => 'tuvafoto', 'path' => '');
+$a[260] = array('id' => 260, 'alias' => 'tuvafoto', 'path' => '', 'parent' => 22);
 $m[] = array('22' => '260');
 $d['kids'] = 265;
-$a[265] = array('id' => 265, 'alias' => 'kids', 'path' => '');
+$a[265] = array('id' => 265, 'alias' => 'kids', 'path' => '', 'parent' => 23);
 $m[] = array('23' => '265');
 $d['dad'] = 267;
-$a[267] = array('id' => 267, 'alias' => 'dad', 'path' => '');
+$a[267] = array('id' => 267, 'alias' => 'dad', 'path' => '', 'parent' => 23);
 $m[] = array('23' => '267');
 $d['dacha'] = 268;
-$a[268] = array('id' => 268, 'alias' => 'dacha', 'path' => '');
+$a[268] = array('id' => 268, 'alias' => 'dacha', 'path' => '', 'parent' => 23);
 $m[] = array('23' => '268');
 $d['26'] = 26;
-$a[26] = array('id' => 26, 'alias' => '26', 'path' => '');
+$a[26] = array('id' => 26, 'alias' => '26', 'path' => '', 'parent' => 25);
 $m[] = array('25' => '26');
 $d['27'] = 27;
-$a[27] = array('id' => 27, 'alias' => '27', 'path' => '');
+$a[27] = array('id' => 27, 'alias' => '27', 'path' => '', 'parent' => 25);
 $m[] = array('25' => '27');
 $d['28'] = 28;
-$a[28] = array('id' => 28, 'alias' => '28', 'path' => '');
+$a[28] = array('id' => 28, 'alias' => '28', 'path' => '', 'parent' => 25);
 $m[] = array('25' => '28');
 $d['сергей-пипуркин'] = 29;
-$a[29] = array('id' => 29, 'alias' => 'сергей-пипуркин', 'path' => '');
+$a[29] = array('id' => 29, 'alias' => 'сергей-пипуркин', 'path' => '', 'parent' => 25);
 $m[] = array('25' => '29');
 $d['95'] = 95;
-$a[95] = array('id' => 95, 'alias' => '95', 'path' => '');
+$a[95] = array('id' => 95, 'alias' => '95', 'path' => '', 'parent' => 25);
 $m[] = array('25' => '95');
 $d['96'] = 96;
-$a[96] = array('id' => 96, 'alias' => '96', 'path' => '');
+$a[96] = array('id' => 96, 'alias' => '96', 'path' => '', 'parent' => 25);
 $m[] = array('25' => '96');
 $d['савелий-гринберг'] = 30;
-$a[30] = array('id' => 30, 'alias' => 'савелий-гринберг', 'path' => '');
+$a[30] = array('id' => 30, 'alias' => 'савелий-гринберг', 'path' => '', 'parent' => 25);
 $m[] = array('25' => '30');
 $d['36'] = 36;
-$a[36] = array('id' => 36, 'alias' => '36', 'path' => '');
+$a[36] = array('id' => 36, 'alias' => '36', 'path' => '', 'parent' => 35);
 $m[] = array('35' => '36');
 $d['mono'] = 37;
-$a[37] = array('id' => 37, 'alias' => 'mono', 'path' => '');
+$a[37] = array('id' => 37, 'alias' => 'mono', 'path' => '', 'parent' => 35);
 $m[] = array('35' => '37');
 $d['marksheider'] = 38;
-$a[38] = array('id' => 38, 'alias' => 'marksheider', 'path' => '');
+$a[38] = array('id' => 38, 'alias' => 'marksheider', 'path' => '', 'parent' => 35);
 $m[] = array('35' => '38');
 $d['mutantoff'] = 50;
-$a[50] = array('id' => 50, 'alias' => 'mutantoff', 'path' => '');
+$a[50] = array('id' => 50, 'alias' => 'mutantoff', 'path' => '', 'parent' => 35);
 $m[] = array('35' => '50');
 $d['intro'] = 286;
-$a[286] = array('id' => 286, 'alias' => 'intro', 'path' => '');
+$a[286] = array('id' => 286, 'alias' => 'intro', 'path' => '', 'parent' => 39);
 $m[] = array('39' => '286');
 $d['walk'] = 287;
-$a[287] = array('id' => 287, 'alias' => 'walk', 'path' => '');
+$a[287] = array('id' => 287, 'alias' => 'walk', 'path' => '', 'parent' => 39);
 $m[] = array('39' => '287');
 $d['power'] = 288;
-$a[288] = array('id' => 288, 'alias' => 'power', 'path' => '');
+$a[288] = array('id' => 288, 'alias' => 'power', 'path' => '', 'parent' => 39);
 $m[] = array('39' => '288');
 $d['tale'] = 289;
-$a[289] = array('id' => 289, 'alias' => 'tale', 'path' => '');
+$a[289] = array('id' => 289, 'alias' => 'tale', 'path' => '', 'parent' => 39);
 $m[] = array('39' => '289');
 $d['dp'] = 97;
-$a[97] = array('id' => 97, 'alias' => 'dp', 'path' => '');
+$a[97] = array('id' => 97, 'alias' => 'dp', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '97');
 $d['ustuu'] = 98;
-$a[98] = array('id' => 98, 'alias' => 'ustuu', 'path' => '');
+$a[98] = array('id' => 98, 'alias' => 'ustuu', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '98');
 $d['99'] = 99;
-$a[99] = array('id' => 99, 'alias' => '99', 'path' => '');
+$a[99] = array('id' => 99, 'alias' => '99', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '99');
 $d['tarakan'] = 100;
-$a[100] = array('id' => 100, 'alias' => 'tarakan', 'path' => '');
+$a[100] = array('id' => 100, 'alias' => 'tarakan', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '100');
 $d['oneyear'] = 101;
-$a[101] = array('id' => 101, 'alias' => 'oneyear', 'path' => '');
+$a[101] = array('id' => 101, 'alias' => 'oneyear', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '101');
 $d['planeta'] = 102;
-$a[102] = array('id' => 102, 'alias' => 'planeta', 'path' => '');
+$a[102] = array('id' => 102, 'alias' => 'planeta', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '102');
 $d['ppk2'] = 103;
-$a[103] = array('id' => 103, 'alias' => 'ppk2', 'path' => '');
+$a[103] = array('id' => 103, 'alias' => 'ppk2', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '103');
 $d['gerakl'] = 104;
-$a[104] = array('id' => 104, 'alias' => 'gerakl', 'path' => '');
+$a[104] = array('id' => 104, 'alias' => 'gerakl', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '104');
 $d['future'] = 105;
-$a[105] = array('id' => 105, 'alias' => 'future', 'path' => '');
+$a[105] = array('id' => 105, 'alias' => 'future', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '105');
 $d['govno'] = 109;
-$a[109] = array('id' => 109, 'alias' => 'govno', 'path' => '');
+$a[109] = array('id' => 109, 'alias' => 'govno', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '109');
 $d['presentation'] = 110;
-$a[110] = array('id' => 110, 'alias' => 'presentation', 'path' => '');
+$a[110] = array('id' => 110, 'alias' => 'presentation', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '110');
 $d['ppk1'] = 111;
-$a[111] = array('id' => 111, 'alias' => 'ppk1', 'path' => '');
+$a[111] = array('id' => 111, 'alias' => 'ppk1', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '111');
 $d['memory'] = 112;
-$a[112] = array('id' => 112, 'alias' => 'memory', 'path' => '');
+$a[112] = array('id' => 112, 'alias' => 'memory', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '112');
 $d['generation'] = 115;
-$a[115] = array('id' => 115, 'alias' => 'generation', 'path' => '');
+$a[115] = array('id' => 115, 'alias' => 'generation', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '115');
 $d['recommend'] = 116;
-$a[116] = array('id' => 116, 'alias' => 'recommend', 'path' => '');
+$a[116] = array('id' => 116, 'alias' => 'recommend', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '116');
 $d['rapcont'] = 294;
-$a[294] = array('id' => 294, 'alias' => 'rapcont', 'path' => '');
+$a[294] = array('id' => 294, 'alias' => 'rapcont', 'path' => '', 'parent' => 42);
 $m[] = array('42' => '294');
 $d['zerzan'] = 203;
-$a[203] = array('id' => 203, 'alias' => 'zerzan', 'path' => '');
+$a[203] = array('id' => 203, 'alias' => 'zerzan', 'path' => '', 'parent' => 55);
 $m[] = array('55' => '203');
 $d['erofeev'] = 204;
-$a[204] = array('id' => 204, 'alias' => 'erofeev', 'path' => '');
+$a[204] = array('id' => 204, 'alias' => 'erofeev', 'path' => '', 'parent' => 55);
 $m[] = array('55' => '204');
 $d['tlostanova'] = 205;
-$a[205] = array('id' => 205, 'alias' => 'tlostanova', 'path' => '');
+$a[205] = array('id' => 205, 'alias' => 'tlostanova', 'path' => '', 'parent' => 55);
 $m[] = array('55' => '205');
 $d['xaritonov'] = 206;
-$a[206] = array('id' => 206, 'alias' => 'xaritonov', 'path' => '');
+$a[206] = array('id' => 206, 'alias' => 'xaritonov', 'path' => '', 'parent' => 55);
 $m[] = array('55' => '206');
 $d['77'] = 77;
-$a[77] = array('id' => 77, 'alias' => '77', 'path' => '');
+$a[77] = array('id' => 77, 'alias' => '77', 'path' => '', 'parent' => 76);
 $m[] = array('76' => '77');
 $d['166'] = 166;
-$a[166] = array('id' => 166, 'alias' => '166', 'path' => '');
+$a[166] = array('id' => 166, 'alias' => '166', 'path' => '', 'parent' => 76);
 $m[] = array('76' => '166');
 $d['iced'] = 247;
-$a[247] = array('id' => 247, 'alias' => 'iced', 'path' => '');
+$a[247] = array('id' => 247, 'alias' => 'iced', 'path' => '', 'parent' => 76);
 $m[] = array('76' => '247');
 $d['248'] = 248;
-$a[248] = array('id' => 248, 'alias' => '248', 'path' => '');
+$a[248] = array('id' => 248, 'alias' => '248', 'path' => '', 'parent' => 76);
 $m[] = array('76' => '248');
 $d['godsvideo'] = 291;
-$a[291] = array('id' => 291, 'alias' => 'godsvideo', 'path' => '');
+$a[291] = array('id' => 291, 'alias' => 'godsvideo', 'path' => '', 'parent' => 80);
 $m[] = array('80' => '291');
 $d['im-video'] = 290;
-$a[290] = array('id' => 290, 'alias' => 'im-video', 'path' => '');
+$a[290] = array('id' => 290, 'alias' => 'im-video', 'path' => '', 'parent' => 89);
 $m[] = array('89' => '290');
 $d['carib'] = 106;
-$a[106] = array('id' => 106, 'alias' => 'carib', 'path' => '');
+$a[106] = array('id' => 106, 'alias' => 'carib', 'path' => '', 'parent' => 103);
 $m[] = array('103' => '106');
 $d['positive'] = 107;
-$a[107] = array('id' => 107, 'alias' => 'positive', 'path' => '');
+$a[107] = array('id' => 107, 'alias' => 'positive', 'path' => '', 'parent' => 103);
 $m[] = array('103' => '107');
 $d['sorokin'] = 108;
-$a[108] = array('id' => 108, 'alias' => 'sorokin', 'path' => '');
+$a[108] = array('id' => 108, 'alias' => 'sorokin', 'path' => '', 'parent' => 104);
 $m[] = array('104' => '108');
 $d['kings'] = 113;
-$a[113] = array('id' => 113, 'alias' => 'kings', 'path' => '');
+$a[113] = array('id' => 113, 'alias' => 'kings', 'path' => '', 'parent' => 111);
 $m[] = array('111' => '113');
 $d['pushkin'] = 114;
-$a[114] = array('id' => 114, 'alias' => 'pushkin', 'path' => '');
+$a[114] = array('id' => 114, 'alias' => 'pushkin', 'path' => '', 'parent' => 111);
 $m[] = array('111' => '114');
 $d['gealizm'] = 121;
-$a[121] = array('id' => 121, 'alias' => 'gealizm', 'path' => '');
+$a[121] = array('id' => 121, 'alias' => 'gealizm', 'path' => '', 'parent' => 120);
 $m[] = array('120' => '121');
 $d['kirill'] = 122;
-$a[122] = array('id' => 122, 'alias' => 'kirill', 'path' => '');
+$a[122] = array('id' => 122, 'alias' => 'kirill', 'path' => '', 'parent' => 120);
 $m[] = array('120' => '122');
 $d['vovan'] = 123;
-$a[123] = array('id' => 123, 'alias' => 'vovan', 'path' => '');
+$a[123] = array('id' => 123, 'alias' => 'vovan', 'path' => '', 'parent' => 120);
 $m[] = array('120' => '123');
 $d['barmalei'] = 124;
-$a[124] = array('id' => 124, 'alias' => 'barmalei', 'path' => '');
+$a[124] = array('id' => 124, 'alias' => 'barmalei', 'path' => '', 'parent' => 120);
 $m[] = array('120' => '124');
 $d['mozg'] = 128;
-$a[128] = array('id' => 128, 'alias' => 'mozg', 'path' => '');
+$a[128] = array('id' => 128, 'alias' => 'mozg', 'path' => '', 'parent' => 120);
 $m[] = array('120' => '128');
 $d['palach'] = 129;
-$a[129] = array('id' => 129, 'alias' => 'palach', 'path' => '');
+$a[129] = array('id' => 129, 'alias' => 'palach', 'path' => '', 'parent' => 120);
 $m[] = array('120' => '129');
 $d['dimdim'] = 130;
-$a[130] = array('id' => 130, 'alias' => 'dimdim', 'path' => '');
+$a[130] = array('id' => 130, 'alias' => 'dimdim', 'path' => '', 'parent' => 120);
 $m[] = array('120' => '130');
 $d['bar'] = 131;
-$a[131] = array('id' => 131, 'alias' => 'bar', 'path' => '');
+$a[131] = array('id' => 131, 'alias' => 'bar', 'path' => '', 'parent' => 120);
 $m[] = array('120' => '131');
 $d['terrorist'] = 132;
-$a[132] = array('id' => 132, 'alias' => 'terrorist', 'path' => '');
+$a[132] = array('id' => 132, 'alias' => 'terrorist', 'path' => '', 'parent' => 120);
 $m[] = array('120' => '132');
 $d['end'] = 126;
-$a[126] = array('id' => 126, 'alias' => 'end', 'path' => '');
+$a[126] = array('id' => 126, 'alias' => 'end', 'path' => '', 'parent' => 125);
 $m[] = array('125' => '126');
 $d['jews'] = 127;
-$a[127] = array('id' => 127, 'alias' => 'jews', 'path' => '');
+$a[127] = array('id' => 127, 'alias' => 'jews', 'path' => '', 'parent' => 125);
 $m[] = array('125' => '127');
 $d['advise'] = 134;
-$a[134] = array('id' => 134, 'alias' => 'advise', 'path' => '');
+$a[134] = array('id' => 134, 'alias' => 'advise', 'path' => '', 'parent' => 133);
 $m[] = array('133' => '134');
 $d['garages'] = 136;
-$a[136] = array('id' => 136, 'alias' => 'garages', 'path' => '');
+$a[136] = array('id' => 136, 'alias' => 'garages', 'path' => '', 'parent' => 135);
 $m[] = array('135' => '136');
 $d['pioneers'] = 137;
-$a[137] = array('id' => 137, 'alias' => 'pioneers', 'path' => '');
+$a[137] = array('id' => 137, 'alias' => 'pioneers', 'path' => '', 'parent' => 135);
 $m[] = array('135' => '137');
 $d['enemy'] = 138;
-$a[138] = array('id' => 138, 'alias' => 'enemy', 'path' => '');
+$a[138] = array('id' => 138, 'alias' => 'enemy', 'path' => '', 'parent' => 135);
 $m[] = array('135' => '138');
 $d['tartu'] = 139;
-$a[139] = array('id' => 139, 'alias' => 'tartu', 'path' => '');
+$a[139] = array('id' => 139, 'alias' => 'tartu', 'path' => '', 'parent' => 135);
 $m[] = array('135' => '139');
 $d['piramids'] = 141;
-$a[141] = array('id' => 141, 'alias' => 'piramids', 'path' => '');
+$a[141] = array('id' => 141, 'alias' => 'piramids', 'path' => '', 'parent' => 140);
 $m[] = array('140' => '141');
 $d['birdie'] = 143;
-$a[143] = array('id' => 143, 'alias' => 'birdie', 'path' => '');
+$a[143] = array('id' => 143, 'alias' => 'birdie', 'path' => '', 'parent' => 142);
 $m[] = array('142' => '143');
 $d['sapgir'] = 145;
-$a[145] = array('id' => 145, 'alias' => 'sapgir', 'path' => '');
+$a[145] = array('id' => 145, 'alias' => 'sapgir', 'path' => '', 'parent' => 144);
 $m[] = array('144' => '145');
 $d['raki'] = 146;
-$a[146] = array('id' => 146, 'alias' => 'raki', 'path' => '');
+$a[146] = array('id' => 146, 'alias' => 'raki', 'path' => '', 'parent' => 144);
 $m[] = array('144' => '146');
 $d['pepperstein'] = 147;
-$a[147] = array('id' => 147, 'alias' => 'pepperstein', 'path' => '');
+$a[147] = array('id' => 147, 'alias' => 'pepperstein', 'path' => '', 'parent' => 144);
 $m[] = array('144' => '147');
 $d['pipurkin'] = 148;
-$a[148] = array('id' => 148, 'alias' => 'pipurkin', 'path' => '');
+$a[148] = array('id' => 148, 'alias' => 'pipurkin', 'path' => '', 'parent' => 144);
 $m[] = array('144' => '148');
 $d['pochki'] = 153;
-$a[153] = array('id' => 153, 'alias' => 'pochki', 'path' => '');
+$a[153] = array('id' => 153, 'alias' => 'pochki', 'path' => '', 'parent' => 149);
 $m[] = array('149' => '153');
 $d['play'] = 155;
-$a[155] = array('id' => 155, 'alias' => 'play', 'path' => '');
+$a[155] = array('id' => 155, 'alias' => 'play', 'path' => '', 'parent' => 154);
 $m[] = array('154' => '155');
 $d['egg'] = 157;
-$a[157] = array('id' => 157, 'alias' => 'egg', 'path' => '');
+$a[157] = array('id' => 157, 'alias' => 'egg', 'path' => '', 'parent' => 156);
 $m[] = array('156' => '157');
 $d['bluesoup'] = 159;
-$a[159] = array('id' => 159, 'alias' => 'bluesoup', 'path' => '');
+$a[159] = array('id' => 159, 'alias' => 'bluesoup', 'path' => '', 'parent' => 158);
 $m[] = array('158' => '159');
 $d['tyaga'] = 160;
-$a[160] = array('id' => 160, 'alias' => 'tyaga', 'path' => '');
+$a[160] = array('id' => 160, 'alias' => 'tyaga', 'path' => '', 'parent' => 158);
 $m[] = array('158' => '160');
 $d['osk'] = 161;
-$a[161] = array('id' => 161, 'alias' => 'osk', 'path' => '');
+$a[161] = array('id' => 161, 'alias' => 'osk', 'path' => '', 'parent' => 158);
 $m[] = array('158' => '161');
 $d['ok'] = 162;
-$a[162] = array('id' => 162, 'alias' => 'ok', 'path' => '');
+$a[162] = array('id' => 162, 'alias' => 'ok', 'path' => '', 'parent' => 158);
 $m[] = array('158' => '162');
 $d['xyz'] = 163;
-$a[163] = array('id' => 163, 'alias' => 'xyz', 'path' => '');
+$a[163] = array('id' => 163, 'alias' => 'xyz', 'path' => '', 'parent' => 158);
 $m[] = array('158' => '163');
 $d['netslov'] = 164;
-$a[164] = array('id' => 164, 'alias' => 'netslov', 'path' => '');
+$a[164] = array('id' => 164, 'alias' => 'netslov', 'path' => '', 'parent' => 158);
 $m[] = array('158' => '164');
 $d['belomor'] = 165;
-$a[165] = array('id' => 165, 'alias' => 'belomor', 'path' => '');
+$a[165] = array('id' => 165, 'alias' => 'belomor', 'path' => '', 'parent' => 158);
 $m[] = array('158' => '165');
 $d['diskurs'] = 207;
-$a[207] = array('id' => 207, 'alias' => 'diskurs', 'path' => '');
+$a[207] = array('id' => 207, 'alias' => 'diskurs', 'path' => '', 'parent' => 167);
 $m[] = array('167' => '207');
 $d['kandvideo'] = 292;
-$a[292] = array('id' => 292, 'alias' => 'kandvideo', 'path' => '');
+$a[292] = array('id' => 292, 'alias' => 'kandvideo', 'path' => '', 'parent' => 167);
 $m[] = array('167' => '292');
 $d['off-program-full'] = 173;
-$a[173] = array('id' => 173, 'alias' => 'off-program-full', 'path' => '');
+$a[173] = array('id' => 173, 'alias' => 'off-program-full', 'path' => '', 'parent' => 172);
 $m[] = array('172' => '173');
 $d['kitvideo'] = 293;
-$a[293] = array('id' => 293, 'alias' => 'kitvideo', 'path' => '');
+$a[293] = array('id' => 293, 'alias' => 'kitvideo', 'path' => '', 'parent' => 175);
 $m[] = array('175' => '293');
 $d['pitekantrop'] = 190;
-$a[190] = array('id' => 190, 'alias' => 'pitekantrop', 'path' => '');
+$a[190] = array('id' => 190, 'alias' => 'pitekantrop', 'path' => '', 'parent' => 189);
 $m[] = array('189' => '190');
 $d['lkn1'] = 208;
-$a[208] = array('id' => 208, 'alias' => 'lkn1', 'path' => '');
+$a[208] = array('id' => 208, 'alias' => 'lkn1', 'path' => '', 'parent' => 194);
 $m[] = array('194' => '208');
 $d['lkn2'] = 209;
-$a[209] = array('id' => 209, 'alias' => 'lkn2', 'path' => '');
+$a[209] = array('id' => 209, 'alias' => 'lkn2', 'path' => '', 'parent' => 194);
 $m[] = array('194' => '209');
 $d['lkn3'] = 210;
-$a[210] = array('id' => 210, 'alias' => 'lkn3', 'path' => '');
+$a[210] = array('id' => 210, 'alias' => 'lkn3', 'path' => '', 'parent' => 194);
 $m[] = array('194' => '210');
 $d['197'] = 197;
-$a[197] = array('id' => 197, 'alias' => '197', 'path' => '');
+$a[197] = array('id' => 197, 'alias' => '197', 'path' => '', 'parent' => 196);
 $m[] = array('196' => '197');
 $d['child'] = 212;
-$a[212] = array('id' => 212, 'alias' => 'child', 'path' => '');
+$a[212] = array('id' => 212, 'alias' => 'child', 'path' => '', 'parent' => 211);
 $m[] = array('211' => '212');
 $d['cables'] = 213;
-$a[213] = array('id' => 213, 'alias' => 'cables', 'path' => '');
+$a[213] = array('id' => 213, 'alias' => 'cables', 'path' => '', 'parent' => 211);
 $m[] = array('211' => '213');
 $d['miracle'] = 214;
-$a[214] = array('id' => 214, 'alias' => 'miracle', 'path' => '');
+$a[214] = array('id' => 214, 'alias' => 'miracle', 'path' => '', 'parent' => 211);
 $m[] = array('211' => '214');
 $d['manstrubation'] = 215;
-$a[215] = array('id' => 215, 'alias' => 'manstrubation', 'path' => '');
+$a[215] = array('id' => 215, 'alias' => 'manstrubation', 'path' => '', 'parent' => 211);
 $m[] = array('211' => '215');
 $d['todd'] = 217;
-$a[217] = array('id' => 217, 'alias' => 'todd', 'path' => '');
+$a[217] = array('id' => 217, 'alias' => 'todd', 'path' => '', 'parent' => 216);
 $m[] = array('216' => '217');
 $d['compilation'] = 219;
-$a[219] = array('id' => 219, 'alias' => 'compilation', 'path' => '');
+$a[219] = array('id' => 219, 'alias' => 'compilation', 'path' => '', 'parent' => 218);
 $m[] = array('218' => '219');
 $d['hoffman'] = 222;
-$a[222] = array('id' => 222, 'alias' => 'hoffman', 'path' => '');
+$a[222] = array('id' => 222, 'alias' => 'hoffman', 'path' => '', 'parent' => 221);
 $m[] = array('221' => '222');
 $d['bon'] = 223;
-$a[223] = array('id' => 223, 'alias' => 'bon', 'path' => '');
+$a[223] = array('id' => 223, 'alias' => 'bon', 'path' => '', 'parent' => 221);
 $m[] = array('221' => '223');
 $d['comittee'] = 224;
-$a[224] = array('id' => 224, 'alias' => 'comittee', 'path' => '');
+$a[224] = array('id' => 224, 'alias' => 'comittee', 'path' => '', 'parent' => 221);
 $m[] = array('221' => '224');
 $d['burroughs'] = 225;
-$a[225] = array('id' => 225, 'alias' => 'burroughs', 'path' => '');
+$a[225] = array('id' => 225, 'alias' => 'burroughs', 'path' => '', 'parent' => 221);
 $m[] = array('221' => '225');
 $d['ross'] = 226;
-$a[226] = array('id' => 226, 'alias' => 'ross', 'path' => '');
+$a[226] = array('id' => 226, 'alias' => 'ross', 'path' => '', 'parent' => 221);
 $m[] = array('221' => '226');
 $d['outcome'] = 228;
-$a[228] = array('id' => 228, 'alias' => 'outcome', 'path' => '');
+$a[228] = array('id' => 228, 'alias' => 'outcome', 'path' => '', 'parent' => 227);
 $m[] = array('227' => '228');
 $d['avdei'] = 229;
-$a[229] = array('id' => 229, 'alias' => 'avdei', 'path' => '');
+$a[229] = array('id' => 229, 'alias' => 'avdei', 'path' => '', 'parent' => 227);
 $m[] = array('227' => '229');
 $d['measure'] = 230;
-$a[230] = array('id' => 230, 'alias' => 'measure', 'path' => '');
+$a[230] = array('id' => 230, 'alias' => 'measure', 'path' => '', 'parent' => 227);
 $m[] = array('227' => '230');
 $d['machno'] = 231;
-$a[231] = array('id' => 231, 'alias' => 'machno', 'path' => '');
+$a[231] = array('id' => 231, 'alias' => 'machno', 'path' => '', 'parent' => 227);
 $m[] = array('227' => '231');
 $d['vagon'] = 232;
-$a[232] = array('id' => 232, 'alias' => 'vagon', 'path' => '');
+$a[232] = array('id' => 232, 'alias' => 'vagon', 'path' => '', 'parent' => 227);
 $m[] = array('227' => '232');
 $d['david'] = 234;
-$a[234] = array('id' => 234, 'alias' => 'david', 'path' => '');
+$a[234] = array('id' => 234, 'alias' => 'david', 'path' => '', 'parent' => 233);
 $m[] = array('233' => '234');
 $d['romanova'] = 235;
-$a[235] = array('id' => 235, 'alias' => 'romanova', 'path' => '');
+$a[235] = array('id' => 235, 'alias' => 'romanova', 'path' => '', 'parent' => 233);
 $m[] = array('233' => '235');
 $d['galkina'] = 236;
-$a[236] = array('id' => 236, 'alias' => 'galkina', 'path' => '');
+$a[236] = array('id' => 236, 'alias' => 'galkina', 'path' => '', 'parent' => 233);
 $m[] = array('233' => '236');
 $d['jir'] = 237;
-$a[237] = array('id' => 237, 'alias' => 'jir', 'path' => '');
+$a[237] = array('id' => 237, 'alias' => 'jir', 'path' => '', 'parent' => 233);
 $m[] = array('233' => '237');
 $d['ryaba'] = 238;
-$a[238] = array('id' => 238, 'alias' => 'ryaba', 'path' => '');
+$a[238] = array('id' => 238, 'alias' => 'ryaba', 'path' => '', 'parent' => 233);
 $m[] = array('233' => '238');
 $d['cd'] = 240;
-$a[240] = array('id' => 240, 'alias' => 'cd', 'path' => '');
+$a[240] = array('id' => 240, 'alias' => 'cd', 'path' => '', 'parent' => 239);
 $m[] = array('239' => '240');
 $d['243'] = 243;
-$a[243] = array('id' => 243, 'alias' => '243', 'path' => '');
+$a[243] = array('id' => 243, 'alias' => '243', 'path' => '', 'parent' => 242);
 $m[] = array('242' => '243');
 $d['spliff'] = 270;
-$a[270] = array('id' => 270, 'alias' => 'spliff', 'path' => '');
+$a[270] = array('id' => 270, 'alias' => 'spliff', 'path' => '', 'parent' => 269);
 $m[] = array('269' => '270');
 $d['mudyankin'] = 272;
-$a[272] = array('id' => 272, 'alias' => 'mudyankin', 'path' => '');
+$a[272] = array('id' => 272, 'alias' => 'mudyankin', 'path' => '', 'parent' => 271);
 $m[] = array('271' => '272');
 $d['chuiman'] = 274;
-$a[274] = array('id' => 274, 'alias' => 'chuiman', 'path' => '');
+$a[274] = array('id' => 274, 'alias' => 'chuiman', 'path' => '', 'parent' => 273);
 $m[] = array('273' => '274');
 $d['flat'] = 276;
-$a[276] = array('id' => 276, 'alias' => 'flat', 'path' => '');
+$a[276] = array('id' => 276, 'alias' => 'flat', 'path' => '', 'parent' => 275);
 $m[] = array('275' => '276');
 $d['untitled'] = 278;
-$a[278] = array('id' => 278, 'alias' => 'untitled', 'path' => '');
+$a[278] = array('id' => 278, 'alias' => 'untitled', 'path' => '', 'parent' => 277);
 $m[] = array('277' => '278');
 $d['feed'] = 280;
-$a[280] = array('id' => 280, 'alias' => 'feed', 'path' => '');
+$a[280] = array('id' => 280, 'alias' => 'feed', 'path' => '', 'parent' => 279);
 $m[] = array('279' => '280');
 $d['winter'] = 282;
-$a[282] = array('id' => 282, 'alias' => 'winter', 'path' => '');
+$a[282] = array('id' => 282, 'alias' => 'winter', 'path' => '', 'parent' => 281);
 $m[] = array('281' => '282');
 $d['hello'] = 283;
-$a[283] = array('id' => 283, 'alias' => 'hello', 'path' => '');
+$a[283] = array('id' => 283, 'alias' => 'hello', 'path' => '', 'parent' => 281);
 $m[] = array('281' => '283');
 $d['opera'] = 285;
-$a[285] = array('id' => 285, 'alias' => 'opera', 'path' => '');
+$a[285] = array('id' => 285, 'alias' => 'opera', 'path' => '', 'parent' => 284);
 $m[] = array('284' => '285');
 $d['fucktheculturefull'] = 296;
-$a[296] = array('id' => 296, 'alias' => 'fucktheculturefull', 'path' => '');
+$a[296] = array('id' => 296, 'alias' => 'fucktheculturefull', 'path' => '', 'parent' => 295);
 $m[] = array('295' => '296');
 $d['onedayinparis'] = 300;
-$a[300] = array('id' => 300, 'alias' => 'onedayinparis', 'path' => '');
+$a[300] = array('id' => 300, 'alias' => 'onedayinparis', 'path' => '', 'parent' => 299);
 $m[] = array('299' => '300');
 $d['bajing_full'] = 307;
-$a[307] = array('id' => 307, 'alias' => 'bajing_full', 'path' => '');
+$a[307] = array('id' => 307, 'alias' => 'bajing_full', 'path' => '', 'parent' => 306);
 $m[] = array('306' => '307');
 $d['anarchokunsttxt'] = 314;
-$a[314] = array('id' => 314, 'alias' => 'anarchokunsttxt', 'path' => '');
+$a[314] = array('id' => 314, 'alias' => 'anarchokunsttxt', 'path' => '', 'parent' => 313);
 $m[] = array('313' => '314');
 $d['pomozh_zaderzhannym_uchastnikam'] = 323;
-$a[323] = array('id' => 323, 'alias' => 'pomozh_zaderzhannym_uchastnikam', 'path' => '');
+$a[323] = array('id' => 323, 'alias' => 'pomozh_zaderzhannym_uchastnikam', 'path' => '', 'parent' => 315);
 $m[] = array('315' => '323');
 $d['voyna_protiv_musora_long'] = 317;
-$a[317] = array('id' => 317, 'alias' => 'voyna_protiv_musora_long', 'path' => '');
+$a[317] = array('id' => 317, 'alias' => 'voyna_protiv_musora_long', 'path' => '', 'parent' => 316);
 $m[] = array('316' => '317');
 $d['hvatit-valyat_malysha'] = 322;
-$a[322] = array('id' => 322, 'alias' => 'hvatit-valyat_malysha', 'path' => '');
+$a[322] = array('id' => 322, 'alias' => 'hvatit-valyat_malysha', 'path' => '', 'parent' => 321);
 $m[] = array('321' => '322');
 $c = &$this->contentTypes;
 $c[301] = 'text/xml';
 $c[309] = 'text/xml';
 $c = &$this->chunkCache;
-$c['WebLoginSidebar'] = '<!-- #declare:separator <hr> --> 
+$c['WebLoginSidebar'] = '<!-- #declare:separator <hr> -->
 <!-- login form section-->
-<form method="post" name="loginfrm" action="[+action+]" style="margin: 0px; padding: 0px;"> 
-<input type="hidden" value="[+rememberme+]" name="rememberme"> 
-<table border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td>
-<table border="0" cellspacing="0" cellpadding="0">
-  <tr>
-	<td><b>User:</b></td>
-	<td><input type="text" name="username" tabindex="1" onkeypress="return webLoginEnter(document.loginfrm.password);" size="5" style="width: 100px;" value="[+username+]" /></td>
-  </tr>
-  <tr>
-	<td><b>Password:</b></td>
-	<td><input type="password" name="password" tabindex="2" onkeypress="return webLoginEnter(document.loginfrm.cmdweblogin);" size="5" style="width: 100px;" value="" /></td>
-  </tr>
-  <tr>
-	<td><label for="chkbox" style="cursor:pointer">Remember me:&nbsp; </label></td>
-	<td>
-	<table width="100%"  border="0" cellspacing="0" cellpadding="0">
-	  <tr>
-		<td valign="top"><input type="checkbox" id="chkbox" name="chkbox" tabindex="4" size="1" value="" [+checkbox+] onClick="webLoginCheckRemember()" /></td>
-		<td align="right">									
-		<input type="submit" value="[+logintext+]" name="cmdweblogin" /></td>
-	  </tr>
-	</table>
-	</td>
-  </tr>
-  <tr>
-	<td colspan="2"><a href="#" onclick="webLoginShowForm(2);return false;">Forget Password?</a></td>
-  </tr>
-</table>
-</td>
-</tr>
-</table>
+<form method="post" name="loginfrm" action="[+action+]">
+    <input type="hidden" value="[+rememberme+]" name="rememberme" />
+    <fieldset>
+        <h3>Your Login Details</h3>
+        <label for="username">User: <input type="text" name="username" id="username" tabindex="1" onkeypress="return webLoginEnter(document.loginfrm.password);" value="[+username+]" /></label>
+    	<label for="password">Password: <input type="password" name="password" id="password" tabindex="2" onkeypress="return webLoginEnter(document.loginfrm.cmdweblogin);" value="" /></label>
+    	<input type="checkbox" id="checkbox_1" name="checkbox_1" tabindex="3" size="1" value="" [+checkbox+] onclick="webLoginCheckRemember()" /><label for="checkbox_1" class="checkbox">Remember me</label>
+    	<input type="submit" value="[+logintext+]" name="cmdweblogin" class="button" />
+	<a href="#" onclick="webLoginShowForm(2);return false;" id="forgotpsswd">Forget Your Password?</a>
+	</fieldset>
 </form>
 <hr>
 <!-- log out hyperlink section -->
-<a href=\'[+action+]\'>[+logouttext+]</a>
+<h4>You\'re already logged in</h4>
+Do you wish to <a href="[+action+]" class="button">[+logouttext+]</a>?
 <hr>
 <!-- Password reminder form section -->
-<form name="loginreminder" method="post" action="[+action+]" style="margin: 0px; padding: 0px;">
-<input type="hidden" name="txtpwdrem" value="0" />
-<table border="0">
-	<tr>
-	  <td>Enter the email address of your account <br />below to receive your password:</td>
-	</tr>
-	<tr>
-	  <td><input type="text" name="txtwebemail" size="24" /></td>
-	</tr>
-	<tr>
-	  <td align="right"><input type="submit" value="Submit" name="cmdweblogin" />
-	  <input type="reset" value="Cancel" name="cmdcancel" onclick="webLoginShowForm(1);" /></td>
-	</tr>
-  </table>
+<form name="loginreminder" method="post" action="[+action+]">
+    <fieldset>
+        <h3>It happens to everyone...</h3>
+        <input type="hidden" name="txtpwdrem" value="0" />
+        <label for="txtwebemail">Enter the email address of your account to reset your password: <input type="text" name="txtwebemail" id="txtwebemail" size="24" /></label>
+        <label>To return to the login form, press the cancel button.</label>
+    	<input type="submit" value="Submit" name="cmdweblogin" class="button" /> <input type="reset" value="Cancel" name="cmdcancel" onclick="webLoginShowForm(1);" class="button" style="clear:none;display:inline" />
+    </fieldset>
 </form>
 
 ';
@@ -1181,6 +1164,15 @@ $c['google-sitemap-tpl'] = '<url>
 <priority>[+priority+]</priority>
 <changefreq>[+changefreq+]</changefreq>
 </url>';
+$c['mm_demo_rules-1_0_9'] = '// more example rules are in assets/plugins/managermanager/example_mm_rules.inc.php
+
+// example of how PHP is allowed - check that a TV named documentTags exists before creating rule
+if($modx->db->getValue("SELECT COUNT(id) FROM " . $modx->getFullTableName(\'site_tmplvars\') . " WHERE name=\'documentTags\'")) {
+    mm_widget_tags(\'documentTags\',\' \'); // Give blog tag editing capabilities to the \'documentTags (3)\' TV
+}
+
+mm_widget_showimagetvs(); // Always give a preview of Image TVs
+';
 $s = &$this->snippetCache;
 $s['WebSignup'] = '# Created By Raymond Irving April, 2005
 #::::::::::::::::::::::::::::::::::::::::
@@ -1312,7 +1304,7 @@ if (!$children === false) {
 } else {
     $firstChildUrl= $modx->makeUrl($modx->config[\'site_start\']);
 }
-return $modx->sendRedirect($firstChildUrl);
+return $modx->sendRedirect($firstChildUrl,0,\'REDIRECT_HEADER\',\'HTTP/1.1 301 Moved Permanently\');
 ';
 $s['WebChangePwd'] = '# Created By Raymond Irving April, 2005
 #::::::::::::::::::::::::::::::::::::::::
@@ -1355,7 +1347,7 @@ return $output;
 
 
 ';
-$s['eForm'] = '# eForm 1.4.4.6 - Electronic Form Snippet
+$s['eForm'] = '# eForm 1.4.4.7 - Electronic Form Snippet
 # Original created by Raymond Irving 15-Dec-2004.
 # Version 1.3+ extended by Jelle Jager (TobyL) September 2006
 # -----------------------------------------------------
@@ -2212,41 +2204,50 @@ if (!isset ($ph)) {
 	return \'\';
 }';
 $s['Personalize'] = '#::::::::::::::::::::::::::::::::::::::::
-# Created By:Ryan Thrash (modx@vertexworks.com), 
+# Created By:Ryan Thrash (modx@vertexworks.com),
 #	and then powered up by kudo (kudo@kudolink.com)
 #
 # Date: Aug 03, 2006
 #
-# Changelog: 
+# Changelog:
 # Dec 01, 05 -- initial release
 # Jun 19, 06 -- updated description
 # Jul 19, 06 -- hacked by kudo to output chunks
 # Aug 03, 06 -- added placeholder for username
+# Aug 27, 10 -- powered up all code
 #
 #::::::::::::::::::::::::::::::::::::::::
-# Description: 	
+# Description:
 #	Checks to see if webusers are logged in and displays yesChunk if the user
 #	is logged or noChunk if user is not logged. Insert only the chunk name as
 #	param, without {{}}. Can use a placeholder to output the username.
 #	TESTED: can be used more than once per page.
 #	TESTED: chunks can contain snippets.
-#	
-#	
+#
+#
 # Params:
-#	&yesChunk [string] [REQUIRED]
+#	&yesChunk [string] (optional)
 #		Output for LOGGED users
 #
-#	&noChunk [string] [REQUIRED] 
+#	&noChunk [string] (optional)
 #		Output for NOT logged users
 #
-#	&ph [string] (optional) 
+#	&ph [string] (optional)
 #		Placeholder for placing the username
 #		ATTENTION!: place this ph only in yesChunk!
-#	
+#
+#	&context [string] (optional)
+#		web|mgr
+#
+#	&yesTV [string] (optional)
+#		Output for LOGGED users
+#
+#	&noTV [string] (optional)
+#		Output for NOT logged users
 #
 # Example Usage:
 #
-#	[[LoggedOrNot? &yesChunk=`Link` &noChunk=`Register` &ph=`name`]]
+#	[[Personalize? &yesChunk=`Link` &noChunk=`Register` &ph=`name`]]
 #
 #	Having Chunks named {{Link}} and another {{Register}}, the first will be
 #	published to registered user, the second to non-registered users.
@@ -2254,25 +2255,114 @@ $s['Personalize'] = '#::::::::::::::::::::::::::::::::::::::::
 #::::::::::::::::::::::::::::::::::::::::
 
 # prepare params and variables
-$o = \'\';
+
+if     ($this->isFrontend() && isset ($_SESSION[\'webValidated\'])) $current_context = \'web\';
+elseif ($this->isBackend()  && isset ($_SESSION[\'mgrValidated\'])) $current_context = \'mgr\';
+
+$output = \'\';
 $yesChunk = (isset($yesChunk))? $yesChunk : \'\';
-$noChunk = (isset($noChunk))? $noChunk : \'\';
+$noChunk  = (isset($noChunk)) ? $noChunk  : \'\';
+$ph       = (isset($ph))      ? $ph       : \'username\';
+$context  = (isset($context)) ? $context     : $current_context;
+$yesTV    = (isset($yesTV))   ? $yesTV : \'\';
+$noTV     = (isset($noTV))    ? $noTV  : \'\';
 
-# do the work
-$test = $modx->getLoginUserName();
-if ($test) {
-    $o = $modx->getChunk($yesChunk);
-  } else {
-    $o = $modx->getChunk($noChunk);
-}
+/*
+$referer = htmlspecialchars($_SERVER[\'HTTP_REFERER\'], ENT_QUOTES);
+$ua =      htmlspecialchars($_SERVER[\'HTTP_USER_AGENT\'], ENT_QUOTES);
+$ip =      htmlspecialchars($_SERVER[\'REMOTE_ADDR\'], ENT_QUOTES);
+$host =    htmlspecialchars($_SERVER[\'REMOTE_HOST\'], ENT_QUOTES);
 
-if (isset($ph)) {
-	$modx->setPlaceholder($ph,$test);
-	return $o;
-} else {
-	return $o;
+$ua_strtolower = strtolower($_SERVER[\'HTTP_USER_AGENT\']);
+if    (strpos($ua_strtolower, \'firefox\') !== false)     $browser = \'firefox\';
+elseif(strpos($ua_strtolower, \'trident/4.0\') !== false) $browser = \'internet explorer 8\';
+elseif(strpos($ua_strtolower, \'msie\') !== false)        $browser = \'internet explorer\';
+elseif(strpos($ua_strtolower, \'chrome\') !== false)      $browser = \'chrome\';
+elseif(strpos($ua_strtolower, \'safari\') !== false)      $browser = \'safari\';
+elseif(strpos($ua_strtolower, \'opera\') !== false)       $browser = \'opera\';
+else $browser = \'other\';
+
+$modx->setPlaceholder(\'referer\', $referer);
+$modx->setPlaceholder(\'ua\',      $ua);
+$modx->setPlaceholder(\'browser\', $browser);
+$modx->setPlaceholder(\'ip\',      $ip);
+$modx->setPlaceholder(\'host\',    $host);
+*/
+
+switch($context)
+{
+    case \'web\':
+        $short_name = $_SESSION[\'webShortname\'];
+        $full_name  = $_SESSION[\'webFullname\'];
+        $email      = $_SESSION[\'webEmail\'];
+        $last_login = $_SESSION[\'webLastlogin\'];
+        break;
+    case \'mgr\':
+    case \'manager\':
+        $short_name = $_SESSION[\'mgrShortname\'];
+        $full_name  = $_SESSION[\'mgrFullname\'];
+        $email      = $_SESSION[\'mgrEmail\'];
+        $last_login = $_SESSION[\'mgrLastlogin\'];
+        break;
+    default:
+        $short_name = \'\';
 }
-';
+if (!empty($context))
+{
+    if($yesTV !== \'\')
+    {
+        $pre_output = $modx->documentObject[$yesTV];
+        if(is_array($pre_output))
+        {
+            $output = $pre_output[1];
+        }
+        else
+        {
+            $output = $pre_output;
+        }
+    }
+    elseif($yesChunk !== \'\')
+    {
+        $output = $modx->getChunk($yesChunk);
+    }
+    else
+    {
+        $output = \'username : \' . $short_name;
+    }
+
+    if(empty($last_login)) $last_login_text = \'first login\';
+    else                   $last_login_text = $modx->toDateFormat($last_login);
+
+    $modx->setPlaceholder($ph,$short_name);
+    $modx->setPlaceholder(\'short_name\',  $short_name);
+    $modx->setPlaceholder(\'full_name\',   $full_name);
+    $modx->setPlaceholder(\'email\',       $email);
+    $modx->setPlaceholder(\'last_login\', $last_login_text);
+}
+else
+{
+    if($noTV !== \'\')
+    {
+        $pre_output = $modx->documentObject[$noTV];
+        if(is_array($pre_output))
+        {
+            $output = $pre_output[1];
+        }
+        else
+        {
+            $output = $pre_output;
+        }
+    }
+    elseif($noChunk!==\'\')
+    {
+        $output = $modx->getChunk($noChunk);
+    }
+    else
+    {
+        $output = \'guest\';
+    }
+}
+return $output;';
 $s['Wayfinder'] = '/*
 ::::::::::::::::::::::::::::::::::::::::
  Snippet name: Wayfinder
@@ -2300,7 +2390,7 @@ $wayfinder_base = $modx->config[\'base_path\']."assets/snippets/wayfinder/";
 //Include a custom config file if specified
 $config = (isset($config)) ? "{$wayfinder_base}configs/{$config}.config.php" : "{$wayfinder_base}configs/default.config.php";
 if (file_exists($config)) {
-	include_once("$config");
+	include("$config");
 }
 
 include_once("{$wayfinder_base}wayfinder.inc.php");
@@ -3881,7 +3971,6 @@ return $output;
 $s['Breadcrumbs'] = '/*
  * This snippet shows the path through the various levels of site structure. It
  * is NOT necessarily the path the user took to arrive at a given page.
- * Version: 1.0.2
  */
 
 /* -----------------------------------------------------------------------------
@@ -4056,6 +4145,11 @@ $s['Breadcrumbs'] = '/*
  */
 ( isset($ignoreIds) ) ? $ignoreids : $ignoreids = \'\';
 
+/* $crumbSeparator [ string ]
+ * The set of templates you\'d like to use for crumbSeparator.
+ */
+( isset($crumbSeparator) ) ? $crumbSeparator : $crumbSeparator = \'&raquo;\';
+
 /* Templates
  * -----------------------------------------------------------------------------
  * In an effort to keep the MODx chunks manager from getting mired down in lots
@@ -4066,7 +4160,7 @@ $s['Breadcrumbs'] = '/*
 $templates = array(
     \'defaultString\' => array(
         \'crumb\' => \'[+crumb+]\',
-        \'separator\' => \' &raquo; \',
+        \'separator\' => \' \'.$crumbSeparator.\' \',
         \'crumbContainer\' => \'<span class="[+crumbBoxClass+]">[+crumbs+]</span>\',
         \'lastCrumbWrapper\' => \'<span class="[+lastCrumbClass+]">[+lastCrumbSpanA+]</span>\',
         \'firstCrumbWrapper\' => \'<span class="[+firstCrumbClass+]">[+firstCrumbSpanA+]</span>\'
@@ -4163,7 +4257,7 @@ if ( $showCurrentCrumb )
 
 // Iterate through parents till we hit root or a reason to stop
 $loopSafety = 0;
-while ( $parent && $loopSafety < 1000 )
+while ( $parent && $parent!=$modx->config[\'site_start\'] && $loopSafety < 1000 )
 {
     // Get next crumb
     $tempCrumb = $modx->getPageInfo($parent,0,"id,parent,pagetitle,longtitle,menutitle,description,published,hidemenu");
@@ -4205,7 +4299,7 @@ while ( $parent && $loopSafety < 1000 )
 
 // Home crumb ------------------------------------------------------------------
 
-if ( $showHomeCrumb && $homeCrumb = $modx->getPageInfo($homeId,0,"id,parent,pagetitle,longtitle,menutitle,description,published,hidemenu") )
+if ( $showHomeCrumb && $homeId != $modx->documentObject[\'id\'] && $homeCrumb = $modx->getPageInfo($homeId,0,"id,parent,pagetitle,longtitle,menutitle,description,published,hidemenu") )
 {
     $crumbs[] = array(
     \'id\' => $homeCrumb[\'id\'],
@@ -4288,7 +4382,7 @@ foreach ( $crumbs as $c )
         }
 
 
-        $pretemplateCrumb .= \'<a class="\'.$crumbClass.\'" href="\'.$modx->makeUrl($c[\'id\']).\'" title="\'.$title.\'">\'.$text.\'</a>\';
+        $pretemplateCrumb .= \'<a class="\'.$crumbClass.\'" href="\'.($c[\'id\'] == $modx->config[\'site_start\'] ? $modx->config[\'base_url\'] : $modx->makeUrl($c[\'id\'])).\'" title="\'.$title.\'">\'.$text.\'</a>\';
     }
     else
     // Make a span instead of a link
@@ -4350,6 +4444,180 @@ $container = str_replace(
 
 // Return crumbs
 return $container;';
+$s['if'] = '/**
+* if snippet  
+* Date: Jan 03, 2013
+*
+* [[if? &is=`[*id*]:is:4:or:[*parent*]:in:5,6,5,7,8,9` &then=`[[if? &is=`0||is||0` &then=`true` &else=`false` &separator=`||`]]` &else=`@TPL:else`]]
+* [[if? &is=`[*id*]:is:1:or:[*id*]:is:2:and:[*parent*]:is:5:or:[*parent*]:in:2,3,4` &then=`true` &else=`false`]]
+*
+* All expressions are logically (....:or:is:.... ) :and: (...:!empty:.....)
+* expression and divides the condition into 2 parts, which in the end compared to the true
+*
+* Sample №1
+* Output action is necessary only in the parent ID = 5 
+* [[if? &is=`[*parent*]:is:5` &then=`@TPL:chunk-name`]]
+*
+* Sample №2
+* Output action is necessary only in the parent ID = 5 or template IDs in (7,8,9)
+* [[if? &is=`[*parent*]:is:5:or:[*template*]:in:7,8,9` &then=`@TPL:chunk-name`]]
+*
+* Sample №3
+* Output action is necessary only in the parent ID = 5 and only the resource with the template ID = 7
+* [[if? &is=`[*parent*]:is:5:and:[*template*]:is:7` &then=`@TPL:chunk-name`]]
+*
+* Sample №4
+* Output action is necessary only in the parent ID = 5 and (only in the template ID = 7 or in other templates but with TV `new` = 1
+* [[if? &is=`[*parent*]:is:5:and:[*template*]:is:7:or:[*new*]:is:1` &then=`@TPL:chunk-name`]]
+*
+* Sample №5
+* Output share for the goods with a price in the range of > 300 <= 700
+* [[if? &is=`[*price*]:gt:300:and:[*price*]:lte:700` &then=`@TPL:chunk-name`]]
+*
+* Sample №6
+* Output in the multiplicity of records Ditto 3
+* [[if? &is=`[+ditto_iteration+]:%:3` &then=`true` &else=`false`]]
+*
+* Sample №7
+* Output in the multiplicity of records Ditto 3 but by multiplying the
+* [[if? &is=`[+ditto_iteration+]*2:%:3` &then=`true` &else=`false` &math=`on`]]
+*
+* Sample №8
+* Print the value of the mathematical expression
+* [[if? &is=`[+ditto_iteration+]*2` &math=`on`]]
+*
+* Operator:
+* (is,=) , (not,!=) , (>,gt) , (<,lt) , (>=,gte) , (lte,<=) , (isempty,empty) , (not_empty,!empty)
+* (null, is_null) , (in_array, inarray, in) , (not_in,!in)
+*
+* More samples
+* [[if? &is=`eval(\'global $iteration;$iteration++;echo $iteration;\')` &math=`on`]]   // iteration in Ditto,Wayfinder and others
+* [[if? &is=`:is:` &then=`@eval: echo str_replace(\'<br/>\',\'\',\'[*pagetitle*]\');`]]    // \'our<br/>works\' -> \'our works\' 
+* [[if? &is=`:is:` &then=`@eval: echo number_format(\'[*price*]\', 2, \',\', \' \');`]]    // \'1000000,89\' -> \'1 000 000,89\'
+*
+*  RussAndRussky.org.ua
+**/
+
+$s=empty($separator)?\':\':$separator;
+$opers=explode($s,$is);
+$subject=$opers[0];
+$eq=true;
+$and=false;
+for ($i=1;$i<count($opers);$i++){
+  	if ($opers[$i]==\'or\') {$or=true;$part_eq=$eq;$eq=true;continue;}
+    if ($or) {$subject=$opers[$i];$or=false;continue;}
+  
+    if ($opers[$i]==\'and\') {
+      $lp=1;
+      $and=true;
+      if (!empty($part_eq)){if ($part_eq||$eq){$left_part=true;}} else {$left_part=$eq?true:false;}
+      $eq=true;unset($part_eq);
+      continue;
+    }
+	if ($and) {$subject=$opers[$i];$and=false;continue;}
+	
+	$operator = $opers[$i];
+	$operand  = $opers[$i+1];
+  
+	if (isset($subject)) {
+		if (!empty($operator)) {
+      if ($math==\'on\' && !empty($subject)) {eval(\'$subject=\'.$subject.\';\');}
+			$operator = strtolower($operator);
+      
+			switch ($operator) {
+   
+        case \'%\':
+        $output = ($subject %$operand==0) ? true: false;$i++;
+        break;
+       
+				case \'!=\':
+				case \'not\':$output = ($subject != $operand) ? true: false;$i++;
+					break;
+				case \'<\':
+				case \'lt\':$output = ($subject < $operand) ? true : false;$i++;
+					break;
+				case \'>\':
+				case \'gt\':$output = ($subject > $operand) ? true : false;$i++;
+					break;
+				case \'<=\':
+				case \'lte\':$output = ($subject <= $operand) ? true : false;$i++;
+					break;
+				case \'>=\':
+				case \'gte\':$output = ($subject >= $operand) ? true : false;$i++;
+					break;
+				case \'isempty\':
+				case \'empty\':$output = empty($subject) ? true : false;
+					break;
+				case \'!empty\':
+				case \'notempty\':
+				case \'isnotempty\':$output = !empty($subject) && $subject != \'\' ? true : false;
+					break;
+				case \'isnull\':
+				case \'null\':$output = $subject == null || strtolower($subject) == \'null\' ? true : false;
+					break;
+				case \'inarray\':
+				case \'in_array\':
+				case \'in\':
+					$operand = explode(\',\',$operand);
+					$output = in_array($subject,$operand) ? true : false;
+					$i++;
+					break;
+				 case \'not_in\':
+				 case \'!in\':
+				 case \'!inarray\':
+					$operand = explode(\',\',$operand);
+					$output = in_array($subject,$operand) ? false : true;
+					$i++;
+					break;
+			  
+				case \'==\':
+				case \'=\':
+				case \'eq\':
+				case \'is\':
+				default:
+        $output = ((string)$subject == (string)$operand) ? true : false;
+        $i++;
+				break;
+			}     
+     
+			$eq=$output?$eq:false;
+   
+		}
+	}
+}
+if ($lp==1){
+  if ($left_part) {
+	if (!empty($part_eq)){
+    	if ($part_eq||$eq){$output=$then;}
+  	} else {
+    	$output=$eq?$then:$else;
+  	}
+  } 
+  else 
+  {
+    $output=$else;
+  }
+} else {
+	if (!empty($part_eq)){
+		if ($part_eq||$eq){
+			$output=$then;
+		}
+	} else {$output=$eq?$then:$else;}
+}
+if (strpos($output,\'@TPL:\')!==FALSE){$output=\'{{\'.(str_replace(\'@TPL:\',\'\',$output)).\'}}\';}
+
+if (substr($output,0,6) == "@eval:") {
+  ob_start();
+	eval(substr($output,6));
+	$output = ob_get_contents();  
+	ob_end_clean(); 
+}
+if (empty($then)&&empty($else)) {
+  if ($math==\'on\') {eval(\'$subject=\'.$subject.\';\');}
+  return $subject;
+}
+
+return $output;';
 $s['ListIndexer'] = '// added in 1.0.1: hidePrivate (hide items from unauthorized users)
 //
 // Derived from ListIndex 0.6j by jaredc@honeydewdesign.com
@@ -6032,47 +6300,36 @@ if (isset($_REQUEST[\'searched\']) && isset($_REQUEST[\'highlight\'])) {
     $modx->documentOutput = $output;
   }
 }';
-$p['ManagerManager'] = '// You can put your ManagerManager rules EITHER in a chunk OR in an external file - whichever suits your development style the best
+$p['Quick Manager+'] = '// In manager
+if (isset($_SESSION[\'mgrValidated\'])) {
 
-// To use an external file, put your rules in /assets/plugins/managermanager/mm_rules.inc.php 
-// (you can rename default.mm_rules.inc.php and use it as an example)
-// The chunk SHOULD have php opening tags at the beginning and end
+    $show = TRUE;
 
-// If you want to put your rules in a chunk (so you can edit them through the Manager),
-// create the chunk, and enter its name in the configuration tab.
-// The chunk should NOT have php tags at the beginning or end
-
-// ManagerManager requires jQuery 1.3+
-// The URL to the jQuery library. Choose from the configuration tab whether you want to use 
-// a local copy (which defaults to the jQuery library distributed with ModX 1.0.1)
-// a remote copy (which defaults to the Google Code hosted version)
-// or specify a URL to a custom location.
-// Here we set some default values, because this is a convenient place to change them if we need to,
-// but you should configure your preference via the Configuration tab.
-$js_default_url_local = $modx->config[\'site_url\']. \'/assets/js/jquery-1.3.2.min.js\';
-$js_default_url_remote = \'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js\';
-
-// You don\'t need to change anything else from here onwards
-//-------------------------------------------------------
-
-// Run the main code
-$asset_path = $modx->config[\'base_path\'] . \'assets/plugins/managermanager/mm.inc.php\';
-include($asset_path);';
-$p['ManagerManagerProps'] = '&config_chunk=Configuration Chunk;text;mm_demo_rules; &remove_deprecated_tv_types_pref=Remove deprecated TV types;list;yes,no;yes &which_jquery=jQuery source;list;local (assets/js),remote (google code),manual url (specify below);local (assets/js) &js_src_type=jQuery URL override;text;  ';
-$p['Quick Manager+'] = '$show = TRUE;
-
-if ($disabled  != \'\') {
-    $arr = explode(",", $disabled );
-    if (in_array($modx->documentIdentifier, $arr)) {
-        $show = FALSE;
+    if ($disabled  != \'\') {
+        $arr = explode(",", $disabled );
+        if (in_array($modx->documentIdentifier, $arr)) {
+            $show = FALSE;
+        }
     }
-}
 
-if ($show) {
-    include_once($modx->config[\'base_path\'].\'assets/plugins/qm/qm.inc.php\');
-    $qm = new Qm($modx, $jqpath, $loadmanagerjq, $loadfrontendjq, $noconflictjq, $loadtb, $tbwidth, $tbheight, $hidefields, $hidetabs, $hidesections, $addbutton, $tpltype, $tplid, $custombutton, $managerbutton, $logout, $autohide);
+    if ($show) {
+        // Replace [*#tv*] with QM+ edit TV button placeholders
+        if ($tvbuttons == \'true\') {
+            $e = $modx->Event;
+            if ($e->name == \'OnParseDocument\') {
+                 $output = &$modx->documentOutput;
+                 $output = preg_replace(\'~\\[\\*#(.*?)\\*\\]~\', \'<!-- \'.$tvbclass.\' $1 -->[*$1*]\', $output);
+                 $modx->documentOutput = $output;
+             }
+         }
+        // In manager
+        if (isset($_SESSION[\'mgrValidated\'])) {
+            include_once($modx->config[\'base_path\'].\'assets/plugins/qm/qm.inc.php\');
+            $qm = new Qm($modx, $jqpath, $loadmanagerjq, $loadfrontendjq, $noconflictjq, $loadtb, $tbwidth, $tbheight, $hidefields, $hidetabs, $hidesections, $addbutton, $tpltype, $tplid, $custombutton, $managerbutton, $logout, $autohide, $editbuttons, $editbclass, $newbuttons, $newbclass, $tvbuttons, $tvbclass);
+        }
+    }
 }';
-$p['Quick Manager+Props'] = '&jqpath=Path to jQuery;text;assets/js/jquery-1.3.2.min.js &loadmanagerjq=Load jQuery in manager;list;true,false;true &loadfrontendjq=Load jQuery in front-end;list;true,false;true &noconflictjq=jQuery noConflict mode in front-end;list;true,false;true &loadtb=Load modal box in front-end;list;true,false;true &tbwidth=Modal box window width;text;80% &tbheight=Modal box window height;text;90% &hidefields=Hide document fields from front-end editors;text;parent &hidetabs=Hide document tabs from front-end editors;text; &hidesections=Hide document sections from front-end editors;text; &addbutton=Show add document here button;list;true,false;true &tpltype=New document template type;list;parent,id,selected;parent &tplid=New document template id;int;3 &custombutton=Custom buttons;textarea; &managerbutton=Show go to manager button;list;true,false;true &logout=Logout to;list;manager,front-end;manager &disabled=Plugin disabled on documents;text; &autohide=Autohide toolbar;list;true,false;true  ';
+$p['Quick Manager+Props'] = '&jqpath=Path to jQuery;text;assets/js/jquery-1.4.4.min.js &loadmanagerjq=Load jQuery in manager;list;true,false;false &loadfrontendjq=Load jQuery in front-end;list;true,false;true &noconflictjq=jQuery noConflict mode in front-end;list;true,false;true &loadtb=Load modal box in front-end;list;true,false;true &tbwidth=Modal box window width;text;80% &tbheight=Modal box window height;text;90% &hidefields=Hide document fields from front-end editors;text;parent &hidetabs=Hide document tabs from front-end editors;text; &hidesections=Hide document sections from front-end editors;text; &addbutton=Show add document here button;list;true,false;true &tpltype=New document template type;list;parent,id,selected;parent &tplid=New document template id;int;3 &custombutton=Custom buttons;textarea; &1=undefined;; &managerbutton=Show go to manager button;list;true,false;true &logout=Logout to;list;manager,front-end;manager &disabled=Plugin disabled on documents;text; &autohide=Autohide toolbar;list;true,false;true &editbuttons=Inline edit buttons;list;true,false;false &editbclass=Edit button CSS class;text;qm-edit &newbuttons=Inline new resource buttons;list;true,false;false &newbclass=New resource button CSS class;text;qm-new &tvbuttons=Inline template variable buttons;list;true,false;false &tvbclass=Template variable button CSS class;text;qm-tv ';
 $p['Forgot Manager Login'] = 'if(!class_exists(\'ForgotManagerPassword\')) {
     class ForgotManagerPassword{
         function ForgotManagerPassword(){
@@ -6082,7 +6339,7 @@ $p['Forgot Manager Login'] = 'if(!class_exists(\'ForgotManagerPassword\')) {
 
         function getLink() {
             global $_lang;
-  
+
             $link = <<<EOD
 <a id="ForgotManagerPassword-show_form" href="index.php?action=show_form">{$_lang[\'forgot_your_password\']}</a>
 EOD;
@@ -6109,27 +6366,27 @@ EOD;
             $user_id = $user_id == false ? false : $modx->db->escape($user_id);
             $username = $modx->db->escape($username);
             $email = $modx->db->escape($email);
-            $emaail = $modx->db->escape($hash);
+            $hash = $modx->db->escape($hash);
 
-			$pre = $modx->db->config[\'table_prefix\'];
-			$site_id = $modx->config[\'site_id\'];
-			$today = date(\'Yz\'); // Year and day of the year
-			$wheres = array();
-			$where = \'\';
-			$user = null;
-  
+            $pre = $modx->db->config[\'table_prefix\'];
+            $site_id = $modx->config[\'site_id\'];
+            $today = date(\'Yz\'); // Year and day of the year
+            $wheres = array();
+            $where = \'\';
+            $user = null;
+
             if($user_id !== false) { $wheres[] = "usr.id = \'{$user_id}\'"; }
             if(!empty($username)) { $wheres[] = "usr.username = \'{$username}\'"; }
             if(!empty($email)) { $wheres[] = "attr.email = \'{$email}\'"; }
-            if(!empty($hash)) { $wheres[] = "MD5(CONCAT(usr.username,usr.password,\'{$site_id}\',\'{$today}\')) = \'{$hash}\'"; } 
+            if(!empty($hash)) { $wheres[] = "MD5(CONCAT(usr.username,usr.password,\'{$site_id}\',\'{$today}\')) = \'{$hash}\'"; }
 
             if($wheres) {
                 $where = \' WHERE \'.implode(\' AND \',$wheres);
                 $sql = "SELECT usr.id, usr.username, attr.email, MD5(CONCAT(usr.username,usr.password,\'{$site_id}\',\'{$today}\')) AS hash
                     FROM `{$pre}manager_users` usr
                     INNER JOIN `{$pre}user_attributes` attr ON usr.id = attr.internalKey
-                    {$where}      
-                    LIMIT 1;"; 
+                    {$where}
+                    LIMIT 1;";
 
                 if($result = $modx->db->query($sql)){
                     if($modx->db->getRecordCount($result)==1) {
@@ -6152,12 +6409,12 @@ EOD;
             $subject = $_lang[\'password_change_request\'];
             $headers  = "MIME-Version: 1.0\\r\\n".
                 "Content-type: text/html; charset=\\"{$modx->config[\'modx_charset\']}\\"\\r\\n".
-		"From: MODx <{$modx->config[\'emailsender\']}>\\r\\n".
+                "From: MODx <{$modx->config[\'emailsender\']}>\\r\\n".
                 "Reply-To: no-reply@{$_SERVER[\'HTTP_HOST\']}\\r\\n".
                 "X-Mailer: PHP/".phpversion();
 
             $user = $this->getUser(0, \'\', $to);
-  
+
             if($user[\'username\']) {
                 $body = <<<EOD
 <p>{$_lang[\'forgot_password_email_intro\']} <a href="{$modx->config[\'site_url\']}manager/processors/login.processor.php?username={$user[\'username\']}&hash={$user[\'hash\']}">{$_lang[\'forgot_password_email_link\']}</a></p>
@@ -6167,8 +6424,8 @@ EOD;
 
                 $mail = mail($to, $subject, $body, $headers);
                 if(!$mail) { $this->errors[] = $_lang[\'error_sending_email\']; }
-   
-                return $mail;  
+
+                return $mail;
             }
         }
 
@@ -6202,7 +6459,7 @@ EOD;
 
             foreach($eng as $key=>$value) {
                 if(empty($_lang[$key])) { $_lang[$key] = $value; }
-            }  
+            }
         }
 
         function getErrorOutput() {
@@ -6211,7 +6468,7 @@ EOD;
             if($this->errors) {
                 $output = \'<span class="error">\'.implode(\'</span><span class="errors">\', $this->errors).\'</span>\';
             }
-  
+
             return $output;
         }
     }
@@ -6221,10 +6478,10 @@ global $_lang;
 
 $output = \'\';
 $event_name = $modx->Event->name;
-$action = (empty($_GET[\'action\']) ? \'\' : $_GET[\'action\']);
-$username = (empty($_GET[\'username\']) ? false : $_GET[\'username\']);
-$to = (empty($_GET[\'email\']) ? \'\' : $_GET[\'email\']);
-$hash = (empty($_GET[\'hash\']) ? false : $_GET[\'hash\']);
+$action = (empty($_GET[\'action\']) ? \'\' : (is_string($_GET[\'action\']) ? $_GET[\'action\'] : \'\'));
+$username = (empty($_GET[\'username\']) ? false : (is_string($_GET[\'username\']) ? $_GET[\'username\'] : \'\'));
+$to = (empty($_GET[\'email\']) ? \'\' : (is_string($_GET[\'email\']) ? $_GET[\'email\'] : \'\'));
+$hash = (empty($_GET[\'hash\']) ? false : (is_string($_GET[\'hash\']) ? $_GET[\'hash\'] : \'\'));
 $forgot = new ForgotManagerPassword();
 
 if($event_name == \'OnManagerLoginFormRender\') {
@@ -6243,7 +6500,7 @@ if($event_name == \'OnManagerLoginFormRender\') {
     if($forgot->errors) { $output = $forgot->getErrorOutput() . $forgot->getLink(); }
 }
 
-if($event_name == \'OnBeforeManagerLogin\') {
+if($event_name == \'OnBeforeManagerLogin\' && $hash && $username) {
     $user = $forgot->getUser(false, $username, \'\', $hash);
     if($user && is_array($user) && !$forgot->errors) {
         $forgot->unblockUser($user[\'id\']);
@@ -6255,181 +6512,52 @@ if($event_name == \'OnManagerAuthentication\' && $hash && $username) {
     $output = ($user !== null && count($forgot->errors) == 0) ? true : false;
 }
 
-$modx->Event->output($output);';
-$p['TinyMCE Rich Text Editor'] = '// Set the name of the plugin folder
-$plugin_dir = "tinymce";
-
-// Set path and base setting variables
-if(!isset($mce_path))
-{ 
-	$mce_path = MODX_BASE_PATH . \'assets/plugins/\'.$plugin_dir . \'/\'; 
-	$mce_url  = MODX_BASE_URL  . \'assets/plugins/\'.$plugin_dir . \'/\'; 
-}
-
-$params[\'customparams\']    = $customparams;
-$params[\'blockFormats\']    = $mce_formats;
-$params[\'entity_encoding\'] = $entity_encoding;
-$params[\'entities\']        = $entities;
-$params[\'pathoptions\']     = $mce_path_options;
-$params[\'resizing\']        = $mce_resizing;
-$params[\'disabledButtons\'] = $disabledButtons;
-$params[\'link_list\']       = $link_list;
-$params[\'theme\']           = $webtheme;
-$params[\'custom_plugins\']  = $webPlugins;
-$params[\'custom_buttons1\'] = $webButtons1;
-$params[\'custom_buttons2\'] = $webButtons2;
-$params[\'custom_buttons3\'] = $webButtons3;
-$params[\'custom_buttons4\'] = $webButtons4;
-$params[\'toolbar_align\']   = $webAlign;
-$params[\'width\']           = $width;
-$params[\'height\']          = $height;
-
-$params[\'mce_path\']        = $mce_path;
-$params[\'mce_url\']         = $mce_url;
-
-include_once $mce_path . \'lang/tinymce.lang.php\';
-include_once $mce_path . \'tinymce.functions.php\';
-
-$mce = new TinyMCE($params);
-
-// Handle event
-$e = &$modx->Event; 
-switch ($e->name)
-{
-	case "OnRichTextEditorRegister": // register only for backend
-		$e->output("TinyMCE");
-		break;
-
-	case "OnRichTextEditorInit": 
-		if($editor!=="TinyMCE") return;
-		
-		$params[\'elements\']        = $elements;
-		$params[\'css_selectors\']   = $modx->config[\'tinymce_css_selectors\'];
-		$params[\'use_browser\']     = $modx->config[\'use_browser\'];
-		$params[\'editor_css_path\'] = $modx->config[\'editor_css_path\'];
-		
-		if($modx->isBackend())
-		{
-			$params[\'theme\']           = $modx->config[\'tinymce_editor_theme\'];
-			$params[\'language\']        = getTinyMCELang($modx->config[\'manager_language\']);
-			$params[\'frontend\']        = false;
-			$params[\'custom_plugins\']  = $modx->config[\'tinymce_custom_plugins\'];
-			$params[\'custom_buttons1\'] = $modx->config[\'tinymce_custom_buttons1\'];
-			$params[\'custom_buttons2\'] = $modx->config[\'tinymce_custom_buttons2\'];
-			$params[\'custom_buttons3\'] = $modx->config[\'tinymce_custom_buttons3\'];
-			$params[\'custom_buttons4\'] = $modx->config[\'tinymce_custom_buttons4\'];
-			$params[\'toolbar_align\']   = $modx->config[\'manager_direction\'];
-			$params[\'webuser\']         = null;
-			
-			$html = $mce->get_mce_script($params);
-		}
-		else
-		{
-			$frontend_language = isset($modx->config[\'fe_editor_lang\']) ? $modx->config[\'fe_editor_lang\']:\'\';
-			$webuser = (isset($modx->config[\'rb_webuser\']) ? $modx->config[\'rb_webuser\'] : null);
-			
-			$params[\'webuser\']         = $webuser;
-			$params[\'language\']        = getTinyMCELang($frontend_language);
-			$params[\'frontend\']        = true;
-			
-			$html = $mce->get_mce_script($params);
-		}
-		$e->output($html);
-		break;
-
-	case "OnInterfaceSettingsRender":
-		global $usersettings,$settings;
-		$action = $modx->manager->action;
-		switch ($action)
-		{
-			case 11:
-				$mce_settings = \'\';
-				break;
-			case 12:
-				$mce_settings = $usersettings;
-				break;
-			case 17:
-				$mce_settings = $settings;
-				break;
-			default:
-				$mce_settings = $settings;
-				break;
-		}
-		
-		$params[\'use_editor\']       = $modx->config[\'base_url\'].$modx->config[\'use_editor\'];
-        $params[\'editor_css_path\']  = $modx->config[\'editor_css_path\'];
-		$params[\'theme\']            = $mce_settings[\'tinymce_editor_theme\'];
-		$params[\'css_selectors\']    = $mce_settings[\'tinymce_css_selectors\'];
-		$params[\'custom_plugins\']   = $mce_settings[\'tinymce_custom_plugins\'];
-		$params[\'custom_buttons1\']  = $mce_settings[\'tinymce_custom_buttons1\'];
-		$params[\'custom_buttons2\']  = $mce_settings[\'tinymce_custom_buttons2\'];
-		$params[\'custom_buttons3\']  = $mce_settings[\'tinymce_custom_buttons3\'];
-		$params[\'custom_buttons4\']  = $mce_settings[\'tinymce_custom_buttons4\'];
-		
-		$html = $mce->get_mce_settings($params);
-		$e->output($html);
-		break;
-		
-	default :
-		return; // stop here - this is very important. 
-		break; 
-}
+$modx->Event->output($output);
 ';
-$p['TinyMCE Rich Text EditorProps'] = '&customparams=Custom Parameters;textarea; &mce_formats=Block Formats;text;p,h1,h2,h3,h4,h5,h6,div,blockquote,code,pre &entity_encoding=Entity Encoding;list;named,numeric,raw;named &entities=Entities;text; &mce_path_options=Path Options;list;rootrelative,docrelative,fullpathurl;docrelative &mce_resizing=Advanced Resizing;list;true,false;true &disabledButtons=Disabled Buttons;text; &link_list=Link List;list;enabled,disabled;enabled &webtheme=Web Theme;list;simple,editor,creative,custom;simple &webPlugins=Web Plugins;text;style,advimage,advlink,searchreplace,contextmenu,paste,fullscreen,nonbreaking,xhtmlxtras,visualchars,media &webButtons1=Web Buttons 1;text;undo,redo,selectall,|,pastetext,pasteword,|,search,replace,|,nonbreaking,hr,charmap,|,image,link,unlink,anchor,media,|,cleanup,removeformat,|,fullscreen,code,help &webButtons2=Web Buttons 2;text;bold,italic,underline,strikethrough,sub,sup,|,|,blockquote,bullist,numlist,outdent,indent,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,|,styleprops &webButtons3=Web Buttons 3;text; &webButtons4=Web Buttons 4;text; &webAlign=Web Toolbar Alignment;list;ltr,rtl;ltr &width=Width;text;100% &height=Height;text;400 ';
-$p['Inherit Parent Template'] = '/*
- * Inherit Parent Template
- *
- * Written By Raymond Irving - 12 Oct 2006
- *
- * Simply results in new documents inheriting the template 
- * of their parent folder upon creating a new document
- *
- * Configuration:
- * check the OnDocFormPrerender event
- *
- * Version 1.1
- *
- */
+$p['ManagerManager'] = '// You can put your ManagerManager rules EITHER in a chunk OR in an external file - whichever suits your development style the best
 
-global $content;
-$e = &$modx->Event;
+// To use an external file, put your rules in /assets/plugins/managermanager/mm_rules.inc.php
+// (you can rename default.mm_rules.inc.php and use it as an example)
+// The chunk SHOULD have php opening tags at the beginning and end
 
-switch($e->name) {
-    case \'OnDocFormPrerender\':        
-        if ($inheritTemplate == \'From First Sibling\') {
-            if ($_REQUEST[\'pid\'] > 0 && $id == 0) {
-                if ($sibl = $modx->getDocumentChildren($_REQUEST[\'pid\'], 1, 0, \'template\', \'\', \'menuindex\', \'ASC\', 1)) {
-                    $content[\'template\'] = $sibl[0][\'template\'];
-                } else if ($sibl = $modx->getDocumentChildren($_REQUEST[\'pid\'], 0, 0, \'template\', \'\', \'menuindex\', \'ASC\', 1)) {
-                    $content[\'template\'] = $sibl[0][\'template\'];
-                } else if ($parent = $modx->getPageInfo($_REQUEST[\'pid\'], 0, \'template\')) {
-                    $content[\'template\'] = $parent[\'template\'];
-                }
-            }
-        } else {
-             if ($parent = $modx->getPageInfo($_REQUEST[\'pid\'],0,\'template\')) {
-                 $content[\'template\'] = $parent[\'template\'];
-             }
-        }
-        break;
-    default:
-        break;
-}';
-$p['Inherit Parent TemplateProps'] = '&inheritTemplate=Inherit Template;list;From Parent,From First Sibling;From Parent ';
+// If you want to put your rules in a chunk (so you can edit them through the Manager),
+// create the chunk, and enter its name in the configuration tab.
+// The chunk should NOT have php tags at the beginning or end
+
+// ManagerManager requires jQuery 1.3+
+// The URL to the jQuery library. Choose from the configuration tab whether you want to use
+// a local copy (which defaults to the jQuery library distributed with ModX 1.0.1)
+// a remote copy (which defaults to the Google Code hosted version)
+// or specify a URL to a custom location.
+// Here we set some default values, because this is a convenient place to change them if we need to,
+// but you should configure your preference via the Configuration tab.
+$js_default_url_local = $modx->config[\'site_url\']. \'/assets/js/jquery-1.4.4.min.js\';
+$js_default_url_remote = \'http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js\';
+
+// You don\'t need to change anything else from here onwards
+//-------------------------------------------------------
+
+// Run the main code
+$asset_path = $modx->config[\'base_path\'] . \'assets/plugins/managermanager/mm.inc.php\';
+include $asset_path;';
+$p['ManagerManagerProps'] = '&config_chunk=Configuration Chunk;text;mm_demo_rules; &remove_deprecated_tv_types_pref=Remove deprecated TV types;list;yes,no;yes &which_jquery=jQuery source;list;local (assets/js),remote (google code),manual url (specify below);local (assets/js) &js_src_type=jQuery URL override;text; ';
+$p['TinyMCE Rich Text Editor'] = 'require MODX_BASE_PATH.\'assets/plugins/tinymce/plugin.tinymce.php\';
+';
+$p['TinyMCE Rich Text EditorProps'] = '&customparams=Custom Parameters;textarea;valid_elements : "*[*]", &mce_formats=Block Formats;text;p,h1,h2,h3,h4,h5,h6,div,blockquote,code,pre &entity_encoding=Entity Encoding;list;named,numeric,raw;named &entities=Entities;text; &mce_path_options=Path Options;list;Site config,Absolute path,Root relative,URL,No convert;Site config &mce_resizing=Advanced Resizing;list;true,false;true &disabledButtons=Disabled Buttons;text; &link_list=Link List;list;enabled,disabled;enabled &webtheme=Web Theme;list;simple,editor,creative,custom;simple &webPlugins=Web Plugins;text;style,advimage,advlink,searchreplace,contextmenu,paste,fullscreen,xhtmlxtras,media &webButtons1=Web Buttons 1;text;undo,redo,selectall,|,pastetext,pasteword,|,search,replace,|,hr,charmap,|,image,link,unlink,anchor,media,|,cleanup,removeformat,|,fullscreen,code,help &webButtons2=Web Buttons 2;text;bold,italic,underline,strikethrough,sub,sup,|,|,blockquote,bullist,numlist,outdent,indent,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,|,styleprops &webButtons3=Web Buttons 3;text; &webButtons4=Web Buttons 4;text; &webAlign=Web Toolbar Alignment;list;ltr,rtl;ltr &width=Width;text;95% &height=Height;text;500 ';
 $e = &$this->pluginEvent;
 $e['OnBeforeManagerLogin'] = array('Forgot Manager Login');
-$e['OnDocFormPrerender'] = array('ManagerManager','Inherit Parent Template','Quick Manager+');
+$e['OnDocFormPrerender'] = array('Quick Manager+','ManagerManager');
 $e['OnDocFormRender'] = array('ManagerManager');
 $e['OnDocFormSave'] = array('Quick Manager+');
 $e['OnInterfaceSettingsRender'] = array('TinyMCE Rich Text Editor');
 $e['OnManagerAuthentication'] = array('Forgot Manager Login');
 $e['OnManagerLoginFormRender'] = array('Forgot Manager Login');
 $e['OnManagerLogout'] = array('Quick Manager+');
-$e['OnParseDocument'] = array('PHx');
+$e['OnParseDocument'] = array('Quick Manager+','PHx');
 $e['OnPluginFormRender'] = array('ManagerManager');
 $e['OnRichTextEditorInit'] = array('TinyMCE Rich Text Editor');
 $e['OnRichTextEditorRegister'] = array('TinyMCE Rich Text Editor');
 $e['OnStripAlias'] = array('TransAlias');
 $e['OnTVFormRender'] = array('ManagerManager');
-$e['OnWebPagePrerender'] = array('Quick Manager+','Search Highlight');
-?>
+$e['OnWebPagePrerender'] = array('Search Highlight','Quick Manager+');
+

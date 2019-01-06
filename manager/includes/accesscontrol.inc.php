@@ -95,7 +95,7 @@ if(!isset($_SESSION['mgrValidated'])){
 	}
 
 	// login info
-	$uid =  isset($_COOKIE['modx_remember_manager']) ? preg_replace('/[^a-zA-Z0-9\-_]*/', '',  $_COOKIE['modx_remember_manager']) :''; 
+	$uid =  isset($_COOKIE['modx_remember_manager']) ? preg_replace('/[^a-zA-Z0-9\-_@\.]*/', '',  $_COOKIE['modx_remember_manager']) :''; 
 	$modx->setPlaceholder('uid',$uid);
 	$modx->setPlaceholder('username',$_lang["username"]);
 	$modx->setPlaceholder('password',$_lang["password"]);
@@ -112,10 +112,15 @@ if(!isset($_SESSION['mgrValidated'])){
 	$modx->setPlaceholder('OnManagerLoginFormRender',$html);
 
 	// load template file
-    $tplFile = $base_path.'assets/templates/manager/login.html';
-    $handle = fopen($tplFile, "r");
-	$tpl = fread($handle, filesize($tplFile));
-	fclose($handle);
+	$tplFile = $base_path.'assets/templates/manager/login.html';
+	if (file_exists($tplFile) ) {
+    	$handle = fopen($tplFile, "r");
+    	$tpl = fread($handle, filesize($tplFile));
+    	fclose($handle);
+	}
+	else {
+    	trigger_error('The manager template file was not found: '.$tplFile);
+	}
 
     // merge placeholders
     $tpl = $modx->mergePlaceholderContent($tpl);
@@ -151,7 +156,7 @@ if(!isset($_SESSION['mgrValidated'])){
 			$_SESSION['mgrShortname'],
 			$lasthittime,
 			(string)$action,
-			var_export($itemid, true),
+			$itemid == null ? var_export(null, true) : $itemid,
 			$ip
 		);
 		if(!$rs = mysql_query($sql)) {

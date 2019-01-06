@@ -14,7 +14,7 @@ function mm_renameField($field, $newlabel, $roles='', $templates='', $newhelp=''
 	$e = &$modx->Event;
 		
 	// if the current page is being edited by someone in the list of roles, and uses a template in the list of templates
-	if (useThisRule($roles, $templates)) {
+	if ($e->name == 'OnDocFormRender' && useThisRule($roles, $templates)) {
 	
 	$output = " // ----------- Rename field -------------- \n";
 		
@@ -78,7 +78,7 @@ function mm_hideFields($fields, $roles='', $templates='') {
 	$fields = makeArray($fields);
 		
 	// if the current page is being edited by someone in the list of roles, and uses a template in the list of templates
-	if (useThisRule($roles, $templates)) {
+	if ($e->name == 'OnDocFormRender' && useThisRule($roles, $templates)) {
 	
 	$e->output(" // ----------- Hide fields -------------- \n");
 	
@@ -158,7 +158,7 @@ function mm_changeFieldHelp($field, $helptext='', $roles='', $templates='') {
 	}
 	
 	// if the current page is being edited by someone in the list of roles, and uses a template in the list of templates
-	if (useThisRule($roles, $templates)) {
+	if ($e->name == 'OnDocFormRender' && useThisRule($roles, $templates)) {
 	
 	$output = " // ----------- Change field help -------------- \n";
 	
@@ -210,7 +210,7 @@ function mm_moveFieldsToTab($fields, $newtab, $roles='', $templates='') {
 	$fields = makeArray($fields);
 			
 	// if the current page is being edited by someone in the list of roles, and uses a template in the list of templates
-	if (useThisRule($roles, $templates)) {
+	if ($e->name == 'OnDocFormRender' && useThisRule($roles, $templates)) {
 	
 	$output = " // ----------- Move field to tab -------------- \n";
 	
@@ -227,17 +227,24 @@ function mm_moveFieldsToTab($fields, $newtab, $roles='', $templates='') {
 		// Make sure the new tab exists in the DOM
 		$output .= "if ( \$j('#tab".$newtab."').length > 0) { \n";
 		$output .= 'var ruleHtml = \'<tr style="height: 10px"><td colspan="2"><div class="split"></div></td></tr>\'; ';
+		
+		// Try and identify any URL type TVs
+		$output .= '$j("select[id$=_prefix]").each( function() { $j(this).parents("tr:first").addClass("urltv"); }  ); ';
 			
 		// Go through each field that has been supplied
 		foreach ($fields as $field) {
 
 			switch ($field) {
+				
+				case 'content':
+                    $output .= '$j("#content_body").appendTo("#tab'.$newtab.'");'. "\n";
+                    $output .= '$j("#content_header").hide();' . "\n";
+				break;	
 			
 				// We can't move these fields because they belong in a particular place
 				case 'keywords':
 				case 'metatags':
 				case 'which_editor':
-				case 'content':
 				case 'hidemenu':
 				case 'show_in_menu':
 				case 'menuindex':
@@ -261,15 +268,14 @@ function mm_moveFieldsToTab($fields, $newtab, $roles='', $templates='') {
 				
 					// What type is this field?
 					if (isset($mm_fields[$field])) {
-						$fieldtype = $mm_fields[$field]['fieldtype'];
 						$fieldname = $mm_fields[$field]['fieldname'];
 						$output .= '
-						var toMove = $j("'.$fieldtype.'[name='.$fieldname.']").parents("tr"); // Identify the table row to move
+						var toMove = $j(":input[name=\''.$fieldname.'\']").parents("tr:not(.urltv)"); // Identify the table row to move
+						toMove.find("script").remove();
 						toMove.next("tr").find("td[colspan=2]").parents("tr").remove(); // Get rid of line after, if there is one
 						var movedTV = toMove.appendTo("#tab'.$newtab.'>table:first"); // Move the table row
 						movedTV.after(ruleHtml); // Insert a rule after 
-						movedTV.find("td[width]").attr("width","");  // Remove widths from label column
-						$j("[name^='.$fieldname.']:first").parents("td").removeAttr( "style" );  // This prevents an IE6/7 bug where the moved field would not be visible until you switched tabs
+						$j("[name=\''.$fieldname.'\']:first").parents("td").removeAttr( "style" );  // This prevents an IE6/7 bug where the moved field would not be visible until you switched tabs
 						';
 					}	
 								
@@ -308,7 +314,7 @@ function mm_requireFields($fields, $roles='', $templates=''){
 	$fields = makeArray($fields);
 
 	// if the current page is being edited by someone in the list of roles, and uses a template in the list of templates
-	if (useThisRule($roles, $templates)) {
+	if ($e->name == 'OnDocFormRender' && useThisRule($roles, $templates)) {
 
 		$output = " // ----------- Require field -------------- \n";
 		$output .= '		

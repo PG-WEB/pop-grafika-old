@@ -1,12 +1,12 @@
 <?php
 /**
  * Filename:       includes/lang/english.inc.php
- * Function:       Language file.
+ * Function:       English language file.
  * Encoding:       UTF8
  * Author:         The MODx Project Team
- * Date:           13 May 2010
+ * Date:           23 December 2010
  * Version:        2.0.5
- * MODx version:   Evolution 1.0.4
+ * MODx version:   Evolution 1.0.5
 */
 //$modx_textdir = 'rtl'; // uncomment this line for RTL langauges
 $modx_lang_attribute = 'en'; // Manager HTML/XML Language Attribute see http://en.wikipedia.org/wiki/ISO_639-1
@@ -98,6 +98,8 @@ $_lang["chunk_code"] = 'Chunk code (html)';
 $_lang["chunk_multiple_id"] = 'Error: Multiple Chunks share the same unique ID.';
 $_lang["chunk_no_exist"] = 'Chunk does not exist.';
 $_lang["cleaningup"] = 'Cleaning up';
+$_lang["clean_uploaded_filename"] = 'Use Transliteration for File Uploads';
+$_lang["clean_uploaded_filename_message"] = 'Use the default or transalias settings for the file name to clean special characters from uploaded file names, preserving dot-characters (periods)';
 $_lang["clear_log"] = 'Clear log';
 $_lang["click_to_context"] = 'Click to access context menu';
 $_lang["click_to_edit_title"] = 'Click here to edit this record';
@@ -116,6 +118,7 @@ $_lang["configcheck_errorpage_unavailable"] = 'Your site\'s Error page is not av
 $_lang["configcheck_errorpage_unavailable_msg"] = 'This means that your Error page is not accessible to normal web surfers or does not exist. This can lead to a recursive looping condition and many errors in your site logs. Make sure there are no Webuser Groups assigned to the page.';
 $_lang["configcheck_errorpage_unpublished"] = 'Your site\'s Error page is not published or does not exist.';
 $_lang["configcheck_errorpage_unpublished_msg"] = 'This means that your Error page is inaccessible to the general public. Publish the page or make sure it is assigned to an existing Resource in your Site Tree in the Tools &gt; Configuration menu.';
+$_lang["configcheck_hide_warning"] = '<a href="javascript:hideConfigCheckWarning(\'%s\');"><em>Don\'t show this again.</em></a>';
 $_lang["configcheck_images"] = 'Images directory not writable';
 $_lang["configcheck_images_msg"] = 'The images directory isn\'t writable, or doesn\'t exist. This means the Image Manager functions in the editor will not work!';
 $_lang["configcheck_installer"] = 'Installer still present';
@@ -129,12 +132,16 @@ $_lang["configcheck_php_gdzip_msg"] = 'MODx needs the GD and Zip extension enabl
 $_lang["configcheck_register_globals"] = 'register_globals is set to ON in your php.ini configuration file';
 $_lang["configcheck_register_globals_msg"] = 'This configuration makes your site much more susceptible to Cross Site Scripting (XSS) attacks. You should speak to your host about what you can do to disable this setting.';
 $_lang["configcheck_title"] = 'Configuration check';
+$_lang["configcheck_templateswitcher_present"] = 'TemplateSwitcher Plugin detected';
+$_lang["configcheck_templateswitcher_present_delete"] = '<a href="javascript:deleteTemplateSwitcher();">Delete TemplateSwitcher</a>';
+$_lang["configcheck_templateswitcher_present_disable"] = '<a href="javascript:disableTemplateSwitcher();">Disable TemplateSwitcher</a>';
+$_lang["configcheck_templateswitcher_present_msg"] = 'The TemplateSwitcher plugin has been found to cause caching and performance problems, and should be used only the functionality is required in your site.';
 $_lang["configcheck_unauthorizedpage_unavailable"] = 'Your site\'s Unauthorized page is not published or does not exist.';
 $_lang["configcheck_unauthorizedpage_unavailable_msg"] = 'This means that your Unauthorized page is not accessible to normal web surfers or does not exist. This can lead to a recursive looping condition and many errors in your site logs. Make sure there are no Webuser Groups assigned to the page.';
 $_lang["configcheck_unauthorizedpage_unpublished"] = 'The Unauthorized page defined in the site configuration settings is not published.';
 $_lang["configcheck_unauthorizedpage_unpublished_msg"] = 'This means that your Unauthorized page is inaccessible to the general public. Publish the page or make sure it is assigned to an existing Resource in your Site Tree in the Tools &gt; Configuration menu.';
 $_lang["configcheck_validate_referer"] = 'Security Warning: HTTP Header Validation';
-$_lang["configcheck_validate_referer_msg"] = "The configuration setting <strong>Validate HTTP_REFERER headers?</strong> is Off. We recommend turning it On. <a href=\"index.php?a=17\">Go to Configuration options</a><br /><a href=\"javascript:hideHeaderVerificationWarning();\"><em>Don't show this again.</em></a>";
+$_lang["configcheck_validate_referer_msg"] = "The configuration setting <strong>Validate HTTP_REFERER headers?</strong> is Off. We recommend turning it On. <a href=\"index.php?a=17\">Go to Configuration options</a>";
 $_lang["configcheck_warning"] = 'Configuration warning: ';
 $_lang["configcheck_what"] = 'What does this mean?';
 $_lang["confirm_block"] = 'Are you sure you want to block this user?';
@@ -207,8 +214,13 @@ $_lang["defaultpublish_message"] = 'Select \'Yes\' to make all new Resources pub
 $_lang["defaultpublish_title"] = 'Published default';
 $_lang["defaultsearch_message"] = 'Select \'Yes\' to make all new Resources searchable by default.';
 $_lang["defaultsearch_title"] = 'Searchable default';
-$_lang["defaulttemplate_message"] = 'Select the default Template you wish to use for new Resources. You can still select a different Template in the Resource editor, this setting just pre-selects one of your Templates for you.';
-$_lang["defaulttemplate_title"] = 'Default Template';
+$_lang["defaulttemplate_message"] = 'Select the Template you wish to use as a system default for new Resources. You can still select a different Template in the Resource editor, this setting just pre-selects one of your Templates for you.';
+$_lang["defaulttemplate_title"] = 'System Default Template';
+$_lang["defaulttemplate_logic_title"] = 'Automatic Template Assignment';
+$_lang["defaulttemplate_logic_general_message"] = 'New Resources will have the following templates, falling back to higher levels if not found:';
+$_lang["defaulttemplate_logic_system_message"] = '<strong>System</strong>: the System Default Template.';
+$_lang["defaulttemplate_logic_parent_message"] = '<strong>Parent</strong>: the same Template as the parent container.';
+$_lang["defaulttemplate_logic_sibling_message"] = '<strong>Sibling</strong>: the same Template as other Resources in the same container.';
 $_lang["delete"] = 'Delete';
 $_lang["delete_resource"] = 'Delete Resource';
 $_lang["delete_tags"] = 'Delete tags';
@@ -627,7 +639,7 @@ $_lang["password_method"] = 'Password notification method';
 $_lang["password_method_email"] = 'Send the new password by e-mail.';
 $_lang["password_method_screen"] = 'Show the new password on screen.';
 $_lang["password_msg"] = 'The new password for <b>%s</b> is <b>%s</b>.';
-$_lang["php_version_check"] = 'MODx is compatible with PHP version 4.0.3 and higher. Please upgrade your PHP installation!';
+$_lang["php_version_check"] = 'MODX Evolution is compatible with PHP version 4.3.3 and higher. This server is using version %s%. Please upgrade your PHP installation!';
 $_lang["plugin"] = 'Plugin';
 $_lang["plugin_code"] = 'Plugin code (php)';
 $_lang["plugin_config"] = 'Plugin configuration';
@@ -666,6 +678,7 @@ $_lang["refresh_site"] = 'Clear Cache';
 $_lang["refresh_title"] = 'Refresh site';
 $_lang["refresh_tree"] = 'Refresh Site Tree';
 $_lang["refresh_unpublished"] = '<b>%s</b> Resources were unpublished.';
+$_lang["release_date"] = 'Release date';
 $_lang["remember_last_tab"] = 'Remember tabs';
 $_lang["remember_last_tab_message"] = 'Tabbed Manager pages load with the last tab viewed instead of defaulting to the first tab';
 $_lang["remember_username"] = 'Remember me';
@@ -676,10 +689,9 @@ $_lang["rename"] = 'Rename';
 $_lang["reports"] = 'Reports';
 $_lang["require_tagname"] = 'A tag name is required';
 $_lang["require_tagvalue"] = 'A tag value is required';
+$_lang["reserved_name_warning"] = 'You have used a reserved name.';
 $_lang["reset"] = 'Reset';
 $_lang["reset_failedlogins"] = 'reset';
-$_lang["resolve_hostnames_message"] = 'Do you want MODx to try to resolve your visitors\' hostnames when they visit your site? Resolving hostnames may create some extra server load, although your visitors won\'t notice this in any way.';
-$_lang["resolve_hostnames_title"] = 'Resolve hostnames';
 $_lang["resource"] = 'Resource';
 $_lang["resource_alias"] = 'URL alias';
 $_lang["resource_alias_help"] = 'Set the URL alias to make the Resource accessible as http://example.com/weburl. This only works Friendly URLs are enabled in the site configuration.';
@@ -1031,7 +1043,6 @@ $_lang["users"] = 'Security';
 $_lang["validate_referer_message"] = 'Validate the HTTP_REFERER headers to reduce the risk of your content editors being tricked into performing unintended actions in the manager as victims of a CSRF (Cross Site Request Forgery) attack. Some configurations may not be able to use this option if the server is not sending HTTP_REFERER headers.';
 $_lang["validate_referer_title"] = 'Validate HTTP_REFERER headers?';
 $_lang["value"] = 'Value';
-$_lang["version_codename"] = 'Version codename';
 $_lang["view"] = 'View';
 $_lang["view_child_resources_in_container"] = 'View children';
 $_lang["view_log"] = 'View log';
@@ -1049,7 +1060,6 @@ $_lang["web_user_management_title"] = 'Web Users';
 $_lang["web_user_title"] = 'Create/edit Web User';
 $_lang["web_users"] = 'Web Users';
 $_lang["weblink"] = 'Weblink';
-$_lang["weblink_message"] = 'A weblink is a reference to an object on the internet. This could be a Resource within MODx, a page on another site or an image or other file on the internet.';
 $_lang["webpwdreminder_message"] = 'Enter a message to be sent to your Web Users whenever they request a new password via email. The Content Manager will send an e-mail containing their new password and activation information. <br /><b>Note:</b> The following Placeholders are replaced by the Content Manager when the message is sent: <br /><br />[+sname+] - Name of your web site, <br />[+saddr+] - Your web site email address, <br />[+surl+] - Your site url, <br />[+uid+] - User\'s Login name or id, <br />[+pwd+] - User\'s password, <br />[+ufn+] - User\'s full name. <br /><br /><b>Leave the [+uid+] and [+pwd+] in the e-mail, or else the username and password won\'t be sent in the mail and your Users won\'t know their username or password!</b>';
 $_lang["webpwdreminder_title"] = 'Web Reminder Email';
 $_lang["websignupemail_message"] = 'Set the email message sent to Users when creating accounts including their username and password<br /><b>Note:</b> The following Placeholders are replaced by the Content Manager when the message is sent: <br /><br />[+sname+] - Name of your web site, <br />[+saddr+] - Your web site email address, <br />[+surl+] - Your site url, <br />[+uid+] - User\'s Login name or id, <br />[+pwd+] - User\'s password, <br />[+ufn+] - User\'s full name. <br /><br /><b>Leave the [+uid+] and [+pwd+] in the e-mail, or else the username and password won\'t be sent in the mail and your Users won\'t know their username or password!</b>';
@@ -1071,4 +1081,32 @@ $_lang["yourinfo_role"] = 'Your role is:';
 $_lang["yourinfo_title"] = 'Your info';
 $_lang["yourinfo_total_logins"] = 'Total number of logins:';
 $_lang["yourinfo_username"] = 'You are logged in as:';
-?>
+
+$_lang['a17_error_reporting_title'] = 'Detection level of the PHP error';
+$_lang['a17_error_reporting_msg'] = 'Set the detection level of the PHP error.';
+$_lang['a17_error_reporting_opt0'] = 'Ignore all';
+$_lang['a17_error_reporting_opt1'] = 'Ignore the warning of a slight notice level(<a href="https://www.google.com/search?q=E_DEPRECATED+E_STRICT" target="_blank">E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT</a>)';
+$_lang['a17_error_reporting_opt2'] = 'Detect all errors except E_NOTICE';
+$_lang['a17_error_reporting_opt99'] = 'Detect all';
+
+$_lang["pwd_hash_algo_title"] = 'Hash algorithm';
+$_lang["pwd_hash_algo_message"] = 'Password hash algorithm.';
+
+$_lang["enable_bindings_title"]  = 'Enable @Bindings commands';
+$_lang['enable_bindings_message'] = 'Enable <a href="https://www.google.co.jp/search?q=modx+Bindings" target="_blank">@Bindings commands</a>. Describe any command in the entry field (template variable) on the contribution screen and carry out this function. When manage a site in plural members because the practice of the PHP sentence is possible, attention is necessary for the use of this function.';
+
+$_lang["bkmgr_alert_mkdir"] = 'A file cannot be created in a directory.  Please check the permission of [+snapshot_path+]';
+$_lang["bkmgr_restore_msg"] = '<p>A site can be restore using an SQL file. </p>';
+$_lang["bkmgr_restore_title"] = 'Restore';
+$_lang["bkmgr_import_ok"] = 'SQL recovery was performed normally.';
+$_lang["bkmgr_snapshot_ok"] = 'The snapshot was saved normally.';
+$_lang["bkmgr_run_sql_file_label"] = 'Execute by sql file';
+$_lang["bkmgr_run_sql_direct_label"] = 'Direct execute SQL command strings';
+$_lang["bkmgr_run_sql_submit"] = 'Execute restore';
+$_lang["bkmgr_run_sql_result"] = 'Result';
+$_lang["bkmgr_snapshot_title"] = 'Snapshot save and recovery';
+$_lang["bkmgr_snapshot_msg"] = '<p>The contents of the database are saved and restored to a server.<br />Preservation place : [+snapshot_path+] ($modx->config[\'snapshot_path\'])</p>';
+$_lang["bkmgr_snapshot_submit"] = 'Add snapshot';
+$_lang["bkmgr_snapshot_list_title"] = 'List of snapshot';
+$_lang["bkmgr_restore_submit"] = 'Revert this data';
+$_lang["bkmgr_snapshot_nothing"] = 'No snapshot';
