@@ -2,7 +2,7 @@
 /**
  * MODX Configuration file
  */
-$database_type     = 'mysqli';
+$database_type     = 'mysql';
 $database_server   = 'localhost';
 $database_user     = 'popgrafi';
 $database_password = '';
@@ -11,7 +11,7 @@ $database_connection_method = 'SET NAMES';
 $dbase             = '`popgrafi_distro2`';
 $table_prefix      = 'modx_';
 
-$lastInstallTime = 1546715337;
+$lastInstallTime = 1546808968;
 
 $https_port = '443';
 
