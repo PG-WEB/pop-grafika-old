@@ -1,19 +1,37 @@
-<?php die('Unauthorized access.'); ?>a:46:{s:2:"id";s:3:"272";s:4:"type";s:8:"document";s:11:"contentType";s:9:"text/html";s:9:"pagetitle";s:98:"Группа ПГ :: Журнал Дурь :: Приключения Авдея Мудянкина";s:9:"longtitle";s:52:"Приключения Авдея Мудянкина";s:11:"description";s:0:"";s:5:"alias";s:9:"mudyankin";s:15:"link_attributes";s:0:"";s:9:"published";s:1:"1";s:8:"pub_date";s:10:"1272332338";s:10:"unpub_date";s:1:"0";s:6:"parent";s:3:"271";s:8:"isfolder";s:1:"0";s:9:"introtext";s:0:"";s:7:"content";s:1299:"<div class="img" align="center">
-<a rel="group1" href="http://pop-grafika.net/comix/muda/m1.gif
-
-" target="new"><img src="http://pop-grafika.net/comix/muda/m1.gif
-" width="49%" alt=""/></a>
+<?php die('Unauthorized access.'); ?>a:46:{s:2:"id";s:2:"67";s:4:"type";s:8:"document";s:11:"contentType";s:9:"text/html";s:9:"pagetitle";s:73:"Безумие должно бодрствовать над мыслью!";s:9:"longtitle";s:73:"Безумие должно бодрствовать над мыслью!";s:11:"description";s:0:"";s:5:"alias";s:7:"derrida";s:15:"link_attributes";s:0:"";s:9:"published";s:1:"1";s:8:"pub_date";s:10:"1268112729";s:10:"unpub_date";s:1:"0";s:6:"parent";s:2:"10";s:8:"isfolder";s:1:"0";s:9:"introtext";s:0:"";s:7:"content";s:11921:"<div class="img" align="center">	
+<img SRC="http://pop-grafika.net/magazine/good/der.gif" width="540"/>
+</div>
 <br/>
-<a class="grouped_elements" rel="group1" href="http://pop-grafika.net/comix/muda/m2.gif
-" target="new"><img src="http://pop-grafika.net/comix/muda/m2.gif
-" width="49%" alt=""/></a> 
-<a class="grouped_elements" rel="group1" href="http://pop-grafika.net/comix/muda/m3.gif" target="new"><img src="http://pop-grafika.net/comix/muda/m3.gif" width="49%" alt=""/></a> 
-<a class="grouped_elements" rel="group1" href="http://pop-grafika.net/comix/muda/m4.gif" target="new"><img src="http://pop-grafika.net/comix/muda/m4.gif" width="49%" alt=""/></a> 
-<a class="grouped_elements" rel="group1" href="http://pop-grafika.net/comix/muda/m5.gif" target="new"><img src="http://pop-grafika.net/comix/muda/m5.gif" width="49%" alt=""/></a> 
-<a class="grouped_elements" rel="group1" href="http://pop-grafika.net/comix/muda/m6.gif" target="new"><img src="http://pop-grafika.net/comix/muda/m6.gif" width="49%" alt=""/></a> 
-<a class="grouped_elements" rel="group1" href="http://pop-grafika.net/comix/muda/m7.gif" target="new"><img src="http://pop-grafika.net/comix/muda/m7.gif" width="49%" alt=""/></a> 	
-</div>";s:8:"richtext";s:1:"1";s:8:"template";s:1:"6";s:9:"menuindex";s:1:"0";s:10:"searchable";s:1:"1";s:9:"cacheable";s:1:"1";s:9:"createdby";s:1:"1";s:9:"createdon";s:10:"1272332366";s:8:"editedby";s:1:"1";s:8:"editedon";s:10:"1286055609";s:7:"deleted";s:1:"0";s:9:"deletedon";s:1:"0";s:9:"deletedby";s:1:"0";s:11:"publishedon";s:10:"1272332366";s:11:"publishedby";s:1:"1";s:9:"menutitle";s:52:"ПРИКЛЮЧЕНИЯ АВДЕЯ МУДЯНКИНА";s:7:"donthit";s:1:"0";s:11:"haskeywords";s:1:"0";s:11:"hasmetatags";s:1:"0";s:10:"privateweb";s:1:"0";s:10:"privatemgr";s:1:"0";s:13:"content_dispo";s:1:"0";s:8:"hidemenu";s:1:"0";s:13:"alias_visible";s:1:"1";s:4:"tags";a:5:{i:0;s:4:"tags";i:1;s:16:"мудянкин";i:2;s:0:"";i:3;s:9:"&format=,";i:4;s:4:"text";}s:10:"menu_start";a:5:{i:0;s:10:"menu_start";i:1;s:2:"13";i:2;s:0:"";i:3;s:0:"";i:4;s:6:"number";}s:8:"mag_logo";a:5:{i:0;s:8:"mag_logo";i:1;s:50:"
-http://pop-grafika.net/images/logos/dur_logo.gif";i:2;s:0:"";i:3;s:75:"&align=none&cpad=1&cspace=1&psize=100&ploc=top-right&egmsg=No records found";i:4;s:6:"option";}s:8:"rss_view";a:5:{i:0;s:8:"rss_view";i:1;s:2:"no";i:2;s:5:"delim";i:3;s:20:"&format=,&default=No";i:4;s:8:"checkbox";}s:10:"changefreq";a:5:{i:0;s:10:"changefreq";i:1;s:7:"monthly";i:2;s:0:"";i:3;s:0:"";i:4;s:8:"dropdown";}s:8:"priority";a:5:{i:0;s:8:"priority";i:1;s:2:".5";i:2;s:0:"";i:3;s:0:"";i:4;s:8:"dropdown";}s:8:"mag_link";a:5:{i:0;s:8:"mag_link";i:1;s:3:"274";i:2;s:0:"";i:3;s:0:"";i:4;s:3:"url";}s:17:"__MODxDocGroups__";s:0:"";}<!--__MODxCacheSpliter__--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<font size="+3">Безумие должно бодрствовать над мыслью! </font><br/>
+Из интервью Франсуа Евальда с Жаком Деррида Март 1991года Magazin litteraire<br/>
+<br/>
+<div class="cont_serif">
+<b>- Есть ли философия Жака Деррида? </b><br/>
+- Нет. <br/>
+<b>- Значит, нет и послания (message)? </b><br/>
+- Нет. <br/>
+<b>- Есть ли норматив? </b><br/>
+- Конечно, это есть, только это и есть. Но <...> почему мне очень не нравится слово "норматив" в этом контексте? То, что я пытался внушить об ответственности* [* имеется в виду понятие ответственности как мысли или действия, определяемого не только тем, из чего оно исходит, но и тем, на что оно направлено - Д.Б.], отсылает скорее к закону, к императивному предписанию, которому нужно отвечать в конечном счете без нормы, без нормативности и без актуально представимой нормальности, без всего, что является в конечном счете объектом знания, принадлежа порядку бытия или ценностей. Я даже не уверен, что понятие "то, что должно", во всяком случае, "то, что должно быть", может быть соразмерно [данной задаче]. Конечно, будет искушение возразить: из всех этих утверждений, по-видимости негативных и абстрактных, сложно вывести политику, мораль или право. Я думаю противоположное. Если не берут в расчет всех этих сомнений, вопросов <...> и т.д., то политика, мораль, право (которые я не смешиваю здесь со справедливостью) обеспечивают себя и умиротворяются в заблуждении-приманке (leurre) и добросовестности - и никогда не далеки от того, чтобы быть или заниматься чем-то другим, чем мораль, политика или право. <br/>
+<b>- Это вы выводите (tirez) из вашей философии? </b><br/>
+- Что вы понимаете под словом "выводить"? Черпать? Находить? Дедуцировать? Индуцировать? Прогнозировать? Заключать? Что касается философии, которая была бы "моей", я вам уже сказал, что ее нет. Я предпочитаю говорить об опыте - это слово означает одновременно переход, путешествие, испытание, является в одно и то же время и опосредованным (культура, чтение, интерпретация, работа, общие вещи, правила и понятия), и единичным - я не говорю непосредственным <...>. Подхватывая использованное вами слово [и обновляя его значение, можно сказать:] то, на чем я настаивал, "получается" (se tirer) из этого опыта (никогда от него не отделываясь (s`en tirer)), говоря точнее, там, где пересекаются работа и единичность, универсальность и эта привилегия единичности - о том, чтобы отказаться от нее, не может идти и речи, отказаться от нее было бы как раз имморально. И это не та привилегия, которая связана с моим предпочтением, но привилегия, в которую я [уже] нахожу себя вписанным и которая делает ощутимым решение или единичную ответственность, без которой не было бы ни морали, ни права, ни политики. Обнаруживается (с множеством сложностей, вдаваться в которые сейчас не место и не время <...>), что я рожден в европейской привилегии, в привилегии языка, нации или французского гражданства, а если не ограничиваться только этим примером - в привилегии этого времени, того, что я люблю, моей семьи, моих друзей, моих врагов, конечно, и т.д. Эти привилегии [предпочтения] могут каждое мгновение противоречить и угрожать императивам универсального учета другого - и этo повседневный опыт [каждого],- но их нейтрализация, их отрицание были бы также противоположны какой бы то ни было подвижной этико-политике. Все "получается"(se tirer) для меня из опыта (живого, повседневного, наивного или рефлексивного, всегда брошенного против невозможного), из этой привилегии, которую мне нужно одновременно утверждать и приносить в жертву. Очень упрощая, для меня всегда присутствует - и я полагаю, что здесь необходимо иметь более, чем один язык, - Мое [мой язык] и Другое [язык другого], и мне нужно пытаться писать таким образом, чтобы язык другого не страдал от моего, чтобы он терпел [допускал] меня, не страдая от этого [сам], пользовался гостеприимством моего языка, не теряясь в нем и не интегрируясь в него. И взаимно, но взаимность [обоюдность, соответствие] здесь не является симметрией - и прежде всего потому, что мы не имеем здесь никакой средней [нейтральной] меры, никакой общей меры, заданной через нечто третье. Это должно изобретаться каждое мгновение, в каждой фразе, без обеспеченности и без абсолютной страховки. Говоря иначе, безумие, определенное "безумие" должно подстерегать [нас] на каждом шагу, и в самой сущности бодрствовать над мыслью, также, как и разум.<br/>
+<br/>
+<p align="right">Перевод и подготовка фрагмента - Денис Беристул</p>
+</div>
+<br/>
+<font size="+3">ПГ беседует с Д. Беристулом</font><br/>
+<div class="cont_serif">
+<br/>
+<b>ПГ.</b> Расскажите, пожалуйста, о кризисе в современной философии. Только коротко. <br/>
+<b>ДБ.</b> Кризис заключается в следующем: некоторые люди поняли, что философия однажды в истории философии умерла. Но она не заметила своей смерти. "Некоторые люди" - это французская часть современных философов, обыгрывающих мотивы смерти философии, как, например, это делает Жан-Люк Нанси в книге "Забвение философии". <br/>
+<b>ПГ.</b> Почему для нашего журнала вы предложили фрагмент интервью с Жаком Деррида? <br/>
+<b>ДБ.</b> Мне показалось, что достаточно обширный замысел ПГ мог бы включать в себя и тот замысел, который в своей философии - если еще можно так говорить - пытается воспроизвести Деррида. Это то, что я могу назвать радикальным движением мысли, для которого в первую очередь важно то, что может быть, а не то, что есть. <br/>
+<b>ПГ.</b> Может ли в наши дни, в ближайшем будущем появиться новый Карл Маркс - со всеми   последствиями? <br/>
+<b>ДБ.</b> Вы имеете в виду Деррида? Я думаю, что от этой "философии" никаких изменений в марксистском смысле, в плане непосредственного влияния на реальность, ждать не приходится. Там нет идеологии, хотя и для Маркса идеология была отрицательным понятием. Но у Деррида нет какого-то Учения о каких-то Идеях. Хотя такое Учение, которое способно стать почвой для глобального передела мира, может появиться всегда. Но как раз то, что я называю радикальным движением мысли, может быть не совсем удачно употребляя здесь политологический термин, противостоит подобным процессам. <br/>
+<b>ПГ.</b> Может ли сыграть в такую игру отечественный литератор А. Дугин? <br/>
+<b>ДБ.</b> Да, судя по тому, что мы о нем узнаем. Я думаю, однако, что он не Карл Маркс, а если и Карл Маркс, то совсем уже десятого разряда. Он просто грубо использует какие-то чужие тексты и мысли в качестве туалетной бумаги, себе на потребу. <br/>
+<b>ПГ.</b> Хотели бы вы на страницах нашего журнала передать кому-нибудь философский привет? <br/>
+<b>ДБ.</b> Да, если можно. Я передам привет и пожелаю крепкого здоровья Жаку Деррида, скорейшего освоения жизни Жан-Люку Нанси - дело в том, что он живет с чужим пересаженным сердцем,- а также всем женщинам-философам. <br/>
+</div>";s:8:"richtext";s:1:"1";s:8:"template";s:1:"6";s:9:"menuindex";s:2:"10";s:10:"searchable";s:1:"1";s:9:"cacheable";s:1:"1";s:9:"createdby";s:1:"1";s:9:"createdon";s:10:"1268112743";s:8:"editedby";s:1:"1";s:8:"editedon";s:10:"1283908597";s:7:"deleted";s:1:"0";s:9:"deletedon";s:1:"0";s:9:"deletedby";s:1:"0";s:11:"publishedon";s:10:"1268112743";s:11:"publishedby";s:1:"1";s:9:"menutitle";s:14:"ДЕРРИДА";s:7:"donthit";s:1:"0";s:11:"haskeywords";s:1:"0";s:11:"hasmetatags";s:1:"0";s:10:"privateweb";s:1:"0";s:10:"privatemgr";s:1:"0";s:13:"content_dispo";s:1:"0";s:8:"hidemenu";s:1:"0";s:13:"alias_visible";s:1:"1";s:4:"tags";a:5:{i:0;s:4:"tags";i:1;s:14:"деррида";i:2;s:0:"";i:3;s:9:"&format=,";i:4;s:4:"text";}s:10:"menu_start";a:5:{i:0;s:10:"menu_start";i:1;s:2:"10";i:2;s:0:"";i:3;s:0:"";i:4;s:6:"number";}s:8:"mag_logo";a:5:{i:0;s:8:"mag_logo";i:1;s:51:"http://pop-grafika.net/images/logos/new_golosPG.gif";i:2;s:0:"";i:3;s:75:"&align=none&cpad=1&cspace=1&psize=100&ploc=top-right&egmsg=No records found";i:4;s:6:"option";}s:8:"rss_view";a:5:{i:0;s:8:"rss_view";i:1;s:2:"no";i:2;s:5:"delim";i:3;s:20:"&format=,&default=No";i:4;s:8:"checkbox";}s:10:"changefreq";a:5:{i:0;s:10:"changefreq";i:1;s:7:"monthly";i:2;s:0:"";i:3;s:0:"";i:4;s:8:"dropdown";}s:8:"priority";a:5:{i:0;s:8:"priority";i:1;s:2:".5";i:2;s:0:"";i:3;s:0:"";i:4;s:8:"dropdown";}s:8:"mag_link";a:5:{i:0;s:8:"mag_link";i:1;s:2:"68";i:2;s:0:"";i:3;s:0:"";i:4;s:3:"url";}s:17:"__MODxDocGroups__";s:0:"";}<!--__MODxCacheSpliter__--><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
 <base href="http://localhost/pop-grafika/" />
@@ -24,7 +42,7 @@ http://pop-grafika.net/images/logos/dur_logo.gif";i:2;s:0:"";i:3;s:75:"&align=no
 <script type="text/javascript" src="/pop-grafika/js/fancybox/jquery.fancybox-1.3.1.js"></script>
  <script type="text/javascript" src="/pop-grafika/js/main.js"></script>
         <title>
-            Группа ПГ :: Журнал Дурь :: Приключения Авдея Мудянкина
+            Безумие должно бодрствовать над мыслью!
         </title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="alternate" type="application/rss+xml" title=" RSS feed" href="/pop-grafika/[~301~]">
@@ -70,76 +88,84 @@ http://pop-grafika.net/images/logos/dur_logo.gif";i:2;s:0:"";i:3;s:75:"&align=no
                     <div class="content">
                         <a href="/pop-grafika/[~6~]" title="Голос ПГ" id="site_logo"><img src="/pop-grafika/images/logos/new_PGpalms.gif" alt="" width="150" height="150" /></a> <span class="mtitle">ЖУРНАЛЫ</span>
 
-			<ul class="main_menu"><li class="menu_item level1"><a href="/pop-grafika/pgmagazines/magpg" title="Группа ПГ :: Журнал ПГ №1" >Журнал ПГ №1</a></li>
+			<ul class="main_menu"><li class="menu_item level1 active"><a href="/pop-grafika/pgmagazines/magpg" title="Группа ПГ :: Журнал ПГ №1" >Журнал ПГ №1</a></li>
 <li class="menu_item level1"><a href="/pop-grafika/pgmagazines/al-manach" title="Группа ПГ :: Аль-Манах ПГ №2" >Аль-Манах ПГ №2</a></li>
 <li class="menu_item level1"><a href="/pop-grafika/pgmagazines/almanach" title="Группа ПГ :: Альманах ПГ №3" >Альманах ПГ №3</a></li>
-<li class="menu_item last level1 active"><a href="/pop-grafika/pgmagazines/folly" title="Группа ПГ :: Журнал Дурь" >Дурь</a></li>
+<li class="menu_item last level1"><a href="/pop-grafika/pgmagazines/folly" title="Группа ПГ :: Журнал Дурь" >Дурь</a></li>
 </ul>
                         <hr style="height:1px; border-width:0; color:gray; background-color:gray" />
-			<ul class="mag_menu"><li class="mag_item mag_level1 mag_parent">
-	<span class="mag_menu_cat_link">ГАНДЖА-РЭП</span>
-	<ul class="mag_submenu"><li class="mag_item last mag_level2">
-	<a href="/pop-grafika/pgmagazines/folly/ganja/spliff" title="Группа ПГ :: Журнал Дурь :: Косякея" >> КОСЯКЕЯ</a>
+			<ul class="mag_menu"><li class="mag_item mag_level1">
+	<a href="/pop-grafika/pgmagazines/magpg/intro" title="От нас" >> OT НАС</a>
 	
 </li>
-</ul>
-</li>
-<li class="mag_item mag_level1 active mag_parent">
-	<span class="mag_menu_cat_link">ПОРНО-ГРАД</span>
-	<ul class="mag_submenu"><li class="mag_item last mag_level2 active">
-	<a href="/pop-grafika/pgmagazines/folly/porno/mudyankin" title="Группа ПГ :: Журнал Дурь :: Приключения Авдея Мудянкина" >> ПРИКЛЮЧЕНИЯ АВДЕЯ МУДЯНКИНА</a>
+<li class="mag_item mag_level1">
+	<a href="/pop-grafika/pgmagazines/magpg/zines" title="ДЕЛАЙ ЧТО ХОЧЕШЬ, И БУДЬ ЧТО БУДЕТ" >> ЖУРНАЛЫ</a>
 	
 </li>
-</ul>
-</li>
-<li class="mag_item mag_level1 mag_parent">
-	<span class="mag_menu_cat_link">ПОСТЕР</span>
-	<ul class="mag_submenu"><li class="mag_item last mag_level2">
-	<a href="/pop-grafika/pgmagazines/folly/poster/chuiman" title="Группа ПГ :: Журнал Дурь :: Хуйман жив!" >> ХУЙМАН ЖИВ!</a>
+<li class="mag_item mag_level1">
+	<a href="/pop-grafika/pgmagazines/magpg/musica" title="МИР СТАЛ СОВСЕМ ДРУГИМ" >> МУЗЫКА</a>
 	
 </li>
-</ul>
-</li>
-<li class="mag_item mag_level1 mag_parent">
-	<span class="mag_menu_cat_link">ИЗ ИСТОРИИ...</span>
-	<ul class="mag_submenu"><li class="mag_item last mag_level2">
-	<a href="/pop-grafika/pgmagazines/folly/history/flat" title="Группа ПГ :: Журнал Дурь :: Сдается квартира" >> СДАЕТСЯ КВАРТИРА</a>
+<li class="mag_item mag_level1">
+	<a href="/pop-grafika/pgmagazines/magpg/movie" title="ГАЛЛЮЦИНОЗОНОЗ" >> КИНО</a>
 	
 </li>
-</ul>
-</li>
-<li class="mag_item mag_level1 mag_parent">
-	<span class="mag_menu_cat_link">ПИТОР-ТРИП</span>
-	<ul class="mag_submenu"><li class="mag_item last mag_level2">
-	<a href="/pop-grafika/pgmagazines/folly/trip/untitled" title="Группа ПГ :: Журнал Дурь :: Без названия" >> БЕЗ НАЗВАНИЯ</a>
+<li class="mag_item mag_level1">
+	<a href="/pop-grafika/pgmagazines/magpg/bugs" title="ЖУКИ И КРИЗИС" >> ЖУКИ</a>
 	
 </li>
-</ul>
-</li>
-<li class="mag_item mag_level1 mag_parent">
-	<span class="mag_menu_cat_link">РИСУНОК ЧИТАТЕЛЯ</span>
-	<ul class="mag_submenu"><li class="mag_item last mag_level2">
-	<a href="/pop-grafika/pgmagazines/folly/reader/feed" title="Группа ПГ :: Журнал Дурь :: Кормление пизды бананом" >> КОРМЛЕНИЕ ПИЗДЫ БАНАНОМ</a>
+<li class="mag_item mag_level1">
+	<a href="/pop-grafika/pgmagazines/magpg/cards" title="ОТКРЫТКИ" >> ОТКРЫТКИ</a>
 	
 </li>
-</ul>
+<li class="mag_item mag_level1">
+	<a href="/pop-grafika/pgmagazines/magpg/stamps" title="МАРКИ" >> МАРКИ</a>
+	
 </li>
-<li class="mag_item mag_level1 mag_parent">
-	<span class="mag_menu_cat_link">ОТКРЫТКИ</span>
+<li class="mag_item mag_level1">
+	<a href="/pop-grafika/pgmagazines/magpg/pelevin" title="ПЕЛЕВИН-ЖЕНЩИНА" >> ПЕЛЕВИН</a>
+	
+</li>
+<li class="mag_item mag_level1">
+	<a href="/pop-grafika/pgmagazines/magpg/nodj" title="NO DJ's " >> NO DJ'S</a>
+	
+</li>
+<li class="mag_item mag_level1 active">
+	<a href="/pop-grafika/pgmagazines/magpg/derrida" title="Безумие должно бодрствовать над мыслью!" >> ДЕРРИДА</a>
+	
+</li>
+<li class="mag_item mag_level1">
+	<a href="/pop-grafika/pgmagazines/magpg/minsk" title="MINSK: ТАТАЛЬНАя ДЫкТАТУРА? " >> МИНСК</a>
+	
+</li>
+<li class="mag_item mag_level1">
+	<a href="/pop-grafika/pgmagazines/magpg/fenso" title="FENSO: период полураспада " >> FENSO</a>
+	
+</li>
+<li class="mag_item mag_level1">
+	<a href="/pop-grafika/pgmagazines/magpg/grinberg" title="Савелий Гринберг " >> С. ГРИНБЕРГ</a>
+	
+</li>
+<li class="mag_item mag_level1">
+	<a href="/pop-grafika/pgmagazines/magpg/boomshanka" title="ИЗ ПОЛЕВЫХ НАБЛЮДЕНИЙ РАБОТНИКА ПО ОХВАТУ" >> BOOMSHANKA</a>
+	
+</li>
+<li class="mag_item last mag_level1 mag_parent">
+	<span class="mag_menu_cat_link">РЕКЛАМА</span>
 	<ul class="mag_submenu"><li class="mag_item mag_level2">
-	<a href="/pop-grafika/pgmagazines/folly/postcards/winter" title="Группа ПГ :: Журнал Дурь :: Зимняя зарисовка" >> ЗИМНЯЯ ЗАРИСОВКА</a>
+	<a href="http://archiveof90s.ru/content/letter/pumpers_1998-05/index.htm" title="ПАМПЕРС" >> ПАМПЕРС</a>
+	
+</li>
+<li class="mag_item mag_level2">
+	<a href="http://www.guelman.ru/slava/" title="КУРИЦЫН" >> КУРИЦЫН</a>
+	
+</li>
+<li class="mag_item mag_level2">
+	<a href="/pop-grafika/pgmagazines/magpg/ad/iced" title="ООО &quot;Обл. Архитекторов&quot;" >> ООО &quot;ОБЛ. АРХИТЕКТОРОВ&quot;</a>
 	
 </li>
 <li class="mag_item last mag_level2">
-	<a href="/pop-grafika/pgmagazines/folly/postcards/hello" title="Группа ПГ :: Журнал Дурь :: Привет" >> ПРИВЕТ</a>
-	
-</li>
-</ul>
-</li>
-<li class="mag_item last mag_level1 mag_parent">
-	<span class="mag_menu_cat_link">БОНУС</span>
-	<ul class="mag_submenu"><li class="mag_item last mag_level2">
-	<a href="/pop-grafika/pgmagazines/folly/bonus/opera" title="Группа ПГ :: Журнал Дурь :: Рэп-Оперы ДУРЬ" >> РЭП-ОПЕРЫ ДУРЬ</a>
+	<a href="mailto:thebluesoup@yahoo.com" title="THE BLUE SOUP" >> THE BLUE SOUP</a>
 	
 </li>
 </ul>
@@ -223,29 +249,47 @@ http://pop-grafika.net/images/logos/dur_logo.gif";i:2;s:0:"";i:3;s:75:"&align=no
 				
                 <div id="mid_column" class="column">
                     <div class="content">
-                        <img src="
-http://pop-grafika.net/images/logos/dur_logo.gif" alt="page logo" id="page_logo" width="100%" />
+                        <img src="http://pop-grafika.net/images/logos/new_golosPG.gif" alt="page logo" id="page_logo" width="100%" />
                         <div id="back_lenta">
                             [!Breadcrumbs? &showHomeCrumb=`0` &showCrumbsAsLinks =`0` & respectHidemenu=`0` &maxCrumbs=`2` &linkTextField=`longtitle`!]
-                        </div><div class="img" align="center">
-<a rel="group1" href="http://pop-grafika.net/comix/muda/m1.gif
-
-" target="new"><img src="http://pop-grafika.net/comix/muda/m1.gif
-" width="49%" alt=""/></a>
+                        </div><div class="img" align="center">	
+<img SRC="http://pop-grafika.net/magazine/good/der.gif" width="540"/>
+</div>
 <br/>
-<a class="grouped_elements" rel="group1" href="http://pop-grafika.net/comix/muda/m2.gif
-" target="new"><img src="http://pop-grafika.net/comix/muda/m2.gif
-" width="49%" alt=""/></a> 
-<a class="grouped_elements" rel="group1" href="http://pop-grafika.net/comix/muda/m3.gif" target="new"><img src="http://pop-grafika.net/comix/muda/m3.gif" width="49%" alt=""/></a> 
-<a class="grouped_elements" rel="group1" href="http://pop-grafika.net/comix/muda/m4.gif" target="new"><img src="http://pop-grafika.net/comix/muda/m4.gif" width="49%" alt=""/></a> 
-<a class="grouped_elements" rel="group1" href="http://pop-grafika.net/comix/muda/m5.gif" target="new"><img src="http://pop-grafika.net/comix/muda/m5.gif" width="49%" alt=""/></a> 
-<a class="grouped_elements" rel="group1" href="http://pop-grafika.net/comix/muda/m6.gif" target="new"><img src="http://pop-grafika.net/comix/muda/m6.gif" width="49%" alt=""/></a> 
-<a class="grouped_elements" rel="group1" href="http://pop-grafika.net/comix/muda/m7.gif" target="new"><img src="http://pop-grafika.net/comix/muda/m7.gif" width="49%" alt=""/></a> 	
+<font size="+3">Безумие должно бодрствовать над мыслью! </font><br/>
+Из интервью Франсуа Евальда с Жаком Деррида Март 1991года Magazin litteraire<br/>
+<br/>
+<div class="cont_serif">
+<b>- Есть ли философия Жака Деррида? </b><br/>
+- Нет. <br/>
+<b>- Значит, нет и послания (message)? </b><br/>
+- Нет. <br/>
+<b>- Есть ли норматив? </b><br/>
+- Конечно, это есть, только это и есть. Но <...> почему мне очень не нравится слово "норматив" в этом контексте? То, что я пытался внушить об ответственности* [* имеется в виду понятие ответственности как мысли или действия, определяемого не только тем, из чего оно исходит, но и тем, на что оно направлено - Д.Б.], отсылает скорее к закону, к императивному предписанию, которому нужно отвечать в конечном счете без нормы, без нормативности и без актуально представимой нормальности, без всего, что является в конечном счете объектом знания, принадлежа порядку бытия или ценностей. Я даже не уверен, что понятие "то, что должно", во всяком случае, "то, что должно быть", может быть соразмерно [данной задаче]. Конечно, будет искушение возразить: из всех этих утверждений, по-видимости негативных и абстрактных, сложно вывести политику, мораль или право. Я думаю противоположное. Если не берут в расчет всех этих сомнений, вопросов <...> и т.д., то политика, мораль, право (которые я не смешиваю здесь со справедливостью) обеспечивают себя и умиротворяются в заблуждении-приманке (leurre) и добросовестности - и никогда не далеки от того, чтобы быть или заниматься чем-то другим, чем мораль, политика или право. <br/>
+<b>- Это вы выводите (tirez) из вашей философии? </b><br/>
+- Что вы понимаете под словом "выводить"? Черпать? Находить? Дедуцировать? Индуцировать? Прогнозировать? Заключать? Что касается философии, которая была бы "моей", я вам уже сказал, что ее нет. Я предпочитаю говорить об опыте - это слово означает одновременно переход, путешествие, испытание, является в одно и то же время и опосредованным (культура, чтение, интерпретация, работа, общие вещи, правила и понятия), и единичным - я не говорю непосредственным <...>. Подхватывая использованное вами слово [и обновляя его значение, можно сказать:] то, на чем я настаивал, "получается" (se tirer) из этого опыта (никогда от него не отделываясь (s`en tirer)), говоря точнее, там, где пересекаются работа и единичность, универсальность и эта привилегия единичности - о том, чтобы отказаться от нее, не может идти и речи, отказаться от нее было бы как раз имморально. И это не та привилегия, которая связана с моим предпочтением, но привилегия, в которую я [уже] нахожу себя вписанным и которая делает ощутимым решение или единичную ответственность, без которой не было бы ни морали, ни права, ни политики. Обнаруживается (с множеством сложностей, вдаваться в которые сейчас не место и не время <...>), что я рожден в европейской привилегии, в привилегии языка, нации или французского гражданства, а если не ограничиваться только этим примером - в привилегии этого времени, того, что я люблю, моей семьи, моих друзей, моих врагов, конечно, и т.д. Эти привилегии [предпочтения] могут каждое мгновение противоречить и угрожать императивам универсального учета другого - и этo повседневный опыт [каждого],- но их нейтрализация, их отрицание были бы также противоположны какой бы то ни было подвижной этико-политике. Все "получается"(se tirer) для меня из опыта (живого, повседневного, наивного или рефлексивного, всегда брошенного против невозможного), из этой привилегии, которую мне нужно одновременно утверждать и приносить в жертву. Очень упрощая, для меня всегда присутствует - и я полагаю, что здесь необходимо иметь более, чем один язык, - Мое [мой язык] и Другое [язык другого], и мне нужно пытаться писать таким образом, чтобы язык другого не страдал от моего, чтобы он терпел [допускал] меня, не страдая от этого [сам], пользовался гостеприимством моего языка, не теряясь в нем и не интегрируясь в него. И взаимно, но взаимность [обоюдность, соответствие] здесь не является симметрией - и прежде всего потому, что мы не имеем здесь никакой средней [нейтральной] меры, никакой общей меры, заданной через нечто третье. Это должно изобретаться каждое мгновение, в каждой фразе, без обеспеченности и без абсолютной страховки. Говоря иначе, безумие, определенное "безумие" должно подстерегать [нас] на каждом шагу, и в самой сущности бодрствовать над мыслью, также, как и разум.<br/>
+<br/>
+<p align="right">Перевод и подготовка фрагмента - Денис Беристул</p>
+</div>
+<br/>
+<font size="+3">ПГ беседует с Д. Беристулом</font><br/>
+<div class="cont_serif">
+<br/>
+<b>ПГ.</b> Расскажите, пожалуйста, о кризисе в современной философии. Только коротко. <br/>
+<b>ДБ.</b> Кризис заключается в следующем: некоторые люди поняли, что философия однажды в истории философии умерла. Но она не заметила своей смерти. "Некоторые люди" - это французская часть современных философов, обыгрывающих мотивы смерти философии, как, например, это делает Жан-Люк Нанси в книге "Забвение философии". <br/>
+<b>ПГ.</b> Почему для нашего журнала вы предложили фрагмент интервью с Жаком Деррида? <br/>
+<b>ДБ.</b> Мне показалось, что достаточно обширный замысел ПГ мог бы включать в себя и тот замысел, который в своей философии - если еще можно так говорить - пытается воспроизвести Деррида. Это то, что я могу назвать радикальным движением мысли, для которого в первую очередь важно то, что может быть, а не то, что есть. <br/>
+<b>ПГ.</b> Может ли в наши дни, в ближайшем будущем появиться новый Карл Маркс - со всеми   последствиями? <br/>
+<b>ДБ.</b> Вы имеете в виду Деррида? Я думаю, что от этой "философии" никаких изменений в марксистском смысле, в плане непосредственного влияния на реальность, ждать не приходится. Там нет идеологии, хотя и для Маркса идеология была отрицательным понятием. Но у Деррида нет какого-то Учения о каких-то Идеях. Хотя такое Учение, которое способно стать почвой для глобального передела мира, может появиться всегда. Но как раз то, что я называю радикальным движением мысли, может быть не совсем удачно употребляя здесь политологический термин, противостоит подобным процессам. <br/>
+<b>ПГ.</b> Может ли сыграть в такую игру отечественный литератор А. Дугин? <br/>
+<b>ДБ.</b> Да, судя по тому, что мы о нем узнаем. Я думаю, однако, что он не Карл Маркс, а если и Карл Маркс, то совсем уже десятого разряда. Он просто грубо использует какие-то чужие тексты и мысли в качестве туалетной бумаги, себе на потребу. <br/>
+<b>ПГ.</b> Хотели бы вы на страницах нашего журнала передать кому-нибудь философский привет? <br/>
+<b>ДБ.</b> Да, если можно. Я передам привет и пожелаю крепкого здоровья Жаку Деррида, скорейшего освоения жизни Жан-Люку Нанси - дело в том, что он живет с чужим пересаженным сердцем,- а также всем женщинам-философам. <br/>
 </div><br>
                      
 <div id="bottom_lenta">         
 <span class="up">
-<a href="[~274~]" alt="page link" id="page_link">Дальше</a>
+<a href="[~68~]" alt="page link" id="page_link">Дальше</a>
 </span>
 </div> 
 <br/>

@@ -2631,7 +2631,7 @@ if (isset($_REQUEST[\'searched\']) && isset($_REQUEST[\'highlight\'])) {
     $output = str_replace(\'<!--search_terms-->\',$highlightText,$output);
     $modx->documentOutput = $output;
   }
-}';$p['TinyMCE Rich Text Editor']='// Set the name of the plugin folder
+}';$p['Search HighlightProps']='{} ';$p['TinyMCE Rich Text Editor']='// Set the name of the plugin folder
 $plugin_dir = "tinymce";
 
 // Set path and base setting variables
