@@ -1,7 +1,6 @@
 <?php
-if (!defined('MODX_BASE_PATH')) {
-    die('HACK???');
-}
+
+use \Doctrine\Common\Cache\Cache;
 
 /**
  * tv extender for DocLister
@@ -31,6 +30,8 @@ class tv_DL_Extender extends extDocLister
      */
     public $storeTable = true;
 
+    protected $cache = false;
+
     /**
      * tv_DL_Extender constructor.
      * @param DocLister $DocLister
@@ -44,6 +45,7 @@ class tv_DL_Extender extends extDocLister
         }
         $this->tvValuesTable = $this->DocLister->getCFGDef('tvValuesTable', $this->tvValuesTable());
         $this->_TVprefix = $this->getTVprefix();
+        $this->cache = isset($this->modx->cache) && $this->modx->cache instanceof Cache;
     }
 
     /**
@@ -67,7 +69,12 @@ class tv_DL_Extender extends extDocLister
      */
     public function getTVnames()
     {
-        return $this->modx->_TVnames;
+        $out = array();
+        foreach ($this->modx->_TVnames as $name => $tv) {
+            $out[$name] = $tv['id'];
+        }
+
+        return $out;
     }
 
     /**
@@ -77,14 +84,23 @@ class tv_DL_Extender extends extDocLister
     public function getAllTV_Name($reload = false)
     {
         if (empty($this->modx->_TVnames) || $reload) {
-            $from = $this->DocLister->getTable('site_tmplvars');
-            $rs = $this->DocLister->dbQuery("SELECT id, name FROM {$from}");
-            $rows = $this->modx->db->makeArray($rs);
-            $out = array();
-            foreach ($rows as $item) {
-                $out[$item['name']] = $item['id'];
+            $this->modx->_TVnames = $this->loadFromCache('_TVnames');
+            if ($this->modx->_TVnames === false) {
+                $this->modx->_TVnames = array();
+                $from = $this->DocLister->getTable('site_tmplvars');
+                $rs = $this->DocLister->dbQuery("SELECT `id`, `name`, `default_text`, `type`, `display`, `display_params` FROM {$from}");
+
+                while ($item = $this->modx->db->getRow($rs)) {
+                    $this->modx->_TVnames[$item['name']] = array(
+                        'id'   => $item['id'],
+                        'type' => $item['type'],
+                        'default' => $item['default_text'],
+                        'display' => $item['display'],
+                        'display_params' => $item['display_params']
+                    );
+                }
+                $this->saveToCache($this->modx->_TVnames, '_TVnames');
             }
-            $this->modx->_TVnames = $out;
         }
 
         return $this->getTVnames();
@@ -108,10 +124,9 @@ class tv_DL_Extender extends extDocLister
         $implodeTvId = implode(',', $tvId);
         $where = "contentid IN({$sanitarInIDs}) AND tmplvarid IN({$implodeTvId})";
         $rs = $this->DocLister->dbQuery("SELECT tmplvarid,value,contentid FROM {$tbl_site_tmplvar_contentvalues} WHERE {$where}");
-        $rows = $this->modx->db->makeArray($rs);
         $tvPrefix = $this->_TVprefix;
 
-        foreach ($rows as $item) {
+        while ($item = $this->modx->db->getRow($rs)) {
             $out[$item['contentid']][$tvPrefix . $tv[$item['tmplvarid']]] = $item['value'];
         }
         $tmp = explode(",", $this->DocLister->sanitarIn($IDs, ',', false));
@@ -125,8 +140,8 @@ class tv_DL_Extender extends extDocLister
         $TVkeys = array_keys($tvDef);
         foreach ($out as $itemid => $item) {
             foreach ($TVkeys as $name) {
-                if (!isset($out[$itemid][$name])) {
-                    $out[$itemid][$name] = $tvDef[$name]['value'];
+                if (!isset($out[$itemid][$name]) || $out[$itemid][$name] === '' || is_null($out[$itemid][$name])) {
+                    $out[$itemid][$name] = $tvDef[$name]['default'];
                 }
                 if (in_array($name, $renderTV) || $renderTV == array("*")) {
                     $out[$itemid][$name] = $this->renderTV($itemid, $name, $out[$itemid][$name], $tvDef[$name]);
@@ -186,8 +201,15 @@ class tv_DL_Extender extends extDocLister
         include_once MODX_MANAGER_PATH . "includes/tmplvars.format.inc.php";
         include_once MODX_MANAGER_PATH . "includes/tmplvars.commands.inc.php";
 
-        return getTVDisplayFormat($tvname, $tvval, $param['display'], $param['display_params'], $param['type'], $iddoc,
-            '');
+        return getTVDisplayFormat(
+            $tvname,
+            $tvval,
+            $param['display'],
+            $param['display_params'],
+            $param['type'],
+            $iddoc,
+            ''
+        );
     }
 
     /**
@@ -203,7 +225,7 @@ class tv_DL_Extender extends extDocLister
         foreach ($tvlist as $tv) {
             $tv = trim($tv);
             if (isset($this->modx->_TVnames[$tv])) {
-                $out[$this->modx->_TVnames[$tv]] = $tv;
+                $out[$this->modx->_TVnames[$tv]['id']] = $tv;
             }
         }
 
@@ -211,19 +233,16 @@ class tv_DL_Extender extends extDocLister
     }
 
     /**
-     * @param $tvId
+     * @param array $tvId
      * @return array
      */
     public function loadTVDefault($tvId)
     {
-        $tbl_site_tmplvars = $this->DocLister->getTable('site_tmplvars');
-        $fields = 'id,name,default_text as value,display,display_params,type';
-        $implodeTvId = implode(',', $tvId);
-        $rs = $this->DocLister->dbQuery("SELECT {$fields} FROM {$tbl_site_tmplvars} WHERE id IN({$implodeTvId})");
-        $rows = $this->modx->db->makeArray($rs);
+        $tvs = array_flip($this->getTVnames());
         $out = array();
-        foreach ($rows as $item) {
-            $out[$this->_TVprefix . $item['name']] = $item;
+        foreach ($tvId as $id) {
+            $name = $tvs[$id];
+            $out[$this->_TVprefix . $name] = $this->modx->_TVnames[$name];
         }
 
         return $out;
@@ -263,19 +282,27 @@ class tv_DL_Extender extends extDocLister
                 if (isset($TVnames[$item[0]])) {
                     $exists = $this->DocLister->checkTableAlias($item[0], $this->tvValuesTable());
                     $prefix = 'dltv_' . $item[0] . '_' . ($i + 1);
-                    $prefix = $this->storeTable ? $this->DocLister->TableAlias($item[0], $this->tvValuesTable(),
-                        $prefix) : $prefix;
+                    $prefix = $this->storeTable ? $this->DocLister->TableAlias(
+                        $item[0],
+                        $this->tvValuesTable(),
+                        $prefix
+                    ) : $prefix;
                     if (!$exists) {
                         $table .= " LEFT JOIN " . $this->DocLister->getTable($this->tvValuesTable(), $prefix) . "
                         on `" . $prefix . "`.`contentid`=`c`.`id` AND `" . $prefix . "`.`tmplvarid`=" . $TVnames[$item[0]];
                     }
                     if (in_array($item[0], $withDefault)) {
                         $exists = $this->DocLister->checkTableAlias($item[0], "site_tmplvars");
-                        $dPrefix = $this->storeTable ? $this->DocLister->TableAlias($item[0], "site_tmplvars",
-                            'd_' . $prefix) : 'd_' . $prefix;
+                        $dPrefix = $this->storeTable ? $this->DocLister->TableAlias(
+                            $item[0],
+                            "site_tmplvars",
+                            'd_' . $prefix
+                        ) : 'd_' . $prefix;
                         if (!$exists) {
-                            $table .= " LEFT JOIN " . $this->DocLister->getTable("site_tmplvars",
-                                    $dPrefix) . " on `" . $dPrefix . "`.`id` = " . $TVnames[$item[0]];
+                            $table .= " LEFT JOIN " . $this->DocLister->getTable(
+                                "site_tmplvars",
+                                $dPrefix
+                            ) . " on `" . $dPrefix . "`.`id` = " . $TVnames[$item[0]];
                         }
                         $field = "IFNULL(`{$prefix}`.`value`, `{$dPrefix}`.`default_text`)";
                     } else {
@@ -290,4 +317,34 @@ class tv_DL_Extender extends extDocLister
 
         return array($table, $sort);
     }
+
+    /**
+     * @param $key
+     * @return mixed
+     */
+    private function loadFromCache($key)
+    {
+        $out = false;
+        if ($this->cache) {
+            $out = $this->modx->cache->fetch($key);
+        }
+
+        return $out;
+    }
+
+    /**
+     * @param mixed $data
+     * @param string $key
+     * @return bool
+     */
+    private function saveToCache($data, $key)
+    {
+        $out = false;
+        if ($this->cache) {
+            $out = $this->modx->cache->save($key, $data, 0);
+        }
+
+        return $out;
+    }
+
 }

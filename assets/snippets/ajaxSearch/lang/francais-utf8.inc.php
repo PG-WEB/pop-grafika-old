@@ -1,9 +1,9 @@
 <?php
 /*
-francais-utf8.inc.php - for AjaxSearch 1.8.2
-Created by: KyleJ (kjaebker@muddydogpaws.com), Translated by: David Mollière, Corrected by: Jean-Christophe Brebion
-Created on: 01/22/07  Translated on: 04/10/07  Corrected on: 28/07/09
-Description: UTF8 French Language file for AjaxSearch
+francais-utf8.inc.php - for AjaxSearch 1.12.1
+Created by: David Mollière, Corrected by: Jean-Christophe Brebion
+Last Modified on 2018-10-27
+Description: Language strings for AjaxSearch
 */
 $_lang['as_resultsIntroFailure'] = 'Aucun résultat de recherche. Élargissez votre requête pour obtenir plus de résultats.';
 $_lang['as_searchButtonText'] = 'rechercher!';
@@ -27,4 +27,10 @@ $_lang['as_cmtIntroMessage'] = 'Avez-vous trouvé ce que vous recherchiez? Laiss
 $_lang['as_cmtSubmitText'] = 'envoyer';
 $_lang['as_cmtResetText'] = 'effacer';
 $_lang['as_cmtThksMessage'] = 'Merci pour votre commentaire';
+$_lang['as_resultsTextSingle'] = '%d résultat trouvé.';
+$_lang['as_resultsTextMultiple'] = '%d résultats trouvés.';
+$_lang['as_grpResultsDisplayedText'] = '(Affichage de %d - %d / %d)';
+$_lang['as_resultsDisplayed'] = 'Affichés : %d';
+$_lang['as_paging1Text'] = '%d - %d / %d';
+$_lang['as_paging2Text'] = 'Voir %d autres resultats';
 ?>

@@ -1,128 +1,133 @@
 <?php
-if(IN_MANAGER_MODE!="true") die("<b>INCLUDE_ORDERING_ERROR</b><br /><br />Please use the MODX Content Manager instead of accessing this file directly.");
+if (!defined('IN_MANAGER_MODE') || IN_MANAGER_MODE !== true) {
+    die("<b>INCLUDE_ORDERING_ERROR</b><br /><br />
+    Please use the EVO Content Manager instead of accessing this file directly.");
+}
 $mxla = $modx_lang_attribute ? $modx_lang_attribute : 'en';
 
 // invoke OnManagerRegClientStartupHTMLBlock event
 $evtOut = $modx->invokeEvent('OnManagerMainFrameHeaderHTMLBlock');
 $modx_textdir = isset($modx_textdir) ? $modx_textdir : null;
 $onManagerMainFrameHeaderHTMLBlock = is_array($evtOut) ? implode("\n", $evtOut) : '';
-$textdir = $modx_textdir==='rtl' ? 'rtl' : 'ltr';
-if(!isset($modx->config['mgr_jquery_path']))  $modx->config['mgr_jquery_path'] = 'media/script/jquery/jquery.min.js';
-if(!isset($modx->config['mgr_date_picker_path'])) $modx->config['mgr_date_picker_path'] = 'media/script/air-datepicker/datepicker.inc.php';
+$textdir = $modx_textdir === 'rtl' ? 'rtl' : 'ltr';
+if (!isset($modx->config['mgr_jquery_path'])) {
+    $modx->config['mgr_jquery_path'] = 'media/script/jquery/jquery.min.js';
+}
+if (!isset($modx->config['mgr_date_picker_path'])) {
+    $modx->config['mgr_date_picker_path'] = 'media/script/air-datepicker/datepicker.inc.php';
+}
+
+$body_class = '';
+$theme_modes = array('', 'lightness', 'light', 'dark', 'darkness');
+if (!empty($theme_modes[$_COOKIE['MODX_themeMode']])) {
+    $body_class .= ' ' . $theme_modes[$_COOKIE['MODX_themeMode']];
+} elseif (!empty($theme_modes[$modx->config['manager_theme_mode']])) {
+    $body_class .= ' ' . $theme_modes[$modx->config['manager_theme_mode']];
+}
+
+$css = 'media/style/' . $modx->config['manager_theme'] . '/style.css?v=' . $lastInstallTime;
+
+if ($modx->config['manager_theme'] == 'default') {
+    if (!file_exists(MODX_MANAGER_PATH . 'media/style/' . $modx->config['manager_theme'] . '/css/styles.min.css')
+        && is_writable(MODX_MANAGER_PATH . 'media/style/' . $modx->config['manager_theme'] . '/css')) {
+        $files = array(
+            'bootstrap' => MODX_MANAGER_PATH . 'media/style/common/bootstrap/css/bootstrap.min.css',
+            'font-awesome' => MODX_MANAGER_PATH . 'media/style/common/font-awesome/css/font-awesome.min.css',
+            'fonts' => MODX_MANAGER_PATH . 'media/style/' . $modx->config['manager_theme'] . '/css/fonts.css',
+            'forms' => MODX_MANAGER_PATH . 'media/style/' . $modx->config['manager_theme'] . '/css/forms.css',
+            'mainmenu' => MODX_MANAGER_PATH . 'media/style/' . $modx->config['manager_theme'] . '/css/mainmenu.css',
+            'tree' => MODX_MANAGER_PATH . 'media/style/' . $modx->config['manager_theme'] . '/css/tree.css',
+            'custom' => MODX_MANAGER_PATH . 'media/style/' . $modx->config['manager_theme'] . '/css/custom.css',
+            'tabpane' => MODX_MANAGER_PATH . 'media/style/' . $modx->config['manager_theme'] . '/css/tabpane.css',
+            'contextmenu' => MODX_MANAGER_PATH . 'media/style/' . $modx->config['manager_theme'] . '/css/contextmenu.css',
+            'index' => MODX_MANAGER_PATH . 'media/style/' . $modx->config['manager_theme'] . '/css/index.css',
+            'main' => MODX_MANAGER_PATH . 'media/style/' . $modx->config['manager_theme'] . '/css/main.css'
+        );
+        $evtOut = $modx->invokeEvent('OnBeforeMinifyCss', array(
+            'files' => $files,
+            'source' => 'manager',
+            'theme' => $modx->config['manager_theme']
+        ));
+        switch (true) {
+            case empty($evtOut):
+            case is_array($evtOut) && count($evtOut) === 0:
+                break;
+            case is_array($evtOut) && count($evtOut) === 1:
+                $files = $evtOut[0];
+                break;
+            default:
+                $modx->webAlertAndQuit(sprintf($_lang['invalid_event_response'], 'OnBeforeMinifyManagerCss'));
+        }
+        require_once MODX_BASE_PATH . 'assets/lib/Formatter/CSSMinify.php';
+        $minifier = new Formatter\CSSMinify($files);
+        $css = $minifier->minify();
+        file_put_contents(
+            MODX_MANAGER_PATH . 'media/style/' . $modx->config['manager_theme'] . '/css/styles.min.css',
+            $css
+        );
+    }
+    if (file_exists(MODX_MANAGER_PATH . 'media/style/' . $modx->config['manager_theme'] . '/css/styles.min.css')) {
+        $css = 'media/style/' . $modx->config['manager_theme'] . '/css/styles.min.css?v=' . $lastInstallTime;
+    }
+}
 
 ?>
 <!DOCTYPE html>
-<html lang="<?php echo  $mxla;?>" dir="<?php echo  $textdir;?>"><head>
-    <title>MODX</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $modx_manager_charset; ?>" />
-    <link rel="stylesheet" type="text/css" href="media/style/<?php echo $modx->config['manager_theme']; ?>/style.css" />
-    <link rel="stylesheet" href="media/style/common/font-awesome/css/font-awesome.min.css" />
-    <?php echo sprintf('<script src="%s" type="text/javascript"></script>'."\n", $modx->config['mgr_jquery_path']); ?>
-    <script src="media/script/mootools/mootools.js" type="text/javascript"></script>
-    <script src="media/script/mootools/moodx.js" type="text/javascript"></script>
+<html lang="<?= $mxla ?>" dir="<?= $textdir ?>">
+<head>
+    <title>Evolution CMS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=<?= $modx_manager_charset ?>"/>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width"/>
+    <meta name="theme-color" content="#1d2023"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" type="text/css" href="<?= $css ?>"/>
+    <script type="text/javascript" src="media/script/tabpane.js"></script>
+    <?= sprintf('<script type="text/javascript" src="%s"></script>' . "\n", $modx->config['mgr_jquery_path']) ?>
+    <?php if ($modx->config['show_picker'] != "0") { ?>
+        <script src="media/style/<?= $modx->config['manager_theme'] ?>/js/color.switcher.js"
+                type="text/javascript"></script>
+    <?php } ?>
+    <?php
+    $aArr = array('2');
+    if (!in_array($_REQUEST['a'], $aArr)) { ?>
+        <script src="media/script/mootools/mootools.js" type="text/javascript"></script>
+        <script src="media/script/mootools/moodx.js" type="text/javascript"></script>
+    <?php } ?>
+
     <!-- OnManagerMainFrameHeaderHTMLBlock -->
-    <?php echo $onManagerMainFrameHeaderHTMLBlock . "\n"; ?>
+    <?= $onManagerMainFrameHeaderHTMLBlock . "\n" ?>
+
     <script type="text/javascript">
-		/* <![CDATA[ */
-	
-        jQuery(function(){
-        jQuery(window).on('beforeunload',function(){
-        	if(documentDirty) {stopWorker();return '<?php echo addslashes($_lang['warning_not_saved']);?>';}
-                jQuery('#actions').fadeOut(100);
-            	jQuery('input,textarea,select').addClass('readonly');
-            });
-        });
-        
-        window.addEvent('load', document_onload);
-        window.addEvent('beforeunload', document_onunload);
-        
-        function document_onload() {
-            stopWorker();
-            hideLoader();
-<?php
-	if(isset($_REQUEST['r']) && preg_match('@^[0-9]+$@',$_REQUEST['r']))
-	    echo 'doRefresh(' . $_REQUEST['r'] . ");\n";
-?>
+      if (!evo) {
+        var evo = {};
+      }
+      var actions;
+      var actionStay = [];
+      var dontShowWorker = false;
+      var documentDirty = false;
+      var timerForUnload;
+      var managerPath = '';
+
+      evo.lang = {
+        saving: '<?= $_lang['saving'] ?>',
+        error_internet_connection: '<?= addslashes($_lang['error_internet_connection']) ?>',
+        warning_not_saved: '<?= addslashes($_lang['warning_not_saved']) ?>'
+      };
+      evo.style = {
+        actions_file: '<?= $_style['actions_file'] ?>',
+        actions_pencil: '<?= $_style['actions_pencil'] ?>',
+        actions_reply: '<?= $_style['actions_reply'] ?>',
+        actions_plus: '<?= $_style['actions_plus'] ?>'
+      };
+      evo.urlCheckConnectionToServer = '<?= MODX_MANAGER_URL ?>includes/version.inc.php';
+    </script>
+    <script src="media/script/main.js"></script>
+    <script>
+        <?php
+        if (isset($_REQUEST['r']) && preg_match('@^[0-9]+$@', $_REQUEST['r'])) {
+            echo 'doRefresh(' . $_REQUEST['r'] . ");\n";
         }
-
-		function reset_path(elementName) {
-	  		document.getElementById(elementName).value = document.getElementById('default_' + elementName).innerHTML;
-		}
-
-        var dontShowWorker = false;
-        function document_onunload() {
-            if(!dontShowWorker) {
-                top.mainMenu.work();
-            }
-        }
-
-        // set tree to default action.
-        if (parent.tree) parent.tree.ca = "open";
-
-		// call the updateMail function, updates mail notification in top navigation
-		if (top.mainMenu) {
-			if(top.mainMenu.updateMail) {
-				top.mainMenu.updateMail(true);
-			}
-		}
-		
-        function stopWorker() {
-            try {
-                parent.mainMenu.stopWork();
-            } catch(oException) {
-                ww = window.setTimeout('stopWorker()',500);
-            }
-        }
-
-        function doRefresh(r) {
-            try {
-                rr = r;
-                top.mainMenu.startrefresh(rr);
-            } catch(oException) {
-                vv = window.setTimeout('doRefresh()',1000);
-            }
-        }
-        var documentDirty=false;
-
-        function checkDirt(evt) {
-            if(documentDirty==true) {
-				var message = "<?php echo $_lang['warning_not_saved']; ?>";
-				if (typeof evt == 'undefined') {
-					evt = window.event;
-            }
-				if (evt) {
-					evt.returnValue = message;
-        }
-				return message;
-  			}
-        }
-
-        function saveWait(fName) {
-            document.getElementById("savingMessage").innerHTML = "<?php echo $_lang['saving']; ?>";
-            for(i = 0; i < document.forms[fName].elements.length; i++) {
-                document.forms[fName].elements[i].disabled='disabled';
-            }
-        }
-
-        var managerPath = "";
-
-        function hideLoader() {
-            document.getElementById('preLoader').style.display = "none";
-        }
-
-        hideL = window.setTimeout("hideLoader()", 1500);
-
-        // add the 'unsaved changes' warning event handler
-        if( window.addEventListener ) {
-			window.addEventListener('beforeunload',checkDirt,false);
-		} else if ( window.attachEvent ) {
-			window.attachEvent('onbeforeunload',checkDirt);
-		} else {
-			window.onbeforeunload = checkDirt;
-		}
-		/* ]]> */
+        ?>
     </script>
 </head>
-<body ondragstart="return false"<?php echo $modx_textdir ? ' class="rtl"':''?>>
-
-<div id="preLoader"><table width="100%" border="0" cellpadding="0"><tr><td align="center"><div class="preLoaderText"><?php echo $_style['ajax_loader']; ?></div></td></tr></table></div>
+<body <?= ($modx_textdir ? ' class="rtl"' : '') ?> class="<?= $body_class ?>" data-evocp="color">

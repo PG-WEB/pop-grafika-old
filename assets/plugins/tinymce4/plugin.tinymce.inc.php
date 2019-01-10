@@ -4,11 +4,7 @@
 if (!defined('MODX_BASE_PATH')) { die('What are you doing? Get out of here!'); }
 
 // Init
-if( !file_exists(MODX_BASE_PATH."assets/lib/class.modxRTEbridge.php")) { // Add Fall-Back for now
-    require_once(MODX_BASE_PATH."assets/plugins/tinymce4/class.modxRTEbridge.php"); 
-} else {
-    require_once(MODX_BASE_PATH."assets/lib/class.modxRTEbridge.php");
-}
+require_once(MODX_BASE_PATH."assets/lib/class.modxRTEbridge.php");
 require_once(MODX_BASE_PATH."assets/plugins/tinymce4/bridge.tinymce4.inc.php");
 
 $e = &$modx->event;
@@ -18,7 +14,7 @@ if($inlineMode == 'enabled' && $e->name == 'OnWebPagePrerender') {
         'theme'=>isset($inlineTheme) ? $inlineTheme : 'inline'
     ));
 } else {
-    $options = is_array($options) ? $options : array();
+    $options = isset($options) && is_array($options) ? $options : array();
 }
 
 $rte = new tinymce4bridge($options);
@@ -46,11 +42,11 @@ switch ($e->name) {
         if ($editor === $editorLabel) {
             // Handle introtext-RTE
             if($introtextRte == 'enabled' && isset($rte->pluginParams['elements']) && !defined($editor . '_INIT_INTROTEXT')) {
-				define($editor . '_INIT_INTROTEXT', 1);
+                define($editor . '_INIT_INTROTEXT', 1);
                 if(!in_array('introtext',$rte->pluginParams['elements'])) {
-					$rte->pluginParams['elements'][]      = 'introtext';
-					$rte->tvOptions['introtext']['theme'] = 'introtext';
-				};
+                    $rte->pluginParams['elements'][]      = 'introtext';
+                    $rte->tvOptions['introtext']['theme'] = 'introtext';
+                };
             }
             $script = $rte->getEditorScript();
             $e->output($script);

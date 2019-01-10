@@ -72,13 +72,16 @@ class AssetsHelper
     {
         $output = '';
         $plugins = $this->modx->pluginEvent;
-        if ((array_search('ManagerManager', $plugins['OnDocFormRender']) === false)) {
-            $output .= $this->registerScript('jQuery', array(
+        //файл проверяется чтобы определить новую админку
+        if (file_exists(MODX_MANAGER_PATH . 'media/script/jquery/jquery.min.js') || array_search('ManagerManager', $plugins['OnDocFormRender']) !== false) {
+            return $output;
+        }
+
+        $output .= $this->registerScript('jQuery', array(
                 'src'     => 'assets/js/jquery/jquery-1.9.1.min.js',
                 'version' => '1.9.1'
             ));
-            $output .= '<script type="text/javascript">var jQuery = jQuery.noConflict(true);</script>';
-        }
+        $output .= '<script type="text/javascript">var jQuery = jQuery.noConflict(true);</script>';
 
         return $output;
     }
@@ -108,7 +111,8 @@ class AssetsHelper
             if ($type == 'js') {
                 $out = '<script type="text/javascript" src="' . $src . '"></script>';
             } else {
-                $out = '<link rel="stylesheet" type="text/css" href="' . $src . '">';
+                $media = isset($params['media']) ? " media=\"{$params['media']}\"" : '';
+                $out = "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$src}\"{$media}>";
             }
 
             $this->modx->loadedjscripts[$name] = $params;
@@ -125,6 +129,8 @@ class AssetsHelper
     public function registerScriptsList($list = array())
     {
         $out = '';
+        if (!is_array($list)) return $out;
+
         foreach ($list as $script => $params) {
             $out .= $this->registerScript($script, $params);
         }

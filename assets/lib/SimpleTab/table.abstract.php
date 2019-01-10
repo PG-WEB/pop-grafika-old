@@ -44,7 +44,6 @@ class dataTable extends \autoTable
     {
         parent::__construct($modx, $debug);
         $this->modx = $modx;
-        $this->params = (isset($modx->event->params) && is_array($modx->event->params)) ? $modx->event->params : array();
         $this->fs = \Helpers\FS::getInstance();
     }
 
@@ -130,7 +129,7 @@ class dataTable extends \autoTable
         if ($cache) {
             return;
         }
-        $thumbsCache = isset($this->params['thumbsCache']) ? $this->params['thumbsCache'] : $this->thumbsCache;
+        $thumbsCache = \APIhelpers::getkey($this->params, 'thumbsCache', $this->thumbsCache);
         $thumb = $thumbsCache . $url;
         if ($this->fs->checkFile($thumb)) {
             $this->deleteThumb($thumb, true);
@@ -139,10 +138,10 @@ class dataTable extends \autoTable
 
     /**
      * @param $ids
-     * @param null $fire_events
+     * @param bool $fire_events
      * @return $this
      */
-    public function delete($ids, $fire_events = null)
+    public function delete($ids, $fire_events = false)
     {
         $out = parent::delete($ids, $fire_events);
         $this->query("ALTER TABLE {$this->makeTable($this->table)} AUTO_INCREMENT = 1");
@@ -153,10 +152,10 @@ class dataTable extends \autoTable
     /**
      * @param $ids
      * @param $rid
-     * @param null $fire_events
+     * @param bool $fire_events
      * @return $this
      */
-    public function deleteAll($ids, $rid, $fire_events = null)
+    public function deleteAll($ids, $rid, $fire_events = false)
     {
         $this->clearIndexes($ids, $rid);
 
@@ -180,6 +179,7 @@ class dataTable extends \autoTable
      */
     public function stripName($name)
     {
+
         $filename = $this->fs->takeFileName($name);
         $ext = $this->fs->takeFileExt($name);
 
@@ -207,27 +207,51 @@ class dataTable extends \autoTable
         /* more refactoring  needed */
         if ($targetIndex < $sourceIndex) {
             if (($point == 'top' && $orderDir == 'asc') || ($point == 'bottom' && $orderDir == 'desc')) {
-                $this->modx->db->update("`{$this->indexName}`=`{$this->indexName}`+1", $table,
-                    "`{$this->indexName}`>={$targetIndex} AND `{$this->indexName}`<{$sourceIndex} AND `{$this->rfName}`={$rid}");
-                $rows = $this->modx->db->update("`{$this->indexName}`={$targetIndex}", $table,
-                    "`{$this->pkName}`={$sourceId}");
+                $this->modx->db->update(
+                    "`{$this->indexName}`=`{$this->indexName}`+1",
+                    $table,
+                    "`{$this->indexName}`>={$targetIndex} AND `{$this->indexName}`<{$sourceIndex} AND `{$this->rfName}`={$rid}"
+                );
+                $rows = $this->modx->db->update(
+                    "`{$this->indexName}`={$targetIndex}",
+                    $table,
+                    "`{$this->pkName}`={$sourceId}"
+                );
             } elseif (($point == 'bottom' && $orderDir == 'asc') || ($point == 'top' && $orderDir == 'desc')) {
-                $this->modx->db->update("`{$this->indexName}`=`{$this->indexName}`+1", $table,
-                    "`{$this->indexName}`>{$targetIndex} AND `{$this->indexName}`<{$sourceIndex} AND `{$this->rfName}`={$rid}");
-                $rows = $this->modx->db->update("`{$this->indexName}`=1+{$targetIndex}", $table,
-                    "`{$this->pkName}`={$sourceId}");
+                $this->modx->db->update(
+                    "`{$this->indexName}`=`{$this->indexName}`+1",
+                    $table,
+                    "`{$this->indexName}`>{$targetIndex} AND `{$this->indexName}`<{$sourceIndex} AND `{$this->rfName}`={$rid}"
+                );
+                $rows = $this->modx->db->update(
+                    "`{$this->indexName}`=1+{$targetIndex}",
+                    $table,
+                    "`{$this->pkName}`={$sourceId}"
+                );
             }
         } else {
             if (($point == 'bottom' && $orderDir == 'asc') || ($point == 'top' && $orderDir == 'desc')) {
-                $this->modx->db->update("`{$this->indexName}`=`{$this->indexName}`-1", $table,
-                    "`{$this->indexName}`<={$targetIndex} AND `{$this->indexName}`>={$sourceIndex} AND `{$this->rfName}`={$rid}");
-                $rows = $this->modx->db->update("`{$this->indexName}`={$targetIndex}", $table,
-                    "`{$this->pkName}`={$sourceId}");
+                $this->modx->db->update(
+                    "`{$this->indexName}`=`{$this->indexName}`-1",
+                    $table,
+                    "`{$this->indexName}`<={$targetIndex} AND `{$this->indexName}`>={$sourceIndex} AND `{$this->rfName}`={$rid}"
+                );
+                $rows = $this->modx->db->update(
+                    "`{$this->indexName}`={$targetIndex}",
+                    $table,
+                    "`{$this->pkName}`={$sourceId}"
+                );
             } elseif (($point == 'top' && $orderDir == 'asc') || ($point == 'bottom' && $orderDir == 'desc')) {
-                $this->modx->db->update("`{$this->indexName}`=`{$this->indexName}`-1", $table,
-                    "`{$this->indexName}`<{$targetIndex} AND `{$this->indexName}`>={$sourceIndex} AND `{$this->rfName}`={$rid}");
-                $rows = $this->modx->db->update("`{$this->indexName}`=-1+{$targetIndex}", $table,
-                    "`{$this->pkName}`={$sourceId}");
+                $this->modx->db->update(
+                    "`{$this->indexName}`=`{$this->indexName}`-1",
+                    $table,
+                    "`{$this->indexName}`<{$targetIndex} AND `{$this->indexName}`>={$sourceIndex} AND `{$this->rfName}`={$rid}"
+                );
+                $rows = $this->modx->db->update(
+                    "`{$this->indexName}`=-1+{$targetIndex}",
+                    $table,
+                    "`{$this->pkName}`={$sourceId}"
+                );
             }
         }
 
@@ -258,4 +282,23 @@ class dataTable extends \autoTable
             return false;
         }
     }
+
+    /**
+     * @return array
+     */
+    public function getParams()
+    {
+        return $this->params;
+    }
+
+    /**
+     * @param array $params
+     */
+    public function setParams($params = array())
+    {
+        if (is_array($params)) {
+            $this->params = $params;
+        }
+    }
+
 }

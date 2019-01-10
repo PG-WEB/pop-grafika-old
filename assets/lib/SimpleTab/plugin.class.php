@@ -65,8 +65,11 @@ abstract class Plugin
             $this->params['template'] = is_array($doc) ? end($doc) : null;
         }
         //overload plugin and class properties
-        $_params = $modx->parseProperties('&template=;;' . $this->params['template'] . ' &id=;;' . $this->params['id'],
-            $modx->event->activePlugin, 'plugin');
+        $_params = $modx->parseProperties(
+            '&template=;;' . $this->params['template'] . ' &id=;;' . $this->params['id'],
+            $modx->event->activePlugin,
+            'plugin'
+        );
         foreach ($_params as $key => $value) {
             if (property_exists($this, $key)) {
                 $this->$key = $value;
@@ -99,8 +102,10 @@ abstract class Plugin
         $templates = isset($this->params['templates']) ? explode(',', $this->params['templates']) : false;
         $roles = isset($this->params['roles']) ? explode(',', $this->params['roles']) : false;
 
-        $tplFlag = ($this->checkTemplate && !$templates || ($templates && !in_array($this->params['template'],
-                    $templates)));
+        $tplFlag = ($this->checkTemplate && !$templates || ($templates && !in_array(
+            $this->params['template'],
+            $templates
+        )));
 
         $documents = isset($this->params['documents']) ? explode(',', $this->params['documents']) : false;
         $docFlag = ($this->checkId && $tplFlag) ? !($documents && in_array($this->params['id'], $documents)) : $tplFlag;
@@ -125,20 +130,7 @@ abstract class Plugin
             }
             $this->registerEvents($this->pluginEvents);
         }
-        $output = '';
-        $plugins = $this->modx->pluginEvent;
-        if (($this->renderEvent !== 'OnDocFormRender' || (array_search('ManagerManager',
-                    $plugins['OnDocFormRender']) === false))
-        ) {
-            $jquery = $this->assets->registerScript('jQuery', array(
-                'version' => '1.9.1',
-                'src'     => 'assets/js/jquery/jquery-1.9.1.min.js'
-            ));
-            if ($jquery !== false) {
-                $output .= $jquery;
-                $output .= '<script type="text/javascript">var jQuery = jQuery.noConflict(true);</script>';
-            }
-        }
+        $output = $this->assets->registerJQuery();
         $tpl = MODX_BASE_PATH . $this->tpl;
         if ($this->fs->checkFile($tpl)) {
             $output .= '[+js+][+styles+]' . file_get_contents($tpl);
@@ -165,12 +157,7 @@ abstract class Plugin
             $scripts = $this->DLTemplate->parseChunk('@CODE:' . $scripts, $ph);
             $scripts = json_decode($scripts, true);
             $scripts = isset($scripts['scripts']) ? $scripts['scripts'] : $scripts['styles'];
-            foreach ($scripts as $name => $params) {
-                $script = $this->assets->registerScript($name, $params);
-                if ($script !== false) {
-                    $js .= $script;
-                }
-            }
+            $js = $this->assets->registerScriptsList($scripts);
         } else {
             if ($list == $this->jsListDefault) {
                 $this->modx->logEvent(0, 3, "Cannot load {$this->jsListDefault} .", $this->pluginName);
@@ -202,8 +189,10 @@ abstract class Plugin
             if ($output !== false) {
                 $ph = $this->getTplPlaceholders();
                 $ph['js'] = $this->renderJS($this->jsListDefault, $ph) . $this->renderJS($this->jsListCustom, $ph);
-                $ph['styles'] = $this->renderJS($this->cssListDefault, $ph) . $this->renderJS($this->cssListCustom,
-                        $ph);
+                $ph['styles'] = $this->renderJS($this->cssListDefault, $ph) . $this->renderJS(
+                    $this->cssListCustom,
+                    $ph
+                );
                 $output = $this->DLTemplate->parseChunk('@CODE:' . $output, $ph);
             }
 
@@ -268,4 +257,5 @@ abstract class Plugin
             }
         }
     }
+
 }

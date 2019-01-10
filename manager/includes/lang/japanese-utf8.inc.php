@@ -469,7 +469,7 @@ $_lang["login_captcha_message"] = '画像で表示されるセキュリティコ
 $_lang["login_homepage"] = 'ログイン後に表示するページ';
 $_lang["login_homepage_message"] = 'ログインしたウェブユーザーに対して表示するリソースのIDを入力してください。<br /><strong>※非公開のリソースは指定できません。また該当ユーザーがアクセス権限をもつリソースに限ります。</strong>';
 $_lang["login_message"] = 'ログイン名とパスワードは大文字・小文字を区別します。';
-$_lang["logo_slogan"] = 'MODX Content Manager - \nCreate and do more with less';
+$_lang["logo_slogan"] = 'EVO Content Manager - \nCreate and do more with less';
 $_lang["logout"] = 'ログアウト';
 $_lang["long_title"] = 'タイトル';
 $_lang["mail_check_timeperiod_message"] = '<a href="index.php?a=10">メッセージ機能</a>のメッセージチェックの間隔を「秒」で指定します';
@@ -681,7 +681,7 @@ $_lang["plugin_priority_instructions"] = 'プラグインの実行順を変更�
 $_lang["plugin_priority_title"] = 'プラグインの実行順';
 $_lang["plugin_title"] = 'プラグインの作成/編集';
 $_lang["preview"] = 'プレビュー';
-$_lang["preview_msg"] = 'ここには最後に更新した内容をプレビューしています。<a href="#" onclick="saveRefreshPreview();"><img src="media/images/icons/save.gif" align="absmiddle" height="12"> 更新と再描画</a>を行うにはここをクリックしてください。';
+$_lang["preview_msg"] = 'ここには最後に更新した内容をプレビューしています。<a href="javascript:;" onclick="saveRefreshPreview();"><i class="fa fa-floppy-o"></i> 更新と再描画</a>を行うにはここをクリックしてください。';
 $_lang["preview_resource"] = 'プレビュー(別窓)';
 $_lang["private"] = 'グループ設定';
 $_lang["public"] = 'グループ制限なし';
@@ -853,7 +853,7 @@ $_lang["role_web_user_management"] = 'ウェブユーザー管理';
 $_lang["rss_url_news_default"] = 'http://feeds2.feedburner.com/modxjp';
 $_lang["rss_url_news_message"] = '管理画面トップの「MODX News」のフィードURL';
 $_lang["rss_url_news_title"] = 'RSS ニュースフィード';
-$_lang["rss_url_security_default"] = 'http://feeds.feedburner.com/modxsecurity';
+$_lang["rss_url_security_default"] = 'http://feeds.feedburner.com/evocms-security-news';
 $_lang["rss_url_security_message"] = '管理画面トップの「MODX Security」のフィードURL';
 $_lang["rss_url_security_title"] = 'RSS セキュリティ情報フィード';
 $_lang["run_module"] = 'モジュールの実行';

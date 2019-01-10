@@ -1,3 +1,4 @@
 <?php
-$recent_update = 1546870133;
-$cacheRefreshTime = 0;
+$recent_update='1547008882';
+$cacheRefreshTime='0';
+

@@ -1,15 +1,17 @@
 <?php
-if(IN_MANAGER_MODE!="true") die("<b>INCLUDE_ORDERING_ERROR</b><br /><br />Please use the MODX Content Manager instead of accessing this file directly.");
+if( ! defined('IN_MANAGER_MODE') || IN_MANAGER_MODE !== true) {
+    die("<b>INCLUDE_ORDERING_ERROR</b><br /><br />Please use the EVO Content Manager instead of accessing this file directly.");
+}
 
 // action list
 $GLOBALS['action_list'] = array(
 	'1'	=> 'Loading a frame(set)',
-	'2'	=> 'Viewing home page/ online users',
+	'2'	=> 'Viewing dashboard',
 	'3'	=> 'Viewing data for resource',
 	'4'	=> 'Creating a resource',
 	'5'	=> 'Saving resource',
 	'6'	=> 'Deleting resource',
-	'7'	=> 'Waiting while MODX cleans up',
+	'7'	=> 'Waiting while EVO cleans up',
 	'8'	=> 'Logged out',
 	'9'	=> 'Viewing help',
 	'10'	=> 'Viewing/ composing messages',
@@ -60,7 +62,7 @@ $GLOBALS['action_list'] = array(
 	'56'	=> 'Refresh resource tree',
 	'57'	=> 'Refresh menu',
 	'58'	=> 'Logged in',
-	'59'    => 'About MODX',
+	'59'    => 'About EVO',
 	'60'	=> 'Emptying Recycle Bin',
 	'61'	=> 'Publishing a resource',
 	'62'	=> 'Un-publishing a resource',
@@ -82,8 +84,6 @@ $GLOBALS['action_list'] = array(
 	'78'	=> 'Editing Chunk (HTML Snippet)',
 	'79'	=> 'Saving Chunk (HTML Snippet)',
 	'80'	=> 'Deleting Chunk (HTML Snippet)',
-	'81'	=> 'Managing keywords',
-	'81'	=> 'Managing keywords',
 	'83'	=> 'Exporting a resource to HTML',
 	'84'	=> 'Load Element Selector',
 	'85'	=> 'Create Folder',
@@ -120,7 +120,7 @@ $GLOBALS['action_list'] = array(
 	'116'	=> 'Delete event log',
 	'117'   => 'Editing tv rank',
 	'118'   => 'Call settings ajax include',
-	'119'   => 'Login Fail (Temporary Block)',	
+	'119'   => 'Login Fail (Temporary Block)',
 
 	'300'	=> 'Create Template Variable',
 	'301'	=> 'Edit Template Variable',
@@ -134,6 +134,11 @@ $GLOBALS['action_list'] = array(
 	'999'	=> 'Viewing test page',
 );
 
+/**
+ * @param string $actionId
+ * @param string $itemid
+ * @return string
+ */
 function getAction($actionId, $itemid='') {
 	global $action_list;
 

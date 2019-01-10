@@ -1,0 +1,21 @@
+[+as.noResults:is=`1`:then=`
+  <div class="[+as.noResultClass+]">
+    [+as.noResultText+]
+  </div>
+`:else=`
+  <br/>
+  <p class="ajaxSearch_resultsInfo">[+as.resultInfoText+]</p>
+    <hr style="height:1px; border-width:0; color:gray; background-color:gray" />  
+    <br/>
+  <!--[+as.paging+]<br/><br/>-->
+  [+as.listResults+]<br/>
+  <div id="bottom_lenta">
+  <span class="up">
+  <!--<hr style="height:1px; border-width:0; color:gray; background-color:gray" />  -->
+  [+as.paging+]
+  </span>
+  </div>
+`+]
+[+as.showCmt:is=`1`:then=`
+[+as.comment+]
+`+]
